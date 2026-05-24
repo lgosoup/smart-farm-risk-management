@@ -4,236 +4,53 @@
   "overrides": {
     "memberships": {},
     "rule_weights": {
-      "R9": 0.99,
-      "R15": 0.99
+      "R9": 0.99
     }
   },
   "bandit": {
     "algo": "ucb1",
     "c": 0.35,
     "actions": {
-      "M_T_OPT_P1_DN": {
-        "n": 0,
-        "total_reward": 0.0
-      },
-      "M_T_OPT_P2_DN": {
-        "n": 0,
-        "total_reward": 0.0
-      },
-      "M_T_BORDER_P0_DN": {
-        "n": 0,
-        "total_reward": 0.0
-      },
-      "M_T_OPT_P1_UP": {
-        "n": 0,
-        "total_reward": 0.0
-      },
-      "M_T_OPT_P2_UP": {
-        "n": 0,
-        "total_reward": 0.0
-      },
-      "M_T_BORDER_P0_UP": {
-        "n": 0,
-        "total_reward": 0.0
-      },
-      "M_DO_TARGET_P1_DN": {
-        "n": 0,
-        "total_reward": 0.0
-      },
-      "M_DO_TARGET_P2_DN": {
-        "n": 0,
-        "total_reward": 0.0
-      },
-      "M_DO_LOW_P1_DN": {
-        "n": 0,
-        "total_reward": 0.0
-      },
-      "M_DO_TARGET_P1_UP": {
-        "n": 0,
-        "total_reward": 0.0
-      },
-      "M_DO_TARGET_P2_UP": {
-        "n": 0,
-        "total_reward": 0.0
-      },
-      "M_DO_LOW_P1_UP": {
-        "n": 0,
-        "total_reward": 0.0
-      },
-      "M_FR_STABLE_P1_DN": {
-        "n": 0,
-        "total_reward": 0.0
-      },
-      "M_FR_STABLE_P2_DN": {
-        "n": 0,
-        "total_reward": 0.0
-      },
-      "M_FR_LOW_P1_DN": {
-        "n": 0,
-        "total_reward": 0.0
-      },
-      "M_FR_STABLE_P1_UP": {
-        "n": 0,
-        "total_reward": 0.0
-      },
-      "M_FR_STABLE_P2_UP": {
-        "n": 0,
-        "total_reward": 0.0
-      },
-      "M_FR_LOW_P1_UP": {
-        "n": 0,
-        "total_reward": 0.0
-      },
-      "M_EC_W_STABLE_P1_DN": {
-        "n": 0,
-        "total_reward": 0.0
-      },
-      "M_EC_W_HIGH_P1_DN": {
-        "n": 0,
-        "total_reward": 0.0
-      },
-      "M_EC_W_STABLE_P1_UP": {
-        "n": 0,
-        "total_reward": 0.0
-      },
-      "M_EC_W_HIGH_P1_UP": {
-        "n": 0,
-        "total_reward": 0.0
-      },
-      "M_TURB_CLEAR_P2_DN": {
-        "n": 0,
-        "total_reward": 0.0
-      },
-      "M_TURB_CLEAR_P2_UP": {
-        "n": 0,
-        "total_reward": 0.0
-      },
-      "W_R6_DN": {
-        "n": 0,
-        "total_reward": 0.0
-      },
-      "W_R7_DN": {
-        "n": 0,
-        "total_reward": 0.0
-      },
-      "W_R8_DN": {
-        "n": 0,
-        "total_reward": 0.0
-      },
-      "W_R9_DN": {
-        "n": 1,
-        "total_reward": 0.7756947000000001
-      },
-      "W_R10_DN": {
-        "n": 0,
-        "total_reward": 0.0
-      },
-      "W_R11_DN": {
-        "n": 0,
-        "total_reward": 0.0
-      },
-      "W_R15_DN": {
-        "n": 0,
-        "total_reward": 0.0
-      },
-      "W_R16_DN": {
-        "n": 0,
-        "total_reward": 0.0
-      },
-      "W_R17_DN": {
-        "n": 0,
-        "total_reward": 0.0
-      },
-      "W_R18_DN": {
-        "n": 0,
-        "total_reward": 0.0
-      },
-      "W_R19_DN": {
-        "n": 0,
-        "total_reward": 0.0
-      },
-      "W_R6_UP": {
-        "n": 0,
-        "total_reward": 0.0
-      },
-      "W_R7_UP": {
-        "n": 0,
-        "total_reward": 0.0
-      },
-      "W_R8_UP": {
-        "n": 0,
-        "total_reward": 0.0
-      },
-      "W_R9_UP": {
-        "n": 0,
-        "total_reward": 0.0
-      },
-      "W_R10_UP": {
-        "n": 0,
-        "total_reward": 0.0
-      },
-      "W_R11_UP": {
-        "n": 0,
-        "total_reward": 0.0
-      },
-      "W_R15_UP": {
-        "n": 0,
-        "total_reward": 0.0
-      },
-      "W_R16_UP": {
-        "n": 0,
-        "total_reward": 0.0
-      },
-      "W_R17_UP": {
-        "n": 0,
-        "total_reward": 0.0
-      },
-      "W_R18_UP": {
-        "n": 0,
-        "total_reward": 0.0
-      },
-      "W_R19_UP": {
-        "n": 0,
-        "total_reward": 0.0
-      }
+      "M_WT_OPT_P1_DN": {"n": 0, "total_reward": 0.0},
+      "M_WT_OPT_P2_DN": {"n": 0, "total_reward": 0.0},
+      "M_WT_BORDER_P0_DN": {"n": 0, "total_reward": 0.0},
+      "M_WT_OPT_P1_UP": {"n": 0, "total_reward": 0.0},
+      "M_WT_OPT_P2_UP": {"n": 0, "total_reward": 0.0},
+      "M_WT_BORDER_P0_UP": {"n": 0, "total_reward": 0.0},
+      "M_FR_STABLE_P1_DN": {"n": 0, "total_reward": 0.0},
+      "M_FR_STABLE_P2_DN": {"n": 0, "total_reward": 0.0},
+      "M_FR_LOW_P1_DN": {"n": 0, "total_reward": 0.0},
+      "M_FR_STABLE_P1_UP": {"n": 0, "total_reward": 0.0},
+      "M_FR_STABLE_P2_UP": {"n": 0, "total_reward": 0.0},
+      "M_FR_LOW_P1_UP": {"n": 0, "total_reward": 0.0},
+      "M_EC_W_STABLE_P1_DN": {"n": 0, "total_reward": 0.0},
+      "M_EC_W_HIGH_P1_DN": {"n": 0, "total_reward": 0.0},
+      "M_EC_W_STABLE_P1_UP": {"n": 0, "total_reward": 0.0},
+      "M_EC_W_HIGH_P1_UP": {"n": 0, "total_reward": 0.0},
+      "M_TURB_CLEAR_P2_DN": {"n": 0, "total_reward": 0.0},
+      "M_TURB_CLEAR_P2_UP": {"n": 0, "total_reward": 0.0},
+      "W_R6_DN": {"n": 0, "total_reward": 0.0},
+      "W_R7_DN": {"n": 0, "total_reward": 0.0},
+      "W_R8_DN": {"n": 0, "total_reward": 0.0},
+      "W_R9_DN": {"n": 1, "total_reward": 0.7756947000000001},
+      "W_R10_DN": {"n": 0, "total_reward": 0.0},
+      "W_R11_DN": {"n": 0, "total_reward": 0.0},
+      "W_R16_DN": {"n": 0, "total_reward": 0.0},
+      "W_R17_DN": {"n": 0, "total_reward": 0.0},
+      "W_R18_DN": {"n": 0, "total_reward": 0.0},
+      "W_R19_DN": {"n": 0, "total_reward": 0.0},
+      "W_R6_UP": {"n": 0, "total_reward": 0.0},
+      "W_R7_UP": {"n": 0, "total_reward": 0.0},
+      "W_R8_UP": {"n": 0, "total_reward": 0.0},
+      "W_R9_UP": {"n": 0, "total_reward": 0.0},
+      "W_R10_UP": {"n": 0, "total_reward": 0.0},
+      "W_R11_UP": {"n": 0, "total_reward": 0.0},
+      "W_R16_UP": {"n": 0, "total_reward": 0.0},
+      "W_R17_UP": {"n": 0, "total_reward": 0.0},
+      "W_R18_UP": {"n": 0, "total_reward": 0.0},
+      "W_R19_UP": {"n": 0, "total_reward": 0.0}
     }
   },
-  "pending": {
-    "action_id": "W_R15_DN",
-    "applied_at": "2026-01-22T02:01:57+09:00",
-    "change": {
-      "ok": true,
-      "type": "rule_weight",
-      "rule_id": "R15",
-      "before": 1.0,
-      "after": 0.99,
-      "multiplier": 0.99
-    }
-  },
-  "last_cycle": {
-    "ts": "2026-01-22T02:01:57+09:00",
-    "selected_action": {
-      "action_id": "W_R15_DN",
-      "action_type": "rule_weight",
-      "var_key": null,
-      "shape_label": null,
-      "point_index": null,
-      "delta": null,
-      "rule_id": "R15",
-      "multiplier": 0.99,
-      "description": "Rule R15 weight ×0.99"
-    },
-    "decision": "APPROVE",
-    "gate": {
-      "decision": "APPROVE",
-      "reason": "안전 범위 내 미세 조정",
-      "bias_tags": [
-        "STABILITY_NEED"
-      ],
-      "notes": [
-        "최근 경고/위험 비중이 높음"
-      ]
-    },
-    "reward": 0.7756947000000001
-  }
+  "pending": null,
+  "last_cycle": null
 }

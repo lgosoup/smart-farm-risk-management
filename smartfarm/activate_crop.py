@@ -18,7 +18,7 @@ def main():
         targets = mgr.get_control_targets()
         print(f"Activated: {crop}")
         print(f"  EC mode: {mgr.get_ec_mode()}")
-        print(f"  Targets: pH={targets.get('target_ph')}, EC={targets.get('target_ec')}, T={targets.get('target_temp')}")
+        print(f"  Targets: pH={targets.get('target_ph')}, EC={targets.get('target_ec')}, water_temp={targets.get('target_water_temp')}")
     else:
         print(f"Failed to activate: {crop}")
         sys.exit(1)

@@ -76,23 +76,15 @@ def _build_recommendations(
             checklist.append(f"Verify whether the {var} change is real or caused by sensor noise.")
 
     for flag in timeseries_flags:
-        if flag.startswith("TS_PERSIST_DO_LOW"):
-            scenario_notes.append("Low DO has persisted across recent samples.")
-            checklist.append("Prioritize aeration and flow recovery.")
-        elif flag.startswith("TS_PERSIST_T_HIGH"):
+        if flag.startswith("TS_PERSIST_T_HIGH"):
             scenario_notes.append("High water temperature has persisted across recent samples.")
             checklist.append("Prioritize cooling or heat rejection.")
-        elif flag.startswith("TS_TREND_DO_DOWN"):
-            scenario_notes.append("DO is trending downward.")
-            checklist.append("Inspect aeration, recirculation, and bio-load.")
         elif flag.startswith("TS_TREND_T_UP"):
             scenario_notes.append("Water temperature is trending upward.")
             checklist.append("Inspect the cooling path and nearby heat sources.")
         elif flag.startswith("TS_TREND_FR_DOWN"):
             scenario_notes.append("Flow ratio is trending downward.")
             checklist.append("Inspect pump output, filter blockage, and tubing.")
-        elif flag.startswith("TS_RECOVERY_FAIL_DO"):
-            scenario_notes.append("DO recovery has not appeared in recent samples.")
         elif flag.startswith("TS_RECOVERY_FAIL_FR"):
             scenario_notes.append("Flow recovery has not appeared in recent samples.")
         elif flag.startswith("TS_VOL_"):
@@ -102,25 +94,20 @@ def _build_recommendations(
 
     for row in fired_rules:
         rule_id = row.get("rule_id")
-        if rule_id == "R1":
-            scenario_notes.append("Critically low DO is driving the current risk state.")
-            checklist.append("Urgently secure dissolved oxygen.")
-        elif rule_id == "R2":
-            scenario_notes.append("Emergency-level temperature is driving the current risk state.")
+        if rule_id == "R2":
+            scenario_notes.append("Emergency-level water temperature is driving the current risk state.")
             checklist.append("Urgently reduce water temperature.")
         elif rule_id == "R3":
             scenario_notes.append("Flow stagnation is driving the current risk state.")
             checklist.append("Urgently restore circulation.")
         elif rule_id == "R6":
-            scenario_notes.append("High temperature combined with low DO is a major composite risk.")
+            scenario_notes.append("High temperature combined with low flow is a major composite risk.")
         elif rule_id == "R7":
-            scenario_notes.append("Low flow combined with low DO is a major composite risk.")
+            scenario_notes.append("High EC combined with low flow is a major composite risk.")
         elif rule_id == "R8":
             scenario_notes.append("Low flow and poor water clarity are increasing contamination risk.")
         elif rule_id == "R9":
-            scenario_notes.append("High EC together with suboptimal DO is elevating risk.")
-        elif rule_id == "R15":
-            checklist.append("Prioritize dissolved oxygen improvement first.")
+            scenario_notes.append("High EC combined with borderline flow is elevating risk.")
         elif rule_id == "R16":
             checklist.append("Prioritize temperature reduction first.")
         elif rule_id == "R17":

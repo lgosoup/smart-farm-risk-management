@@ -31,12 +31,13 @@ HISTORY_INPUTS_PATH = Path(__file__).resolve().parent / "data" / "history_inputs
 DEFAULT_INPUTS_PATH = Path(__file__).resolve().parent / "data" / "inputs.json"
 
 VAR_INFO = {
-    "T": {"label": "온도", "unit": "°C", "cmap": "YlOrRd"},
-    "DO": {"label": "용존산소", "unit": "mg/L", "cmap": "Blues"},
+    "water_temperature": {"label": "수온", "unit": "°C", "cmap": "YlOrRd"},
     "pH": {"label": "pH", "unit": "", "cmap": "Greens"},
-    "FR": {"label": "유량비", "unit": "", "cmap": "Oranges"},
-    "EC": {"label": "EC", "unit": "", "cmap": "Purples"},
-    "Turbidity": {"label": "탁도", "unit": "NTU", "cmap": "Greys"},
+    "EC": {"label": "EC", "unit": "mS/cm", "cmap": "Purples"},
+    "flow_ratio": {"label": "유량비", "unit": "", "cmap": "Oranges"},
+    "turbidity": {"label": "탁도", "unit": "NTU", "cmap": "Greys"},
+    "air_temperature": {"label": "공기 온도", "unit": "°C", "cmap": "RdPu"},
+    "humidity": {"label": "습도", "unit": "%", "cmap": "Blues"},
 }
 
 
@@ -45,7 +46,11 @@ def _load_default_inputs() -> Dict[str, float]:
         data = json.loads(DEFAULT_INPUTS_PATH.read_text(encoding="utf-8"))
         if isinstance(data, dict):
             return {k: float(v) for k, v in data.items() if isinstance(v, (int, float))}
-    return {"T": 18.0, "DO": 6.0, "pH": 6.3, "FR": 1.0, "EC": 0.5, "Turbidity": 1.0}
+    return {
+        "water_temperature": 18.0, "pH": 6.3, "EC": 0.5,
+        "flow_ratio": 1.0, "turbidity": 1.0,
+        "air_temperature": 25.0, "humidity": 60.0,
+    }
 
 
 def _read_history_inputs(path: Path) -> Tuple[List[Dict[str, Optional[float]]], List[str]]:
@@ -312,21 +317,19 @@ def _label_color(label: str) -> str:
 
 def _rule_name(rule_id: str) -> str:
     mapping = {
-        "R1": "용존산소 극저",
         "R2": "고수온 극고",
         "R3": "유량 정체",
         "R4": "pH 극단",
         "R5": "탁도 극심",
-        "R6": "고수온+저DO",
-        "R7": "저유량+저DO",
+        "R6": "고수온+저유량",
+        "R7": "고EC+저유량",
         "R8": "저유량+탁도상승",
-        "R9": "고EC+저DO",
-        "R10": "수온/DO 경계",
+        "R9": "고EC+유량경계",
+        "R10": "수온/유량 경계",
         "R11": "복합 경계",
         "R12": "경고 누적 승격",
         "R13": "전반 최적",
         "R14": "기본 최적",
-        "R15": "저DO 경고",
         "R16": "고수온 경고",
         "R17": "저유량 경고",
         "R18": "탁도 경고",
@@ -557,21 +560,32 @@ def main() -> None:
         return value
 
     inputs = {
-        "T": _num_input("T", "온도 T (°C)", default_inputs.get("T", 18.0), 0.1, _get_var_cfg(cfg, "T", ec_mode)),
-        "DO": _num_input(
-            "DO", "용존산소 DO (mg/L)", default_inputs.get("DO", 6.0), 0.1, _get_var_cfg(cfg, "DO", ec_mode)
+        "water_temperature": _num_input(
+            "water_temperature", "수온 (°C)",
+            default_inputs.get("water_temperature", 18.0), 0.1,
+            _get_var_cfg(cfg, "water_temperature", ec_mode),
         ),
         "pH": _num_input("pH", "pH", default_inputs.get("pH", 6.3), 0.01, _get_var_cfg(cfg, "pH", ec_mode)),
-        "FR": _num_input(
-            "FR", "유량비 FR", default_inputs.get("FR", 1.0), 0.01, _get_var_cfg(cfg, "FR", ec_mode)
+        "EC": _num_input("EC", "EC (mS/cm)", default_inputs.get("EC", 0.5), 0.01, _get_var_cfg(cfg, "EC", ec_mode)),
+        "flow_ratio": _num_input(
+            "flow_ratio", "유량비",
+            default_inputs.get("flow_ratio", 1.0), 0.01,
+            _get_var_cfg(cfg, "flow_ratio", ec_mode),
         ),
-        "EC": _num_input("EC", "EC", default_inputs.get("EC", 0.5), 0.01, _get_var_cfg(cfg, "EC", ec_mode)),
-        "Turbidity": _num_input(
-            "Turbidity",
-            "탁도 (NTU)",
-            default_inputs.get("Turbidity", 1.0),
-            0.1,
-            _get_var_cfg(cfg, "Turbidity", ec_mode),
+        "turbidity": _num_input(
+            "turbidity", "탁도 (NTU)",
+            default_inputs.get("turbidity", 1.0), 0.1,
+            _get_var_cfg(cfg, "turbidity", ec_mode),
+        ),
+        "air_temperature": _num_input(
+            "air_temperature", "공기 온도 (°C)",
+            default_inputs.get("air_temperature", 25.0), 0.1,
+            _get_var_cfg(cfg, "air_temperature", ec_mode),
+        ),
+        "humidity": _num_input(
+            "humidity", "습도 (%)",
+            default_inputs.get("humidity", 60.0), 0.5,
+            _get_var_cfg(cfg, "humidity", ec_mode),
         ),
     }
 
@@ -617,7 +631,7 @@ def main() -> None:
     with col1:
         st.subheader("현재 입력값")
         rows = []
-        for var in ["T", "DO", "pH", "FR", "EC", "Turbidity"]:
+        for var in ["water_temperature", "pH", "EC", "flow_ratio", "turbidity", "air_temperature", "humidity"]:
             var_cfg = _get_var_cfg(cfg, var, ec_mode)
             rows.append(
                 {
@@ -641,8 +655,10 @@ def main() -> None:
         st.bar_chart(_display_map_dict(_score_membership_table(label_peaks)))
 
     st.subheader("퍼지 멤버십 결과")
-    tabs = st.tabs(["T", "DO", "pH", "FR", "EC", "Turbidity"])
-    for tab, var in zip(tabs, ["T", "DO", "pH", "FR", "EC", "Turbidity"]):
+    _FUZZY_VARS = ["water_temperature", "pH", "EC", "flow_ratio", "turbidity", "air_temperature", "humidity"]
+    _TAB_NAMES = ["수온", "pH", "EC", "유량비", "탁도", "공기온도", "습도"]
+    tabs = st.tabs(_TAB_NAMES)
+    for tab, var in zip(tabs, _FUZZY_VARS):
         with tab:
             var_cfg = _get_var_cfg(cfg, var, ec_mode)
             if not var_cfg:

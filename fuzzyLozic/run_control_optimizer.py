@@ -30,7 +30,7 @@ from control import (
 from main import run_assessment
 
 
-REQUIRED_INPUT_KEYS = ["T", "DO", "pH", "FR", "EC", "Turbidity"]
+REQUIRED_INPUT_KEYS = ["water_temperature", "pH", "EC", "flow_ratio", "turbidity", "air_temperature", "humidity"]
 
 
 def parse_args() -> argparse.Namespace:

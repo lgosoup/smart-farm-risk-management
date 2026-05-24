@@ -70,7 +70,6 @@ def _postprocess_korean_terms(obj: Any) -> Any:
     # "(EC)" 안의 EC는 건드리지 않기 위해 (?<!\() 사용
     repls = [
         (re.compile(r"(?<!\()EC\b"), "전기전도도(EC)"),
-        (re.compile(r"(?<!\()DO\b"), "용존산소(DO)"),
     ]
 
     if isinstance(obj, str):
@@ -124,7 +123,7 @@ def _safe_dict(d: Dict[str, Any], key: str) -> Dict[str, Any]:
 
 def _compute_max_delta(history_packets: List[Dict[str, Any]]) -> Dict[str, float]:
     # consecutive inputs delta 기반 최대 변화량
-    vars_ = ["T", "DO", "pH", "FR", "EC", "Turbidity"]
+    vars_ = ["water_temperature", "pH", "EC", "flow_ratio", "turbidity", "air_temperature", "humidity"]
     max_delta: Dict[str, float] = {k: 0.0 for k in vars_}
 
     prev_inputs: Optional[Dict[str, Any]] = None

@@ -6,6 +6,15 @@ Policy note:
 - Sensor inputs MUST NOT be modified (no smoothing, no clipping, no imputation).
 - Time-series behavior is handled via qualitative flags (trend/volatility/persistence/spike/recovery),
   which can be used as explainable contributors in inference and reporting.
+
+Sensor variables:
+  water_temperature : 수온 (°C) — 양액/수조 수온
+  pH               : 산도 (0–14)
+  EC               : 전기전도도 (mS/cm or dS/m)
+  flow_ratio       : 유량비 (무차원, 1.0 = 기준)
+  turbidity        : 탁도 (NTU)
+  air_temperature  : 공기 온도 °C (SHTC3, 모니터링 전용)
+  humidity         : 공기 상대습도 % (SHTC3, 모니터링 전용)
 """
 from __future__ import annotations
 
@@ -46,24 +55,14 @@ def default_config() -> Dict[str, object]:
     """
     Default config builder. Returns new objects each time to avoid accidental mutation.
     """
-    # Temperature anchors (°C): optimum 12–13, acceptable 10–15
-    temperature_shapes = [
+    # Water temperature anchors (°C): optimum 12–13, acceptable 10–15
+    water_temperature_shapes = [
         MembershipShape("매우낮음", "trap", (-5.0, -1.0, 6.0, 8.0)),
         MembershipShape("낮음", "tri", (7.0, 9.0, 11.0)),
         MembershipShape("안정(최적)", "trap", (10.0, 12.0, 13.0, 15.0)),
         MembershipShape("경계(상승)", "tri", (14.0, 16.0, 18.0)),
         MembershipShape("경고(고온)", "tri", (17.0, 20.0, 24.0)),
         MembershipShape("위험(급고온)", "trap", (22.0, 26.0, 35.0, 40.0)),
-    ]
-
-    # DO anchors (mg/L): critical 5, target 9
-    do_shapes = [
-        MembershipShape("치명적 낮음", "trap", (0.0, 0.0, 4.0, 5.0)),
-        MembershipShape("매우낮음", "tri", (4.5, 5.5, 6.5)),
-        MembershipShape("낮음", "tri", (6.0, 7.0, 8.0)),
-        MembershipShape("경계", "tri", (7.5, 8.25, 9.0)),
-        MembershipShape("안정(목표)", "trap", (8.5, 9.0, 10.5, 12.0)),
-        MembershipShape("충분(높음)", "trap", (10.0, 11.5, 14.0, 16.0)),
     ]
 
     # pH anchors: optimum 6.0–7.0
@@ -76,7 +75,7 @@ def default_config() -> Dict[str, object]:
     ]
 
     # Flow ratio FR (unitless, relative)
-    flow_shapes = [
+    flow_ratio_shapes = [
         MembershipShape("정체(위험)", "trap", (0.0, 0.0, 0.35, 0.45)),
         MembershipShape("매우낮음(경고)", "tri", (0.3, 0.45, 0.6)),
         MembershipShape("낮음(주의)", "tri", (0.5, 0.65, 0.8)),
@@ -110,6 +109,24 @@ def default_config() -> Dict[str, object]:
         MembershipShape("극도로 탁함(위험)", "trap", (12.0, 15.0, 25.0, 35.0)),
     ]
 
+    # Air temperature (°C) — SHTC3 기반, 모니터링 전용 (퍼지 규칙 미적용)
+    air_temperature_shapes = [
+        MembershipShape("매우낮음", "trap", (-5.0, 0.0, 10.0, 15.0)),
+        MembershipShape("낮음", "tri", (12.0, 15.0, 20.0)),
+        MembershipShape("안정(적정)", "trap", (18.0, 22.0, 28.0, 32.0)),
+        MembershipShape("높음(주의)", "tri", (30.0, 35.0, 40.0)),
+        MembershipShape("매우높음(위험)", "trap", (38.0, 42.0, 60.0, 65.0)),
+    ]
+
+    # Humidity (%) — SHTC3 기반, 모니터링 전용 (퍼지 규칙 미적용)
+    humidity_shapes = [
+        MembershipShape("매우낮음", "trap", (0.0, 0.0, 20.0, 35.0)),
+        MembershipShape("낮음", "tri", (25.0, 40.0, 55.0)),
+        MembershipShape("적정", "trap", (50.0, 60.0, 75.0, 80.0)),
+        MembershipShape("높음(주의)", "tri", (75.0, 85.0, 90.0)),
+        MembershipShape("매우높음(위험)", "trap", (88.0, 95.0, 100.0, 100.0)),
+    ]
+
     # Output risk fuzzy sets over 0–100
     risk_outputs = [
         OutputSetConfig("매우안정", "trap", (0.0, 0.0, 10.0, 20.0)),
@@ -122,15 +139,17 @@ def default_config() -> Dict[str, object]:
 
     cfg: Dict[str, object] = {
         "variables": {
-            "T": VariableConfig("T", temperature_shapes),
-            "DO": VariableConfig("DO", do_shapes),
+            "water_temperature": VariableConfig("water_temperature", water_temperature_shapes),
             "pH": VariableConfig("pH", ph_shapes),
-            "FR": VariableConfig("FR", flow_shapes),
+            "flow_ratio": VariableConfig("flow_ratio", flow_ratio_shapes),
             "EC": {
                 "water": VariableConfig("EC_water", ec_shapes_water),
                 "hydro": VariableConfig("EC_hydro", ec_shapes_hydro),
             },
-            "Turbidity": VariableConfig("Turbidity", turbidity_shapes),
+            "turbidity": VariableConfig("turbidity", turbidity_shapes),
+            # air_temperature, humidity: 모니터링 전용 (규칙 미적용)
+            "air_temperature": VariableConfig("air_temperature", air_temperature_shapes),
+            "humidity": VariableConfig("humidity", humidity_shapes),
         },
         "output_risk_sets": risk_outputs,
         "risk_universe": {"min": 0.0, "max": 100.0, "step": 1.0},
@@ -150,61 +169,52 @@ def default_config() -> Dict[str, object]:
         "integrity_policy": {
             "enabled": True,
             "ranges": {
-                "T": (-5.0, 45.0),
-                "DO": (0.0, 20.0),
+                "water_temperature": (-5.0, 45.0),
                 "pH": (0.0, 14.0),
-                "FR": (0.0, 3.0),
+                "flow_ratio": (0.0, 3.0),
                 "EC": (0.0, 10.0),
-                "Turbidity": (0.0, 100.0),
+                "turbidity": (0.0, 100.0),
+                "air_temperature": (-10.0, 60.0),
+                "humidity": (0.0, 100.0),
             },
-            # optional: per-step spike threshold (uses previous sample)
             "spike_thresholds": {
-                "T": 5.0,
-                "DO": 3.0,
+                "water_temperature": 5.0,
                 "pH": 1.5,
-                "FR": 0.8,
+                "flow_ratio": 0.8,
                 "EC": 2.5,
-                "Turbidity": 25.0,
+                "turbidity": 25.0,
+                "air_temperature": 8.0,
+                "humidity": 20.0,
             },
         },
 
         # Rapid change (optional)
         "delta_policy": {
             "enabled": False,
-            "thresholds": {"T": 2.0, "DO": 1.0},
+            "thresholds": {"water_temperature": 2.0, "flow_ratio": 0.3},
             "weight": 0.1,
         },
 
         # Time-series policy (flags only; no input modification)
         "timeseries_policy": {
             "enabled": True,
-            "window": 5,  # number of records used from history (plus current)
-            # Trend detection: compare first vs last within the window
+            "window": 5,
             "trend": {
-                "T": {"direction": "up", "threshold": 1.0, "fast_threshold": 2.5},
-                "DO": {"direction": "down", "threshold": 0.7, "fast_threshold": 1.8},
-                "FR": {"direction": "down", "threshold": 0.15, "fast_threshold": 0.35},
+                "water_temperature": {"direction": "up", "threshold": 1.0, "fast_threshold": 2.5},
+                "flow_ratio": {"direction": "down", "threshold": 0.15, "fast_threshold": 0.35},
             },
-            # Spike detection: compare previous vs current (single step)
             "spike": {
-                "T": {"up": 1.5, "down": 1.5},
-                "DO": {"up": 1.2, "down": 1.2},
-                "FR": {"up": 0.2, "down": 0.2},
+                "water_temperature": {"up": 1.5, "down": 1.5},
+                "flow_ratio": {"up": 0.2, "down": 0.2},
             },
-            # Volatility detection (std-dev within window)
-            "volatility": {"T": 0.6, "DO": 0.4, "FR": 0.12},
-            # Persistence: last N samples staying beyond threshold
+            "volatility": {"water_temperature": 0.6, "flow_ratio": 0.12},
             "persistence": {
-                "T": {"op": "ge", "threshold": 17.0, "count": 3},
-                "DO": {"op": "le", "threshold": 7.0, "count": 3},
-                "FR": {"op": "le", "threshold": 0.65, "count": 3},
+                "water_temperature": {"op": "ge", "threshold": 17.0, "count": 3},
+                "flow_ratio": {"op": "le", "threshold": 0.65, "count": 3},
             },
-            # Recovery-fail: low/bad region but not recovering (no improving trend)
             "recovery_fail": {
-                "DO": {"bad_op": "le", "bad_threshold": 7.0, "count": 3, "min_recover_delta": 0.3},
-                "FR": {"bad_op": "le", "bad_threshold": 0.65, "count": 3, "min_recover_delta": 0.05},
+                "flow_ratio": {"bad_op": "le", "bad_threshold": 0.65, "count": 3, "min_recover_delta": 0.05},
             },
-            # Synthetic contribution weights
             "weights": {
                 "trend_per_flag": 0.08,
                 "trend_fast_bonus": 0.06,
@@ -234,7 +244,6 @@ def default_config() -> Dict[str, object]:
         # Alert escalation policy (post inference; for action_key only)
         "alert_policy": {
             "enabled": True,
-            # If current risk_label is "위험" and last N labels are also "위험", escalate action_key to "긴급"
             "danger_escalation": {"label": "위험", "count": 3, "escalated_action_key": "긴급"},
         },
 
@@ -249,7 +258,7 @@ def default_config() -> Dict[str, object]:
             "R9": {"base_label": "경고", "promote_label": "위험", "promote_threshold": 0.8},
             "R12": {
                 "warning_rules": [
-                    "R2","R4","R5","R6","R7","R8","R9","R10","R11","R15","R16","R17","R18","R19"
+                    "R2","R4","R5","R6","R7","R8","R10","R11","R16","R17","R18","R19"
                 ],
                 "firing_threshold": 0.6,
                 "count_threshold": 2,
@@ -264,19 +273,15 @@ def default_config() -> Dict[str, object]:
         },
 
         # -------- Improvement hooks (bandit + optional LLM gate) --------
-        # These values are *defaults*. If improvement_state.json exists,
-        # overrides can be applied on top (membership points + rule weights).
         "improvement": {
-            "enabled": False,  # off by default (baseline is deterministic)
+            "enabled": False,
             "state_path": DEFAULT_STATE_PATH,
-            # Hard safety bounds to prevent sudden / unsafe drift.
             "membership_delta_cap": {
-                "T": 0.5,
-                "DO": 0.3,
+                "water_temperature": 0.5,
                 "pH": 0.15,
-                "FR": 0.08,
+                "flow_ratio": 0.08,
                 "EC": 0.25,
-                "Turbidity": 1.5,
+                "turbidity": 1.5,
             },
             "rule_weight_bounds": {
                 "min": 0.80,
@@ -284,18 +289,12 @@ def default_config() -> Dict[str, object]:
             },
         },
 
-        # Per-rule influence weights (default 1.0). Used by improvement module.
-        # NOTE: synthetic rules (DELTA/TS_*) are not weighted.
         "rule_weights": {
-            # single-variable
             "R1": 1.0, "R2": 1.0, "R3": 1.0, "R4": 1.0, "R5": 1.0,
-            # interactions
             "R6": 1.0, "R7": 1.0, "R8": 1.0, "R9": 1.0, "R10": 1.0,
             "R11": 1.0, "R12": 1.0,
-            # stability
             "R13": 1.0, "R14": 1.0,
-            # warning helpers
-            "R15": 1.0, "R16": 1.0, "R17": 1.0, "R18": 1.0, "R19": 1.0, "R20": 1.0,
+            "R16": 1.0, "R17": 1.0, "R18": 1.0, "R19": 1.0, "R20": 1.0,
         },
     }
 
@@ -309,8 +308,8 @@ def _apply_membership_overrides(cfg: Dict[str, object], overrides: Dict[str, obj
     Expected override format:
     {
       "memberships": {
-        "T": {"안정(최적)": [10.0, 12.1, 13.0, 15.0], ...},
-        "DO": {...},
+        "water_temperature": {"안정(최적)": [10.0, 12.1, 13.0, 15.0], ...},
+        "flow_ratio": {...},
         "EC_water": {...},
         "EC_hydro": {...},
       }
@@ -343,8 +342,7 @@ def _apply_membership_overrides(cfg: Dict[str, object], overrides: Dict[str, obj
             new_shapes.append(MembershipShape(s.label, s.shape, new_pts))
         return VariableConfig(getattr(var_cfg_obj, "name", var_key), new_shapes)
 
-    # T/DO/pH/FR/Turbidity
-    for k in ["T", "DO", "pH", "FR", "Turbidity"]:
+    for k in ["water_temperature", "pH", "flow_ratio", "turbidity", "air_temperature", "humidity"]:
         if k in variables:
             variables[k] = _rebuilt_var(k, variables[k])
 
@@ -374,10 +372,6 @@ def load_config(state_path: str | None = None, crop_config_path: str | None = No
     Load baseline config, then apply crop profile overrides, then improvement overrides.
 
     Layer order: base → crop_config.json → improvement_state.json
-    This means UCB1 bandit adjustments layer on top of crop-specific settings.
-
-    If state_path is None, use cfg['improvement']['state_path'].
-    Missing/invalid state files are ignored (baseline config returned).
     """
     base = default_config()
     imp = base.get("improvement") if isinstance(base.get("improvement"), dict) else {}
@@ -386,7 +380,7 @@ def load_config(state_path: str | None = None, crop_config_path: str | None = No
 
     cfg = copy.deepcopy(base)
 
-    # Layer 1: Crop profile overrides (crop-specific base membership shapes)
+    # Layer 1: Crop profile overrides
     crop_p = Path(cp)
     if crop_p.exists():
         try:
@@ -395,13 +389,10 @@ def load_config(state_path: str | None = None, crop_config_path: str | None = No
                 ov = crop_data.get("overrides", {}) or {}
                 _apply_membership_overrides(cfg, ov)
                 _apply_rule_weight_overrides(cfg, ov)
-                # Apply ec_mode from crop config
                 if "ec_mode" in crop_data:
                     cfg["ec_mode_active"] = crop_data["ec_mode"]
-                # Apply control_targets
                 if "control_targets" in crop_data:
                     cfg["control_targets"] = crop_data["control_targets"]
-                # Apply improvement_limits (delta caps)
                 if "improvement_limits" in crop_data:
                     imp_cfg = cfg.get("improvement") or {}
                     imp_cfg["membership_delta_cap"] = crop_data["improvement_limits"]
@@ -410,7 +401,7 @@ def load_config(state_path: str | None = None, crop_config_path: str | None = No
         except Exception:
             pass
 
-    # Layer 2: UCB1 bandit improvement overrides (on top of crop base)
+    # Layer 2: UCB1 bandit improvement overrides
     p = Path(sp)
     if p.exists():
         try:

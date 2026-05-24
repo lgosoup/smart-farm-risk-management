@@ -90,7 +90,7 @@ def _show_status() -> None:
     if status.get("control_targets"):
         targets = status["control_targets"]
         print(f"  Control targets: pH={targets.get('target_ph')}, "
-              f"EC={targets.get('target_ec')}, T={targets.get('target_temp')}")
+              f"EC={targets.get('target_ec')}, water_temp={targets.get('target_water_temp')}")
 
 
 def _fetch_documents(crop_name_ko: str, api_key: str | None) -> list[dict]:
@@ -108,6 +108,42 @@ def _fetch_documents(crop_name_ko: str, api_key: str | None) -> list[dict]:
         print(f"  [WARNING] API fetch failed: {exc}")
         print("  Proceeding with fallback defaults only.")
         return []
+
+
+_FIELD_TO_PARAM: dict[str, str] = {
+    "pH":        "ph_optimal",
+    "EC":        "ec_vegetative",
+    "T_water":   "water_temp_optimal",
+    "T_root":    "water_temp_optimal",
+    "T_air":     "air_temp_optimal",
+    "FR":        "flow_ratio",
+    "Turbidity": "turbidity",
+}
+
+
+def _map_nlp_candidates(candidates: list[dict]) -> list[dict]:
+    """Convert DocumentNLPExtractor output (field/min/max) to builder input (param/value)."""
+    result = []
+    for c in candidates:
+        field = c.get("field", "")
+        param = _FIELD_TO_PARAM.get(field)
+        if not param:
+            continue
+        lo = c.get("min")
+        hi = c.get("max")
+        if lo is not None and hi is not None:
+            value = [lo, hi]
+        elif lo is not None:
+            value = lo
+        elif hi is not None:
+            value = hi
+        else:
+            continue
+        mapped = dict(c)
+        mapped["param"] = param
+        mapped["value"] = value
+        result.append(mapped)
+    return result
 
 
 def _extract_candidates(documents: list[dict], crop_info: dict) -> list[dict]:
@@ -199,10 +235,10 @@ def _print_summary(
     ctrl = profile.get("control_targets", {})
     if ctrl:
         print(f"  Control targets:")
-        print(f"    pH  = {ctrl.get('target_ph')}")
-        print(f"    EC  = {ctrl.get('target_ec')} mS/cm  (mode: {ctrl.get('ec_mode', 'hydro')})")
-        print(f"    T   = {ctrl.get('target_temp')} C")
-        print(f"    DO  >= {ctrl.get('target_do')} mg/L")
+        print(f"    pH           = {ctrl.get('target_ph')}")
+        print(f"    EC           = {ctrl.get('target_ec')} mS/cm  (mode: {ctrl.get('ec_mode', 'hydro')})")
+        print(f"    water_temp   = {ctrl.get('target_water_temp')} C")
+        print(f"    flow_ratio   = {ctrl.get('target_flow_ratio')}")
 
     fuzzy = profile.get("fuzzy_params", {})
     if fuzzy:
@@ -271,6 +307,10 @@ def generate_crop_profile(
     print(f"\n[3] Running NLP extraction...")
     candidates = _extract_candidates(documents, crop_info)
     print(f"    -> {len(candidates)} candidate(s) extracted")
+
+    print(f"\n[3.5] Mapping NLP fields to profile params...")
+    candidates = _map_nlp_candidates(candidates)
+    print(f"    -> {len(candidates)} candidate(s) after field mapping")
 
     print(f"\n[4] Normalizing units...")
     normalized = _normalize_units(candidates)

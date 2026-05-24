@@ -19,8 +19,8 @@ def run_demo_scenarios(ec_mode: str = "water") -> List[Dict[str, object]]:
         "history_packets_path": str(Path(config["history_packets_path"])),
     }
     samples = [
-        {"T": 18.0, "DO": 6.0, "pH": 6.3, "FR": 1.0, "EC": 0.5, "Turbidity": 1.0},
-        {"T": 12.5, "DO": 9.5, "pH": 6.5, "FR": 1.0, "EC": 0.1, "Turbidity": 0.5},
+        {"water_temperature": 18.0, "pH": 6.3, "EC": 0.5, "flow_ratio": 1.0, "turbidity": 1.0, "air_temperature": 26.0, "humidity": 60.0},
+        {"water_temperature": 12.5, "pH": 6.5, "EC": 0.1, "flow_ratio": 1.0, "turbidity": 0.5, "air_temperature": 22.0, "humidity": 55.0},
     ]
     results: List[Dict[str, object]] = []
     for sample in samples:

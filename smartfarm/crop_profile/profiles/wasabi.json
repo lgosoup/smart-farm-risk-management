@@ -11,18 +11,17 @@
     "air_temp_optimal": [10.0, 18.0],
     "water_temp_optimal": [10.0, 15.0],
     "ph_optimal": [6.0, 7.0],
-    "ec_vegetative": [0.1, 0.3],
-    "do_minimum": 6.0
+    "ec_vegetative": [0.1, 0.3]
   },
 
   "fuzzy_params": {
-    "T": {
+    "water_temperature": {
       "매우낮음":    [-10.0, -7.0, 4.0, 8.0],
       "낮음":        [3.0, 6.0, 9.0],
-      "안정(최적)":  [9.0, 10.0, 18.0, 19.0],
-      "경계(상승)":  [18.5, 21.5, 24.5],
-      "경고(고온)":  [23.0, 27.0, 31.0],
-      "위험(급고온)": [29.0, 33.0, 46.0, 51.0]
+      "안정(최적)":  [9.0, 10.0, 15.0, 16.0],
+      "경계(상승)":  [15.5, 18.5, 21.5],
+      "경고(고온)":  [20.0, 24.0, 28.0],
+      "위험(급고온)": [26.0, 30.0, 43.0, 48.0]
     },
     "pH": {
       "강산성(위험)":       [0.0, 0.0, 4.8, 5.4],
@@ -37,40 +36,30 @@
       "안정":          [0.1, 0.2, 0.2, 0.3],
       "높음(경고)":    [0.3, 0.7, 1.1],
       "매우높음(위험)": [0.9, 1.5, 3.3, 4.3]
-    },
-    "DO": {
-      "치명적 낮음":  [0.0, 0.0, 4.5, 5.5],
-      "매우낮음":     [5.2, 6.0, 6.8],
-      "낮음":         [6.5, 7.5, 8.5],
-      "경계":         [8.0, 9.0, 10.0],
-      "안정(목표)":   [9.5, 10.0, 12.0, 14.0],
-      "충분(높음)":   [12.0, 14.0, 18.0, 20.0]
     }
   },
 
   "control_targets": {
-    "target_temp": 12.5,
+    "target_water_temp": 12.5,
     "target_ph": 6.5,
     "target_ec": 0.2,
-    "target_do": 6.0,
     "target_flow_ratio": 1.0,
     "ec_mode": "hydro"
   },
 
   "rule_weights": {
-    "R6_high_temp_low_do": 1.3,
-    "R7_low_flow_low_do":  1.2,
+    "R6_high_temp_low_flow": 1.3,
+    "R7_high_ec_low_flow":   1.2,
     "R8_low_flow_turbidity": 1.0,
-    "R9_high_ec_low_do":   1.3
+    "R9_high_ec_flow_border": 1.3
   },
 
   "improvement_limits": {
-    "T": 0.5,
-    "DO": 0.3,
+    "water_temperature": 0.5,
     "pH": 0.15,
-    "FR": 0.08,
+    "flow_ratio": 0.08,
     "EC": 0.25,
-    "Turbidity": 1.0
+    "turbidity": 1.0
   },
 
   "system_flags": {
@@ -112,24 +101,16 @@
         "confidence": 0.72,
         "context": "hydroponic"
       }
-    ],
-    "do_minimum": [
-      {
-        "source": "국립원예특작과학원 와사비 수경재배 연구 보고서 2021",
-        "evidence": "와사비는 DO에 민감하여 근권 DO가 6.0 mg/L 이하로 떨어지면 뿌리 산소 결핍 증상과 병해가 발생한다.",
-        "confidence": 0.72,
-        "context": "hydroponic"
-      }
     ]
   },
 
   "fallbacks_used": [],
 
   "validation": {
-    "passed_count": 5,
+    "passed_count": 4,
     "pending_count": 0,
     "rejected_count": 0,
-    "overall_confidence": 0.72,
+    "overall_confidence": 0.74,
     "pending": [],
     "rejected": []
   }

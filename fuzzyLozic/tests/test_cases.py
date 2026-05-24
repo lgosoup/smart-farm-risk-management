@@ -19,33 +19,33 @@ def _run(inputs, ec_mode=None):
 
 
 def test_normal_stable():
-    inputs = {"T": 12.5, "DO": 9.5, "pH": 6.5, "FR": 1.0, "EC": 0.12, "Turbidity": 0.5}
+    inputs = {"water_temperature": 12.5, "pH": 6.5, "flow_ratio": 1.0, "EC": 0.12, "turbidity": 0.5, "air_temperature": 22.0, "humidity": 55.0}
     score, risk_label, *_ = _run(inputs, ec_mode="water")
     assert risk_label in {"매우안정", "안정", "경계", "주의"}
 
 
-def test_do_critical_is_danger():
-    # DO=3.0: 바질 기준 치명적 낮음 구간(0~3.5) 내 → R1 발화 → 위험
-    inputs = {"T": 12.0, "DO": 3.0, "pH": 6.6, "FR": 1.0, "EC": 0.1, "Turbidity": 0.5}
+def test_high_temp_danger():
+    # water_temperature emergency level → R2 fires → 위험
+    inputs = {"water_temperature": 34.0, "pH": 6.6, "flow_ratio": 1.0, "EC": 0.1, "turbidity": 0.5, "air_temperature": 35.0, "humidity": 60.0}
     _, risk_label, *_ = _run(inputs, ec_mode="water")
-    assert risk_label == "위험"
+    assert risk_label in {"경고", "위험"}
 
 
-def test_temp_rising_and_do_boundary():
-    # 바질 기준: T=31.0(경고(고온) 진입), DO=6.5(낮음 중심) → 경고 이상
-    inputs = {"T": 31.0, "DO": 6.5, "pH": 6.6, "FR": 1.0, "EC": 0.1, "Turbidity": 0.8}
+def test_temp_rising_and_flow_low():
+    # 고온 + 유량 저하 → R6 발화 → 경고 이상
+    inputs = {"water_temperature": 31.0, "pH": 6.6, "flow_ratio": 0.5, "EC": 0.1, "turbidity": 0.8, "air_temperature": 30.0, "humidity": 65.0}
     _, risk_label, *_ = _run(inputs, ec_mode="water")
     assert risk_label in {"경고", "위험"}
 
 
 def test_flow_low_and_turbid():
-    inputs = {"T": 12.0, "DO": 9.0, "pH": 6.5, "FR": 0.55, "EC": 0.12, "Turbidity": 10.0}
+    inputs = {"water_temperature": 12.0, "pH": 6.5, "flow_ratio": 0.55, "EC": 0.12, "turbidity": 10.0, "air_temperature": 22.0, "humidity": 55.0}
     _, risk_label, *_ = _run(inputs, ec_mode="water")
     assert risk_label in {"주의", "경고", "위험"}
 
 
 def test_ec_mode_branching():
-    inputs = {"T": 12.0, "DO": 8.0, "pH": 6.5, "FR": 1.0, "EC": 3.5, "Turbidity": 0.5}
+    inputs = {"water_temperature": 12.0, "pH": 6.5, "flow_ratio": 1.0, "EC": 3.5, "turbidity": 0.5, "air_temperature": 22.0, "humidity": 55.0}
     score_water, label_water, *_ = _run(inputs, ec_mode="water")
     score_hydro, label_hydro, *_ = _run(inputs, ec_mode="hydro")
     assert (label_water != label_hydro) or (abs(score_water - score_hydro) > 1e-3)
@@ -54,18 +54,18 @@ def test_ec_mode_branching():
 def test_timeseries_flags_emitted():
     cfg = load_default_config()
     history = [
-        {"T": 12.0, "DO": 9.0, "FR": 1.0},
-        {"T": 12.4, "DO": 8.6, "FR": 0.95},
-        {"T": 13.0, "DO": 8.2, "FR": 0.90},
-        {"T": 13.8, "DO": 7.8, "FR": 0.82},
+        {"water_temperature": 12.0, "flow_ratio": 1.0},
+        {"water_temperature": 12.4, "flow_ratio": 0.95},
+        {"water_temperature": 13.0, "flow_ratio": 0.90},
+        {"water_temperature": 13.8, "flow_ratio": 0.82},
     ]
-    current = {"T": 14.2, "DO": 7.5, "pH": 6.5, "FR": 0.78, "EC": 0.12, "Turbidity": 0.8}
+    current = {"water_temperature": 14.2, "pH": 6.5, "flow_ratio": 0.78, "EC": 0.12, "turbidity": 0.8, "air_temperature": 24.0, "humidity": 58.0}
     flags = compute_timeseries_flags(current, history, cfg)
     assert any(k.startswith("TS_TREND_") for k in flags.keys())
 
 
 def test_alert_escalation_action_key():
-    inputs = {"T": 20.0, "DO": 4.8, "pH": 6.6, "FR": 0.6, "EC": 0.12, "Turbidity": 0.8}
+    inputs = {"water_temperature": 20.0, "pH": 6.6, "flow_ratio": 0.6, "EC": 0.12, "turbidity": 0.8, "air_temperature": 28.0, "humidity": 62.0}
     packet = run_assessment(
         inputs,
         ec_mode="water",
@@ -78,7 +78,7 @@ def test_alert_escalation_action_key():
 
 
 def test_driver_end_to_end_packet_fields():
-    inputs = {"T": 13.0, "DO": 9.2, "pH": 6.6, "FR": 1.05, "EC": 0.15, "Turbidity": 0.9}
+    inputs = {"water_temperature": 13.0, "pH": 6.6, "flow_ratio": 1.05, "EC": 0.15, "turbidity": 0.9, "air_temperature": 23.0, "humidity": 57.0}
     packet = run_assessment(inputs, ec_mode="water", history_inputs=[], recent_risk_labels=[], save_history=False)
     assert "risk" in packet and "rules_fired_topN" in packet
     assert "timeseries" in packet and "sensor_integrity" in packet and "recommendations" in packet

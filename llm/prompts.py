@@ -47,6 +47,6 @@ def build_system_prompt(crop_name: str = "", crop_ko: str = "") -> str:
 - 정말 근거가 없으면 "근거 부족"을 솔직히 적되, 막연한 조치는 만들지 마라.
 
 표현:
-- 변수 약어는 괄호로 풀어서 쓴다. 예) EC(전기전도도), DO(용존산소), Turbidity(탁도), FR(유량), T(수온), pH(산성도)
+- 변수명은 괄호로 풀어서 쓴다. 예) water_temperature(수온), air_temperature(기온), humidity(습도), EC(전기전도도), flow_ratio(유량비), turbidity(탁도), pH(산성도)
 - 중복 문장 제거, 과장 금지, 짧고 명확하게.
 """.strip()

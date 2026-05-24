@@ -12,19 +12,21 @@ _FALLBACK_GROWTH_PARAMS: dict = {
     "water_temp_optimal": None,
     "ph_optimal":         [6.0, 7.0],
     "ec_vegetative":      [1.0, 2.0],
-    "do_minimum":         5.0,
 }
 
 _DEFAULT_RULE_WEIGHTS: dict = {
-    "R6_high_temp_low_do": 1.0,
-    "R7_low_flow_low_do":  1.0,
+    "R6_high_temp_low_flow": 1.0,
+    "R7_high_ec_low_flow":   1.0,
     "R8_low_flow_turbidity": 1.0,
-    "R9_high_ec_low_do":   1.0,
+    "R9_high_ec_flow_border": 1.0,
 }
 
 _DEFAULT_IMPROVEMENT_LIMITS: dict = {
-    "T": 0.5, "DO": 0.3, "pH": 0.15,
-    "FR": 0.08, "EC": 0.25, "Turbidity": 1.5,
+    "water_temperature": 0.5,
+    "pH": 0.15,
+    "flow_ratio": 0.08,
+    "EC": 0.25,
+    "turbidity": 1.5,
 }
 
 _DEFAULT_SYSTEM_FLAGS: dict = {
@@ -40,34 +42,26 @@ def _midpoint(lo: float, hi: float) -> float:
 
 
 def _extract_raw_params(passed_candidates: list[dict]) -> tuple[dict, list[str]]:
-    """Build raw_growth_params dict from passed candidates.
-
-    Returns (raw_params, fallbacks_used).
-    """
+    """Build raw_growth_params dict from passed candidates."""
     raw: dict = {
         "air_temp_optimal":   None,
         "water_temp_optimal": None,
         "ph_optimal":         None,
         "ec_vegetative":      None,
-        "do_minimum":         None,
     }
     fallbacks_used: list[str] = []
 
-    # Map candidate param names → raw_growth_params keys
     param_map: dict[str, str] = {
         "air_temp_optimal":   "air_temp_optimal",
         "water_temp_optimal": "water_temp_optimal",
         "ph_optimal":         "ph_optimal",
         "ec_vegetative":      "ec_vegetative",
-        "do_minimum":         "do_minimum",
     }
-    # Also handle aliases
     aliases: dict[str, str] = {
-        "t_air_optimal": "air_temp_optimal",
+        "t_air_optimal":   "air_temp_optimal",
         "t_water_optimal": "water_temp_optimal",
-        "ph": "ph_optimal",
-        "ec": "ec_vegetative",
-        "do_min": "do_minimum",
+        "ph":              "ph_optimal",
+        "ec":              "ec_vegetative",
     }
 
     for c in passed_candidates:
@@ -76,7 +70,6 @@ def _extract_raw_params(passed_candidates: list[dict]) -> tuple[dict, list[str]]
         if target and raw.get(target) is None:
             raw[target] = c.get("value_normalized") or c.get("value")
 
-    # Fill any still-None with global fallbacks
     for key, fallback_val in _FALLBACK_GROWTH_PARAMS.items():
         if raw.get(key) is None:
             raw[key] = fallback_val
@@ -98,13 +91,12 @@ def _build_control_targets(raw: dict) -> dict:
 
     t_air = mid(raw.get("air_temp_optimal"))
     t_water = mid(raw.get("water_temp_optimal"))
-    target_temp = t_water if t_water is not None else t_air
+    target_water_temp = t_water if t_water is not None else t_air
 
     return {
-        "target_temp": target_temp,
+        "target_water_temp": target_water_temp,
         "target_ph": mid(raw.get("ph_optimal")),
         "target_ec": mid(raw.get("ec_vegetative")),
-        "target_do": raw.get("do_minimum"),  # minimum, not midpoint
         "target_flow_ratio": 1.0,
         "ec_mode": "hydro",
     }
@@ -126,16 +118,7 @@ def _build_sources(passed_candidates: list[dict]) -> dict:
 
 
 class CropProfileBuilder:
-    """Assemble the full Crop Profile JSON from all components.
-
-    Usage::
-
-        builder = CropProfileBuilder()
-        profile = builder.build(
-            crop_info={"crop": "basil", "crop_ko": "바질", ...},
-            candidates=[...],
-        )
-    """
+    """Assemble the full Crop Profile JSON from all components."""
 
     def __init__(self) -> None:
         self.unit_normalizer = UnitNormalizer()
@@ -149,21 +132,6 @@ class CropProfileBuilder:
         sources_metadata: list[dict] | None = None,  # noqa: ARG002
         system_flags_override: dict | None = None,
     ) -> dict:
-        """Build complete Crop Profile from validated extraction candidates.
-
-        Parameters
-        ----------
-        crop_info:
-            Metadata about the crop (name, growth_type, etc.).  Expected keys:
-            crop, crop_ko, scientific_name, cultivar, growth_type, edible_part,
-            cultivation_mode.
-        candidates:
-            Raw extraction candidates (before or after unit normalization).
-        sources_metadata:
-            Optional list of additional source records to attach.
-        system_flags_override:
-            Override the system_flags sub-dict.
-        """
         # 1. Normalise units
         normalized = self.unit_normalizer.normalize(candidates)
 
@@ -180,13 +148,12 @@ class CropProfileBuilder:
         # 5. Control targets
         control_targets = _build_control_targets(raw_growth_params)
 
-        # 6. Rule weights (merge crop_info overrides if provided)
+        # 6. Rule weights
         rule_weights = dict(_DEFAULT_RULE_WEIGHTS)
         for key, val in crop_info.get("rule_weights_override", {}).items():
-            rule_key = f"{key}_high_temp_low_do" if key == "R6" else key
-            rule_weights[rule_key] = val
+            rule_weights[key] = val
 
-        # 7. Improvement limits (crop_info can override per-variable caps)
+        # 7. Improvement limits
         improvement_limits = dict(_DEFAULT_IMPROVEMENT_LIMITS)
         improvement_limits.update(crop_info.get("improvement_limits_override", {}))
 

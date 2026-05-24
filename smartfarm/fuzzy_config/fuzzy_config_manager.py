@@ -150,7 +150,7 @@ class FuzzyConfigManager:
         """
         Return flat rule weights dict for inference engine.
         Maps profile rule_weights keys to config rule IDs.
-        Example: {"R6_high_temp_low_do": 1.2} -> {"R6": 1.2}
+        Example: {"R6_high_temp_low_flow": 1.2} -> {"R6": 1.2}
         """
         if self._current_profile is None:
             return {}
@@ -245,8 +245,8 @@ class FuzzyConfigManager:
         """
         Convert profile fuzzy_params format to config override format.
 
-        Input:  {"T": {"안정(최적)": [19,20,25,26]}, "EC_hydro": {...}}
-        Output: {"T": {"안정(최적)": [19,20,25,26]}, "EC_hydro": {...}}
+        Input:  {"water_temperature": {"안정(최적)": [19,20,25,26]}, "EC_hydro": {...}}
+        Output: {"water_temperature": {"안정(최적)": [19,20,25,26]}, "EC_hydro": {...}}
 
         (memberships dict is used directly inside the "memberships" key of overrides)
         """
@@ -264,17 +264,17 @@ class FuzzyConfigManager:
         """
         Convert profile rule_weights to config format.
 
-        Input:  {"R6_high_temp_low_do": 1.2, "R7_low_flow_low_do": 1.0}
+        Input:  {"R6_high_temp_low_flow": 1.2, "R7_high_ec_low_flow": 1.0}
         Output: {"R6": 1.2, "R7": 1.0}
 
         Also accepts bare rule IDs (e.g. "R6": 1.2) which are passed through.
         """
         # Known named aliases -> rule IDs
         mapping: dict[str, str] = {
-            "R6_high_temp_low_do": "R6",
-            "R7_low_flow_low_do": "R7",
+            "R6_high_temp_low_flow": "R6",
+            "R7_high_ec_low_flow": "R7",
             "R8_low_flow_turbidity": "R8",
-            "R9_high_ec_low_do": "R9",
+            "R9_high_ec_flow_border": "R9",
         }
 
         result: dict = {}

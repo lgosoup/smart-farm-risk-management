@@ -132,10 +132,10 @@ class CropProfileRepository:
 
         # Map profile rule_weight keys to fuzzy rule IDs
         _rw_map = {
-            "R6_high_temp_low_do": "R6",
-            "R7_low_flow_low_do":  "R7",
+            "R6_high_temp_low_flow": "R6",
+            "R7_high_ec_low_flow":   "R7",
             "R8_low_flow_turbidity": "R8",
-            "R9_high_ec_low_do":   "R9",
+            "R9_high_ec_flow_border": "R9",
         }
         fuzzy_rule_weights: dict = {}
         for profile_key, rule_id in _rw_map.items():
@@ -155,10 +155,10 @@ class CropProfileRepository:
         rule_weights_raw: dict = profile.get("rule_weights", {})
 
         _rw_map = {
-            "R6_high_temp_low_do": "R6",
-            "R7_low_flow_low_do":  "R7",
+            "R6_high_temp_low_flow": "R6",
+            "R7_high_ec_low_flow":   "R7",
             "R8_low_flow_turbidity": "R8",
-            "R9_high_ec_low_do":   "R9",
+            "R9_high_ec_flow_border": "R9",
         }
         rule_weights_short: dict = {}
         for pk, rid in _rw_map.items():

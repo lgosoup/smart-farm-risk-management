@@ -97,7 +97,8 @@ class SensorAdapter(ABC):
 
     @abstractmethod
     def collect(self) -> dict[str, float]:
-        """현재 센서값을 반환. {T, DO, pH, FR, EC, Turbidity} 포함 필수."""
+        """현재 센서값을 반환.
+        {water_temperature, pH, EC, flow_ratio, turbidity, air_temperature, humidity} 포함 필수."""
 
 
 class FileSensorAdapter(SensorAdapter):
@@ -132,7 +133,7 @@ class SubprocessSensorAdapter(SensorAdapter):
         )
 
     센서 스크립트 규약:
-      - 실행 후 inputs.json에 {"T":..., "DO":..., "pH":..., "FR":..., "EC":..., "Turbidity":...} 작성
+      - 실행 후 inputs.json에 {"water_temperature":..., "pH":..., "EC":..., "flow_ratio":..., "turbidity":..., "air_temperature":..., "humidity":...} 작성
       - 성공 시 returncode=0, 실패 시 returncode!=0
     """
 
@@ -404,9 +405,11 @@ def run(
         try:
             inputs = adapter.collect()
             log.info(
-                "센서 수집 완료: T=%.1f DO=%.2f pH=%.2f FR=%.2f EC=%.3f Turb=%.1f",
-                inputs.get("T", 0), inputs.get("DO", 0), inputs.get("pH", 0),
-                inputs.get("FR", 0), inputs.get("EC", 0), inputs.get("Turbidity", 0),
+                "센서 수집 완료: wt=%.1f pH=%.2f EC=%.3f fr=%.2f turb=%.1f at=%.1f hum=%.1f",
+                inputs.get("water_temperature", 0), inputs.get("pH", 0),
+                inputs.get("EC", 0), inputs.get("flow_ratio", 0),
+                inputs.get("turbidity", 0), inputs.get("air_temperature", 0),
+                inputs.get("humidity", 0),
             )
         except Exception as e:
             log.error("센서 수집 실패: %s — 이번 사이클 건너뜀", e)
