@@ -1,0 +1,37 @@
+{
+  "category": "water_temp",
+  "query": "strawberry nutrient solution temperature hydroponic",
+  "limit": 2,
+  "year": null,
+  "documents": [
+    {
+      "category": "water_temp",
+      "query": "strawberry nutrient solution temperature hydroponic",
+      "title": "Potassium Sulfate Supplementation with Elevated Electrical Conductivity Was Unproductive for Hydroponic Strawberry at the Original Yamazaki Nutrient Solution Nitrogen Level",
+      "abstract": "The production of strawberries (Fragaria ×ananassa) in hydroponic systems has been increasing. In hydroponic systems, precise nutrient management is crucial for optimal plant growth and fruit production. Among essential elements, potassium (K) is a key nutrient that affects fruit yield and quality in fruiting crops. The objective of this study was to investigate whether increasing the K concentration in the Yamazaki strawberry nutrient solution could enhance plant growth, fruit yield, and fruit quality in hydroponic strawberries. Bare-root plants of strawberry ‘Monterey’ and ‘San Andreas’ were planted in a deep water culture hydroponic system and grown with initial K concentrations of 117, 194, 271, and 348 mg·L−1 under the same initial nitrogen concentration of 77 mg·L−1. As the K concentration increased from 117 to 348 mg·L−1, the nutrient solution electrical conductivity increased from 1.0 to 1.9 dS·m−1. The experiment was conducted inside an indoor vertical farm at a 23 °C air temperature with an extended photon flux density (400–750 nm) of 350 µmol·m−2·s−1 under an 18-hour photoperiod. Increasing the K concentration from 117 to 348 mg·L−1 had minimal effects on plant growth characteristics of both cultivars, although root dry mass of ‘Monterey’ increased linearly with increasing K. Increasing the K concentration from 117 to 348 mg·L−1 did not affect the total fruit number or total fruit fresh mass of ‘Monterey’, but for ‘San Andreas’, it reduced the total fruit number by 34% and total fruit fresh mass by 45%. Additionally, increasing the K concentration from 117 to 348 mg·L−1 reduced the individual fruit mass, fruit length, and fruit diameter and increased titratable acidity in both cultivars. These results indicate that increasing the K concentration in the Yamazaki strawberry nutrient solution did not benefit plant growth, fruit yield, or fruit quality of the hydroponically grown strawberries ‘Monterey’ or ‘San Andreas’.",
+      "url": "https://www.semanticscholar.org/paper/c316f232323aec4becf9d9eaa835c4bbebff217f",
+      "openAccessPdf": "",
+      "source_type": "paper",
+      "paperId": "c316f232323aec4becf9d9eaa835c4bbebff217f",
+      "year": 2025,
+      "venue": "Hortscience",
+      "citationCount": 0,
+      "doi": "10.21273/hortsci18252-24"
+    },
+    {
+      "category": "water_temp",
+      "query": "strawberry nutrient solution temperature hydroponic",
+      "title": "Performance Evaluation of a Chiller System for Nutrient Solutions Temperature Control in Lowland Tropical Hydroponic Strawberry Cultivation",
+      "abstract": "Hydroponic strawberry cultivation in tropical lowland regions is constrained by elevated ambient temperatures that increase Nutrient Solution Temperature (NST) beyond the optimal Root-Zone Temperature (RZT) range required for plant growth, leading to thermal stress, reduced nutrient uptake, and yield losses. This study aimed to design and evaluate the performance of a chiller-based cooling system integrated into a recirculating hydroponic setup to maintain the NST within the optimal range of 17–20°C for strawberry cultivation. A laboratory-scale prototype employing a vapor-compression refrigeration system using the R32 refrigerant was developed and tested under tropical conditions. The thermal performance of the system was assessed through cooling load calculations, thermodynamic analysis, and real-time monitoring of temperature, pressure, electrical parameters, and hydraulic conditions, whereas plant growth responses were observed qualitatively. The results demonstrate that the proposed system effectively reduced NST from elevated initial conditions to the target range within 18 minutes and maintained temperature stability using an on–off control strategy. The system achieved a stable actual Coefficient of Performance (COP) of approximately 4.02 with an overall efficiency of approximately 56%, indicating reliable operation under practical conditions. Root-zone temperature control significantly enhanced vegetative growth, leaf quality, and fruit uniformity compared with plants grown without cooling. The findings confirmed that direct nutrient solution cooling using a vapor-compression chiller is a viable and scalable engineering solution for hydroponic strawberry cultivation in tropical lowlands. This study contributes empirical performance data to the limited literature on chiller-integrated hydroponic systems and provides a practical foundation for extending high-value strawberry production into hot climates, while supporting sustainable and controlled agricultural practices.",
+      "url": "https://www.semanticscholar.org/paper/af6db3aa1599fc482465211ae3055a9a25b11296",
+      "openAccessPdf": "",
+      "source_type": "paper",
+      "paperId": "af6db3aa1599fc482465211ae3055a9a25b11296",
+      "year": 2026,
+      "venue": "Journal Keteknikan Pertanian",
+      "citationCount": 0,
+      "doi": "10.19028/jtep.014.1.162-177"
+    }
+  ],
+  "cached_at": "2026-05-12 02:01:17"
+}

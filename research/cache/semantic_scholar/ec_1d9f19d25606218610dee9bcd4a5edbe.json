@@ -1,0 +1,37 @@
+{
+  "category": "EC",
+  "query": "basil hydroponic EC range",
+  "limit": 2,
+  "year": null,
+  "documents": [
+    {
+      "category": "EC",
+      "query": "basil hydroponic EC range",
+      "title": "Optimizing Hydroponic Crop Production: A Multifaceted Approach to EC, pH and Nutrient Management",
+      "abstract": "Hydroponics is the practice of growing crops without soil, which relies on careful calibration of pH, EC (electrical conductivity) and nutrient availability to promote plant growth and yield. In hydroponics, pH is an important factor governing how nutrient availability is affected. Ideal pH range for most of the crops is 5.5-6.5. pH is important to determine acidity and alkalinity of a solution and it further affects nutrient absorption. pH management is different in Deep water Culture, Nutrient Film Technique and System of Flooded tubes. Modern techniques like microcontroller and sensors are being used to monitor hydroponic solution. Optimum pH is important for nutrient uptake and proper nutrient ratio influence uptake of another nutrient.EC or dissolved amounts of salts, measures the concentration of nutrients available for the plants. There are various nutrient recipes for the crops that are being added to the system in dosage of gram/litre. Higher EC can be managed by diluting the solution. Falling EC levels can be adjusted by adding the nutrient solution. An increase in EC value can be beneficial for the fruit quality but may result in yield reduction. Real time sensors are used nowadays for monitoring of EC and pH. In hydroponics there is less contamination, low water consumption, higher yield and no need of herbicides or pesticides but initial cost is high and regular monitoring is important.",
+      "url": "https://www.semanticscholar.org/paper/d4052db1a5ee23ca649eab96b8b963146e5e1212",
+      "openAccessPdf": "",
+      "source_type": "paper",
+      "paperId": "d4052db1a5ee23ca649eab96b8b963146e5e1212",
+      "year": 2025,
+      "venue": "Journal of Scientific Research and Reports",
+      "citationCount": 1,
+      "doi": "10.9734/jsrr/2025/v31i42995"
+    },
+    {
+      "category": "EC",
+      "query": "basil hydroponic EC range",
+      "title": "Photosynthetic responses of hydroponically grown basil (Ocimum basilicum L.) to drought and high-EC stress",
+      "abstract": "Background Basil (Ocimum basilicum L.), a widely cultivated culinary and medicinal herb in the Lamiaceae family, is particularly vulnerable to various environmental stressors. This study examines how water deficit and elevated nutrient-solution electrical conductivity (EC) affect the photosynthetic efficiency of basil plants grown in an nutrient film technique (NFT) hydroponic system. Methods Chlorophyll fluorescence was assessed using both continuous-excitation and modulated pulse-amplitude-modulated (PAM) techniques. Fluorescence parameters were monitored in plants at two developmental stages, immature and mature, under drought and high–electrical-conductivity (EC) stress. Results Both stressors altered Photosystem II (PSII)—related fluorescence parameters, but high EC stress caused a wider spectrum of changes. In mature plants, those alterations were less pronounced, indicating enhanced tolerance likely due to more efficient electron transport and greater structural stability of the photosynthetic apparatus. The obtained results supported our hypothesis, that drought and high-EC stress would differentially impair photosynthetic efficiency, with drought imposing stronger osmotic limitations on photochemistry and high EC introducing additional ionic constraints. These stresses generated distinct physiological response patterns detectable by chlorophyll fluorescence measurements.",
+      "url": "https://www.semanticscholar.org/paper/1aa86522030b2ec9dc82bd40d561cde11aa39253",
+      "openAccessPdf": "",
+      "source_type": "paper",
+      "paperId": "1aa86522030b2ec9dc82bd40d561cde11aa39253",
+      "year": 2026,
+      "venue": "PeerJ",
+      "citationCount": 0,
+      "doi": "10.7717/peerj.20728"
+    }
+  ],
+  "cached_at": "2026-05-12 01:48:56"
+}

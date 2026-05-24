@@ -1,0 +1,37 @@
+{
+  "category": "pH",
+  "query": "strawberry nutrient solution pH optimal",
+  "limit": 2,
+  "year": null,
+  "documents": [
+    {
+      "category": "pH",
+      "query": "strawberry nutrient solution pH optimal",
+      "title": "Fuzzy Control Application to an Irrigation System of Hydroponic Crops under Greenhouse: Case Cultivation of Strawberries (Fragaria Vesca)",
+      "abstract": "Hydroponics refers to a modern set of agricultural techniques that do not require the use of natural soil for plant germination and development. These types of crops use artificial irrigation systems that, together with fuzzy control methods, allow plants to be provided with the exact amount of nutrients for optimal growth. The diffuse control begins with the sensorization of the agricultural variables that intervene in the hydroponic ecosystem, such as the environmental temperature, electrical conductivity of the nutrient solution and the temperature, humidity, and pH of the substrate. Based on this knowledge, these variables can be controlled to be within the ranges required for optimal plant growth, reducing the risk of a negative impact on the crop. This research takes, as a case study, the application of fuzzy control methods to hydroponic strawberry crops (Fragaria vesca). It is shown that, under this scheme, a greater foliage of the plants and a larger size of the fruits are obtained in comparison with natural cultivation systems in which irrigation and fertilization are carried out by default, without considering the alterations in the aforementioned variables. It is concluded that the combination of modern agricultural techniques such as hydroponics and diffuse control allow us to improve the quality of the crops and the optimization of the required resources.",
+      "url": "https://www.semanticscholar.org/paper/c85a848d0e45d5d071f65c0fc05ac481b56dda42",
+      "openAccessPdf": "https://www.mdpi.com/1424-8220/23/8/4088/pdf?version=1681873819",
+      "source_type": "paper",
+      "paperId": "c85a848d0e45d5d071f65c0fc05ac481b56dda42",
+      "year": 2023,
+      "venue": "Italian National Conference on Sensors",
+      "citationCount": 15,
+      "doi": "10.3390/s23084088"
+    },
+    {
+      "category": "pH",
+      "query": "strawberry nutrient solution pH optimal",
+      "title": "Effect of fertiliser application method and nutrient solution pH on growth, yield and flower quality of gardenia (Gardenia jasminoides)",
+      "abstract": "ABSTRACT Gardenia jasminoides, a popular ornamental species, often shows reduced growth and flowering due to poor nutrient management. This two-year study aimed to assess the effect of fertiliser application method and nutrient solution acidity on the performance of gardenia. Two application methods (foliar/soil drench) and four pH levels (5, 6, 7, and 8) were tested to evaluate their effects on plant growth, leaf physiology, and flower yield and quality. Soil drenching significantly improved shoot growth traits along with leaf nitrogen, phosphorus, and calcium concentrations and flower yield compared to foliar spray. Adjusting the nutrient solution to pH 6 notably enhanced shoot biomass and flower traits relative to pH 5 and 8. Nutrient drenching at pH 6 led to a 90% increase in chlorophyll content, 200% in leaf area, 84% in leaf fresh weight, and 155% in flower number, among other improvements, compared to foliar spraying at the same pH. However, it also caused reductions in root fresh weight (−42%), leaf iron (−47%), and soil respiration (−15%). These findings indicate that soil drenching at pH 6 optimises gardenia growth and flower yield. Further research is recommended to explore long-term nutrient uptake and translocation mechanisms under different fertilisation strategies at optimal pH.",
+      "url": "https://www.semanticscholar.org/paper/b19708b52a298ad767eaae5b480e7d66cd2e1af5",
+      "openAccessPdf": "",
+      "source_type": "paper",
+      "paperId": "b19708b52a298ad767eaae5b480e7d66cd2e1af5",
+      "year": 2025,
+      "venue": "New Zealand journal of crop and horticultural science",
+      "citationCount": 0,
+      "doi": "10.1080/01140671.2025.2502117"
+    }
+  ],
+  "cached_at": "2026-05-12 02:01:22"
+}

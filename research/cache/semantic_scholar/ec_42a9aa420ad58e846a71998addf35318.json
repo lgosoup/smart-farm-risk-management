@@ -1,0 +1,37 @@
+{
+  "category": "EC",
+  "query": "basil nutrient solution electrical conductivity",
+  "limit": 2,
+  "year": null,
+  "documents": [
+    {
+      "category": "EC",
+      "query": "basil nutrient solution electrical conductivity",
+      "title": "Nutrient Use in Vertical Farming: Optimal Electrical Conductivity of Nutrient Solution for Growth of Lettuce and Basil in Hydroponic Cultivation",
+      "abstract": "During the past few decades, vertical farming has attracted a lot of interest as an alternative food production method. Vertical farms use engineered growth environments and hydroponic cultivation techniques for growing plants indoors. One of the important factors in vertical farming for the cultivation of different plants is the amount of nutrients, which can be measured as electrical conductivity (EC). Studying the optimal EC is important for avoiding nutrient loss and deficiency in vertical farms. In this study, we investigated the effect of five EC levels (2, 1.2, 0.9, 0.7, and 0.5 dS m−1) of Hoagland nutrient solution on the growth and development of basil cultivar ‘Emily’ and lettuce cultivar ‘Batavia-Caipira’. During the study, the environmental parameters were kept fixed using an automatic dosing machine. The experiment was done in automatic vertical farms using the hydroponic ebb–flow cultivation technique with a temperature of 20 ± 1 °C, relative humidity of 50–60%, CO2 concentration of 450 ppm, pH = 6, the PPFD (photosynthetic photon flux density) of 215 ± 5.5 μmol m−2 s−1, and the photoperiod of 16:8 h (day/night). Each treatment was replicated four times. We studied the effects on several growth parameters (including the dry and fresh weight of leaves and roots, number of leaves, and leaf area) as well as the chlorophyll and nitrogen concentration of the leaves. According to the results, the basil and lettuce growth parameters among the five treatments have been significantly higher in the treatment with EC of 1.2 and 0.9 dS m−1. These EC values are lower than the recommended EC value given as the optimum in the previous studies. However, the concentration of chlorophyll and nitrogen show different trends and were higher in full strength of nutrient solution with EC = 2 dS m−1.",
+      "url": "https://www.semanticscholar.org/paper/133fb149b103d83a329c0c20e13096d1134de842",
+      "openAccessPdf": "https://www.mdpi.com/2311-7524/7/9/283/pdf?version=1630902697",
+      "source_type": "paper",
+      "paperId": "133fb149b103d83a329c0c20e13096d1134de842",
+      "year": 2021,
+      "venue": "Horticulturae",
+      "citationCount": 67,
+      "doi": "10.3390/horticulturae7090283"
+    },
+    {
+      "category": "EC",
+      "query": "basil nutrient solution electrical conductivity",
+      "title": "Optimization of the Yield, Total Phenolic Content, and Antioxidant Capacity of Basil by Controlling the Electrical Conductivity of the Nutrient Solution",
+      "abstract": "Hydroponic cultivation using nutrient solution (NS) is the main cultivation method employed by plant factories with artificial lighting (PFALs). The electrical conductivity (EC) of NSs influences the yield and quality of vegetables. The purpose of this study was to optimize the yield and antioxidant accumulation of basil in a PFAL by EC management. In experiment 1, basil plants were grown under four different ECs (0.5, 1.0, 3.0, and 5.0 dS m−1) after transplanting. At 18 days after treatment, the highest levels of shoot fresh and dry weights, leaf fresh and dry weights, and leaf area were observed at an EC of 3.0 dS m−1. However, low-EC treatments (0.5 and 1.0 dS m−1) generated total phenolic content (TPC) and antioxidant capacities that were higher than those of other EC treatments (3.0 and 5.0 dS m−1). In experiment 2, basil plants were grown at an EC of 3.0 dS m−1 for 13 or 15 days, then treated with water or NS with low ECs (0.5 and 1.0 dS m−1) for 5 or 3 days before harvest. The short-term low-EC treatments, especially, water for 3 days and 0.5 dS m−1 for 5 days, significantly increased the TPC and antioxidant capacity of leaves without significantly decreasing the yields of basil, compared with the control. In conclusion, yield of basil was optimized with an EC of 3.0 dS m−1; however, the TPC and antioxidant capacity of basil were significantly increased by low ECs of 0.5 and 1.0 dS m−1. Short-term low-EC treatments (0.5 dS m−1 for 5 days or water for 3 days) could be used to promote the TPC and antioxidant capacity in leaves without sacrificing yield of basil significantly.",
+      "url": "https://www.semanticscholar.org/paper/d02df70dfa33decc9b7874c8df5de7b41e2b3675",
+      "openAccessPdf": "https://www.mdpi.com/2311-7524/8/3/216/pdf?version=1646132898",
+      "source_type": "paper",
+      "paperId": "d02df70dfa33decc9b7874c8df5de7b41e2b3675",
+      "year": 2022,
+      "venue": "Horticulturae",
+      "citationCount": 21,
+      "doi": "10.3390/horticulturae8030216"
+    }
+  ],
+  "cached_at": "2026-05-12 01:48:59"
+}

@@ -1,0 +1,37 @@
+{
+  "category": "pH",
+  "query": "basil hydroponic pH range",
+  "limit": 2,
+  "year": null,
+  "documents": [
+    {
+      "category": "pH",
+      "query": "basil hydroponic pH range",
+      "title": "Interactive hydroponic growth simulator for educational use",
+      "abstract": "This project is a web-based hydroponic simulator created to forecast plant growth in a variety of environmental circumstances. Temperature, electrical conductivity, light intensity, and pH stress—which is the decrease in growth brought on by departures from a plant's ideal pH range—are among the environmental inputs that the simulator uses to model plant growth using the Growth Index equation. The model's main output is an estimated harvest time and growth rate, which enables students to see how environmental changes affect plant development. Sliders allow users to interact with the simulation, allowing for the simultaneous execution of multiple trials and comparisons between different plant species, including kale (Brassica oleracea), lettuce (Latuca sativa), tomatoes (Solanum lycopersicum), and basil (Ocimum basilicum). This simulation, which is based on actual hydroponic monitoring systems, helps students develop their intuition about plant growth and sustainable agriculture through experimentation. By enabling students to manipulate environmental variables and analyze system-level responses, the simulator reinforces concepts from AP Biology like homeostasis and experimental design, as well as AP Environmental Science topics including sustainable agriculture, resource management, and human impacts on ecosystems. ",
+      "url": "https://www.semanticscholar.org/paper/fb2bc90989127538190e07204fb1f52303e889c1",
+      "openAccessPdf": "",
+      "source_type": "paper",
+      "paperId": "fb2bc90989127538190e07204fb1f52303e889c1",
+      "year": 2026,
+      "venue": "Journal of Science &amp; Engineering",
+      "citationCount": 0,
+      "doi": "10.64804/pvqfw427"
+    },
+    {
+      "category": "pH",
+      "query": "basil hydroponic pH range",
+      "title": "Effects of Low pH of Hydroponic Nutrient Solution on Plant Growth, Nutrient Uptake, and Root Rot Disease Incidence of Basil (Ocimum basilicum L.)",
+      "abstract": "Rootzone pH affects nutrient availability for plants. Hydroponic leafy greens are grown in nutrient solutions with pH 5.5 to 6.5. Lower pH may inhibit plant growth, whereas pathogenic oomycete growth and reproduction may be mitigated. General understanding of pH effects on nutrient availability suggests likely toxicity and deficiency of specific micronutrients. We hypothesized that if adjustments are made to the micronutrient concentrations in solution, plants will grow in lower-than-conventional pH without nutrient disorders, while oomycete disease incidence and severity may be reduced. To develop a new nutrient solution management strategy, we examined pH of 4.0, 4.5, 5.0, and 5.5 with or without micronutrient adjustments for growing two cultivars of basil plants Dolce Fresca and Nufar in a greenhouse hydroponic deep-water culture (DWC) system. Micronutrient adjustments included reduced concentrations of copper, zinc, manganese, and boron by one-half and doubled molybdenum concentration. Plants harvested 20 to 28 days after transplanting did not show significant effects of pH or the micronutrient adjustment. Phosphorus, calcium, magnesium, sulfur, boron, manganese, and zinc concentrations in leaves significantly declined, while potassium and aluminum concentrations increased with decreasing pH. However, these changes and therefore micronutrient adjustments did not affect basil plant growth significantly. ‘Nufar’ basil plants were then grown in a growth chamber DWC system at pH 4.0 or a conventional 5.5 with and without inoculation of Pythium aphanidermatum zoospores. Fourteen days after inoculation, P. aphanidermatum oospore production was confirmed only for the inoculated plants in pH 5.5 solution, where a significant reduction of plant growth was observed. The results of the present study indicate that maintaining nutrient solution pH at 4.0 can effectively suppress the severity of root rot caused by P. aphanidermatum initiated by zoospore inoculation without influencing basil growth.",
+      "url": "https://www.semanticscholar.org/paper/521ae521ada9a9a3e708c55ddafa4eef0f0050ba",
+      "openAccessPdf": "https://journals.ashs.org/downloadpdf/journals/hortsci/55/8/article-p1251.pdf",
+      "source_type": "paper",
+      "paperId": "521ae521ada9a9a3e708c55ddafa4eef0f0050ba",
+      "year": 2020,
+      "venue": "Hortscience",
+      "citationCount": 58,
+      "doi": "10.21273/hortsci14986-20"
+    }
+  ],
+  "cached_at": "2026-05-12 01:48:51"
+}

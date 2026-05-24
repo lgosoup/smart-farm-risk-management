@@ -1,0 +1,37 @@
+{
+  "category": "light",
+  "query": "strawberry PPFD DLI photoperiod hydroponic",
+  "limit": 2,
+  "year": null,
+  "documents": [
+    {
+      "category": "light",
+      "query": "strawberry PPFD DLI photoperiod hydroponic",
+      "title": "Effects of light intensity and photoperiod on runner plant propagation of hydroponic strawberry transplants under LED lighting",
+      "abstract": "Vegetative propagation of strawberry (Fragaria × ananassa Duch.) in the plant factory with artificial lighting is considered as an effective approach to produce high-quality transplants. In this study, mother plants of ‘Benihoppe’ strawberry were grown hydroponically for 50 d under eight LED lighting treatments by combining four levels of light intensity (200, 250, 300 and 350 mol/(m2·s)) and two photoperiods (12 h/d and 16 h/d). Runner development, growth of runner plants, photon yield and energy yield in runners and runner plants were investigated to evaluate the strawberry propagation efficiency. Results indicated that length of runners decreased linearly with increasing daily light integral (DLI) under each photoperiod and was significantly shorter under photoperiod of 16 h/d. Runner elongation was inhibited by high DLI. Number of runners and runner plants formed by mother plants increased by 38.9% and 33.7%, when DLI increased from 8.6 to 11.5 mol/(m2·d), respectively; however, no further increase was observed when DLI was higher than 11.5 mol/(m2·d). Similar trends were found in crown diameter and biomass of primary and secondary runner plants. Negative impact of high DLI (20.2 mol/(m2·d)) on photosynthetic capacity of runner plants was observed as a decrease in leaf net photosynthetic rate, potential maximum photochemical efficiency of PSII, and chlorophyll content. Furthermore, photon yield and energy yield in runners and runner plants decreased significantly with increasing DLI. Therefore, DLI in a range of 11.5-17.3 mol/(m2·d) is beneficial to improve strawberry propagation efficiency and quality of runner plants, and 11.5 mol/(m2·d) is optimal for the strawberry propagation of runner plants in the LED plant factory because of the higher photon and energy yields. \nKeywords: hydroponic strawberry, vegetative propagation, daily light integral, photon yield \nDOI: 10.25165/j.ijabe.20191206.5265 \n \nCitation: Zheng J F, He D X, Ji F. Effects of light intensity and photoperiod on runner plant propagation of hydroponic strawberry transplants under LED lighting. Int J Agric & Biol Eng, 2019; 12(6): 26–31.",
+      "url": "https://www.semanticscholar.org/paper/13cd3bc8d3222ba57e542e8e513fa019a768fb54",
+      "openAccessPdf": "https://doi.org/10.25165/j.ijabe.20191206.5265",
+      "source_type": "paper",
+      "paperId": "13cd3bc8d3222ba57e542e8e513fa019a768fb54",
+      "year": 2019,
+      "venue": "International Journal of Agricultural and Biological Engineering",
+      "citationCount": 32,
+      "doi": "10.25165/j.ijabe.20191205.5265"
+    },
+    {
+      "category": "light",
+      "query": "strawberry PPFD DLI photoperiod hydroponic",
+      "title": "Determination of optimal daily light integral (DLI) for indoor cultivation of iceberg lettuce in an indigenous vertical hydroponic system",
+      "abstract": "The indoor cultivation of lettuce in a vertical hydroponic system (VHS) under artificial lighting is an energy-intensive process incurring a high energy cost. This study determines the optimal daily light integral (DLI) as a function of photoperiod on the physiological, morphological, and nutritional parameters, as well as the resource use efficiency of iceberg lettuce (cv. Glendana) grown in an indoor VHS. Seedlings were grown in a photoperiod of 12 h, 16 h, and 20 h with a photosynthetic photon flux density (PPFD) of 200 µmol m^−2 s^−1 using white LED lights. The results obtained were compared with VHS without artificial lights inside the greenhouse. The DLI values for 12 h, 16 h, and 20 h were 8.64, 11.5, and 14.4 mol m^−2 day^−1, respectively. The shoot fresh weight at harvest increased from 275.5 to 393 g as the DLI increased from 8.64 to 11.5 mol m^−2 day^−1. DLI of 14.4 mol m^−2 day^−1 had a negative impact on fresh weight, dry weight, and leaf area. The transition from VHS without artificial lights to VHS with artificial lights resulted in a 60% increase in fresh weight. Significantly higher water use efficiency of 71 g FW/L and energy use efficiency of 206.31 g FW/kWh were observed under a DLI of 11.5 mol m^−2 day^−1. The study recommends an optimal DLI of 11.5 mol m^−2 day^−1 for iceberg lettuce grown in an indoor vertical hydroponic system.",
+      "url": "https://www.semanticscholar.org/paper/0f5de8cb2268942ab0e4b789fe74f59ee719e199",
+      "openAccessPdf": "https://www.nature.com/articles/s41598-023-36997-2.pdf",
+      "source_type": "paper",
+      "paperId": "0f5de8cb2268942ab0e4b789fe74f59ee719e199",
+      "year": 2023,
+      "venue": "Scientific Reports",
+      "citationCount": 55,
+      "doi": "10.1038/s41598-023-36997-2"
+    }
+  ],
+  "cached_at": "2026-05-12 02:01:51"
+}

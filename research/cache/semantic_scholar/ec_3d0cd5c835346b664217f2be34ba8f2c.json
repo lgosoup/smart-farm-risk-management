@@ -1,0 +1,37 @@
+{
+  "category": "EC",
+  "query": "strawberry nutrient solution electrical conductivity",
+  "limit": 2,
+  "year": null,
+  "documents": [
+    {
+      "category": "EC",
+      "query": "strawberry nutrient solution electrical conductivity",
+      "title": "Potassium Sulfate Supplementation with Elevated Electrical Conductivity Was Unproductive for Hydroponic Strawberry at the Original Yamazaki Nutrient Solution Nitrogen Level",
+      "abstract": "The production of strawberries (Fragaria ×ananassa) in hydroponic systems has been increasing. In hydroponic systems, precise nutrient management is crucial for optimal plant growth and fruit production. Among essential elements, potassium (K) is a key nutrient that affects fruit yield and quality in fruiting crops. The objective of this study was to investigate whether increasing the K concentration in the Yamazaki strawberry nutrient solution could enhance plant growth, fruit yield, and fruit quality in hydroponic strawberries. Bare-root plants of strawberry ‘Monterey’ and ‘San Andreas’ were planted in a deep water culture hydroponic system and grown with initial K concentrations of 117, 194, 271, and 348 mg·L−1 under the same initial nitrogen concentration of 77 mg·L−1. As the K concentration increased from 117 to 348 mg·L−1, the nutrient solution electrical conductivity increased from 1.0 to 1.9 dS·m−1. The experiment was conducted inside an indoor vertical farm at a 23 °C air temperature with an extended photon flux density (400–750 nm) of 350 µmol·m−2·s−1 under an 18-hour photoperiod. Increasing the K concentration from 117 to 348 mg·L−1 had minimal effects on plant growth characteristics of both cultivars, although root dry mass of ‘Monterey’ increased linearly with increasing K. Increasing the K concentration from 117 to 348 mg·L−1 did not affect the total fruit number or total fruit fresh mass of ‘Monterey’, but for ‘San Andreas’, it reduced the total fruit number by 34% and total fruit fresh mass by 45%. Additionally, increasing the K concentration from 117 to 348 mg·L−1 reduced the individual fruit mass, fruit length, and fruit diameter and increased titratable acidity in both cultivars. These results indicate that increasing the K concentration in the Yamazaki strawberry nutrient solution did not benefit plant growth, fruit yield, or fruit quality of the hydroponically grown strawberries ‘Monterey’ or ‘San Andreas’.",
+      "url": "https://www.semanticscholar.org/paper/c316f232323aec4becf9d9eaa835c4bbebff217f",
+      "openAccessPdf": "",
+      "source_type": "paper",
+      "paperId": "c316f232323aec4becf9d9eaa835c4bbebff217f",
+      "year": 2025,
+      "venue": "Hortscience",
+      "citationCount": 0,
+      "doi": "10.21273/hortsci18252-24"
+    },
+    {
+      "category": "EC",
+      "query": "strawberry nutrient solution electrical conductivity",
+      "title": "Effects of Gypsum Application at Different Levels of Nutrient Solution Electrical Conductivity on Yield, Quality and Antioxidant Activity of Soilless Strawberry Grown in Cocopeat",
+      "abstract": "Research on strawberry (Fragaria x ananassa Duch.) was carried out in greenhouse in 2022-2023, arranging a 4 x 2 factorial experiment, consisting of four levels of electrical conductivity of the nutrient solutions (1.2, 1.7, 2.2, and 2.7 dS m-1) and application of gypsum (without application – control and application). The plants were grown in coconut fibre substrate from late October to early June. The 2.2 dS m-1 ECsol resulted in the highest yield, whereas the highest values of dry matter and soluble solids were recorded under 2.7 dS m-1 ECsol. Gypsum application resulted in the increase of dry matter, soluble solids, firmness and colour components. The 2.2 and 2.7 dS m-1 ECsol led to the highest levels of hydrophilic and lipophilic antioxidant activities as well as polyphenols and vitamin C. From the research carried out on strawberry grown in coconut fibre, it arose that the 2.2 dS m-1 EC of the nutrient solution showed the best effect on yield, but it did not generally differ from 2.7 dS m-1 regarding the quality of the 'fruits'. Gypsum treatment represents an effective strategy to improve some important qualitative characteristics of strawberry 'fruits', under the perspective of sustainable management of crop systems.",
+      "url": "https://www.semanticscholar.org/paper/21e86824a04a30da964b9d405f5d83f246f4613d",
+      "openAccessPdf": "https://doi.org/10.15835/buasvmcn-fst:2023.0038",
+      "source_type": "paper",
+      "paperId": "21e86824a04a30da964b9d405f5d83f246f4613d",
+      "year": 2024,
+      "venue": "Bulletin of University of Agricultural Sciences and Veterinary Medicine Cluj-Napoca: Food Science and Technology",
+      "citationCount": 0,
+      "doi": "10.15835/buasvmcn-fst:2023.0038"
+    }
+  ],
+  "cached_at": "2026-05-12 02:01:27"
+}

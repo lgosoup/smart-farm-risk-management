@@ -1,0 +1,37 @@
+{
+  "category": "pH",
+  "query": "strawberry hydroponic pH range",
+  "limit": 2,
+  "year": null,
+  "documents": [
+    {
+      "category": "pH",
+      "query": "strawberry hydroponic pH range",
+      "title": "Effects of varying electrical conductivity levels on plant growth, yield, and photosynthetic parameters of Tochiotome strawberry (Fragaria × ananassa 'Tochiotome) in a greenhouse",
+      "abstract": "This study aimed to identify the salinity threshold affecting plant health and optimal conditions for sustainable strawberry cultivation in greenhouses. By identifying the optimal EC range that promotes plant growth while minimizing salinity stress, this study offers strategies to mitigate the negative effects of salinity on crop production. This study was conducted in a hydroponic system, where strawberries were irrigated with different EC levels (0.5, 1.0, 2.0, 4.0, 6.0, and 8.0 dS·m⁻¹) using Hoagland nutrient solutions. We applied irrigation treatments with different electrical conductivity (EC) levels to evaluate their effects on the growth, yield, and photosynthetic performance of Fragaria × ananassa ‘Tochiotome’ strawberries. The crown and leaf fresh weights, root length, individual fruit weight, leaf area, SPAD values (chlorophyll content), Brix percentage (fruit sweetness), and overall yield were measured. The results showed that EC influenced water uptake, nutrient availability, and physiological aspects of the plant. The EC levels above 6.0 dS·m⁻¹ significantly reduced crown and leaf fresh weights due to osmotic stress and nutrient imbalances, negatively affecting biomass accumulation. Root length also decreased at higher EC levels, indicating compromised root growth, while individual fruit weight was declined likely due to impaired nutrient uptake. In contrast, leaf area, SPAD values (chlorophyll content indicator), and Brix percentage (fruit sweetness) remained stable, suggesting resilience in some plant traits. Yield was declined at both high and low EC levels, which might be attributed to a reduced fruit size and nutrient uptake limitations. Moderate salinity levels (2.0–4.0 dS·m⁻¹) initially improved photosynthetic parameters, but higher levels (6.0–8.0 dS·m⁻¹) reduced photosynthetic efficiency. These results suggest that maintaining the EC between 2.0 and 4.0 dS·m⁻¹ optimizes plant growth and photosynthesis, whereas deviations above or below this range may lead to salinity stress or nutrient deficiencies.",
+      "url": "https://www.semanticscholar.org/paper/f179f0a0213029351c4e39692ca32b377f1bd68a",
+      "openAccessPdf": "",
+      "source_type": "paper",
+      "paperId": "f179f0a0213029351c4e39692ca32b377f1bd68a",
+      "year": 2025,
+      "venue": "Australian Journal of Crop Science",
+      "citationCount": 2,
+      "doi": "10.21475/ajcs.25.19.04.p322"
+    },
+    {
+      "category": "pH",
+      "query": "strawberry hydroponic pH range",
+      "title": "Organic, conventional and hydroponic vegetables: Can 15N natural abundance of farm N inputs differentiate mode of production?",
+      "abstract": "Abstract Organic and synthetic N-fertilizers normally show quite different δ15N values, which can be imprinted in agricultural soils and growing plants. Therefore, δ15N values have been considered as a promising marker to differentiate organic plant products from other farming systems that do not exclude synthetic N-fertilizer use. The aim of this study was to evaluate the δ15N values of fertilizer N sources from different farming systems and the δ15N values of the plant products produced in situ. Samples of soil, substrates, N sources, and plant products (lettuce, tomato, and strawberry) were sampled from well documented organic (n = 2), conventional (n = 4) and hydroponic (n = 2) farms in the southern Brazil. Plant parts were also compared. δ15N values of N-inputs (substrates, organic and synthetic fertilizers) overlapped, within the range of −2 to +8 ‰. Soil samples from conventional farms (+5.3 to +9.8 ‰) showed higher δ15N values than from organic systems (+4.9 to +6.5 ‰). As a consequence, δ 15N values had limited value as a tool to differentiate plant products from different farming systems. However, it may be a potentially more useful technique for strawberries but not for tomatoes and lettuce. The inconsistency found in the differentiation between farming systems can be attributed to the overlapping of δ15N values of the fertilizer N sources used on those farms.",
+      "url": "https://www.semanticscholar.org/paper/cff48915ee09bac02063e70debd20c00ad466a51",
+      "openAccessPdf": "",
+      "source_type": "paper",
+      "paperId": "cff48915ee09bac02063e70debd20c00ad466a51",
+      "year": 2020,
+      "venue": "",
+      "citationCount": 9,
+      "doi": "10.1016/j.scienta.2020.109219"
+    }
+  ],
+  "cached_at": "2026-05-12 02:01:19"
+}

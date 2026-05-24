@@ -1,0 +1,1 @@
+"""Crop input normalization module."""

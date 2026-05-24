@@ -1,0 +1,37 @@
+{
+  "category": "humidity",
+  "query": "strawberry growing relative humidity",
+  "limit": 2,
+  "year": null,
+  "documents": [
+    {
+      "category": "humidity",
+      "query": "strawberry growing relative humidity",
+      "title": "Electrical system design for temperature and humidity monitoring and control of strawberry greenhouses",
+      "abstract": "Strawberries have a high nutritional value and are a major source of fiber, iron, potassium, and flavonoids and other trace elements needed by humans. The growing environment of strawberry requires high air temperature and humidity: if the temperature is too high, it can affect pollination and increase the number of deformed fruits. If the air temperature is low, it can also cause freezing flowers to occur. The same goes for humidity, but once the relative humidity continues to be too high, when the plant is in bud, the germination rate and opening rate of anthers is low, and it is easy to cause gray mold when it enters the growing season. This thesis designs an electrical system for the intelligent monitoring and control of temperature and humidity in a strawberry greenhouse, based on the ‘STC89C51’ microcontroller, to achieve the monitoring of temperature and humidity information in the strawberry greenhouse, as well as automatic control of heating, cooling, humidification, dehumidification and other functions in the greenhouse based on the monitoring information, and through the upper computer software to store and analyze the measured data, and then according to the simulation, software and hardware debugging results by The visualization and analysis of the simulation and hardware and software results will lead to reasonable recommendations for environmental control in the strawberry greenhouse.",
+      "url": "https://www.semanticscholar.org/paper/bf6c68ecc5f66fd4d4aea335bc348d7d7a4f8546",
+      "openAccessPdf": "",
+      "source_type": "paper",
+      "paperId": "bf6c68ecc5f66fd4d4aea335bc348d7d7a4f8546",
+      "year": 2023,
+      "venue": "International Conference on Mechanical Engineering, Materials and Automation Technology",
+      "citationCount": 0,
+      "doi": "10.1117/12.3007070"
+    },
+    {
+      "category": "humidity",
+      "query": "strawberry growing relative humidity",
+      "title": "Effect of Growing Media, Humic Acid and Boron on Storage Life of Strawberry Fruits (Fragaria X Ananassa Duch) cv. Albion",
+      "abstract": "A study was conducted during (2019-2020) growing season in plastic house and cold room of Horticulture Departments, College of Agricultural engineering science, the University of Sulaimani in Sulaimani –Iraqi Kurdistan region, in order to investigate the effect of three factors growing media(M1, M2, and M3), humic acid with concentration (0, 2.5 and 5 mg. L-1), boric acid with concentration (0 and 20  mg. L-1) on fruit quality and storability of strawberry fruits stored for 20 days in a cool room at storage (2±2°C) with relative humidity 85-90%. The results showed a growing media effect on total soluble solids and anthocyanin content. Boric acid at 20 mg. L-1 gave the highest value of total sugars and berry firmness was 6.861% 486.877g, respectively. Humic acid decreased fruit decay%, while caused to increase in total soluble solids, anthocyanin, and ascorbic acid. \nThe interaction effect between growing media (M3) with 20 mg. L-1 boric acid recorded the highest value of firmness, TSS%, Total sugar% and ascorbic acid content, but the interaction effect between growing media (M2) with 20 mg. L-1 boric acid gave the lowest fruit weight loss%, Application of growing media (M1) with 0 mg. L-1 boric acid showed the highest value of anthocyanin content. On the other hand, the interaction effect between growing media (M3) with 5 mg. L-1 of humic acid gave the lowest fruit weight loss% but the highest value of firmness and ascorbic acid content, as well as, growing media (M1) with 5 mg. L-1 of humic acid gave the lowest decay% and highest value TSS%, the same growing media with 2.5 mg. L-1 of humic acid gave the maximum value of anthocyanin content. The interaction effect between 20 mg. L-1 boric acid with 5 mg. L-1 of humic acid recorded the lowest value of fruit weight loss% and decay%, otherwise, the same treatment gave the highest value of firmness and ascorbic acid content. \nFinally, the interaction effects of the three factors obtained the lowest fruit weight loss% was observed from growing media (M3), 20 mg. L-1 boric acid and 5 mg. L-1of humic acid, while the same treatment given the highest value of firmness and ascorbic acid content. \n ",
+      "url": "https://www.semanticscholar.org/paper/6c2b54fd0e481e869e89395eabb6aeeeff0347f8",
+      "openAccessPdf": "",
+      "source_type": "paper",
+      "paperId": "6c2b54fd0e481e869e89395eabb6aeeeff0347f8",
+      "year": 2022,
+      "venue": "Kufa Journal for Agricultural Sciences",
+      "citationCount": 0,
+      "doi": "10.36077/kjas/2021/v13i1.328"
+    }
+  ],
+  "cached_at": "2026-05-12 02:01:44"
+}

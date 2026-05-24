@@ -1,0 +1,37 @@
+{
+  "category": "DO",
+  "query": "basil hydroponic dissolved oxygen",
+  "limit": 2,
+  "year": null,
+  "documents": [
+    {
+      "category": "DO",
+      "query": "basil hydroponic dissolved oxygen",
+      "title": "effect of dissolved oxygen on common carp (Cyprinus carpio) and basil (Ocimum basilicum) in the aquaponics system",
+      "abstract": "Aquaponics is an integrated system that combines fish farming (aquaculture) and hydroponic plant production. The objective of this study was to examine how the level of dissolved oxygen with or without an air pump affects water quality, fish output and plant growth parameters for common carp (Cyprinus carpio) and basil (Ocimum basilicum). \nEbb – and flood aquaponics systems (with automatic syphon) was used. Two treatments were set in this experiment, one of which was the aquaponics system without air pump (unit I), where water of the plant bed was pumped two directions, one falling back to the fish tank oxygenating the water the other was pumped to the hydroponics unit. The other system (unit II) was designed with an air pump.\nIn the course of the study, water quality parameters, such as oxygen saturation, dissolved oxygen (DO), electrical conductivity (EC) and nitrite were significantly different (p<0.05). Total basil biomass was higher in unit II. (5367.41 g). The final biomass of common carp were 2829.45 g ± 79.24 and 2980.6 g ± 64.13 g in unit I and unit II respectively. Weight gain (WG) and specific growth rate (SGR) showed no significant differences (p>0.05) between the treatments. ",
+      "url": "https://www.semanticscholar.org/paper/3ca38f98ff757cafafe6b07bc6f67e0de7a67e85",
+      "openAccessPdf": "https://ojs.lib.unideb.hu/actaagrar/article/download/8933/8437",
+      "source_type": "paper",
+      "paperId": "3ca38f98ff757cafafe6b07bc6f67e0de7a67e85",
+      "year": 2021,
+      "venue": "",
+      "citationCount": 8,
+      "doi": "10.34101/ACTAAGRAR/1/8933"
+    },
+    {
+      "category": "DO",
+      "query": "basil hydroponic dissolved oxygen",
+      "title": "Overview of Multiple Applications of Basil Species and Cultivars and the Effects of Production Environmental Parameters on Yields and Secondary Metabolites in Hydroponic Systems",
+      "abstract": "Basil (Ocimum basilicum L.), including other species and cultivars, is an excellent source of nutritional compounds, the accumulation of which can be stimulated by exogenous factors (environmental and nutritional conditions). Although best practices are relatively established for mature basil plants, microgreens production requires further research to optimize quality and quantity. The study objectives are (i) to provide an overview of the many uses of basil, (ii) collate and present common hydroponic systems available in the market, (iii) review effects of key production environment parameters on basil yields in hydroponic systems, and (iv) summarize the effects of the growth environments on yield quantity and quality of basil microgreens. The paper analyzes in detail key production parameters of basil microgreens in hydroponic systems, such as temperature, humidity, pH, electrical conductivity, dissolved oxygen, carbon dioxide, nutrient solutions, and the influence of light (quantity, quality, and photoperiods). The collated literature review has shown that basil, grown hydroponically, can tolerate high variations of environmental parameters: pH 5.1–8.5, temperature 15–24 °C, relative humidity 60–70%, electrical conductivity up to 1.2 mS cm−1, depending on the developmental stage, dissolved oxygen at 4 mg L−1 (optimally 6.5 mg L−1), and light intensity between 200 and 400 μmol m−2 s−1. The study has synthesized an overview of different production parameters to provide guidance on the optimization of environmental conditions to ensure the quantity and quality production of basil microgreens. Improving the quality of basil microgreens can ideally spur continued gastronomic interest in microgreens in general, which will encourage more entrepreneurs to grow basil and other microgreens. Hence, the study findings are a great resource to learn about the effects of different environments on basil microgreen production. This information can inform research for successful production of different species and cultivars of basil microgreens, and establishing testing protocols to improve the quantity and quality of the harvest.",
+      "url": "https://www.semanticscholar.org/paper/1fda93b65ab3ebf5c5eb719b898968d1232da003",
+      "openAccessPdf": "https://www.mdpi.com/2071-1050/13/20/11332/pdf?version=1634782850",
+      "source_type": "paper",
+      "paperId": "1fda93b65ab3ebf5c5eb719b898968d1232da003",
+      "year": 2021,
+      "venue": "Sustainability",
+      "citationCount": 24,
+      "doi": "10.3390/su132011332"
+    }
+  ],
+  "cached_at": "2026-05-12 01:49:10"
+}

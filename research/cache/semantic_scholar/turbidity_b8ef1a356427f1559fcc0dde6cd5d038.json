@@ -1,0 +1,37 @@
+{
+  "category": "turbidity",
+  "query": "strawberry hydroponic water quality turbidity",
+  "limit": 2,
+  "year": null,
+  "documents": [
+    {
+      "category": "turbidity",
+      "query": "strawberry hydroponic water quality turbidity",
+      "title": "Enhancing Hydroponic Strawberry Cultivation: Optimizing Water Consumption for Sustainable Yield, Quality and Resource Efficiency",
+      "abstract": "Hydroponic cultivation requires proper fertigation management to avoid over‐fertigation and environmental damage. This 2‐year study evaluated the effects of full irrigation, partial root‐zone drying (PRD) and sustained deficit irrigation (SDI) on hydroponic strawberry cultivation to optimize water and fertilizer use. In the first year, various irrigation and fertilizer levels were tested, and on the basis of these results, the second year focused on full and half irrigation with different nutrient solution concentrations. This study evaluated plant morphology, physiochemical traits (e.g., chlorophyll, phenolics, and electrolyte leakage) and fruit quality (TSS/TA and L/D ratio) while calculating irrigation water productivity and biomass water use efficiency (WUE). Nutrient element contents were measured in the substrate and leaves. The second‐year results indicated that irrigation treatments significantly influenced fruit quality and yield. The PRD, which was fertigated with a half‐pot capacity (PRD2), was the best approach because it does not reduce nutrients, preserves substrate health and reduces fertigation by 50%. PRD2 is a drought resistance strategy that reduces vegetative growth and leaf surface area, leading to increased yield and improved berry quality. Additionally, these findings suggest that fertigation adjustments can improve plant stress resistance. These results demonstrate the potential for scalable and sustainable hydroponic strawberry production, offering practical applications for water‐efficient agriculture in resource‐limited environments.",
+      "url": "https://www.semanticscholar.org/paper/1dde58b6fe80bdaa9af4af73a013872b3f887143",
+      "openAccessPdf": "",
+      "source_type": "paper",
+      "paperId": "1dde58b6fe80bdaa9af4af73a013872b3f887143",
+      "year": 2025,
+      "venue": "Irrigation and Drainage",
+      "citationCount": 0,
+      "doi": "10.1002/ird.3117"
+    },
+    {
+      "category": "turbidity",
+      "query": "strawberry hydroponic water quality turbidity",
+      "title": "Short-Term Time-Series Forecasting of Hydroponic Water Quality Parameters Using XGBoost Based IoT Sensor Data",
+      "abstract": "Water quality monitoring is a critical factor in the success of hydroponic farming. Conventional reactive monitoring systems are often too slow to detect changes in water quality parameters such as Total Dissolved Solids (TDS), turbidity, and water level, which can lead to crop failure. This study aims to develop a short-term forecasting model using the Extreme Gradient Boosting (XGBoost) algorithm to support an early warning system. Time-series data was collected via IoT sensors over five months at 15-minute intervals. Model performance evaluation showed high accuracy across all parameters. The nutrient prediction model (TDS) achieved an R-squared value above 0.94 with MAPE below 2%, indicating excellent precision. For the turbidity parameter, the model obtained the highest R-squared value of 0.986 with MAE of only 0.72 NTU. Meanwhile, water level predictions were able to map water fluctuation dynamics with R-squared ranging from 0.85-0.92. These results prove that the XGBoost model is effective in providing accurate water condition estimates, enabling farmers to take preventive measures before a significant decline in water quality occurs within a relatively short period of time.",
+      "url": "https://www.semanticscholar.org/paper/f01ed090ec5cb9641c18886d6fd8d44515a83fbe",
+      "openAccessPdf": "",
+      "source_type": "paper",
+      "paperId": "f01ed090ec5cb9641c18886d6fd8d44515a83fbe",
+      "year": 2026,
+      "venue": "Jurnal Informatika dan Teknik Elektro Terapan",
+      "citationCount": 0,
+      "doi": "10.23960/jitet.v14i2.9458"
+    }
+  ],
+  "cached_at": "2026-05-12 02:01:34"
+}

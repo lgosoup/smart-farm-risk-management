@@ -1,0 +1,37 @@
+{
+  "category": "light",
+  "query": "strawberry hydroponic light requirement",
+  "limit": 2,
+  "year": null,
+  "documents": [
+    {
+      "category": "light",
+      "query": "strawberry hydroponic light requirement",
+      "title": "ANALISIS KEBUTUHAN AIR TANAMAN STRAWBERRY YANG DIBUDIDAYAKAN SECARA HIDROPONIK DI DALAM GREENHOUSE",
+      "abstract": null,
+      "url": "https://www.semanticscholar.org/paper/bfe74b3234bf8f8080747b502d984036f509a5ff",
+      "openAccessPdf": "",
+      "source_type": "paper",
+      "paperId": "bfe74b3234bf8f8080747b502d984036f509a5ff",
+      "year": 2013,
+      "venue": "",
+      "citationCount": 0,
+      "doi": null
+    },
+    {
+      "category": "light",
+      "query": "strawberry hydroponic light requirement",
+      "title": "Analysis of Hydroponic Strawberry (Fragaria spp.) Disease and Pest Using Deep Learning under Artificial-Light Vertical Farm Conditions",
+      "abstract": ": Indoor vertical farms using artificial lighting enable high-density and year-round strawberry production but create humid microclimates that favor rapid disease outbreaks. Conventional disease scouting based on visual inspection is labor-intensive and often delayed. This study aimed to develop an edge-computing-based automatic disease scouting system for strawberries cultivated in an artificial-light vertical farm using a YOLOv5 deep learning model and to evaluate its reliability by comparing results before and after outlier removal. A slider-mounted RGB imaging system and an NVIDIA Jetson Nano edge device were installed above multilayer strawberry beds in Taebaek commercial farm. Images collected along predefined paths were analyzed to detect major strawberry diseases including gray mold, powdery mildew on leaves and fruits, and anthracnose fruit rot. During the experimental period no insect pests were detected. Before outlier removal, 3,357 disease objects were detected, with the four dominant disease classes accounting for more than 96% of detections. However, a few rare or abnormally large detections distorted infected-area statistics. Outliers were filtered based on confidence threshold, size distribution, and geometric validity. After filtering, the overall spatial distribution and dominance structure of major diseases remained stable, while quantitative indicators became more realistic and robust. Gray mold and leaf powdery mildew consistently emerged as the major threats, and hotspot locations were preserved. The proposed edge-AI-based scouting system demonstrated feasibility for real-time monitoring in an artificial-light vertical farm, and systematic outlier removal effectively improved data reliability for precision disease management.",
+      "url": "https://www.semanticscholar.org/paper/a8b36cb4e51f3fad747c8d38117251dfef7e0bb6",
+      "openAccessPdf": "",
+      "source_type": "paper",
+      "paperId": "a8b36cb4e51f3fad747c8d38117251dfef7e0bb6",
+      "year": 2025,
+      "venue": "Korean Journal of Environmental Agriculture",
+      "citationCount": 0,
+      "doi": "10.5338/kjea.2025.44.43"
+    }
+  ],
+  "cached_at": "2026-05-12 02:01:49"
+}

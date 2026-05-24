@@ -1,0 +1,37 @@
+{
+  "category": "turbidity",
+  "query": "basil root disease water quality hydroponic",
+  "limit": 2,
+  "year": null,
+  "documents": [
+    {
+      "category": "turbidity",
+      "query": "basil root disease water quality hydroponic",
+      "title": "Triadic Interaction of Engineered Nanoparticles, PFAS, and Synthetic Root Exudates in Hydroponic Systems: A Surface Chemistry Approach for Water Quality Innovation",
+      "abstract": null,
+      "url": "https://www.semanticscholar.org/paper/b711cdf23e1807ebcbfde19f1f7c73231197143e",
+      "openAccessPdf": "",
+      "source_type": "paper",
+      "paperId": "b711cdf23e1807ebcbfde19f1f7c73231197143e",
+      "year": 2025,
+      "venue": "ACS ES&amp;T Water",
+      "citationCount": 3,
+      "doi": "10.1021/acsestwater.5c00492"
+    },
+    {
+      "category": "turbidity",
+      "query": "basil root disease water quality hydroponic",
+      "title": "Cold Plasma Treatment of Sweet Basil Seeds and Nutrient Water in Hydroponics: Impact on Growth and Quality",
+      "abstract": "ABSTRACT This study investigated the combined effect of two plasma treatments during hydroponic growing of sweet basil plants. Air‐based cold plasma was applied to basil seeds using a Plasmajet. Also, plasma‐activated water (PAW) was produced by using a submerged gliding arc plasmatron system followed by mixing the PAW with a nutrient solution (NS) to make plasma‐activated NS (PANS). Basil plants from untreated and plasma‐treated seeds were grown hydroponically using NS and PANS in a greenhouse in an ebb‐and‐flow system. Basil plants were harvested after 21 days and analyzed for their dry tissue mass, growth parameters (plant height, number of branches and nodes, root length, and leaf index), quality (color, texture), and microbiology (total plate count). The combination of plasma treatment of seeds followed by growing the plants using PANS (treated group) resulted in higher plant height, longer root length, greater number of branches, bigger leaves, and higher zinc content in leaves in comparison to plants grown from untreated seeds and with NS (control group). Plasma treatment did not significantly affect moisture content, number of nodes, dry weight, wet weight, greenness, texture, aroma content, and sensory attributes of basil leaves. However, sensory results showed increased basil flavor, aroma, and bitterness in the tomato basil salad made with PANS‐treated basil, compared to tomato basil salad made with NS‐treated basil. This work revealed that the plasma treatment of the basil seeds combined with PANS could be effective to enhance the growth of sweet basil plants and increase the aroma and flavor of this culinary herb.",
+      "url": "https://www.semanticscholar.org/paper/af8b98e12bf14d57dd2b7ad90900c2a2179e66a6",
+      "openAccessPdf": "https://doi.org/10.1111/1750-3841.70224",
+      "source_type": "paper",
+      "paperId": "af8b98e12bf14d57dd2b7ad90900c2a2179e66a6",
+      "year": 2025,
+      "venue": "Journal of Food Science",
+      "citationCount": 1,
+      "doi": "10.1111/1750-3841.70224"
+    }
+  ],
+  "cached_at": "2026-05-12 01:49:08"
+}

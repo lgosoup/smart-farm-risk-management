@@ -1,0 +1,37 @@
+{
+  "category": "crop_risk",
+  "query": "strawberry root rot hydroponic",
+  "limit": 2,
+  "year": null,
+  "documents": [
+    {
+      "category": "crop_risk",
+      "query": "strawberry root rot hydroponic",
+      "title": "Reprogramming of Strawberry (Fragaria vesca) Root Transcriptome in Response to Phytophthora cactorum",
+      "abstract": "Crown rot (Phytophthora cactorum) causes significant economic losses in strawberry production. The best control strategy would be to use resistant cultivars, but polygenically inherited resistance makes the breeding of the garden strawberry (Fragaria × ananassa) challenging. The diploid wild strawberry Fragaria vesca Hawaii 4 genotype was shown previously to have resistance against crown rot. To explore the resistance mechanisms, we inoculated the roots of Hawaii 4 with P. cactorum in a novel in vitro hydroponic system to minimize interference caused by other microbes. Major reprogramming of the root transcriptome occurred, involving 30% of the genes. The surveillance system of the plant shifted from the development mode to the defense mode. Furthermore, the immune responses as well as many genes involved in the biosynthesis of the defense hormones jasmonic acid, ethylene and salicylic acid were up-regulated. Several major allergen-like genes encoding PR-10 proteins were highly expressed in the inoculated plants, suggesting that they also have a crucial role in the defense responses against P. cactorum. Additionally, flavonoids and terpenoids may be of vital importance, as several genes involved in their biosynthesis were up-regulated. The cell wall biosynthesis and developmental processes were down-regulated, possibly as a result of the down-regulation of the key genes involved in the biosynthesis of growth-promoting hormones brassinosteroids and auxin. Of particular interest was the expression of potential resistance genes in the recently identified P. cactorum resistance locus RPc-1. These new findings help to target the breeding efforts aiming at more resistant strawberry cultivars.",
+      "url": "https://www.semanticscholar.org/paper/456f897686c91a858b08f3d45b3419767d35f35d",
+      "openAccessPdf": "https://journals.plos.org/plosone/article/file?id=10.1371/journal.pone.0161078&type=printable",
+      "source_type": "paper",
+      "paperId": "456f897686c91a858b08f3d45b3419767d35f35d",
+      "year": 2016,
+      "venue": "PLoS ONE",
+      "citationCount": 51,
+      "doi": "10.1371/journal.pone.0161078"
+    },
+    {
+      "category": "crop_risk",
+      "query": "strawberry root rot hydroponic",
+      "title": "The role of Phytophthora cactorum in decline of hydroponically- grown strawberry and evaluation of relative resistance of strawberry cultivars to it",
+      "abstract": null,
+      "url": "https://www.semanticscholar.org/paper/3b546d38ba572ea5942cbdc2b148a85014a85e5e",
+      "openAccessPdf": "",
+      "source_type": "paper",
+      "paperId": "3b546d38ba572ea5942cbdc2b148a85014a85e5e",
+      "year": 2012,
+      "venue": "",
+      "citationCount": 0,
+      "doi": null
+    }
+  ],
+  "cached_at": "2026-05-12 02:01:54"
+}

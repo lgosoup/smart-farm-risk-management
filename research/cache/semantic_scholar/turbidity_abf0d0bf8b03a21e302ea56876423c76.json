@@ -1,0 +1,37 @@
+{
+  "category": "turbidity",
+  "query": "strawberry root disease water quality hydroponic",
+  "limit": 2,
+  "year": null,
+  "documents": [
+    {
+      "category": "turbidity",
+      "query": "strawberry root disease water quality hydroponic",
+      "title": "Enhancing Hydroponic Strawberry Cultivation: Optimizing Water Consumption for Sustainable Yield, Quality and Resource Efficiency",
+      "abstract": "Hydroponic cultivation requires proper fertigation management to avoid over‐fertigation and environmental damage. This 2‐year study evaluated the effects of full irrigation, partial root‐zone drying (PRD) and sustained deficit irrigation (SDI) on hydroponic strawberry cultivation to optimize water and fertilizer use. In the first year, various irrigation and fertilizer levels were tested, and on the basis of these results, the second year focused on full and half irrigation with different nutrient solution concentrations. This study evaluated plant morphology, physiochemical traits (e.g., chlorophyll, phenolics, and electrolyte leakage) and fruit quality (TSS/TA and L/D ratio) while calculating irrigation water productivity and biomass water use efficiency (WUE). Nutrient element contents were measured in the substrate and leaves. The second‐year results indicated that irrigation treatments significantly influenced fruit quality and yield. The PRD, which was fertigated with a half‐pot capacity (PRD2), was the best approach because it does not reduce nutrients, preserves substrate health and reduces fertigation by 50%. PRD2 is a drought resistance strategy that reduces vegetative growth and leaf surface area, leading to increased yield and improved berry quality. Additionally, these findings suggest that fertigation adjustments can improve plant stress resistance. These results demonstrate the potential for scalable and sustainable hydroponic strawberry production, offering practical applications for water‐efficient agriculture in resource‐limited environments.",
+      "url": "https://www.semanticscholar.org/paper/1dde58b6fe80bdaa9af4af73a013872b3f887143",
+      "openAccessPdf": "",
+      "source_type": "paper",
+      "paperId": "1dde58b6fe80bdaa9af4af73a013872b3f887143",
+      "year": 2025,
+      "venue": "Irrigation and Drainage",
+      "citationCount": 0,
+      "doi": "10.1002/ird.3117"
+    },
+    {
+      "category": "turbidity",
+      "query": "strawberry root disease water quality hydroponic",
+      "title": "Triadic Interaction of Engineered Nanoparticles, PFAS, and Synthetic Root Exudates in Hydroponic Systems: A Surface Chemistry Approach for Water Quality Innovation",
+      "abstract": null,
+      "url": "https://www.semanticscholar.org/paper/b711cdf23e1807ebcbfde19f1f7c73231197143e",
+      "openAccessPdf": "",
+      "source_type": "paper",
+      "paperId": "b711cdf23e1807ebcbfde19f1f7c73231197143e",
+      "year": 2025,
+      "venue": "ACS ES&amp;T Water",
+      "citationCount": 3,
+      "doi": "10.1021/acsestwater.5c00492"
+    }
+  ],
+  "cached_at": "2026-05-12 02:01:37"
+}

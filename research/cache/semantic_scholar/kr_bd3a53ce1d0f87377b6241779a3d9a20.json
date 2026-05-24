@@ -1,0 +1,37 @@
+{
+  "category": "KR",
+  "query": "딸기 수경재배 적정 온도 pH EC 양액",
+  "limit": 2,
+  "year": null,
+  "documents": [
+    {
+      "category": "KR",
+      "query": "딸기 수경재배 적정 온도 pH EC 양액",
+      "title": "Light quality and photoperiod affect growth of sowthistle (Ixeris dentata Nakai) in a closed-type plant production system.",
+      "abstract": null,
+      "url": "https://www.semanticscholar.org/paper/ad299ec9353256e75fd61120fa1793e12ccd49d6",
+      "openAccessPdf": "",
+      "source_type": "paper",
+      "paperId": "ad299ec9353256e75fd61120fa1793e12ccd49d6",
+      "year": 2016,
+      "venue": "",
+      "citationCount": 8,
+      "doi": "10.12972/KJHST.20160005"
+    },
+    {
+      "category": "KR",
+      "query": "딸기 수경재배 적정 온도 pH EC 양액",
+      "title": "Influence of Bicarbonate Concentrations in Nutrient Solution on the Growth, Occurrence of Daughter Plants and Nutrient Uptake in Vegetative Propagation of ‘Seolhyang’ Strawberry",
+      "abstract": null,
+      "url": "https://www.semanticscholar.org/paper/4ebcc068a4b58ba7224bcd1c7df395a23a366ac9",
+      "openAccessPdf": "https://koreascience.or.kr:80/article/JAKO201415641085274.pdf",
+      "source_type": "paper",
+      "paperId": "4ebcc068a4b58ba7224bcd1c7df395a23a366ac9",
+      "year": 2014,
+      "venue": "",
+      "citationCount": 7,
+      "doi": "10.7235/HORT.2014.13074"
+    }
+  ],
+  "cached_at": "2026-05-12 02:01:58"
+}

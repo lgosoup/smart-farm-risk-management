@@ -1,0 +1,37 @@
+{
+  "category": "crop_risk",
+  "query": "strawberry bolting temperature hydroponic",
+  "limit": 2,
+  "year": null,
+  "documents": [
+    {
+      "category": "crop_risk",
+      "query": "strawberry bolting temperature hydroponic",
+      "title": "Performance Evaluation of a Chiller System for Nutrient Solutions Temperature Control in Lowland Tropical Hydroponic Strawberry Cultivation",
+      "abstract": "Hydroponic strawberry cultivation in tropical lowland regions is constrained by elevated ambient temperatures that increase Nutrient Solution Temperature (NST) beyond the optimal Root-Zone Temperature (RZT) range required for plant growth, leading to thermal stress, reduced nutrient uptake, and yield losses. This study aimed to design and evaluate the performance of a chiller-based cooling system integrated into a recirculating hydroponic setup to maintain the NST within the optimal range of 17–20°C for strawberry cultivation. A laboratory-scale prototype employing a vapor-compression refrigeration system using the R32 refrigerant was developed and tested under tropical conditions. The thermal performance of the system was assessed through cooling load calculations, thermodynamic analysis, and real-time monitoring of temperature, pressure, electrical parameters, and hydraulic conditions, whereas plant growth responses were observed qualitatively. The results demonstrate that the proposed system effectively reduced NST from elevated initial conditions to the target range within 18 minutes and maintained temperature stability using an on–off control strategy. The system achieved a stable actual Coefficient of Performance (COP) of approximately 4.02 with an overall efficiency of approximately 56%, indicating reliable operation under practical conditions. Root-zone temperature control significantly enhanced vegetative growth, leaf quality, and fruit uniformity compared with plants grown without cooling. The findings confirmed that direct nutrient solution cooling using a vapor-compression chiller is a viable and scalable engineering solution for hydroponic strawberry cultivation in tropical lowlands. This study contributes empirical performance data to the limited literature on chiller-integrated hydroponic systems and provides a practical foundation for extending high-value strawberry production into hot climates, while supporting sustainable and controlled agricultural practices.",
+      "url": "https://www.semanticscholar.org/paper/af6db3aa1599fc482465211ae3055a9a25b11296",
+      "openAccessPdf": "",
+      "source_type": "paper",
+      "paperId": "af6db3aa1599fc482465211ae3055a9a25b11296",
+      "year": 2026,
+      "venue": "Journal Keteknikan Pertanian",
+      "citationCount": 0,
+      "doi": "10.19028/jtep.014.1.162-177"
+    },
+    {
+      "category": "crop_risk",
+      "query": "strawberry bolting temperature hydroponic",
+      "title": "Effects of cold water on plant growth and development of strawberry under hydroponic system",
+      "abstract": "\n Climate change has significantly impacted the flowering patterns of strawberry plants cultivated under typical environmental conditions, which conventionally require low temperatures to induce flowering. This study aimed to investigate the effects of cold-water irrigation on the growth and development of strawberries grown in a hydroponic system. The experiment was conducted in an uncontrolled greenhouse environment at the Faculty of Agriculture, Chiang Mai University, Thailand. A factorial arrangement of 2 × 2 in a completely randomized design was used, consisting of two root-zone cooling temperatures (cold water temperature at 10°C ± 1°C and ambient temperature water at 26°C ± 1°C) and two strawberry cultivars (‘Pharachatan 80’ or ‘P80’ and ‘Akihime’), with five replications. The results revealed that cold water temperature significantly enhanced vegetative growth parameters, including plant height (26.59 cm), canopy size (28.97 cm), leaf length (9.07 cm), leaf width (8.17 cm), petiole length (25.15 cm), root length (48.31 cm), and leaf number (8.36 leaves) compared to ambient temperature water. However, no significant interaction between cooling temperatures and strawberry cultivars was observed regarding vegetative growth. Conversely, a significant interaction between two factors was observed in flowering characteristics. The ‘Akihime’ cultivar produced a significantly higher number of flowers (10.64) under cold water conditions compared to ‘P80’ (6.13). Despite differences in flower number, no significant variation was observed in the number of fruits between the two cultivars; however, cultivar ‘P80’ exhibited superior fruit quality characteristics compared to ‘Akihime'. Notably, neither cultivar flowered under ambient temperature water conditions. These findings indicate that cold-water irrigation substantially promotes vegetative growth and effectively induces flowering in hydroponically grown strawberries under the uncontrolled environment of a greenhouse, highlighting the potential application of hydrocooling to enhance strawberry productivity, especially in regions increasingly impacted by rising temperatures due to climate change.\n \n \n \n \n What is already known on this subject?\n In recent years, climate change has caused unpredictable weather patterns, leading to agricultural challenges in Thailand. Rising temperatures, shorter winters, prolonged summers, irregular rainfall, and increased pests and diseases have negatively affected strawberry flowering under natural conditions, which rely on cold temperatures for floral induction, especially in tropical climates.\n \n \n What are the new findings?\n These findings demonstrate that cold-water hydroponics significantly enhances the vegetative growth, root development, and flowering of strawberries under tropical climates. This study supports the potential application of hydrocooling as a method to improve strawberry cultivation, particularly in regions affected by rising temperatures due to climate change.\n \n \n What is the expected impact on horticulture?\n The findings from this research shall serve as a guideline for inducing strawberry flowering in Thailand and potentially extend their off-season production in hydroponic systems.\n \n \n",
+      "url": "https://www.semanticscholar.org/paper/32bb9bc4aff87f077708525b54afc6fa20af9d49",
+      "openAccessPdf": "",
+      "source_type": "paper",
+      "paperId": "32bb9bc4aff87f077708525b54afc6fa20af9d49",
+      "year": 2025,
+      "venue": "European Journal of Horticultural Science",
+      "citationCount": 1,
+      "doi": "10.1079/ejhs.2025.0010"
+    }
+  ],
+  "cached_at": "2026-05-12 02:01:56"
+}

@@ -1,0 +1,37 @@
+{
+  "category": "DO",
+  "query": "strawberry hydroponic dissolved oxygen",
+  "limit": 2,
+  "year": null,
+  "documents": [
+    {
+      "category": "DO",
+      "query": "strawberry hydroponic dissolved oxygen",
+      "title": "Characterization of nutrient solution changes during flow through media",
+      "abstract": null,
+      "url": "https://www.semanticscholar.org/paper/e53e9d84740d0fbfcfe0e53f707a1c057d83e07a",
+      "openAccessPdf": "",
+      "source_type": "paper",
+      "paperId": "e53e9d84740d0fbfcfe0e53f707a1c057d83e07a",
+      "year": 2005,
+      "venue": "",
+      "citationCount": 0,
+      "doi": "10.4271/2005-01-2774"
+    },
+    {
+      "category": "DO",
+      "query": "strawberry hydroponic dissolved oxygen",
+      "title": "Boosting Hydroponic Production of Kale and Arugula by Managing Dissolved Oxygen",
+      "abstract": "The dissolved oxygen (DO) level in the hydroponic solution is an important factor influencing plant development and water and nutrient uptake. There is limited information on the optimal DO concentrations and methods to precisely control the levels for leafy greens growth in hydroponics. In this greenhouse study, we built a real-time adjusted DO enrichment system using different techniques (oxygen generator and infuser) and sensor-based monitoring system in deep water culture hydroponics. We evaluated the effects of three DO enrichment levels (10, 15, and 20 mg·L−1) on arugula (Eruca vesicaria ‘Astro’ and ‘Esmee’) and kale (Brassica oleracea ‘KX-1’ and ‘Red Russian’) growth in comparison with the traditional air pump–based aeration system. Weekly measurements were taken for plant height, leaf greenness, fresh and dry biomass, root–shoot ratio, until final harvest. We also measured leaf gas exchange, soluble solids content (SSC), and nutrient concentration at the end. Additionally, energy costs and yield returns were evaluated. The results showed that DO enrichment level higher than 15 mg·L−1 benefited arugula biomass (63% to 191% improvement) but had no significant effect on kale growth. The treatments did not alter arugula or kale root-to-shoot ratios, SSC, or gas exchange, and the impact on plant nutrient content varied. DO enrichment treatments incurred over 140% higher energy costs (electricity) compared with the control (air pump only), with only arugula grown under DO levels of 20 mg·L−1 showing net economic returns ($0.14 increased per plant) that justified the increased energy expenditure. This study demonstrated using DO enrichment to benefit hydroponic plant production was crop- and concentration-specific.",
+      "url": "https://www.semanticscholar.org/paper/e3aa69b4e922c1277a013bdd554e59281930a807",
+      "openAccessPdf": "",
+      "source_type": "paper",
+      "paperId": "e3aa69b4e922c1277a013bdd554e59281930a807",
+      "year": 2025,
+      "venue": "Hortscience",
+      "citationCount": 0,
+      "doi": "10.21273/hortsci18774-25"
+    }
+  ],
+  "cached_at": "2026-05-12 02:01:39"
+}

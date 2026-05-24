@@ -1,0 +1,37 @@
+{
+  "category": "KR",
+  "query": "딸기 수경재배 양액 기준",
+  "limit": 2,
+  "year": null,
+  "documents": [
+    {
+      "category": "KR",
+      "query": "딸기 수경재배 양액 기준",
+      "title": "딸기 수경재배 시 '베리스타'와 '죽향'의 생육과 품질 향상을 위한 적정 양액농도 설정",
+      "abstract": null,
+      "url": "https://www.semanticscholar.org/paper/c345fe417ec8ebe6e8c41405a6d8ec5c5f945cd7",
+      "openAccessPdf": "",
+      "source_type": "paper",
+      "paperId": "c345fe417ec8ebe6e8c41405a6d8ec5c5f945cd7",
+      "year": 2017,
+      "venue": "",
+      "citationCount": 0,
+      "doi": null
+    },
+    {
+      "category": "KR",
+      "query": "딸기 수경재배 양액 기준",
+      "title": "Ict 기반의 이동식 다단 수경재배 시스템",
+      "abstract": null,
+      "url": "https://www.semanticscholar.org/paper/51e19c029526bcacbd7703d38d3a1cd42425d07d",
+      "openAccessPdf": "",
+      "source_type": "paper",
+      "paperId": "51e19c029526bcacbd7703d38d3a1cd42425d07d",
+      "year": 2017,
+      "venue": "",
+      "citationCount": 0,
+      "doi": null
+    }
+  ],
+  "cached_at": "2026-05-12 02:02:01"
+}

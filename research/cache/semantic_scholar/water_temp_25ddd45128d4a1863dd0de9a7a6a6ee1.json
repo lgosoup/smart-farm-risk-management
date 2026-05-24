@@ -1,0 +1,37 @@
+{
+  "category": "water_temp",
+  "query": "basil hydroponic water temperature range",
+  "limit": 2,
+  "year": null,
+  "documents": [
+    {
+      "category": "water_temp",
+      "query": "basil hydroponic water temperature range",
+      "title": "Effects of Elevated Water Temperature on Growth of Basil Using Nutrient Film Technique",
+      "abstract": "Hydroponic systems have become increasingly popular for growers in recent years for year-round local production. Whereas optimal air temperature for plant growth has been considered, optimal root zone temperatures have not been examined as thoroughly. The objective of this research was to determine the optimal water temperature for growing different types of basil hydroponically. Research was conducted at the greenhouses in Stillwater, OK. Seventeen cultivars were selected from six main types of basil and transplanted into Nutrient Film Technique hydroponic systems, and three water temperature treatments were applied: 23, 27.5, and 31 °C. Height, width, average leaf area, leaf number, chlorophyll concentration (chlorophyll readings obtained with the Minolta-502 SPAD meter), shoot fresh weight, shoot dry weight, and root dry weight were evaluated. In general, the 27.5 and 31 °C treatments were not greater than each other in terms of leaf number and root dry weight but were greater than the 23 °C treatment. The 31 °C treatment had the greatest height, whereas width, average leaf area, shoot fresh weight, and shoot dry weight were not different from the 27.5 °C treatment. The 23 °C treatment had the greatest chlorophyll concentration (SPAD) value. Cultivar differences were significant in average leaf area and SPAD, with ‘Spicy Bush’ having the smallest leaf area and purple basil having the greatest SPAD value. For all cultivars except purple basil and ‘Large Leaf Italian’, a 27.5 °C water temperature would be recommended for greater plant growth.",
+      "url": "https://www.semanticscholar.org/paper/7ff3c0886191da6ae14e84f39dc3e731b3140dea",
+      "openAccessPdf": "https://journals.ashs.org/downloadpdf/journals/hortsci/57/8/article-p925.pdf",
+      "source_type": "paper",
+      "paperId": "7ff3c0886191da6ae14e84f39dc3e731b3140dea",
+      "year": 2022,
+      "venue": "Hortscience",
+      "citationCount": 22,
+      "doi": "10.21273/hortsci16690-22"
+    },
+    {
+      "category": "water_temp",
+      "query": "basil hydroponic water temperature range",
+      "title": "The Effect of The Fertilizer Water Cycle on The Water Quality of The Hydroponic System",
+      "abstract": "Water quality changes in the hydroponic planting system planted with curly kale (kailan) were examined by measuring physiochemical analysis over three planting cycles. The water quality parameters measured included temperature, pH, Electrical Conductivity (EC), Biochemical Oxygen Demand (BOD), and Chemical Oxygen Demand (COD). In this study we also measured 13 elements in water samples which are Ammoniacal Nitrogen (AN), Phosphate (PO4), Sulphate (SO4), Nitrate (NO3), Boron (B), Calcium (Ca), Copper (Cu), Iron (Fe), Potassium (K), Magnesium (Mg), Manganese (Mn), Phosphorus (P) and Zinc (Zn). The analysis results compare the observed values with those recommended by the National Water Quality Standards (NWQS) Class IV (water quality standard for irrigation purposes). Chemical analysis of AN, B, Cu, Mn, Zn, COD, and BOD obtained from water sampling cycles 1–3 remained within the acceptable range. The determination of minerals was also relatively low compared to the NWQS value. However, the water analysis results for cycle 3 showed that Nitrate and Fe levels exceeded the maximum limit set by NWQS. Phosphate and K demonstrated a similar pattern, even though no fixed value exists for these parameters in the NWQS. The results of the water quality analysis during the cultivation process demonstrate that the fertilizer water can still be recycled, contributing to water conservation and pollution control.",
+      "url": "https://www.semanticscholar.org/paper/1b9d3512692b70af931bc54d1918cf7e0198e67d",
+      "openAccessPdf": "",
+      "source_type": "paper",
+      "paperId": "1b9d3512692b70af931bc54d1918cf7e0198e67d",
+      "year": 2025,
+      "venue": "Advances in Agricultural and Food Research Journal",
+      "citationCount": 0,
+      "doi": "10.36877/aafrj.a0000578"
+    }
+  ],
+  "cached_at": "2026-05-12 01:48:46"
+}

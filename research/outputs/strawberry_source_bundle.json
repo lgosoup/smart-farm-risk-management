@@ -1,0 +1,927 @@
+{
+  "bundle_type": "source_bundle",
+  "crop_info": {
+    "crop": "strawberry",
+    "crop_common_name_en": "strawberry",
+    "crop_common_name_ko": "딸기",
+    "scientific_name": "Fragaria × ananassa"
+  },
+  "query_plan": {
+    "water_temp": [
+      "strawberry hydroponic water temperature range",
+      "strawberry nutrient solution temperature hydroponic",
+      "Fragaria × ananassa hydroponic water temperature"
+    ],
+    "pH": [
+      "strawberry hydroponic pH range",
+      "strawberry nutrient solution pH optimal",
+      "Fragaria × ananassa hydroponic pH nutrient solution"
+    ],
+    "EC": [
+      "strawberry hydroponic EC range",
+      "strawberry nutrient solution electrical conductivity",
+      "Fragaria × ananassa hydroponic electrical conductivity"
+    ],
+    "flow": [
+      "strawberry hydroponic flow rate",
+      "strawberry hydroponic water circulation",
+      "strawberry hydroponic nutrient solution flow"
+    ],
+    "turbidity": [
+      "strawberry hydroponic water quality turbidity",
+      "strawberry root disease water quality hydroponic",
+      "strawberry hydroponic nutrient solution clarity"
+    ],
+    "DO": [
+      "strawberry hydroponic dissolved oxygen",
+      "strawberry root oxygen hydroponic",
+      "Fragaria × ananassa hydroponic dissolved oxygen root"
+    ],
+    "humidity": [
+      "strawberry growing relative humidity",
+      "strawberry greenhouse humidity range",
+      "Fragaria × ananassa humidity plant growth"
+    ],
+    "light": [
+      "strawberry hydroponic light requirement",
+      "strawberry PPFD DLI photoperiod hydroponic",
+      "Fragaria × ananassa light requirement hydroponic"
+    ],
+    "crop_risk": [
+      "strawberry root rot hydroponic",
+      "strawberry bolting temperature hydroponic",
+      "strawberry disease hydroponic nutrient solution",
+      "Fragaria × ananassa root disease hydroponic"
+    ],
+    "KR": [
+      "딸기 수경재배 적정 온도 pH EC 양액",
+      "딸기 수경재배 양액 기준",
+      "딸기 수경재배 생육 단계별 양액 농도",
+      "딸기 수경재배 병해 뿌리"
+    ]
+  },
+  "search_config": {
+    "limit_per_query": 2,
+    "max_queries_per_category": 2,
+    "year": null,
+    "use_cache": true
+  },
+  "search_summary": {
+    "total_raw_documents": 40,
+    "total_unique_documents": 34,
+    "category_count": 10,
+    "query_count_executed": 20
+  },
+  "query_results": [
+    {
+      "category": "water_temp",
+      "query": "strawberry hydroponic water temperature range",
+      "status": "ok",
+      "message": "Search succeeded.",
+      "document_count": 2
+    },
+    {
+      "category": "water_temp",
+      "query": "strawberry nutrient solution temperature hydroponic",
+      "status": "ok",
+      "message": "Search succeeded.",
+      "document_count": 2
+    },
+    {
+      "category": "pH",
+      "query": "strawberry hydroponic pH range",
+      "status": "ok",
+      "message": "Search succeeded.",
+      "document_count": 2
+    },
+    {
+      "category": "pH",
+      "query": "strawberry nutrient solution pH optimal",
+      "status": "ok",
+      "message": "Search succeeded.",
+      "document_count": 2
+    },
+    {
+      "category": "EC",
+      "query": "strawberry hydroponic EC range",
+      "status": "ok",
+      "message": "Search succeeded.",
+      "document_count": 2
+    },
+    {
+      "category": "EC",
+      "query": "strawberry nutrient solution electrical conductivity",
+      "status": "ok",
+      "message": "Search succeeded.",
+      "document_count": 2
+    },
+    {
+      "category": "flow",
+      "query": "strawberry hydroponic flow rate",
+      "status": "ok",
+      "message": "Search succeeded.",
+      "document_count": 2
+    },
+    {
+      "category": "flow",
+      "query": "strawberry hydroponic water circulation",
+      "status": "ok",
+      "message": "Search succeeded.",
+      "document_count": 2
+    },
+    {
+      "category": "turbidity",
+      "query": "strawberry hydroponic water quality turbidity",
+      "status": "ok",
+      "message": "Search succeeded.",
+      "document_count": 2
+    },
+    {
+      "category": "turbidity",
+      "query": "strawberry root disease water quality hydroponic",
+      "status": "ok",
+      "message": "Search succeeded.",
+      "document_count": 2
+    },
+    {
+      "category": "DO",
+      "query": "strawberry hydroponic dissolved oxygen",
+      "status": "ok",
+      "message": "Search succeeded.",
+      "document_count": 2
+    },
+    {
+      "category": "DO",
+      "query": "strawberry root oxygen hydroponic",
+      "status": "ok",
+      "message": "Search succeeded.",
+      "document_count": 2
+    },
+    {
+      "category": "humidity",
+      "query": "strawberry growing relative humidity",
+      "status": "ok",
+      "message": "Search succeeded.",
+      "document_count": 2
+    },
+    {
+      "category": "humidity",
+      "query": "strawberry greenhouse humidity range",
+      "status": "ok",
+      "message": "Search succeeded.",
+      "document_count": 2
+    },
+    {
+      "category": "light",
+      "query": "strawberry hydroponic light requirement",
+      "status": "ok",
+      "message": "Search succeeded.",
+      "document_count": 2
+    },
+    {
+      "category": "light",
+      "query": "strawberry PPFD DLI photoperiod hydroponic",
+      "status": "ok",
+      "message": "Search succeeded.",
+      "document_count": 2
+    },
+    {
+      "category": "crop_risk",
+      "query": "strawberry root rot hydroponic",
+      "status": "ok",
+      "message": "Search succeeded.",
+      "document_count": 2
+    },
+    {
+      "category": "crop_risk",
+      "query": "strawberry bolting temperature hydroponic",
+      "status": "ok",
+      "message": "Search succeeded.",
+      "document_count": 2
+    },
+    {
+      "category": "KR",
+      "query": "딸기 수경재배 적정 온도 pH EC 양액",
+      "status": "ok",
+      "message": "Search succeeded.",
+      "document_count": 2
+    },
+    {
+      "category": "KR",
+      "query": "딸기 수경재배 양액 기준",
+      "status": "ok",
+      "message": "Search succeeded.",
+      "document_count": 2
+    }
+  ],
+  "documents": [
+    {
+      "category": "water_temp",
+      "query": "strawberry hydroponic water temperature range",
+      "title": "Spot Cooling System Development for Ever-bearing Strawberry by Using Low Density Polyethylene Pipe",
+      "abstract": null,
+      "url": "https://www.semanticscholar.org/paper/4c420c75834bbee270a5c57cf54bed30efb494ff",
+      "openAccessPdf": "https://doi.org/10.5389/ksae.2014.56.6.149",
+      "source_type": "paper",
+      "paperId": "4c420c75834bbee270a5c57cf54bed30efb494ff",
+      "year": 2014,
+      "venue": "",
+      "citationCount": 2,
+      "doi": "10.5389/KSAE.2014.56.6.149",
+      "matched_queries": [
+        {
+          "category": "water_temp",
+          "query": "strawberry hydroponic water temperature range"
+        },
+        {
+          "category": "flow",
+          "query": "strawberry hydroponic water circulation"
+        }
+      ]
+    },
+    {
+      "category": "water_temp",
+      "query": "strawberry hydroponic water temperature range",
+      "title": "연질 PE관을 이용한 여름딸기 부분냉방기술 개발",
+      "abstract": null,
+      "url": "https://www.semanticscholar.org/paper/a2792f4ffdadcc2b4b9f70e257348b8770902c64",
+      "openAccessPdf": "",
+      "source_type": "paper",
+      "paperId": "a2792f4ffdadcc2b4b9f70e257348b8770902c64",
+      "year": 2014,
+      "venue": "",
+      "citationCount": 0,
+      "doi": null,
+      "matched_queries": [
+        {
+          "category": "water_temp",
+          "query": "strawberry hydroponic water temperature range"
+        },
+        {
+          "category": "flow",
+          "query": "strawberry hydroponic water circulation"
+        }
+      ]
+    },
+    {
+      "category": "water_temp",
+      "query": "strawberry nutrient solution temperature hydroponic",
+      "title": "Potassium Sulfate Supplementation with Elevated Electrical Conductivity Was Unproductive for Hydroponic Strawberry at the Original Yamazaki Nutrient Solution Nitrogen Level",
+      "abstract": "The production of strawberries (Fragaria ×ananassa) in hydroponic systems has been increasing. In hydroponic systems, precise nutrient management is crucial for optimal plant growth and fruit production. Among essential elements, potassium (K) is a key nutrient that affects fruit yield and quality in fruiting crops. The objective of this study was to investigate whether increasing the K concentration in the Yamazaki strawberry nutrient solution could enhance plant growth, fruit yield, and fruit quality in hydroponic strawberries. Bare-root plants of strawberry ‘Monterey’ and ‘San Andreas’ were planted in a deep water culture hydroponic system and grown with initial K concentrations of 117, 194, 271, and 348 mg·L−1 under the same initial nitrogen concentration of 77 mg·L−1. As the K concentration increased from 117 to 348 mg·L−1, the nutrient solution electrical conductivity increased from 1.0 to 1.9 dS·m−1. The experiment was conducted inside an indoor vertical farm at a 23 °C air temperature with an extended photon flux density (400–750 nm) of 350 µmol·m−2·s−1 under an 18-hour photoperiod. Increasing the K concentration from 117 to 348 mg·L−1 had minimal effects on plant growth characteristics of both cultivars, although root dry mass of ‘Monterey’ increased linearly with increasing K. Increasing the K concentration from 117 to 348 mg·L−1 did not affect the total fruit number or total fruit fresh mass of ‘Monterey’, but for ‘San Andreas’, it reduced the total fruit number by 34% and total fruit fresh mass by 45%. Additionally, increasing the K concentration from 117 to 348 mg·L−1 reduced the individual fruit mass, fruit length, and fruit diameter and increased titratable acidity in both cultivars. These results indicate that increasing the K concentration in the Yamazaki strawberry nutrient solution did not benefit plant growth, fruit yield, or fruit quality of the hydroponically grown strawberries ‘Monterey’ or ‘San Andreas’.",
+      "url": "https://www.semanticscholar.org/paper/c316f232323aec4becf9d9eaa835c4bbebff217f",
+      "openAccessPdf": "",
+      "source_type": "paper",
+      "paperId": "c316f232323aec4becf9d9eaa835c4bbebff217f",
+      "year": 2025,
+      "venue": "Hortscience",
+      "citationCount": 0,
+      "doi": "10.21273/hortsci18252-24",
+      "matched_queries": [
+        {
+          "category": "water_temp",
+          "query": "strawberry nutrient solution temperature hydroponic"
+        },
+        {
+          "category": "EC",
+          "query": "strawberry nutrient solution electrical conductivity"
+        }
+      ]
+    },
+    {
+      "category": "water_temp",
+      "query": "strawberry nutrient solution temperature hydroponic",
+      "title": "Performance Evaluation of a Chiller System for Nutrient Solutions Temperature Control in Lowland Tropical Hydroponic Strawberry Cultivation",
+      "abstract": "Hydroponic strawberry cultivation in tropical lowland regions is constrained by elevated ambient temperatures that increase Nutrient Solution Temperature (NST) beyond the optimal Root-Zone Temperature (RZT) range required for plant growth, leading to thermal stress, reduced nutrient uptake, and yield losses. This study aimed to design and evaluate the performance of a chiller-based cooling system integrated into a recirculating hydroponic setup to maintain the NST within the optimal range of 17–20°C for strawberry cultivation. A laboratory-scale prototype employing a vapor-compression refrigeration system using the R32 refrigerant was developed and tested under tropical conditions. The thermal performance of the system was assessed through cooling load calculations, thermodynamic analysis, and real-time monitoring of temperature, pressure, electrical parameters, and hydraulic conditions, whereas plant growth responses were observed qualitatively. The results demonstrate that the proposed system effectively reduced NST from elevated initial conditions to the target range within 18 minutes and maintained temperature stability using an on–off control strategy. The system achieved a stable actual Coefficient of Performance (COP) of approximately 4.02 with an overall efficiency of approximately 56%, indicating reliable operation under practical conditions. Root-zone temperature control significantly enhanced vegetative growth, leaf quality, and fruit uniformity compared with plants grown without cooling. The findings confirmed that direct nutrient solution cooling using a vapor-compression chiller is a viable and scalable engineering solution for hydroponic strawberry cultivation in tropical lowlands. This study contributes empirical performance data to the limited literature on chiller-integrated hydroponic systems and provides a practical foundation for extending high-value strawberry production into hot climates, while supporting sustainable and controlled agricultural practices.",
+      "url": "https://www.semanticscholar.org/paper/af6db3aa1599fc482465211ae3055a9a25b11296",
+      "openAccessPdf": "",
+      "source_type": "paper",
+      "paperId": "af6db3aa1599fc482465211ae3055a9a25b11296",
+      "year": 2026,
+      "venue": "Journal Keteknikan Pertanian",
+      "citationCount": 0,
+      "doi": "10.19028/jtep.014.1.162-177",
+      "matched_queries": [
+        {
+          "category": "water_temp",
+          "query": "strawberry nutrient solution temperature hydroponic"
+        },
+        {
+          "category": "crop_risk",
+          "query": "strawberry bolting temperature hydroponic"
+        }
+      ]
+    },
+    {
+      "category": "pH",
+      "query": "strawberry hydroponic pH range",
+      "title": "Effects of varying electrical conductivity levels on plant growth, yield, and photosynthetic parameters of Tochiotome strawberry (Fragaria × ananassa 'Tochiotome) in a greenhouse",
+      "abstract": "This study aimed to identify the salinity threshold affecting plant health and optimal conditions for sustainable strawberry cultivation in greenhouses. By identifying the optimal EC range that promotes plant growth while minimizing salinity stress, this study offers strategies to mitigate the negative effects of salinity on crop production. This study was conducted in a hydroponic system, where strawberries were irrigated with different EC levels (0.5, 1.0, 2.0, 4.0, 6.0, and 8.0 dS·m⁻¹) using Hoagland nutrient solutions. We applied irrigation treatments with different electrical conductivity (EC) levels to evaluate their effects on the growth, yield, and photosynthetic performance of Fragaria × ananassa ‘Tochiotome’ strawberries. The crown and leaf fresh weights, root length, individual fruit weight, leaf area, SPAD values (chlorophyll content), Brix percentage (fruit sweetness), and overall yield were measured. The results showed that EC influenced water uptake, nutrient availability, and physiological aspects of the plant. The EC levels above 6.0 dS·m⁻¹ significantly reduced crown and leaf fresh weights due to osmotic stress and nutrient imbalances, negatively affecting biomass accumulation. Root length also decreased at higher EC levels, indicating compromised root growth, while individual fruit weight was declined likely due to impaired nutrient uptake. In contrast, leaf area, SPAD values (chlorophyll content indicator), and Brix percentage (fruit sweetness) remained stable, suggesting resilience in some plant traits. Yield was declined at both high and low EC levels, which might be attributed to a reduced fruit size and nutrient uptake limitations. Moderate salinity levels (2.0–4.0 dS·m⁻¹) initially improved photosynthetic parameters, but higher levels (6.0–8.0 dS·m⁻¹) reduced photosynthetic efficiency. These results suggest that maintaining the EC between 2.0 and 4.0 dS·m⁻¹ optimizes plant growth and photosynthesis, whereas deviations above or below this range may lead to salinity stress or nutrient deficiencies.",
+      "url": "https://www.semanticscholar.org/paper/f179f0a0213029351c4e39692ca32b377f1bd68a",
+      "openAccessPdf": "",
+      "source_type": "paper",
+      "paperId": "f179f0a0213029351c4e39692ca32b377f1bd68a",
+      "year": 2025,
+      "venue": "Australian Journal of Crop Science",
+      "citationCount": 2,
+      "doi": "10.21475/ajcs.25.19.04.p322",
+      "matched_queries": [
+        {
+          "category": "pH",
+          "query": "strawberry hydroponic pH range"
+        },
+        {
+          "category": "EC",
+          "query": "strawberry hydroponic EC range"
+        }
+      ]
+    },
+    {
+      "category": "pH",
+      "query": "strawberry hydroponic pH range",
+      "title": "Organic, conventional and hydroponic vegetables: Can 15N natural abundance of farm N inputs differentiate mode of production?",
+      "abstract": "Abstract Organic and synthetic N-fertilizers normally show quite different δ15N values, which can be imprinted in agricultural soils and growing plants. Therefore, δ15N values have been considered as a promising marker to differentiate organic plant products from other farming systems that do not exclude synthetic N-fertilizer use. The aim of this study was to evaluate the δ15N values of fertilizer N sources from different farming systems and the δ15N values of the plant products produced in situ. Samples of soil, substrates, N sources, and plant products (lettuce, tomato, and strawberry) were sampled from well documented organic (n = 2), conventional (n = 4) and hydroponic (n = 2) farms in the southern Brazil. Plant parts were also compared. δ15N values of N-inputs (substrates, organic and synthetic fertilizers) overlapped, within the range of −2 to +8 ‰. Soil samples from conventional farms (+5.3 to +9.8 ‰) showed higher δ15N values than from organic systems (+4.9 to +6.5 ‰). As a consequence, δ 15N values had limited value as a tool to differentiate plant products from different farming systems. However, it may be a potentially more useful technique for strawberries but not for tomatoes and lettuce. The inconsistency found in the differentiation between farming systems can be attributed to the overlapping of δ15N values of the fertilizer N sources used on those farms.",
+      "url": "https://www.semanticscholar.org/paper/cff48915ee09bac02063e70debd20c00ad466a51",
+      "openAccessPdf": "",
+      "source_type": "paper",
+      "paperId": "cff48915ee09bac02063e70debd20c00ad466a51",
+      "year": 2020,
+      "venue": "",
+      "citationCount": 9,
+      "doi": "10.1016/j.scienta.2020.109219",
+      "matched_queries": [
+        {
+          "category": "pH",
+          "query": "strawberry hydroponic pH range"
+        }
+      ]
+    },
+    {
+      "category": "pH",
+      "query": "strawberry nutrient solution pH optimal",
+      "title": "Fuzzy Control Application to an Irrigation System of Hydroponic Crops under Greenhouse: Case Cultivation of Strawberries (Fragaria Vesca)",
+      "abstract": "Hydroponics refers to a modern set of agricultural techniques that do not require the use of natural soil for plant germination and development. These types of crops use artificial irrigation systems that, together with fuzzy control methods, allow plants to be provided with the exact amount of nutrients for optimal growth. The diffuse control begins with the sensorization of the agricultural variables that intervene in the hydroponic ecosystem, such as the environmental temperature, electrical conductivity of the nutrient solution and the temperature, humidity, and pH of the substrate. Based on this knowledge, these variables can be controlled to be within the ranges required for optimal plant growth, reducing the risk of a negative impact on the crop. This research takes, as a case study, the application of fuzzy control methods to hydroponic strawberry crops (Fragaria vesca). It is shown that, under this scheme, a greater foliage of the plants and a larger size of the fruits are obtained in comparison with natural cultivation systems in which irrigation and fertilization are carried out by default, without considering the alterations in the aforementioned variables. It is concluded that the combination of modern agricultural techniques such as hydroponics and diffuse control allow us to improve the quality of the crops and the optimization of the required resources.",
+      "url": "https://www.semanticscholar.org/paper/c85a848d0e45d5d071f65c0fc05ac481b56dda42",
+      "openAccessPdf": "https://www.mdpi.com/1424-8220/23/8/4088/pdf?version=1681873819",
+      "source_type": "paper",
+      "paperId": "c85a848d0e45d5d071f65c0fc05ac481b56dda42",
+      "year": 2023,
+      "venue": "Italian National Conference on Sensors",
+      "citationCount": 15,
+      "doi": "10.3390/s23084088",
+      "matched_queries": [
+        {
+          "category": "pH",
+          "query": "strawberry nutrient solution pH optimal"
+        }
+      ]
+    },
+    {
+      "category": "pH",
+      "query": "strawberry nutrient solution pH optimal",
+      "title": "Effect of fertiliser application method and nutrient solution pH on growth, yield and flower quality of gardenia (Gardenia jasminoides)",
+      "abstract": "ABSTRACT Gardenia jasminoides, a popular ornamental species, often shows reduced growth and flowering due to poor nutrient management. This two-year study aimed to assess the effect of fertiliser application method and nutrient solution acidity on the performance of gardenia. Two application methods (foliar/soil drench) and four pH levels (5, 6, 7, and 8) were tested to evaluate their effects on plant growth, leaf physiology, and flower yield and quality. Soil drenching significantly improved shoot growth traits along with leaf nitrogen, phosphorus, and calcium concentrations and flower yield compared to foliar spray. Adjusting the nutrient solution to pH 6 notably enhanced shoot biomass and flower traits relative to pH 5 and 8. Nutrient drenching at pH 6 led to a 90% increase in chlorophyll content, 200% in leaf area, 84% in leaf fresh weight, and 155% in flower number, among other improvements, compared to foliar spraying at the same pH. However, it also caused reductions in root fresh weight (−42%), leaf iron (−47%), and soil respiration (−15%). These findings indicate that soil drenching at pH 6 optimises gardenia growth and flower yield. Further research is recommended to explore long-term nutrient uptake and translocation mechanisms under different fertilisation strategies at optimal pH.",
+      "url": "https://www.semanticscholar.org/paper/b19708b52a298ad767eaae5b480e7d66cd2e1af5",
+      "openAccessPdf": "",
+      "source_type": "paper",
+      "paperId": "b19708b52a298ad767eaae5b480e7d66cd2e1af5",
+      "year": 2025,
+      "venue": "New Zealand journal of crop and horticultural science",
+      "citationCount": 0,
+      "doi": "10.1080/01140671.2025.2502117",
+      "matched_queries": [
+        {
+          "category": "pH",
+          "query": "strawberry nutrient solution pH optimal"
+        }
+      ]
+    },
+    {
+      "category": "EC",
+      "query": "strawberry hydroponic EC range",
+      "title": "Growth and Fruit Yield of Strawberry Grown in Raised Bed Culture Using Growing Media with Lower Cost",
+      "abstract": null,
+      "url": "https://www.semanticscholar.org/paper/0ccbbf09923ef2f36e4bf79406c1e33b65fda141",
+      "openAccessPdf": "",
+      "source_type": "paper",
+      "paperId": "0ccbbf09923ef2f36e4bf79406c1e33b65fda141",
+      "year": 2004,
+      "venue": "",
+      "citationCount": 4,
+      "doi": null,
+      "matched_queries": [
+        {
+          "category": "EC",
+          "query": "strawberry hydroponic EC range"
+        }
+      ]
+    },
+    {
+      "category": "EC",
+      "query": "strawberry nutrient solution electrical conductivity",
+      "title": "Effects of Gypsum Application at Different Levels of Nutrient Solution Electrical Conductivity on Yield, Quality and Antioxidant Activity of Soilless Strawberry Grown in Cocopeat",
+      "abstract": "Research on strawberry (Fragaria x ananassa Duch.) was carried out in greenhouse in 2022-2023, arranging a 4 x 2 factorial experiment, consisting of four levels of electrical conductivity of the nutrient solutions (1.2, 1.7, 2.2, and 2.7 dS m-1) and application of gypsum (without application – control and application). The plants were grown in coconut fibre substrate from late October to early June. The 2.2 dS m-1 ECsol resulted in the highest yield, whereas the highest values of dry matter and soluble solids were recorded under 2.7 dS m-1 ECsol. Gypsum application resulted in the increase of dry matter, soluble solids, firmness and colour components. The 2.2 and 2.7 dS m-1 ECsol led to the highest levels of hydrophilic and lipophilic antioxidant activities as well as polyphenols and vitamin C. From the research carried out on strawberry grown in coconut fibre, it arose that the 2.2 dS m-1 EC of the nutrient solution showed the best effect on yield, but it did not generally differ from 2.7 dS m-1 regarding the quality of the 'fruits'. Gypsum treatment represents an effective strategy to improve some important qualitative characteristics of strawberry 'fruits', under the perspective of sustainable management of crop systems.",
+      "url": "https://www.semanticscholar.org/paper/21e86824a04a30da964b9d405f5d83f246f4613d",
+      "openAccessPdf": "https://doi.org/10.15835/buasvmcn-fst:2023.0038",
+      "source_type": "paper",
+      "paperId": "21e86824a04a30da964b9d405f5d83f246f4613d",
+      "year": 2024,
+      "venue": "Bulletin of University of Agricultural Sciences and Veterinary Medicine Cluj-Napoca: Food Science and Technology",
+      "citationCount": 0,
+      "doi": "10.15835/buasvmcn-fst:2023.0038",
+      "matched_queries": [
+        {
+          "category": "EC",
+          "query": "strawberry nutrient solution electrical conductivity"
+        }
+      ]
+    },
+    {
+      "category": "flow",
+      "query": "strawberry hydroponic flow rate",
+      "title": "Optimization of Emerging NFT Hydroponic System For Lettuce,Spinach,kale And Strawberry In India.",
+      "abstract": "The focus on optimizing Nutrient Film Technique (NFT) system for the zero residual food in Indian climatic conditions. Parameters such as Ph,TDS,EC(Electric Conductivity),Flow rate,Temperature and Humidity with efficient use of water. Plants fast growth with the help of nutrients uptake through roots from nutrient film.",
+      "url": "https://www.semanticscholar.org/paper/55eb65e18d94139865da09e780d226039d3b5ba0",
+      "openAccessPdf": "",
+      "source_type": "paper",
+      "paperId": "55eb65e18d94139865da09e780d226039d3b5ba0",
+      "year": 2025,
+      "venue": "International Journal For Multidisciplinary Research",
+      "citationCount": 0,
+      "doi": "10.36948/ijfmr.2025.v07i06.61375",
+      "matched_queries": [
+        {
+          "category": "flow",
+          "query": "strawberry hydroponic flow rate"
+        }
+      ]
+    },
+    {
+      "category": "flow",
+      "query": "strawberry hydroponic flow rate",
+      "title": "An Alternative Strategy for Clonal Micropropagation of the Garden Strawberry",
+      "abstract": "\n \n The aim of the study was to develop a technological approach for the production, storage, and preparation of strawberry microplants, facilitating their simultaneous acclimatization before planting in a greenhouse when favorable temperature and lighting conditions are established.\n \n \n \n \n The initial material for the experiment was obtained\n via\n clonal micropropagation. Preparation, accumulation, and preservation of strawberry plants\n in vitro\n for delayed acclimatization were performed by periodically repeating the procedure of removing roots and leaves from previously rooted microplants and transferring them in the form of vegetating buds onto a fresh nutrient medium for further rehabilitation. The mass acclimatization of microplants was carried out under substrate-free flow-through hydroponic conditions, following which they were transplanted into a greenhouse in early spring.\n \n \n \n \n The survival rate of microplants during the periodically repeated procedures of removing roots and leaves from previously obtained microplants reached 100% for all studied cultivars. Active leaf and root recovery began on days 3–7 and 10–14, respectively. A 1-month acclimatization period on flow-through hydroponics allowed for a 2–2.5-fold increase in microplant height, a 2-fold increase in root length, and an almost 3-fold increase in weight.\n \n \n \n The repetitive removal of microplant roots and leaves, with their further transplantation on fresh nutrient medium as vegetating buds for subsequent rehabilitation during periods of unfavorable environmental conditions, does not reduce the viability of microplants, allowing the preservation of planting material without loss until acclimatization is advisable. Acclimatization using flow-through hydroponics enables the elimination of fungal pathogenesis that occurs during the use of solid substrates. This protocol also increases the predictability of acclimatization outcomes and ensures successful transplantation into a greenhouse.\n \n \n \n The developed alternative strategy of strawberry clonal micropropagation allows prediction of the output volume of acclimatized microplants throughout a calendar year with a high degree of accuracy. The estimated quantity of such material can be compactly stored in a lighted tissue culture room, significantly saving time and resources. Microplants are well preserved until a favorable moment for acclimatization in a viable state as vegetating buds. After the rehabilitation cycles are complete, the microplants can be simultaneously transferred for acclimatization on flow-through hydroponics.\n",
+      "url": "https://www.semanticscholar.org/paper/27371e42508e5dff650e8dcb3ec79258b9d28695",
+      "openAccessPdf": "",
+      "source_type": "paper",
+      "paperId": "27371e42508e5dff650e8dcb3ec79258b9d28695",
+      "year": 2026,
+      "venue": "Open Biotechnology Journal",
+      "citationCount": 0,
+      "doi": "10.2174/0118740707455704260310055813",
+      "matched_queries": [
+        {
+          "category": "flow",
+          "query": "strawberry hydroponic flow rate"
+        }
+      ]
+    },
+    {
+      "category": "turbidity",
+      "query": "strawberry hydroponic water quality turbidity",
+      "title": "Enhancing Hydroponic Strawberry Cultivation: Optimizing Water Consumption for Sustainable Yield, Quality and Resource Efficiency",
+      "abstract": "Hydroponic cultivation requires proper fertigation management to avoid over‐fertigation and environmental damage. This 2‐year study evaluated the effects of full irrigation, partial root‐zone drying (PRD) and sustained deficit irrigation (SDI) on hydroponic strawberry cultivation to optimize water and fertilizer use. In the first year, various irrigation and fertilizer levels were tested, and on the basis of these results, the second year focused on full and half irrigation with different nutrient solution concentrations. This study evaluated plant morphology, physiochemical traits (e.g., chlorophyll, phenolics, and electrolyte leakage) and fruit quality (TSS/TA and L/D ratio) while calculating irrigation water productivity and biomass water use efficiency (WUE). Nutrient element contents were measured in the substrate and leaves. The second‐year results indicated that irrigation treatments significantly influenced fruit quality and yield. The PRD, which was fertigated with a half‐pot capacity (PRD2), was the best approach because it does not reduce nutrients, preserves substrate health and reduces fertigation by 50%. PRD2 is a drought resistance strategy that reduces vegetative growth and leaf surface area, leading to increased yield and improved berry quality. Additionally, these findings suggest that fertigation adjustments can improve plant stress resistance. These results demonstrate the potential for scalable and sustainable hydroponic strawberry production, offering practical applications for water‐efficient agriculture in resource‐limited environments.",
+      "url": "https://www.semanticscholar.org/paper/1dde58b6fe80bdaa9af4af73a013872b3f887143",
+      "openAccessPdf": "",
+      "source_type": "paper",
+      "paperId": "1dde58b6fe80bdaa9af4af73a013872b3f887143",
+      "year": 2025,
+      "venue": "Irrigation and Drainage",
+      "citationCount": 0,
+      "doi": "10.1002/ird.3117",
+      "matched_queries": [
+        {
+          "category": "turbidity",
+          "query": "strawberry hydroponic water quality turbidity"
+        },
+        {
+          "category": "turbidity",
+          "query": "strawberry root disease water quality hydroponic"
+        }
+      ]
+    },
+    {
+      "category": "turbidity",
+      "query": "strawberry hydroponic water quality turbidity",
+      "title": "Short-Term Time-Series Forecasting of Hydroponic Water Quality Parameters Using XGBoost Based IoT Sensor Data",
+      "abstract": "Water quality monitoring is a critical factor in the success of hydroponic farming. Conventional reactive monitoring systems are often too slow to detect changes in water quality parameters such as Total Dissolved Solids (TDS), turbidity, and water level, which can lead to crop failure. This study aims to develop a short-term forecasting model using the Extreme Gradient Boosting (XGBoost) algorithm to support an early warning system. Time-series data was collected via IoT sensors over five months at 15-minute intervals. Model performance evaluation showed high accuracy across all parameters. The nutrient prediction model (TDS) achieved an R-squared value above 0.94 with MAPE below 2%, indicating excellent precision. For the turbidity parameter, the model obtained the highest R-squared value of 0.986 with MAE of only 0.72 NTU. Meanwhile, water level predictions were able to map water fluctuation dynamics with R-squared ranging from 0.85-0.92. These results prove that the XGBoost model is effective in providing accurate water condition estimates, enabling farmers to take preventive measures before a significant decline in water quality occurs within a relatively short period of time.",
+      "url": "https://www.semanticscholar.org/paper/f01ed090ec5cb9641c18886d6fd8d44515a83fbe",
+      "openAccessPdf": "",
+      "source_type": "paper",
+      "paperId": "f01ed090ec5cb9641c18886d6fd8d44515a83fbe",
+      "year": 2026,
+      "venue": "Jurnal Informatika dan Teknik Elektro Terapan",
+      "citationCount": 0,
+      "doi": "10.23960/jitet.v14i2.9458",
+      "matched_queries": [
+        {
+          "category": "turbidity",
+          "query": "strawberry hydroponic water quality turbidity"
+        }
+      ]
+    },
+    {
+      "category": "turbidity",
+      "query": "strawberry root disease water quality hydroponic",
+      "title": "Triadic Interaction of Engineered Nanoparticles, PFAS, and Synthetic Root Exudates in Hydroponic Systems: A Surface Chemistry Approach for Water Quality Innovation",
+      "abstract": null,
+      "url": "https://www.semanticscholar.org/paper/b711cdf23e1807ebcbfde19f1f7c73231197143e",
+      "openAccessPdf": "",
+      "source_type": "paper",
+      "paperId": "b711cdf23e1807ebcbfde19f1f7c73231197143e",
+      "year": 2025,
+      "venue": "ACS ES&amp;T Water",
+      "citationCount": 3,
+      "doi": "10.1021/acsestwater.5c00492",
+      "matched_queries": [
+        {
+          "category": "turbidity",
+          "query": "strawberry root disease water quality hydroponic"
+        }
+      ]
+    },
+    {
+      "category": "DO",
+      "query": "strawberry hydroponic dissolved oxygen",
+      "title": "Characterization of nutrient solution changes during flow through media",
+      "abstract": null,
+      "url": "https://www.semanticscholar.org/paper/e53e9d84740d0fbfcfe0e53f707a1c057d83e07a",
+      "openAccessPdf": "",
+      "source_type": "paper",
+      "paperId": "e53e9d84740d0fbfcfe0e53f707a1c057d83e07a",
+      "year": 2005,
+      "venue": "",
+      "citationCount": 0,
+      "doi": "10.4271/2005-01-2774",
+      "matched_queries": [
+        {
+          "category": "DO",
+          "query": "strawberry hydroponic dissolved oxygen"
+        }
+      ]
+    },
+    {
+      "category": "DO",
+      "query": "strawberry hydroponic dissolved oxygen",
+      "title": "Boosting Hydroponic Production of Kale and Arugula by Managing Dissolved Oxygen",
+      "abstract": "The dissolved oxygen (DO) level in the hydroponic solution is an important factor influencing plant development and water and nutrient uptake. There is limited information on the optimal DO concentrations and methods to precisely control the levels for leafy greens growth in hydroponics. In this greenhouse study, we built a real-time adjusted DO enrichment system using different techniques (oxygen generator and infuser) and sensor-based monitoring system in deep water culture hydroponics. We evaluated the effects of three DO enrichment levels (10, 15, and 20 mg·L−1) on arugula (Eruca vesicaria ‘Astro’ and ‘Esmee’) and kale (Brassica oleracea ‘KX-1’ and ‘Red Russian’) growth in comparison with the traditional air pump–based aeration system. Weekly measurements were taken for plant height, leaf greenness, fresh and dry biomass, root–shoot ratio, until final harvest. We also measured leaf gas exchange, soluble solids content (SSC), and nutrient concentration at the end. Additionally, energy costs and yield returns were evaluated. The results showed that DO enrichment level higher than 15 mg·L−1 benefited arugula biomass (63% to 191% improvement) but had no significant effect on kale growth. The treatments did not alter arugula or kale root-to-shoot ratios, SSC, or gas exchange, and the impact on plant nutrient content varied. DO enrichment treatments incurred over 140% higher energy costs (electricity) compared with the control (air pump only), with only arugula grown under DO levels of 20 mg·L−1 showing net economic returns ($0.14 increased per plant) that justified the increased energy expenditure. This study demonstrated using DO enrichment to benefit hydroponic plant production was crop- and concentration-specific.",
+      "url": "https://www.semanticscholar.org/paper/e3aa69b4e922c1277a013bdd554e59281930a807",
+      "openAccessPdf": "",
+      "source_type": "paper",
+      "paperId": "e3aa69b4e922c1277a013bdd554e59281930a807",
+      "year": 2025,
+      "venue": "Hortscience",
+      "citationCount": 0,
+      "doi": "10.21273/hortsci18774-25",
+      "matched_queries": [
+        {
+          "category": "DO",
+          "query": "strawberry hydroponic dissolved oxygen"
+        }
+      ]
+    },
+    {
+      "category": "DO",
+      "query": "strawberry root oxygen hydroponic",
+      "title": "Effect of Root-Zone Temperature on the Growth and Fruit Quality of Hydroponically Grown Strawberry Plants",
+      "abstract": "It has been reported that soil temperature modulates the growth and quality of many leafy vegetables and some fruit vegetables; however, this effect has not been sufficiently reported for strawberry plants. Here using a deep flow technique hydroponic system, we investigated the effect of various root-zone temperatures (10 °C, 20 °C, and 30 °C) on the plant growth and fruit quality of strawberry plants grown at an air temperature of 20 °C. The high root-zone temperature treatment (30 °C) decreased oxygen consumption and cell viability of the roots, resulting in withering of most of the plants after 2 months of treatment. In contrast, roots exposed to low temperature (10 °C) showed higher biomass production than those exposed to ambient condition (20 °C), whereas leaf growth was only slightly influenced. The biomass of reproductive organs, such as inflorescences and fruits, were increased in plants treated with a low root-zone temperature, suggesting the activation of reproductive growth by low temperature. However, the contents of ascorbic acid and sugar in fruits were not significantly influenced by the cooling of the root-zone, although the fruit maturation period was significantly prolonged by low temperature. These data indicate that manipulation of root-zone temperature could alter the vegetative and reproductive growth of hydroponically grown strawberry plants.",
+      "url": "https://www.semanticscholar.org/paper/c44eae6da51aebfe6f1e308a359a412a3edb63f0",
+      "openAccessPdf": "https://doi.org/10.5539/jas.v8n5p122",
+      "source_type": "paper",
+      "paperId": "c44eae6da51aebfe6f1e308a359a412a3edb63f0",
+      "year": 2016,
+      "venue": "",
+      "citationCount": 42,
+      "doi": "10.5539/JAS.V8N5P122",
+      "matched_queries": [
+        {
+          "category": "DO",
+          "query": "strawberry root oxygen hydroponic"
+        }
+      ]
+    },
+    {
+      "category": "DO",
+      "query": "strawberry root oxygen hydroponic",
+      "title": "On the hydroponic induction of strawberry roots and its microstructure changes",
+      "abstract": null,
+      "url": "https://www.semanticscholar.org/paper/636cc1d1fd12f2e83188ba1b6f4477c9c7e0d95a",
+      "openAccessPdf": "",
+      "source_type": "paper",
+      "paperId": "636cc1d1fd12f2e83188ba1b6f4477c9c7e0d95a",
+      "year": 2015,
+      "venue": "",
+      "citationCount": 0,
+      "doi": null,
+      "matched_queries": [
+        {
+          "category": "DO",
+          "query": "strawberry root oxygen hydroponic"
+        }
+      ]
+    },
+    {
+      "category": "humidity",
+      "query": "strawberry growing relative humidity",
+      "title": "Electrical system design for temperature and humidity monitoring and control of strawberry greenhouses",
+      "abstract": "Strawberries have a high nutritional value and are a major source of fiber, iron, potassium, and flavonoids and other trace elements needed by humans. The growing environment of strawberry requires high air temperature and humidity: if the temperature is too high, it can affect pollination and increase the number of deformed fruits. If the air temperature is low, it can also cause freezing flowers to occur. The same goes for humidity, but once the relative humidity continues to be too high, when the plant is in bud, the germination rate and opening rate of anthers is low, and it is easy to cause gray mold when it enters the growing season. This thesis designs an electrical system for the intelligent monitoring and control of temperature and humidity in a strawberry greenhouse, based on the ‘STC89C51’ microcontroller, to achieve the monitoring of temperature and humidity information in the strawberry greenhouse, as well as automatic control of heating, cooling, humidification, dehumidification and other functions in the greenhouse based on the monitoring information, and through the upper computer software to store and analyze the measured data, and then according to the simulation, software and hardware debugging results by The visualization and analysis of the simulation and hardware and software results will lead to reasonable recommendations for environmental control in the strawberry greenhouse.",
+      "url": "https://www.semanticscholar.org/paper/bf6c68ecc5f66fd4d4aea335bc348d7d7a4f8546",
+      "openAccessPdf": "",
+      "source_type": "paper",
+      "paperId": "bf6c68ecc5f66fd4d4aea335bc348d7d7a4f8546",
+      "year": 2023,
+      "venue": "International Conference on Mechanical Engineering, Materials and Automation Technology",
+      "citationCount": 0,
+      "doi": "10.1117/12.3007070",
+      "matched_queries": [
+        {
+          "category": "humidity",
+          "query": "strawberry growing relative humidity"
+        }
+      ]
+    },
+    {
+      "category": "humidity",
+      "query": "strawberry growing relative humidity",
+      "title": "Effect of Growing Media, Humic Acid and Boron on Storage Life of Strawberry Fruits (Fragaria X Ananassa Duch) cv. Albion",
+      "abstract": "A study was conducted during (2019-2020) growing season in plastic house and cold room of Horticulture Departments, College of Agricultural engineering science, the University of Sulaimani in Sulaimani –Iraqi Kurdistan region, in order to investigate the effect of three factors growing media(M1, M2, and M3), humic acid with concentration (0, 2.5 and 5 mg. L-1), boric acid with concentration (0 and 20  mg. L-1) on fruit quality and storability of strawberry fruits stored for 20 days in a cool room at storage (2±2°C) with relative humidity 85-90%. The results showed a growing media effect on total soluble solids and anthocyanin content. Boric acid at 20 mg. L-1 gave the highest value of total sugars and berry firmness was 6.861% 486.877g, respectively. Humic acid decreased fruit decay%, while caused to increase in total soluble solids, anthocyanin, and ascorbic acid. \nThe interaction effect between growing media (M3) with 20 mg. L-1 boric acid recorded the highest value of firmness, TSS%, Total sugar% and ascorbic acid content, but the interaction effect between growing media (M2) with 20 mg. L-1 boric acid gave the lowest fruit weight loss%, Application of growing media (M1) with 0 mg. L-1 boric acid showed the highest value of anthocyanin content. On the other hand, the interaction effect between growing media (M3) with 5 mg. L-1 of humic acid gave the lowest fruit weight loss% but the highest value of firmness and ascorbic acid content, as well as, growing media (M1) with 5 mg. L-1 of humic acid gave the lowest decay% and highest value TSS%, the same growing media with 2.5 mg. L-1 of humic acid gave the maximum value of anthocyanin content. The interaction effect between 20 mg. L-1 boric acid with 5 mg. L-1 of humic acid recorded the lowest value of fruit weight loss% and decay%, otherwise, the same treatment gave the highest value of firmness and ascorbic acid content. \nFinally, the interaction effects of the three factors obtained the lowest fruit weight loss% was observed from growing media (M3), 20 mg. L-1 boric acid and 5 mg. L-1of humic acid, while the same treatment given the highest value of firmness and ascorbic acid content. \n ",
+      "url": "https://www.semanticscholar.org/paper/6c2b54fd0e481e869e89395eabb6aeeeff0347f8",
+      "openAccessPdf": "",
+      "source_type": "paper",
+      "paperId": "6c2b54fd0e481e869e89395eabb6aeeeff0347f8",
+      "year": 2022,
+      "venue": "Kufa Journal for Agricultural Sciences",
+      "citationCount": 0,
+      "doi": "10.36077/kjas/2021/v13i1.328",
+      "matched_queries": [
+        {
+          "category": "humidity",
+          "query": "strawberry growing relative humidity"
+        }
+      ]
+    },
+    {
+      "category": "humidity",
+      "query": "strawberry greenhouse humidity range",
+      "title": "DEVELOPMENT OF A THERMAL MODEL OF A SOLAR POWERED VAPOUR ABSORPTION REFRIGERATION SUPPORTED GREENHOUSE FOR STRAWBERRY CULTIVATION",
+      "abstract": "In this paper, a novel scheme of a solar powered vapour absorption refrigeration supported greenhouse with indirect evaporative cooler has been proposed. The main objective of this work is to create a favorable microclimatic condition for strawberry cultivation inside the greenhouse for a country with sub-tropical climatic conditions like India when the ambient temperature and humidity are high. The maximum yield of strawberry is achieved for a temperature ranging between 15-25 °C with a relative humidity varying from 55 to 65%. It is quite impossible to achieve a favorable temperature range for strawberry cultivation in the greenhouse under such condition by using the existing greenhouse cooling techniques. A double effect parallel flow LiBr-H2O absorption cooling system along with an IDEC powered through solar energy has been used. A thermal model for the greenhouse has been developed and analyzed for the climatic condition of Kolkata, India. The study reveals that the proposed system can very well maintain a conducive climate for the growth of target plantation for the given location.",
+      "url": "https://www.semanticscholar.org/paper/63d3945d285451ec041e5b3352bdaaa51b796abd",
+      "openAccessPdf": "https://doi.org/10.1088/1757-899x/1080/1/012043",
+      "source_type": "paper",
+      "paperId": "63d3945d285451ec041e5b3352bdaaa51b796abd",
+      "year": 2021,
+      "venue": "",
+      "citationCount": 0,
+      "doi": "10.1088/1757-899X/1080/1/012043",
+      "matched_queries": [
+        {
+          "category": "humidity",
+          "query": "strawberry greenhouse humidity range"
+        }
+      ]
+    },
+    {
+      "category": "humidity",
+      "query": "strawberry greenhouse humidity range",
+      "title": "اثر اسید سالیسیلیک بر رشد، عملکرد و کیفیت میوه توتفرنگی رقم \"پاروس\" در شرایط شوری",
+      "abstract": "Because of increasing trend in salinization of water sources, and inevitable using non-traditional water, a research was planned to determine the tolerance range of strawberry cv. Paros to salinity and possible role of salicylic acid (SA) in ameliorating its adverse effect on plant growth. In this research, effect of different salinity levels (0, 20 and 40 mM in nutrient solution) and SA (0, 100, 200 and 300 mg/L as foliar spray) on this plant was investigated. Rooted plants of strawberry were cultivated in 3 L plastic pots, filled with 1:1 ratio of perlite and cocopeat under greenhouse conditions. Day and night temperatures were 23±3 and 15±3 oC and relative humidity was about 60 to 70%. After establishment of plants, salinity treatments were carried out. Results indicated that salt stress had adverse influence on most of the parameters and caused reduction in shoot and root fresh and dry weight, and also decreased vitamin C concentration of fruits. Foliar application of SA solution at 200 mg/L caused an increase in tolerance level of plants and improved such characteristics as leaf area, shoot and root fresh and dry weight and yield. This ameliorative effect of SA decreased along with increase in salinity concentration to 40 mM. In general, SA could mitigate the detrimental effect of saline conditions on growth of strawberry plants, especially at 200 mg/L concentration.",
+      "url": "https://www.semanticscholar.org/paper/9627ba130bb93d70f3b71de9e32db6d4eb1f98dd",
+      "openAccessPdf": "https://doi.org/10.18869/acadpub.ejgcst.7.4.163",
+      "source_type": "paper",
+      "paperId": "9627ba130bb93d70f3b71de9e32db6d4eb1f98dd",
+      "year": 2017,
+      "venue": "",
+      "citationCount": 3,
+      "doi": "10.18869/ACADPUB.EJGCST.7.4.163",
+      "matched_queries": [
+        {
+          "category": "humidity",
+          "query": "strawberry greenhouse humidity range"
+        }
+      ]
+    },
+    {
+      "category": "light",
+      "query": "strawberry hydroponic light requirement",
+      "title": "ANALISIS KEBUTUHAN AIR TANAMAN STRAWBERRY YANG DIBUDIDAYAKAN SECARA HIDROPONIK DI DALAM GREENHOUSE",
+      "abstract": null,
+      "url": "https://www.semanticscholar.org/paper/bfe74b3234bf8f8080747b502d984036f509a5ff",
+      "openAccessPdf": "",
+      "source_type": "paper",
+      "paperId": "bfe74b3234bf8f8080747b502d984036f509a5ff",
+      "year": 2013,
+      "venue": "",
+      "citationCount": 0,
+      "doi": null,
+      "matched_queries": [
+        {
+          "category": "light",
+          "query": "strawberry hydroponic light requirement"
+        }
+      ]
+    },
+    {
+      "category": "light",
+      "query": "strawberry hydroponic light requirement",
+      "title": "Analysis of Hydroponic Strawberry (Fragaria spp.) Disease and Pest Using Deep Learning under Artificial-Light Vertical Farm Conditions",
+      "abstract": ": Indoor vertical farms using artificial lighting enable high-density and year-round strawberry production but create humid microclimates that favor rapid disease outbreaks. Conventional disease scouting based on visual inspection is labor-intensive and often delayed. This study aimed to develop an edge-computing-based automatic disease scouting system for strawberries cultivated in an artificial-light vertical farm using a YOLOv5 deep learning model and to evaluate its reliability by comparing results before and after outlier removal. A slider-mounted RGB imaging system and an NVIDIA Jetson Nano edge device were installed above multilayer strawberry beds in Taebaek commercial farm. Images collected along predefined paths were analyzed to detect major strawberry diseases including gray mold, powdery mildew on leaves and fruits, and anthracnose fruit rot. During the experimental period no insect pests were detected. Before outlier removal, 3,357 disease objects were detected, with the four dominant disease classes accounting for more than 96% of detections. However, a few rare or abnormally large detections distorted infected-area statistics. Outliers were filtered based on confidence threshold, size distribution, and geometric validity. After filtering, the overall spatial distribution and dominance structure of major diseases remained stable, while quantitative indicators became more realistic and robust. Gray mold and leaf powdery mildew consistently emerged as the major threats, and hotspot locations were preserved. The proposed edge-AI-based scouting system demonstrated feasibility for real-time monitoring in an artificial-light vertical farm, and systematic outlier removal effectively improved data reliability for precision disease management.",
+      "url": "https://www.semanticscholar.org/paper/a8b36cb4e51f3fad747c8d38117251dfef7e0bb6",
+      "openAccessPdf": "",
+      "source_type": "paper",
+      "paperId": "a8b36cb4e51f3fad747c8d38117251dfef7e0bb6",
+      "year": 2025,
+      "venue": "Korean Journal of Environmental Agriculture",
+      "citationCount": 0,
+      "doi": "10.5338/kjea.2025.44.43",
+      "matched_queries": [
+        {
+          "category": "light",
+          "query": "strawberry hydroponic light requirement"
+        }
+      ]
+    },
+    {
+      "category": "light",
+      "query": "strawberry PPFD DLI photoperiod hydroponic",
+      "title": "Effects of light intensity and photoperiod on runner plant propagation of hydroponic strawberry transplants under LED lighting",
+      "abstract": "Vegetative propagation of strawberry (Fragaria × ananassa Duch.) in the plant factory with artificial lighting is considered as an effective approach to produce high-quality transplants. In this study, mother plants of ‘Benihoppe’ strawberry were grown hydroponically for 50 d under eight LED lighting treatments by combining four levels of light intensity (200, 250, 300 and 350 mol/(m2·s)) and two photoperiods (12 h/d and 16 h/d). Runner development, growth of runner plants, photon yield and energy yield in runners and runner plants were investigated to evaluate the strawberry propagation efficiency. Results indicated that length of runners decreased linearly with increasing daily light integral (DLI) under each photoperiod and was significantly shorter under photoperiod of 16 h/d. Runner elongation was inhibited by high DLI. Number of runners and runner plants formed by mother plants increased by 38.9% and 33.7%, when DLI increased from 8.6 to 11.5 mol/(m2·d), respectively; however, no further increase was observed when DLI was higher than 11.5 mol/(m2·d). Similar trends were found in crown diameter and biomass of primary and secondary runner plants. Negative impact of high DLI (20.2 mol/(m2·d)) on photosynthetic capacity of runner plants was observed as a decrease in leaf net photosynthetic rate, potential maximum photochemical efficiency of PSII, and chlorophyll content. Furthermore, photon yield and energy yield in runners and runner plants decreased significantly with increasing DLI. Therefore, DLI in a range of 11.5-17.3 mol/(m2·d) is beneficial to improve strawberry propagation efficiency and quality of runner plants, and 11.5 mol/(m2·d) is optimal for the strawberry propagation of runner plants in the LED plant factory because of the higher photon and energy yields. \nKeywords: hydroponic strawberry, vegetative propagation, daily light integral, photon yield \nDOI: 10.25165/j.ijabe.20191206.5265 \n \nCitation: Zheng J F, He D X, Ji F. Effects of light intensity and photoperiod on runner plant propagation of hydroponic strawberry transplants under LED lighting. Int J Agric & Biol Eng, 2019; 12(6): 26–31.",
+      "url": "https://www.semanticscholar.org/paper/13cd3bc8d3222ba57e542e8e513fa019a768fb54",
+      "openAccessPdf": "https://doi.org/10.25165/j.ijabe.20191206.5265",
+      "source_type": "paper",
+      "paperId": "13cd3bc8d3222ba57e542e8e513fa019a768fb54",
+      "year": 2019,
+      "venue": "International Journal of Agricultural and Biological Engineering",
+      "citationCount": 32,
+      "doi": "10.25165/j.ijabe.20191205.5265",
+      "matched_queries": [
+        {
+          "category": "light",
+          "query": "strawberry PPFD DLI photoperiod hydroponic"
+        }
+      ]
+    },
+    {
+      "category": "light",
+      "query": "strawberry PPFD DLI photoperiod hydroponic",
+      "title": "Determination of optimal daily light integral (DLI) for indoor cultivation of iceberg lettuce in an indigenous vertical hydroponic system",
+      "abstract": "The indoor cultivation of lettuce in a vertical hydroponic system (VHS) under artificial lighting is an energy-intensive process incurring a high energy cost. This study determines the optimal daily light integral (DLI) as a function of photoperiod on the physiological, morphological, and nutritional parameters, as well as the resource use efficiency of iceberg lettuce (cv. Glendana) grown in an indoor VHS. Seedlings were grown in a photoperiod of 12 h, 16 h, and 20 h with a photosynthetic photon flux density (PPFD) of 200 µmol m^−2 s^−1 using white LED lights. The results obtained were compared with VHS without artificial lights inside the greenhouse. The DLI values for 12 h, 16 h, and 20 h were 8.64, 11.5, and 14.4 mol m^−2 day^−1, respectively. The shoot fresh weight at harvest increased from 275.5 to 393 g as the DLI increased from 8.64 to 11.5 mol m^−2 day^−1. DLI of 14.4 mol m^−2 day^−1 had a negative impact on fresh weight, dry weight, and leaf area. The transition from VHS without artificial lights to VHS with artificial lights resulted in a 60% increase in fresh weight. Significantly higher water use efficiency of 71 g FW/L and energy use efficiency of 206.31 g FW/kWh were observed under a DLI of 11.5 mol m^−2 day^−1. The study recommends an optimal DLI of 11.5 mol m^−2 day^−1 for iceberg lettuce grown in an indoor vertical hydroponic system.",
+      "url": "https://www.semanticscholar.org/paper/0f5de8cb2268942ab0e4b789fe74f59ee719e199",
+      "openAccessPdf": "https://www.nature.com/articles/s41598-023-36997-2.pdf",
+      "source_type": "paper",
+      "paperId": "0f5de8cb2268942ab0e4b789fe74f59ee719e199",
+      "year": 2023,
+      "venue": "Scientific Reports",
+      "citationCount": 55,
+      "doi": "10.1038/s41598-023-36997-2",
+      "matched_queries": [
+        {
+          "category": "light",
+          "query": "strawberry PPFD DLI photoperiod hydroponic"
+        }
+      ]
+    },
+    {
+      "category": "crop_risk",
+      "query": "strawberry root rot hydroponic",
+      "title": "Reprogramming of Strawberry (Fragaria vesca) Root Transcriptome in Response to Phytophthora cactorum",
+      "abstract": "Crown rot (Phytophthora cactorum) causes significant economic losses in strawberry production. The best control strategy would be to use resistant cultivars, but polygenically inherited resistance makes the breeding of the garden strawberry (Fragaria × ananassa) challenging. The diploid wild strawberry Fragaria vesca Hawaii 4 genotype was shown previously to have resistance against crown rot. To explore the resistance mechanisms, we inoculated the roots of Hawaii 4 with P. cactorum in a novel in vitro hydroponic system to minimize interference caused by other microbes. Major reprogramming of the root transcriptome occurred, involving 30% of the genes. The surveillance system of the plant shifted from the development mode to the defense mode. Furthermore, the immune responses as well as many genes involved in the biosynthesis of the defense hormones jasmonic acid, ethylene and salicylic acid were up-regulated. Several major allergen-like genes encoding PR-10 proteins were highly expressed in the inoculated plants, suggesting that they also have a crucial role in the defense responses against P. cactorum. Additionally, flavonoids and terpenoids may be of vital importance, as several genes involved in their biosynthesis were up-regulated. The cell wall biosynthesis and developmental processes were down-regulated, possibly as a result of the down-regulation of the key genes involved in the biosynthesis of growth-promoting hormones brassinosteroids and auxin. Of particular interest was the expression of potential resistance genes in the recently identified P. cactorum resistance locus RPc-1. These new findings help to target the breeding efforts aiming at more resistant strawberry cultivars.",
+      "url": "https://www.semanticscholar.org/paper/456f897686c91a858b08f3d45b3419767d35f35d",
+      "openAccessPdf": "https://journals.plos.org/plosone/article/file?id=10.1371/journal.pone.0161078&type=printable",
+      "source_type": "paper",
+      "paperId": "456f897686c91a858b08f3d45b3419767d35f35d",
+      "year": 2016,
+      "venue": "PLoS ONE",
+      "citationCount": 51,
+      "doi": "10.1371/journal.pone.0161078",
+      "matched_queries": [
+        {
+          "category": "crop_risk",
+          "query": "strawberry root rot hydroponic"
+        }
+      ]
+    },
+    {
+      "category": "crop_risk",
+      "query": "strawberry root rot hydroponic",
+      "title": "The role of Phytophthora cactorum in decline of hydroponically- grown strawberry and evaluation of relative resistance of strawberry cultivars to it",
+      "abstract": null,
+      "url": "https://www.semanticscholar.org/paper/3b546d38ba572ea5942cbdc2b148a85014a85e5e",
+      "openAccessPdf": "",
+      "source_type": "paper",
+      "paperId": "3b546d38ba572ea5942cbdc2b148a85014a85e5e",
+      "year": 2012,
+      "venue": "",
+      "citationCount": 0,
+      "doi": null,
+      "matched_queries": [
+        {
+          "category": "crop_risk",
+          "query": "strawberry root rot hydroponic"
+        }
+      ]
+    },
+    {
+      "category": "crop_risk",
+      "query": "strawberry bolting temperature hydroponic",
+      "title": "Effects of cold water on plant growth and development of strawberry under hydroponic system",
+      "abstract": "\n Climate change has significantly impacted the flowering patterns of strawberry plants cultivated under typical environmental conditions, which conventionally require low temperatures to induce flowering. This study aimed to investigate the effects of cold-water irrigation on the growth and development of strawberries grown in a hydroponic system. The experiment was conducted in an uncontrolled greenhouse environment at the Faculty of Agriculture, Chiang Mai University, Thailand. A factorial arrangement of 2 × 2 in a completely randomized design was used, consisting of two root-zone cooling temperatures (cold water temperature at 10°C ± 1°C and ambient temperature water at 26°C ± 1°C) and two strawberry cultivars (‘Pharachatan 80’ or ‘P80’ and ‘Akihime’), with five replications. The results revealed that cold water temperature significantly enhanced vegetative growth parameters, including plant height (26.59 cm), canopy size (28.97 cm), leaf length (9.07 cm), leaf width (8.17 cm), petiole length (25.15 cm), root length (48.31 cm), and leaf number (8.36 leaves) compared to ambient temperature water. However, no significant interaction between cooling temperatures and strawberry cultivars was observed regarding vegetative growth. Conversely, a significant interaction between two factors was observed in flowering characteristics. The ‘Akihime’ cultivar produced a significantly higher number of flowers (10.64) under cold water conditions compared to ‘P80’ (6.13). Despite differences in flower number, no significant variation was observed in the number of fruits between the two cultivars; however, cultivar ‘P80’ exhibited superior fruit quality characteristics compared to ‘Akihime'. Notably, neither cultivar flowered under ambient temperature water conditions. These findings indicate that cold-water irrigation substantially promotes vegetative growth and effectively induces flowering in hydroponically grown strawberries under the uncontrolled environment of a greenhouse, highlighting the potential application of hydrocooling to enhance strawberry productivity, especially in regions increasingly impacted by rising temperatures due to climate change.\n \n \n \n \n What is already known on this subject?\n In recent years, climate change has caused unpredictable weather patterns, leading to agricultural challenges in Thailand. Rising temperatures, shorter winters, prolonged summers, irregular rainfall, and increased pests and diseases have negatively affected strawberry flowering under natural conditions, which rely on cold temperatures for floral induction, especially in tropical climates.\n \n \n What are the new findings?\n These findings demonstrate that cold-water hydroponics significantly enhances the vegetative growth, root development, and flowering of strawberries under tropical climates. This study supports the potential application of hydrocooling as a method to improve strawberry cultivation, particularly in regions affected by rising temperatures due to climate change.\n \n \n What is the expected impact on horticulture?\n The findings from this research shall serve as a guideline for inducing strawberry flowering in Thailand and potentially extend their off-season production in hydroponic systems.\n \n \n",
+      "url": "https://www.semanticscholar.org/paper/32bb9bc4aff87f077708525b54afc6fa20af9d49",
+      "openAccessPdf": "",
+      "source_type": "paper",
+      "paperId": "32bb9bc4aff87f077708525b54afc6fa20af9d49",
+      "year": 2025,
+      "venue": "European Journal of Horticultural Science",
+      "citationCount": 1,
+      "doi": "10.1079/ejhs.2025.0010",
+      "matched_queries": [
+        {
+          "category": "crop_risk",
+          "query": "strawberry bolting temperature hydroponic"
+        }
+      ]
+    },
+    {
+      "category": "KR",
+      "query": "딸기 수경재배 적정 온도 pH EC 양액",
+      "title": "Light quality and photoperiod affect growth of sowthistle (Ixeris dentata Nakai) in a closed-type plant production system.",
+      "abstract": null,
+      "url": "https://www.semanticscholar.org/paper/ad299ec9353256e75fd61120fa1793e12ccd49d6",
+      "openAccessPdf": "",
+      "source_type": "paper",
+      "paperId": "ad299ec9353256e75fd61120fa1793e12ccd49d6",
+      "year": 2016,
+      "venue": "",
+      "citationCount": 8,
+      "doi": "10.12972/KJHST.20160005",
+      "matched_queries": [
+        {
+          "category": "KR",
+          "query": "딸기 수경재배 적정 온도 pH EC 양액"
+        }
+      ]
+    },
+    {
+      "category": "KR",
+      "query": "딸기 수경재배 적정 온도 pH EC 양액",
+      "title": "Influence of Bicarbonate Concentrations in Nutrient Solution on the Growth, Occurrence of Daughter Plants and Nutrient Uptake in Vegetative Propagation of ‘Seolhyang’ Strawberry",
+      "abstract": null,
+      "url": "https://www.semanticscholar.org/paper/4ebcc068a4b58ba7224bcd1c7df395a23a366ac9",
+      "openAccessPdf": "https://koreascience.or.kr:80/article/JAKO201415641085274.pdf",
+      "source_type": "paper",
+      "paperId": "4ebcc068a4b58ba7224bcd1c7df395a23a366ac9",
+      "year": 2014,
+      "venue": "",
+      "citationCount": 7,
+      "doi": "10.7235/HORT.2014.13074",
+      "matched_queries": [
+        {
+          "category": "KR",
+          "query": "딸기 수경재배 적정 온도 pH EC 양액"
+        }
+      ]
+    },
+    {
+      "category": "KR",
+      "query": "딸기 수경재배 양액 기준",
+      "title": "딸기 수경재배 시 '베리스타'와 '죽향'의 생육과 품질 향상을 위한 적정 양액농도 설정",
+      "abstract": null,
+      "url": "https://www.semanticscholar.org/paper/c345fe417ec8ebe6e8c41405a6d8ec5c5f945cd7",
+      "openAccessPdf": "",
+      "source_type": "paper",
+      "paperId": "c345fe417ec8ebe6e8c41405a6d8ec5c5f945cd7",
+      "year": 2017,
+      "venue": "",
+      "citationCount": 0,
+      "doi": null,
+      "matched_queries": [
+        {
+          "category": "KR",
+          "query": "딸기 수경재배 양액 기준"
+        }
+      ]
+    },
+    {
+      "category": "KR",
+      "query": "딸기 수경재배 양액 기준",
+      "title": "Ict 기반의 이동식 다단 수경재배 시스템",
+      "abstract": null,
+      "url": "https://www.semanticscholar.org/paper/51e19c029526bcacbd7703d38d3a1cd42425d07d",
+      "openAccessPdf": "",
+      "source_type": "paper",
+      "paperId": "51e19c029526bcacbd7703d38d3a1cd42425d07d",
+      "year": 2017,
+      "venue": "",
+      "citationCount": 0,
+      "doi": null,
+      "matched_queries": [
+        {
+          "category": "KR",
+          "query": "딸기 수경재배 양액 기준"
+        }
+      ]
+    }
+  ],
+  "next_step": {
+    "target_module": "DocumentNLPExtractor",
+    "description": "documents 배열의 title, abstract, openAccessPdf를 이용해 수온, pH, EC, 유량, 탁도, DO, 습도, 광량, 작물 특이 위험 관련 파라미터 후보를 추출한다."
+  }
+}

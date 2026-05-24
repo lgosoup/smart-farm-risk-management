@@ -1,0 +1,867 @@
+{
+  "bundle_type": "source_bundle",
+  "crop_info": {
+    "crop": "basil",
+    "crop_common_name_en": "basil",
+    "crop_common_name_ko": "바질",
+    "scientific_name": "Ocimum basilicum"
+  },
+  "query_plan": {
+    "water_temp": [
+      "basil hydroponic water temperature range",
+      "basil nutrient solution temperature hydroponic",
+      "Ocimum basilicum hydroponic water temperature"
+    ],
+    "pH": [
+      "basil hydroponic pH range",
+      "basil nutrient solution pH optimal",
+      "Ocimum basilicum hydroponic pH nutrient solution"
+    ],
+    "EC": [
+      "basil hydroponic EC range",
+      "basil nutrient solution electrical conductivity",
+      "Ocimum basilicum hydroponic electrical conductivity"
+    ],
+    "flow": [
+      "basil hydroponic flow rate",
+      "basil hydroponic water circulation",
+      "basil hydroponic nutrient solution flow"
+    ],
+    "turbidity": [
+      "basil hydroponic water quality turbidity",
+      "basil root disease water quality hydroponic",
+      "basil hydroponic nutrient solution clarity"
+    ],
+    "DO": [
+      "basil hydroponic dissolved oxygen",
+      "basil root oxygen hydroponic",
+      "Ocimum basilicum hydroponic dissolved oxygen root"
+    ],
+    "humidity": [
+      "basil growing relative humidity",
+      "basil greenhouse humidity range",
+      "Ocimum basilicum humidity plant growth"
+    ],
+    "light": [
+      "basil hydroponic light requirement",
+      "basil PPFD DLI photoperiod hydroponic",
+      "Ocimum basilicum light requirement hydroponic"
+    ],
+    "crop_risk": [
+      "basil root rot hydroponic",
+      "basil bolting temperature hydroponic",
+      "basil disease hydroponic nutrient solution",
+      "Ocimum basilicum root disease hydroponic"
+    ],
+    "KR": [
+      "바질 수경재배 적정 온도 pH EC 양액",
+      "바질 수경재배 양액 기준",
+      "바질 수경재배 생육 단계별 양액 농도",
+      "바질 수경재배 병해 뿌리"
+    ]
+  },
+  "search_config": {
+    "limit_per_query": 2,
+    "max_queries_per_category": 2,
+    "year": null,
+    "use_cache": true
+  },
+  "search_summary": {
+    "total_raw_documents": 37,
+    "total_unique_documents": 31,
+    "category_count": 10,
+    "query_count_executed": 20
+  },
+  "query_results": [
+    {
+      "category": "water_temp",
+      "query": "basil hydroponic water temperature range",
+      "status": "ok",
+      "message": "Search succeeded.",
+      "document_count": 2
+    },
+    {
+      "category": "water_temp",
+      "query": "basil nutrient solution temperature hydroponic",
+      "status": "ok",
+      "message": "Search succeeded.",
+      "document_count": 2
+    },
+    {
+      "category": "pH",
+      "query": "basil hydroponic pH range",
+      "status": "ok",
+      "message": "Search succeeded.",
+      "document_count": 2
+    },
+    {
+      "category": "pH",
+      "query": "basil nutrient solution pH optimal",
+      "status": "ok",
+      "message": "Search succeeded.",
+      "document_count": 2
+    },
+    {
+      "category": "EC",
+      "query": "basil hydroponic EC range",
+      "status": "ok",
+      "message": "Search succeeded.",
+      "document_count": 2
+    },
+    {
+      "category": "EC",
+      "query": "basil nutrient solution electrical conductivity",
+      "status": "ok",
+      "message": "Search succeeded.",
+      "document_count": 2
+    },
+    {
+      "category": "flow",
+      "query": "basil hydroponic flow rate",
+      "status": "ok",
+      "message": "Search succeeded.",
+      "document_count": 2
+    },
+    {
+      "category": "flow",
+      "query": "basil hydroponic water circulation",
+      "status": "ok",
+      "message": "Search succeeded.",
+      "document_count": 2
+    },
+    {
+      "category": "turbidity",
+      "query": "basil hydroponic water quality turbidity",
+      "status": "ok",
+      "message": "Search succeeded.",
+      "document_count": 2
+    },
+    {
+      "category": "turbidity",
+      "query": "basil root disease water quality hydroponic",
+      "status": "ok",
+      "message": "Search succeeded.",
+      "document_count": 2
+    },
+    {
+      "category": "DO",
+      "query": "basil hydroponic dissolved oxygen",
+      "status": "ok",
+      "message": "Search succeeded.",
+      "document_count": 2
+    },
+    {
+      "category": "DO",
+      "query": "basil root oxygen hydroponic",
+      "status": "ok",
+      "message": "Search succeeded.",
+      "document_count": 2
+    },
+    {
+      "category": "humidity",
+      "query": "basil growing relative humidity",
+      "status": "ok",
+      "message": "Search succeeded.",
+      "document_count": 2
+    },
+    {
+      "category": "humidity",
+      "query": "basil greenhouse humidity range",
+      "status": "ok",
+      "message": "Search succeeded.",
+      "document_count": 2
+    },
+    {
+      "category": "light",
+      "query": "basil hydroponic light requirement",
+      "status": "ok",
+      "message": "Search succeeded.",
+      "document_count": 2
+    },
+    {
+      "category": "light",
+      "query": "basil PPFD DLI photoperiod hydroponic",
+      "status": "ok",
+      "message": "Search succeeded.",
+      "document_count": 2
+    },
+    {
+      "category": "crop_risk",
+      "query": "basil root rot hydroponic",
+      "status": "ok",
+      "message": "Search succeeded.",
+      "document_count": 2
+    },
+    {
+      "category": "crop_risk",
+      "query": "basil bolting temperature hydroponic",
+      "status": "ok",
+      "message": "Search succeeded.",
+      "document_count": 2
+    },
+    {
+      "category": "KR",
+      "query": "바질 수경재배 적정 온도 pH EC 양액",
+      "status": "ok",
+      "message": "Search succeeded.",
+      "document_count": 1
+    },
+    {
+      "category": "KR",
+      "query": "바질 수경재배 양액 기준",
+      "status": "ok",
+      "message": "Search succeeded.",
+      "document_count": 0
+    }
+  ],
+  "documents": [
+    {
+      "category": "water_temp",
+      "query": "basil hydroponic water temperature range",
+      "title": "Effects of Elevated Water Temperature on Growth of Basil Using Nutrient Film Technique",
+      "abstract": "Hydroponic systems have become increasingly popular for growers in recent years for year-round local production. Whereas optimal air temperature for plant growth has been considered, optimal root zone temperatures have not been examined as thoroughly. The objective of this research was to determine the optimal water temperature for growing different types of basil hydroponically. Research was conducted at the greenhouses in Stillwater, OK. Seventeen cultivars were selected from six main types of basil and transplanted into Nutrient Film Technique hydroponic systems, and three water temperature treatments were applied: 23, 27.5, and 31 °C. Height, width, average leaf area, leaf number, chlorophyll concentration (chlorophyll readings obtained with the Minolta-502 SPAD meter), shoot fresh weight, shoot dry weight, and root dry weight were evaluated. In general, the 27.5 and 31 °C treatments were not greater than each other in terms of leaf number and root dry weight but were greater than the 23 °C treatment. The 31 °C treatment had the greatest height, whereas width, average leaf area, shoot fresh weight, and shoot dry weight were not different from the 27.5 °C treatment. The 23 °C treatment had the greatest chlorophyll concentration (SPAD) value. Cultivar differences were significant in average leaf area and SPAD, with ‘Spicy Bush’ having the smallest leaf area and purple basil having the greatest SPAD value. For all cultivars except purple basil and ‘Large Leaf Italian’, a 27.5 °C water temperature would be recommended for greater plant growth.",
+      "url": "https://www.semanticscholar.org/paper/7ff3c0886191da6ae14e84f39dc3e731b3140dea",
+      "openAccessPdf": "https://journals.ashs.org/downloadpdf/journals/hortsci/57/8/article-p925.pdf",
+      "source_type": "paper",
+      "paperId": "7ff3c0886191da6ae14e84f39dc3e731b3140dea",
+      "year": 2022,
+      "venue": "Hortscience",
+      "citationCount": 22,
+      "doi": "10.21273/hortsci16690-22",
+      "matched_queries": [
+        {
+          "category": "water_temp",
+          "query": "basil hydroponic water temperature range"
+        }
+      ]
+    },
+    {
+      "category": "water_temp",
+      "query": "basil hydroponic water temperature range",
+      "title": "The Effect of The Fertilizer Water Cycle on The Water Quality of The Hydroponic System",
+      "abstract": "Water quality changes in the hydroponic planting system planted with curly kale (kailan) were examined by measuring physiochemical analysis over three planting cycles. The water quality parameters measured included temperature, pH, Electrical Conductivity (EC), Biochemical Oxygen Demand (BOD), and Chemical Oxygen Demand (COD). In this study we also measured 13 elements in water samples which are Ammoniacal Nitrogen (AN), Phosphate (PO4), Sulphate (SO4), Nitrate (NO3), Boron (B), Calcium (Ca), Copper (Cu), Iron (Fe), Potassium (K), Magnesium (Mg), Manganese (Mn), Phosphorus (P) and Zinc (Zn). The analysis results compare the observed values with those recommended by the National Water Quality Standards (NWQS) Class IV (water quality standard for irrigation purposes). Chemical analysis of AN, B, Cu, Mn, Zn, COD, and BOD obtained from water sampling cycles 1–3 remained within the acceptable range. The determination of minerals was also relatively low compared to the NWQS value. However, the water analysis results for cycle 3 showed that Nitrate and Fe levels exceeded the maximum limit set by NWQS. Phosphate and K demonstrated a similar pattern, even though no fixed value exists for these parameters in the NWQS. The results of the water quality analysis during the cultivation process demonstrate that the fertilizer water can still be recycled, contributing to water conservation and pollution control.",
+      "url": "https://www.semanticscholar.org/paper/1b9d3512692b70af931bc54d1918cf7e0198e67d",
+      "openAccessPdf": "",
+      "source_type": "paper",
+      "paperId": "1b9d3512692b70af931bc54d1918cf7e0198e67d",
+      "year": 2025,
+      "venue": "Advances in Agricultural and Food Research Journal",
+      "citationCount": 0,
+      "doi": "10.36877/aafrj.a0000578",
+      "matched_queries": [
+        {
+          "category": "water_temp",
+          "query": "basil hydroponic water temperature range"
+        }
+      ]
+    },
+    {
+      "category": "water_temp",
+      "query": "basil nutrient solution temperature hydroponic",
+      "title": "Nutrient Use in Vertical Farming: Optimal Electrical Conductivity of Nutrient Solution for Growth of Lettuce and Basil in Hydroponic Cultivation",
+      "abstract": "During the past few decades, vertical farming has attracted a lot of interest as an alternative food production method. Vertical farms use engineered growth environments and hydroponic cultivation techniques for growing plants indoors. One of the important factors in vertical farming for the cultivation of different plants is the amount of nutrients, which can be measured as electrical conductivity (EC). Studying the optimal EC is important for avoiding nutrient loss and deficiency in vertical farms. In this study, we investigated the effect of five EC levels (2, 1.2, 0.9, 0.7, and 0.5 dS m−1) of Hoagland nutrient solution on the growth and development of basil cultivar ‘Emily’ and lettuce cultivar ‘Batavia-Caipira’. During the study, the environmental parameters were kept fixed using an automatic dosing machine. The experiment was done in automatic vertical farms using the hydroponic ebb–flow cultivation technique with a temperature of 20 ± 1 °C, relative humidity of 50–60%, CO2 concentration of 450 ppm, pH = 6, the PPFD (photosynthetic photon flux density) of 215 ± 5.5 μmol m−2 s−1, and the photoperiod of 16:8 h (day/night). Each treatment was replicated four times. We studied the effects on several growth parameters (including the dry and fresh weight of leaves and roots, number of leaves, and leaf area) as well as the chlorophyll and nitrogen concentration of the leaves. According to the results, the basil and lettuce growth parameters among the five treatments have been significantly higher in the treatment with EC of 1.2 and 0.9 dS m−1. These EC values are lower than the recommended EC value given as the optimum in the previous studies. However, the concentration of chlorophyll and nitrogen show different trends and were higher in full strength of nutrient solution with EC = 2 dS m−1.",
+      "url": "https://www.semanticscholar.org/paper/133fb149b103d83a329c0c20e13096d1134de842",
+      "openAccessPdf": "https://www.mdpi.com/2311-7524/7/9/283/pdf?version=1630902697",
+      "source_type": "paper",
+      "paperId": "133fb149b103d83a329c0c20e13096d1134de842",
+      "year": 2021,
+      "venue": "Horticulturae",
+      "citationCount": 67,
+      "doi": "10.3390/horticulturae7090283",
+      "matched_queries": [
+        {
+          "category": "water_temp",
+          "query": "basil nutrient solution temperature hydroponic"
+        },
+        {
+          "category": "pH",
+          "query": "basil nutrient solution pH optimal"
+        },
+        {
+          "category": "EC",
+          "query": "basil nutrient solution electrical conductivity"
+        },
+        {
+          "category": "humidity",
+          "query": "basil growing relative humidity"
+        }
+      ]
+    },
+    {
+      "category": "water_temp",
+      "query": "basil nutrient solution temperature hydroponic",
+      "title": "Quantifying the effects of hydroponic systems, nutrient solution, and air temperature on growth and development of basil (Ocimum L.) species",
+      "abstract": null,
+      "url": "https://www.semanticscholar.org/paper/34d482233118811d866c3ae83e26c9589882de89",
+      "openAccessPdf": "https://lib.dr.iastate.edu/cgi/viewcontent.cgi?article=5864&context=etd",
+      "source_type": "paper",
+      "paperId": "34d482233118811d866c3ae83e26c9589882de89",
+      "year": 2015,
+      "venue": "",
+      "citationCount": 9,
+      "doi": "10.31274/ETD-180810-4456",
+      "matched_queries": [
+        {
+          "category": "water_temp",
+          "query": "basil nutrient solution temperature hydroponic"
+        }
+      ]
+    },
+    {
+      "category": "pH",
+      "query": "basil hydroponic pH range",
+      "title": "Interactive hydroponic growth simulator for educational use",
+      "abstract": "This project is a web-based hydroponic simulator created to forecast plant growth in a variety of environmental circumstances. Temperature, electrical conductivity, light intensity, and pH stress—which is the decrease in growth brought on by departures from a plant's ideal pH range—are among the environmental inputs that the simulator uses to model plant growth using the Growth Index equation. The model's main output is an estimated harvest time and growth rate, which enables students to see how environmental changes affect plant development. Sliders allow users to interact with the simulation, allowing for the simultaneous execution of multiple trials and comparisons between different plant species, including kale (Brassica oleracea), lettuce (Latuca sativa), tomatoes (Solanum lycopersicum), and basil (Ocimum basilicum). This simulation, which is based on actual hydroponic monitoring systems, helps students develop their intuition about plant growth and sustainable agriculture through experimentation. By enabling students to manipulate environmental variables and analyze system-level responses, the simulator reinforces concepts from AP Biology like homeostasis and experimental design, as well as AP Environmental Science topics including sustainable agriculture, resource management, and human impacts on ecosystems. ",
+      "url": "https://www.semanticscholar.org/paper/fb2bc90989127538190e07204fb1f52303e889c1",
+      "openAccessPdf": "",
+      "source_type": "paper",
+      "paperId": "fb2bc90989127538190e07204fb1f52303e889c1",
+      "year": 2026,
+      "venue": "Journal of Science &amp; Engineering",
+      "citationCount": 0,
+      "doi": "10.64804/pvqfw427",
+      "matched_queries": [
+        {
+          "category": "pH",
+          "query": "basil hydroponic pH range"
+        }
+      ]
+    },
+    {
+      "category": "pH",
+      "query": "basil hydroponic pH range",
+      "title": "Effects of Low pH of Hydroponic Nutrient Solution on Plant Growth, Nutrient Uptake, and Root Rot Disease Incidence of Basil (Ocimum basilicum L.)",
+      "abstract": "Rootzone pH affects nutrient availability for plants. Hydroponic leafy greens are grown in nutrient solutions with pH 5.5 to 6.5. Lower pH may inhibit plant growth, whereas pathogenic oomycete growth and reproduction may be mitigated. General understanding of pH effects on nutrient availability suggests likely toxicity and deficiency of specific micronutrients. We hypothesized that if adjustments are made to the micronutrient concentrations in solution, plants will grow in lower-than-conventional pH without nutrient disorders, while oomycete disease incidence and severity may be reduced. To develop a new nutrient solution management strategy, we examined pH of 4.0, 4.5, 5.0, and 5.5 with or without micronutrient adjustments for growing two cultivars of basil plants Dolce Fresca and Nufar in a greenhouse hydroponic deep-water culture (DWC) system. Micronutrient adjustments included reduced concentrations of copper, zinc, manganese, and boron by one-half and doubled molybdenum concentration. Plants harvested 20 to 28 days after transplanting did not show significant effects of pH or the micronutrient adjustment. Phosphorus, calcium, magnesium, sulfur, boron, manganese, and zinc concentrations in leaves significantly declined, while potassium and aluminum concentrations increased with decreasing pH. However, these changes and therefore micronutrient adjustments did not affect basil plant growth significantly. ‘Nufar’ basil plants were then grown in a growth chamber DWC system at pH 4.0 or a conventional 5.5 with and without inoculation of Pythium aphanidermatum zoospores. Fourteen days after inoculation, P. aphanidermatum oospore production was confirmed only for the inoculated plants in pH 5.5 solution, where a significant reduction of plant growth was observed. The results of the present study indicate that maintaining nutrient solution pH at 4.0 can effectively suppress the severity of root rot caused by P. aphanidermatum initiated by zoospore inoculation without influencing basil growth.",
+      "url": "https://www.semanticscholar.org/paper/521ae521ada9a9a3e708c55ddafa4eef0f0050ba",
+      "openAccessPdf": "https://journals.ashs.org/downloadpdf/journals/hortsci/55/8/article-p1251.pdf",
+      "source_type": "paper",
+      "paperId": "521ae521ada9a9a3e708c55ddafa4eef0f0050ba",
+      "year": 2020,
+      "venue": "Hortscience",
+      "citationCount": 58,
+      "doi": "10.21273/hortsci14986-20",
+      "matched_queries": [
+        {
+          "category": "pH",
+          "query": "basil hydroponic pH range"
+        },
+        {
+          "category": "crop_risk",
+          "query": "basil root rot hydroponic"
+        }
+      ]
+    },
+    {
+      "category": "pH",
+      "query": "basil nutrient solution pH optimal",
+      "title": "Effect of fertiliser application method and nutrient solution pH on growth, yield and flower quality of gardenia (Gardenia jasminoides)",
+      "abstract": "ABSTRACT Gardenia jasminoides, a popular ornamental species, often shows reduced growth and flowering due to poor nutrient management. This two-year study aimed to assess the effect of fertiliser application method and nutrient solution acidity on the performance of gardenia. Two application methods (foliar/soil drench) and four pH levels (5, 6, 7, and 8) were tested to evaluate their effects on plant growth, leaf physiology, and flower yield and quality. Soil drenching significantly improved shoot growth traits along with leaf nitrogen, phosphorus, and calcium concentrations and flower yield compared to foliar spray. Adjusting the nutrient solution to pH 6 notably enhanced shoot biomass and flower traits relative to pH 5 and 8. Nutrient drenching at pH 6 led to a 90% increase in chlorophyll content, 200% in leaf area, 84% in leaf fresh weight, and 155% in flower number, among other improvements, compared to foliar spraying at the same pH. However, it also caused reductions in root fresh weight (−42%), leaf iron (−47%), and soil respiration (−15%). These findings indicate that soil drenching at pH 6 optimises gardenia growth and flower yield. Further research is recommended to explore long-term nutrient uptake and translocation mechanisms under different fertilisation strategies at optimal pH.",
+      "url": "https://www.semanticscholar.org/paper/b19708b52a298ad767eaae5b480e7d66cd2e1af5",
+      "openAccessPdf": "",
+      "source_type": "paper",
+      "paperId": "b19708b52a298ad767eaae5b480e7d66cd2e1af5",
+      "year": 2025,
+      "venue": "New Zealand journal of crop and horticultural science",
+      "citationCount": 0,
+      "doi": "10.1080/01140671.2025.2502117",
+      "matched_queries": [
+        {
+          "category": "pH",
+          "query": "basil nutrient solution pH optimal"
+        }
+      ]
+    },
+    {
+      "category": "EC",
+      "query": "basil hydroponic EC range",
+      "title": "Optimizing Hydroponic Crop Production: A Multifaceted Approach to EC, pH and Nutrient Management",
+      "abstract": "Hydroponics is the practice of growing crops without soil, which relies on careful calibration of pH, EC (electrical conductivity) and nutrient availability to promote plant growth and yield. In hydroponics, pH is an important factor governing how nutrient availability is affected. Ideal pH range for most of the crops is 5.5-6.5. pH is important to determine acidity and alkalinity of a solution and it further affects nutrient absorption. pH management is different in Deep water Culture, Nutrient Film Technique and System of Flooded tubes. Modern techniques like microcontroller and sensors are being used to monitor hydroponic solution. Optimum pH is important for nutrient uptake and proper nutrient ratio influence uptake of another nutrient.EC or dissolved amounts of salts, measures the concentration of nutrients available for the plants. There are various nutrient recipes for the crops that are being added to the system in dosage of gram/litre. Higher EC can be managed by diluting the solution. Falling EC levels can be adjusted by adding the nutrient solution. An increase in EC value can be beneficial for the fruit quality but may result in yield reduction. Real time sensors are used nowadays for monitoring of EC and pH. In hydroponics there is less contamination, low water consumption, higher yield and no need of herbicides or pesticides but initial cost is high and regular monitoring is important.",
+      "url": "https://www.semanticscholar.org/paper/d4052db1a5ee23ca649eab96b8b963146e5e1212",
+      "openAccessPdf": "",
+      "source_type": "paper",
+      "paperId": "d4052db1a5ee23ca649eab96b8b963146e5e1212",
+      "year": 2025,
+      "venue": "Journal of Scientific Research and Reports",
+      "citationCount": 1,
+      "doi": "10.9734/jsrr/2025/v31i42995",
+      "matched_queries": [
+        {
+          "category": "EC",
+          "query": "basil hydroponic EC range"
+        }
+      ]
+    },
+    {
+      "category": "EC",
+      "query": "basil hydroponic EC range",
+      "title": "Photosynthetic responses of hydroponically grown basil (Ocimum basilicum L.) to drought and high-EC stress",
+      "abstract": "Background Basil (Ocimum basilicum L.), a widely cultivated culinary and medicinal herb in the Lamiaceae family, is particularly vulnerable to various environmental stressors. This study examines how water deficit and elevated nutrient-solution electrical conductivity (EC) affect the photosynthetic efficiency of basil plants grown in an nutrient film technique (NFT) hydroponic system. Methods Chlorophyll fluorescence was assessed using both continuous-excitation and modulated pulse-amplitude-modulated (PAM) techniques. Fluorescence parameters were monitored in plants at two developmental stages, immature and mature, under drought and high–electrical-conductivity (EC) stress. Results Both stressors altered Photosystem II (PSII)—related fluorescence parameters, but high EC stress caused a wider spectrum of changes. In mature plants, those alterations were less pronounced, indicating enhanced tolerance likely due to more efficient electron transport and greater structural stability of the photosynthetic apparatus. The obtained results supported our hypothesis, that drought and high-EC stress would differentially impair photosynthetic efficiency, with drought imposing stronger osmotic limitations on photochemistry and high EC introducing additional ionic constraints. These stresses generated distinct physiological response patterns detectable by chlorophyll fluorescence measurements.",
+      "url": "https://www.semanticscholar.org/paper/1aa86522030b2ec9dc82bd40d561cde11aa39253",
+      "openAccessPdf": "",
+      "source_type": "paper",
+      "paperId": "1aa86522030b2ec9dc82bd40d561cde11aa39253",
+      "year": 2026,
+      "venue": "PeerJ",
+      "citationCount": 0,
+      "doi": "10.7717/peerj.20728",
+      "matched_queries": [
+        {
+          "category": "EC",
+          "query": "basil hydroponic EC range"
+        }
+      ]
+    },
+    {
+      "category": "EC",
+      "query": "basil nutrient solution electrical conductivity",
+      "title": "Optimization of the Yield, Total Phenolic Content, and Antioxidant Capacity of Basil by Controlling the Electrical Conductivity of the Nutrient Solution",
+      "abstract": "Hydroponic cultivation using nutrient solution (NS) is the main cultivation method employed by plant factories with artificial lighting (PFALs). The electrical conductivity (EC) of NSs influences the yield and quality of vegetables. The purpose of this study was to optimize the yield and antioxidant accumulation of basil in a PFAL by EC management. In experiment 1, basil plants were grown under four different ECs (0.5, 1.0, 3.0, and 5.0 dS m−1) after transplanting. At 18 days after treatment, the highest levels of shoot fresh and dry weights, leaf fresh and dry weights, and leaf area were observed at an EC of 3.0 dS m−1. However, low-EC treatments (0.5 and 1.0 dS m−1) generated total phenolic content (TPC) and antioxidant capacities that were higher than those of other EC treatments (3.0 and 5.0 dS m−1). In experiment 2, basil plants were grown at an EC of 3.0 dS m−1 for 13 or 15 days, then treated with water or NS with low ECs (0.5 and 1.0 dS m−1) for 5 or 3 days before harvest. The short-term low-EC treatments, especially, water for 3 days and 0.5 dS m−1 for 5 days, significantly increased the TPC and antioxidant capacity of leaves without significantly decreasing the yields of basil, compared with the control. In conclusion, yield of basil was optimized with an EC of 3.0 dS m−1; however, the TPC and antioxidant capacity of basil were significantly increased by low ECs of 0.5 and 1.0 dS m−1. Short-term low-EC treatments (0.5 dS m−1 for 5 days or water for 3 days) could be used to promote the TPC and antioxidant capacity in leaves without sacrificing yield of basil significantly.",
+      "url": "https://www.semanticscholar.org/paper/d02df70dfa33decc9b7874c8df5de7b41e2b3675",
+      "openAccessPdf": "https://www.mdpi.com/2311-7524/8/3/216/pdf?version=1646132898",
+      "source_type": "paper",
+      "paperId": "d02df70dfa33decc9b7874c8df5de7b41e2b3675",
+      "year": 2022,
+      "venue": "Horticulturae",
+      "citationCount": 21,
+      "doi": "10.3390/horticulturae8030216",
+      "matched_queries": [
+        {
+          "category": "EC",
+          "query": "basil nutrient solution electrical conductivity"
+        }
+      ]
+    },
+    {
+      "category": "flow",
+      "query": "basil hydroponic flow rate",
+      "title": "Nutrient solution concentration and flow rate affect sweet basil growth, yield, and water productivity in a recirculating gravel film hydroponic system",
+      "abstract": null,
+      "url": "https://www.semanticscholar.org/paper/fdf23a883f9e6a7052b2c4a7143719ac1b6a4571",
+      "openAccessPdf": "",
+      "source_type": "paper",
+      "paperId": "fdf23a883f9e6a7052b2c4a7143719ac1b6a4571",
+      "year": 2026,
+      "venue": "South African Journal of Botany",
+      "citationCount": 1,
+      "doi": "10.1016/j.sajb.2026.04.018",
+      "matched_queries": [
+        {
+          "category": "flow",
+          "query": "basil hydroponic flow rate"
+        }
+      ]
+    },
+    {
+      "category": "flow",
+      "query": "basil hydroponic flow rate",
+      "title": "Design, Development and Testing of an IoT‐Based Smart Vertical Hydroponic System for Optimized Nutrient Management in a Controlled Environment",
+      "abstract": "This study focuses on the development of a smart vertical hydroponic system based on the Internet of Things (IoT). The system is programmed to regulate key aspects of hydroponic farming, including irrigation, growth environment and nutrient requirements. The experimental design evaluated the effects of nutrient solution flow rates (0.5, 1.0 and 1.5 lpm) and fertigation management systems (manual, commercial dozer and developed IoT‐based dozer) for basil crops. During 2022–2023, growth parameters were monitored at regular intervals along with the yield and water consumption of each system. The results showed that the 1 lpm flow rate is the most suitable for the developed system. Compared with manual fertigation, the IoT‐based fertigation system resulted in significant increases in plant height (12%), leaf area (16%), number of leaves (16%) and fresh weight (19%). These improvements helped the plants achieve significantly higher yields (19%) and water use efficiencies (18%). The IoT‐based vertical nutrient film technique (NFT) hydroponic system continuously allows remote data monitoring and precisely manages fertigation automatically. Compared with traditional methods, the developed system achieved 5.46 times greater crop density. This study highlights the potential of integrating IoT and sensor technologies in hydroponic systems to improve nutrient management, crop productivity and sustainability in modern agriculture.",
+      "url": "https://www.semanticscholar.org/paper/4eaa7e04de68c62cc18150496a867fd96c5ae2a3",
+      "openAccessPdf": "",
+      "source_type": "paper",
+      "paperId": "4eaa7e04de68c62cc18150496a867fd96c5ae2a3",
+      "year": 2025,
+      "venue": "Irrigation and Drainage",
+      "citationCount": 5,
+      "doi": "10.1002/ird.4002",
+      "matched_queries": [
+        {
+          "category": "flow",
+          "query": "basil hydroponic flow rate"
+        }
+      ]
+    },
+    {
+      "category": "flow",
+      "query": "basil hydroponic water circulation",
+      "title": "AI-Driven Robotic Systems for Efficient Hydroponic Water Circulation and Purification Management",
+      "abstract": "The development of AI-driven robotic systems offers substantial prospects for improving hydroponic farming methods, especially in water circulation and purification oversight. This work investigates using Reinforcement Learning (RL) algorithms in robotic systems to enhance fertilizer delivery and water quality in hydroponic settings. By persistently monitoring essential characteristics like pH, turbidity, and nutrient content, the robotic systems may implement real-time modifications to the water circulation process. The RL algorithm facilitates the system's learning from environmental input, enhancing decision-making over time and providing optimum plant growth conditions. Simulation and field testing demonstrated that the deployment of AI-driven robots results in less water waste, improved fertilizer efficiency, and greater plant health. Moreover, the automation of repetitive chores reduces labor expenses and operational intricacies, facilitating sustainable agriculture methods. This study underscores the potential of AI to transform hydroponic agriculture via intelligent resource management and environmental sustainability solutions.",
+      "url": "https://www.semanticscholar.org/paper/6c14a51275de746d3f4b35dad48fa37f64356288",
+      "openAccessPdf": "",
+      "source_type": "paper",
+      "paperId": "6c14a51275de746d3f4b35dad48fa37f64356288",
+      "year": 2025,
+      "venue": "2025 World Skills Conference on Universal Data Analytics and Sciences (WorldSUAS)",
+      "citationCount": 1,
+      "doi": "10.1109/WorldSUAS66815.2025.11199191",
+      "matched_queries": [
+        {
+          "category": "flow",
+          "query": "basil hydroponic water circulation"
+        }
+      ]
+    },
+    {
+      "category": "flow",
+      "query": "basil hydroponic water circulation",
+      "title": "Hydroponic lettuce in-situ water circulation evaluation via nondestructive mass measurement in controlled environment",
+      "abstract": "This study proposed a hydroponic system with the capacity to acquire high-resolution in situ mass data for non-destructive evaluation of water circulation in lettuce. The system customizes the watering profile, enables high-frequency in situ weight measurement, and monitors multidimensional environment changes. Key air, water, and light parameters were collected to evaluate the plant response, susceptibility, and adaptability to environmental conditions. Multiple physiological indices were defined to characterize the properties of two lettuce varieties in response to different environmental factors.",
+      "url": "https://www.semanticscholar.org/paper/f31480812c215ff305b1e2b6a5625c5e9621f8e0",
+      "openAccessPdf": "https://doi.org/10.3389/fpls.2024.1385191",
+      "source_type": "paper",
+      "paperId": "f31480812c215ff305b1e2b6a5625c5e9621f8e0",
+      "year": 2024,
+      "venue": "Frontiers in Plant Science",
+      "citationCount": 1,
+      "doi": "10.3389/fpls.2024.1385191",
+      "matched_queries": [
+        {
+          "category": "flow",
+          "query": "basil hydroponic water circulation"
+        }
+      ]
+    },
+    {
+      "category": "turbidity",
+      "query": "basil hydroponic water quality turbidity",
+      "title": "Short-Term Time-Series Forecasting of Hydroponic Water Quality Parameters Using XGBoost Based IoT Sensor Data",
+      "abstract": "Water quality monitoring is a critical factor in the success of hydroponic farming. Conventional reactive monitoring systems are often too slow to detect changes in water quality parameters such as Total Dissolved Solids (TDS), turbidity, and water level, which can lead to crop failure. This study aims to develop a short-term forecasting model using the Extreme Gradient Boosting (XGBoost) algorithm to support an early warning system. Time-series data was collected via IoT sensors over five months at 15-minute intervals. Model performance evaluation showed high accuracy across all parameters. The nutrient prediction model (TDS) achieved an R-squared value above 0.94 with MAPE below 2%, indicating excellent precision. For the turbidity parameter, the model obtained the highest R-squared value of 0.986 with MAE of only 0.72 NTU. Meanwhile, water level predictions were able to map water fluctuation dynamics with R-squared ranging from 0.85-0.92. These results prove that the XGBoost model is effective in providing accurate water condition estimates, enabling farmers to take preventive measures before a significant decline in water quality occurs within a relatively short period of time.",
+      "url": "https://www.semanticscholar.org/paper/f01ed090ec5cb9641c18886d6fd8d44515a83fbe",
+      "openAccessPdf": "",
+      "source_type": "paper",
+      "paperId": "f01ed090ec5cb9641c18886d6fd8d44515a83fbe",
+      "year": 2026,
+      "venue": "Jurnal Informatika dan Teknik Elektro Terapan",
+      "citationCount": 0,
+      "doi": "10.23960/jitet.v14i2.9458",
+      "matched_queries": [
+        {
+          "category": "turbidity",
+          "query": "basil hydroponic water quality turbidity"
+        }
+      ]
+    },
+    {
+      "category": "turbidity",
+      "query": "basil hydroponic water quality turbidity",
+      "title": "Cold Plasma Treatment of Sweet Basil Seeds and Nutrient Water in Hydroponics: Impact on Growth and Quality",
+      "abstract": "ABSTRACT This study investigated the combined effect of two plasma treatments during hydroponic growing of sweet basil plants. Air‐based cold plasma was applied to basil seeds using a Plasmajet. Also, plasma‐activated water (PAW) was produced by using a submerged gliding arc plasmatron system followed by mixing the PAW with a nutrient solution (NS) to make plasma‐activated NS (PANS). Basil plants from untreated and plasma‐treated seeds were grown hydroponically using NS and PANS in a greenhouse in an ebb‐and‐flow system. Basil plants were harvested after 21 days and analyzed for their dry tissue mass, growth parameters (plant height, number of branches and nodes, root length, and leaf index), quality (color, texture), and microbiology (total plate count). The combination of plasma treatment of seeds followed by growing the plants using PANS (treated group) resulted in higher plant height, longer root length, greater number of branches, bigger leaves, and higher zinc content in leaves in comparison to plants grown from untreated seeds and with NS (control group). Plasma treatment did not significantly affect moisture content, number of nodes, dry weight, wet weight, greenness, texture, aroma content, and sensory attributes of basil leaves. However, sensory results showed increased basil flavor, aroma, and bitterness in the tomato basil salad made with PANS‐treated basil, compared to tomato basil salad made with NS‐treated basil. This work revealed that the plasma treatment of the basil seeds combined with PANS could be effective to enhance the growth of sweet basil plants and increase the aroma and flavor of this culinary herb.",
+      "url": "https://www.semanticscholar.org/paper/af8b98e12bf14d57dd2b7ad90900c2a2179e66a6",
+      "openAccessPdf": "https://doi.org/10.1111/1750-3841.70224",
+      "source_type": "paper",
+      "paperId": "af8b98e12bf14d57dd2b7ad90900c2a2179e66a6",
+      "year": 2025,
+      "venue": "Journal of Food Science",
+      "citationCount": 1,
+      "doi": "10.1111/1750-3841.70224",
+      "matched_queries": [
+        {
+          "category": "turbidity",
+          "query": "basil hydroponic water quality turbidity"
+        },
+        {
+          "category": "turbidity",
+          "query": "basil root disease water quality hydroponic"
+        }
+      ]
+    },
+    {
+      "category": "turbidity",
+      "query": "basil root disease water quality hydroponic",
+      "title": "Triadic Interaction of Engineered Nanoparticles, PFAS, and Synthetic Root Exudates in Hydroponic Systems: A Surface Chemistry Approach for Water Quality Innovation",
+      "abstract": null,
+      "url": "https://www.semanticscholar.org/paper/b711cdf23e1807ebcbfde19f1f7c73231197143e",
+      "openAccessPdf": "",
+      "source_type": "paper",
+      "paperId": "b711cdf23e1807ebcbfde19f1f7c73231197143e",
+      "year": 2025,
+      "venue": "ACS ES&amp;T Water",
+      "citationCount": 3,
+      "doi": "10.1021/acsestwater.5c00492",
+      "matched_queries": [
+        {
+          "category": "turbidity",
+          "query": "basil root disease water quality hydroponic"
+        }
+      ]
+    },
+    {
+      "category": "DO",
+      "query": "basil hydroponic dissolved oxygen",
+      "title": "effect of dissolved oxygen on common carp (Cyprinus carpio) and basil (Ocimum basilicum) in the aquaponics system",
+      "abstract": "Aquaponics is an integrated system that combines fish farming (aquaculture) and hydroponic plant production. The objective of this study was to examine how the level of dissolved oxygen with or without an air pump affects water quality, fish output and plant growth parameters for common carp (Cyprinus carpio) and basil (Ocimum basilicum). \nEbb – and flood aquaponics systems (with automatic syphon) was used. Two treatments were set in this experiment, one of which was the aquaponics system without air pump (unit I), where water of the plant bed was pumped two directions, one falling back to the fish tank oxygenating the water the other was pumped to the hydroponics unit. The other system (unit II) was designed with an air pump.\nIn the course of the study, water quality parameters, such as oxygen saturation, dissolved oxygen (DO), electrical conductivity (EC) and nitrite were significantly different (p<0.05). Total basil biomass was higher in unit II. (5367.41 g). The final biomass of common carp were 2829.45 g ± 79.24 and 2980.6 g ± 64.13 g in unit I and unit II respectively. Weight gain (WG) and specific growth rate (SGR) showed no significant differences (p>0.05) between the treatments. ",
+      "url": "https://www.semanticscholar.org/paper/3ca38f98ff757cafafe6b07bc6f67e0de7a67e85",
+      "openAccessPdf": "https://ojs.lib.unideb.hu/actaagrar/article/download/8933/8437",
+      "source_type": "paper",
+      "paperId": "3ca38f98ff757cafafe6b07bc6f67e0de7a67e85",
+      "year": 2021,
+      "venue": "",
+      "citationCount": 8,
+      "doi": "10.34101/ACTAAGRAR/1/8933",
+      "matched_queries": [
+        {
+          "category": "DO",
+          "query": "basil hydroponic dissolved oxygen"
+        }
+      ]
+    },
+    {
+      "category": "DO",
+      "query": "basil hydroponic dissolved oxygen",
+      "title": "Overview of Multiple Applications of Basil Species and Cultivars and the Effects of Production Environmental Parameters on Yields and Secondary Metabolites in Hydroponic Systems",
+      "abstract": "Basil (Ocimum basilicum L.), including other species and cultivars, is an excellent source of nutritional compounds, the accumulation of which can be stimulated by exogenous factors (environmental and nutritional conditions). Although best practices are relatively established for mature basil plants, microgreens production requires further research to optimize quality and quantity. The study objectives are (i) to provide an overview of the many uses of basil, (ii) collate and present common hydroponic systems available in the market, (iii) review effects of key production environment parameters on basil yields in hydroponic systems, and (iv) summarize the effects of the growth environments on yield quantity and quality of basil microgreens. The paper analyzes in detail key production parameters of basil microgreens in hydroponic systems, such as temperature, humidity, pH, electrical conductivity, dissolved oxygen, carbon dioxide, nutrient solutions, and the influence of light (quantity, quality, and photoperiods). The collated literature review has shown that basil, grown hydroponically, can tolerate high variations of environmental parameters: pH 5.1–8.5, temperature 15–24 °C, relative humidity 60–70%, electrical conductivity up to 1.2 mS cm−1, depending on the developmental stage, dissolved oxygen at 4 mg L−1 (optimally 6.5 mg L−1), and light intensity between 200 and 400 μmol m−2 s−1. The study has synthesized an overview of different production parameters to provide guidance on the optimization of environmental conditions to ensure the quantity and quality production of basil microgreens. Improving the quality of basil microgreens can ideally spur continued gastronomic interest in microgreens in general, which will encourage more entrepreneurs to grow basil and other microgreens. Hence, the study findings are a great resource to learn about the effects of different environments on basil microgreen production. This information can inform research for successful production of different species and cultivars of basil microgreens, and establishing testing protocols to improve the quantity and quality of the harvest.",
+      "url": "https://www.semanticscholar.org/paper/1fda93b65ab3ebf5c5eb719b898968d1232da003",
+      "openAccessPdf": "https://www.mdpi.com/2071-1050/13/20/11332/pdf?version=1634782850",
+      "source_type": "paper",
+      "paperId": "1fda93b65ab3ebf5c5eb719b898968d1232da003",
+      "year": 2021,
+      "venue": "Sustainability",
+      "citationCount": 24,
+      "doi": "10.3390/su132011332",
+      "matched_queries": [
+        {
+          "category": "DO",
+          "query": "basil hydroponic dissolved oxygen"
+        }
+      ]
+    },
+    {
+      "category": "DO",
+      "query": "basil root oxygen hydroponic",
+      "title": "Growth of Hydroponic Sweet Basil (O. basilicum L.) Using Plasma-Activated Nutrient Solution (PANS)",
+      "abstract": "Hydroponic sweet basil (O. basilicum L.) farming uses a recirculating nutrient solution that may spread waterborne microbial contamination including algae. Plasma, the fourth state of matter, generates antimicrobial reactive oxygen and nitrogen species when exposed to water. The objective of this work was to study the effect of plasma-treated water-based nutrient solution on plant growth and in reduction of algae. Basil plants were grown in isolated ebb and flow hydroponic systems (under monitored environmental conditions) using nutrient solution (NS) and plasma-activated nutrient solution (PANS) with two separate treatments: the same irrigation solutions were used in the growth cycle (Treatment 1: NST1 and PANST1 once at the beginning growth cycle) and new irrigation solutions at every week of the growth cycle (Treatment 2: NST2 and PANST2). The plant growth parameters (height, fresh and dry weight, number of branches and nodes, root length, leaf index), quality parameters (color, texture, aroma, and tissue nutrients concentration), and algae concentrations were measured. Compared to NST1, plants grown on PANST1 were significantly taller (up to 12%), had a higher fresh mass (up to 29%) and dry mass (up to 45%), and had a higher greenness value (up to 28%). Algae growth was significantly reduced in the PANST2 reservoir (up to 24%) compared to the NST2 reservoir. It was confirmed that Treatment 1 significantly improved the yield, morphology, and quality of sweet basil plants, while Treatment 2 was best suited to decreasing algae concentration in the hydroponic environment. This preliminary study indicated that PANS could improve the quality and growth of sweet basil in hydroponic farming while controlling the algae growth in the growing environment.",
+      "url": "https://www.semanticscholar.org/paper/113d4640fba2e85c6cc78c5c6c16e29acf01ebdb",
+      "openAccessPdf": "https://www.mdpi.com/2077-0472/13/2/443/pdf?version=1676355082",
+      "source_type": "paper",
+      "paperId": "113d4640fba2e85c6cc78c5c6c16e29acf01ebdb",
+      "year": 2023,
+      "venue": "Agriculture",
+      "citationCount": 20,
+      "doi": "10.3390/agriculture13020443",
+      "matched_queries": [
+        {
+          "category": "DO",
+          "query": "basil root oxygen hydroponic"
+        }
+      ]
+    },
+    {
+      "category": "DO",
+      "query": "basil root oxygen hydroponic",
+      "title": "Yield and nutritional quality of aeroponically cultivated basil as affected by the available root-zone volume -",
+      "abstract": "*Corresponding author: Georgios Salachas, Department of Agricultural Technology, Laboratory of Plant Physiology and Nutrition, Technological Educational Institute of Western Greece, Campus Amaliada, 27200, Patras, Greece. E-mail: gsal@teimes.gr Received: 30 May 2015; Revised: 04 November 2015; Accepted: 08 December 2015; Published Online: 08 December 2015 Salachas, et al.: Aeroponic basil. Yield and nutritional quality 912 Emir. J. Food Agric ● Vol 27 ● Issue 12 ● 2015 air oxygen, promoting thus root metabolism and plant growth (Chiipanthenga et al., 2012), in comparison with hydroponic and soil cultivations. This study investigated the impact of the available root-zone volume on the yield and nutritional quality of sweet basil plants grown aeroponically. MATERIALS AND METHODS The experiment was carried out at a fully automated aeroponic greenhouse farm (500m2), located at Mesolonghi (lat. 38°59′N, long. 22°36′E), near the coastal area of Western Greece. The detached greenhouse was situated in the north-south direction. The closed recirculated aeroponic system consisted of three growing canals (x three replications). The growing canals are made of polystyrene insulated material of rectangular section, with constant length 10 m, width 0.67 m and depths of 0.15, 0.30 and 0.70 m. The canals were covered with polystyrene panels with three parallel holes for holding the plants. Totally, 450 sweet basil seed plants of about 10cm height each transplanted (after washing the roots in order to remove the soil) in the aeroponic growing canals. A high pressure irrigation system with two parallel pipes containing aeroponic sprayers was installed inside the structures in the bottom of the canals. The roots of the plants were sprayed by the nutrient solution for 25 sec every 5 min. The whole system was controlled electronically. Plants were grown under conditions. The root zone was automatically set to 20oC. The dry biomass content, the root length, the shoot high and the number of leaves per plant were measured every 10 days during the growing period. The rate of net photosynthesis, the rate of transpiration, the stomatal conductance, the chlorophyll content and the total phenolics content of roots and leaves were also determined at the end of the growing period. Nutrient solution The nutrient solution used for irrigation had the following macronutrient composition, (mM): K+, 6.5; Ca2+, 3; Mg2+, 0.9; NO3 -, 6.75; NH4 +, 0.36; H2PO4 -, 1.6 and micronutrient (μM): Fe2+, 30; Mn2+, 5; Zn2+, 4; Cu2+, 0.75; B+3, 30; Mo+6, 0.53 pH was adjusted to 5.6 by the use of HNO3 and the electrical conductivity was kept at 1.70 dS m-1. The temperature of the nutrient solution was kept at 20o C automatically. Preparation of the nutrient solution, adjustment of pH and electrical conductivity were controlled electronically. Gas exchange measurements Gas exchange measurements were conducted for seven fully expanded, mature leaves per experimental set of conditions using the LCI Portable Photosynthesis System (ADC, BioScientific Ltd., England). In this system, CO2 is determined by an infrared gas analyzer and H2O is recorded with two laser trimmed humidity sensors. Experimental measurements included net photosynthesis rate (μmol CO2 m -2 s-1), transpiration rate (mmol m-2 s-1) and stomatal conductance for CO2 diffusion (mol H2O m -2 s-1). All measurements were performed in fully expanded leaves of the same physiological age, at the same daytime and under identical natural light (incident photon flux density on the leaf surface ≈ 1000 μmol m-2 s-1) and temperature conditions (leaf surface temperature was between 25oC and 32oC). Chlorophyll content Three discs (0.9 cm in diameter) from each leaf (first fully expanded leaf) were incubated with 3 ml of dimethylsulphoxide (DMSO 99.5% or 14.8 M; Sigma Chemical Co.) in a glass tube at 65oC for 60 min until the tissue became colorless (Shinano et al., 1996). The absorbances at 665 nm for chlorophyll a and 648 nm for chlorophyll b were determined. The chlorophyll content was evaluated according to Lichtenthaler and Wellburn (1983), using the equations: Chlorophyll a, Chla = 14,85xA665 − 5,14xA648 (mg Chla/ml) Chlorophyll b, Chla = 25,4xA648 − 7,36xA665 (mg Chlb/ml) Total chlorophyll concentration (a+b), Chl(a+b) = Chla + Chlb (mg Chl/ml). Total phenolics Fresh leafs of basil (1 g) were homogenized in an UltraTurrax in 10 ml solution of methanol: deionized water: formic acid in proportion 50 ml: 48.5 ml: 1.5ml respectively for 100 ml solution (Mazza et al., 1999). The homogenate was centrifuged in a cooled centrifuge Centra MP4R (IEC, USA) at 10.000 g for 10 min at 4oC and the supernatant was used for the determination of phenolics. The absorbance of the supernatant was measured at 280 nm. The content of total phenolics was determined using a gallic acid standard curve and was expressed as μgr GAE/gr F.W. Isolation and analysis of the essential oils When basil plants reached full bloom, harvested samples of fresh leaves, stems and flowers, were cut in small pieces and submitted to hydro distillation with a Clevenger-type apparatus for 4 h (1.500 g with 6 lit of water). The essential oils were collected, dried under anhydrous sodium sulfate and stored in dark glass bottles at 4o C until further analysis. Essential oils yield (%) was calculated as per 100 g of dry material. The qualitative and quantitative analysis of the essential oils was performed using a Hewlett Packard 5890 II GC, equipped with a HP-5MS (crosslinked 5% PH ME siloxane) capillary column (30 m, 0.25 mm i.d., 0.25 mm Salachas, et al.: Aeroponic basil. Yield and nutritional quality Emir. J. Food Agric ● Vol 27 ● Issue 12 ● 2015 913 film thickness) and a mass spectrometer 5972 as detector. The carrier gas was helium, (rate 1 ml/min). The initial column temperature was 60oC and gradually increased to 250o C at a rate of 3 oC/min. The total time of the method was 63.33 min. For GC-MS detection, an electron ionization system was used with ionization energy of 70 Ev. Injector and detector (MS transfer line) temperatures were set at 220oC and 290oC, respectively. Diluted samples of 0.1 ml (the solvent was acetone of 99.8% purity) were injected manually and split less. Chromatographic peaks were identified by retention times and mass spectra of authentic compounds when available. Statistical data analysis Mean values of all treatments were compared by one-way ANOVA test and significant differences were determined using Duncan’s test (p < 0.05). All data were analyzed using the SPSS 17.0 program for Windows. RESULTS AND DISCUSSION Growth measurements From the beginning of the growing season and up to the first month, there were small but not statistically important differences in the mean shoot and root dry biomass content (Fig. 1, 2). After the first month, the shoot dry weight of the plants cultivated into canals with depth 15 and 30 cm significantly increased in comparison to plants cultivated into canals of 70 cm depth (Fig. 1). At the end of the growing period, the shoot dry weight of the plants in canals with depth of 15 and 30 cm was doubled compared to that plants grown in 70 cm depth. In contrast, the root dry biomass content of plants grown in 70 cm depth canals increased significantly, in comparison with plants grown in canals with depth 15 and 30cm (Fig. 2). Plants from the third week and from lower depth (15 and 30 cm) growing canals became higher than in 70 cm depth canals (Fig. 3). In contrast, after the first month of growing season, roots from lower depth were significantly shorter in comparison to roots from 70 cm depth canals (Fig. 4). The number of leaves per basil plant significantly increased for lower depth (15 and 30 cm) growing canals than in 70 cm depth canals (data not shown). The above results showed that the available root zone volume was essential for the aeroponic growth of plants. Basil plants cultivated aeroponically in the lower depth (15 and 30 cm) canals had better growth characteristics as shown by increased shoot height, higher number of leaves per plant and increased shoot dry biomass content. In comparison, plants cultivated in deeper, (70 cm) canals, had. lower shoot height, lower number of leaves per plant and lower shoot biomass content, possibly due to inadequate nutrition availability and absorption. By misting or injecting the nutrient solution under high pressure directly and closer onto the surface of the roots (15 to 30 cm), the plants were enforced profoundly with adequate nutritional substances and increased extra-oxygen concentrations (diluted into water droplets), giving to the plants optimum growth and maturation conditions. For the long-term growing periods in the deeper canals (70 cm), the mist system could not Fig 1. Mean shoot dry biomass content of aeroponically cultivated basil plants during cultivation season, in relation to the available",
+      "url": "https://www.semanticscholar.org/paper/40e4f56a4a76ff8dbbbbe7fea02a48edfb441bba",
+      "openAccessPdf": "https://www.ejfa.me/index.php/journal/article/download/984/715",
+      "source_type": "paper",
+      "paperId": "40e4f56a4a76ff8dbbbbe7fea02a48edfb441bba",
+      "year": 2015,
+      "venue": "",
+      "citationCount": 23,
+      "doi": "10.9755/EJFA.2015-05-233",
+      "matched_queries": [
+        {
+          "category": "DO",
+          "query": "basil root oxygen hydroponic"
+        }
+      ]
+    },
+    {
+      "category": "humidity",
+      "query": "basil growing relative humidity",
+      "title": "Morphological and physiological response in green and purple basil plants (Ocimum basilicum) under different proportions of red, green, and blue LED lightings",
+      "abstract": "Abstract Light quality not only influences the accumulation of photosynthetic pigments, but also mediates photo-physiological parameters in plant leaves. There is limited information available regarding the photosynthetic physiology of Ocimum plants under the influence of different light spectra. Monochromatic light spectra have been used for studying morphological and phytochemical productions of these plants. However, different proportions of red and blue light irradiation and supplement it with green light to identify the optimized light quality conditions for growing basils remain unknown. The aim of this study was to investigate that modifying the spectral environment with light-emitting diode (LED) lighting in hydroponic growth chambers can alter growth patterns in basil leaves and plant morphology, affecting physiological performance and photosynthetic pigments in the leaves of both green and purple basils. Plants were hydroponically cultured with a 12 h photoperiod at 24/20 °C (day/night), 75 % relative humidity, and 180 μmol m−2 s−1 photon flux density under three LED sources and three spectral color ratios, red (R): green (G): blue (B) = 4: 1: 1, 2: 1: 1, and 1: 1: 1, in an environmentally controlled growth room for 64 d after sowing. These various spectral environments affected plant growth, leaf area, and shoot and root fresh and dry weights, as well as the plant shape of both species. Plants treated with a 4:1:1 ratio were significantly larger than plants treated with a 1:1:1 ratio, demonstrating that the former light quality can be strategically used to enhance the growth of basil plants. Furthermore, 4:1:1-treated plants had relatively higher photosynthetic capacity, quantum yield, and photosynthetic electron transport compared to 2:1:1 or 1:1:1 treatments. Light treatments significantly and obviously affected pigments and cultivars differently, in that purple and green cultivars displayed remarkably higher and lower pigment content under 1:1:1 and 2:1:1 treatment, respectively. The precise management of photosynthetic parameters in response to the spectral quality of lighting may hold promise for maximizing the economic efficiency of the growth, development, and metabolic potential of O. basilicum plants grown in controlled environments.",
+      "url": "https://www.semanticscholar.org/paper/3b89cca5c1f947d780b106548494f5dd3cc48740",
+      "openAccessPdf": "",
+      "source_type": "paper",
+      "paperId": "3b89cca5c1f947d780b106548494f5dd3cc48740",
+      "year": 2021,
+      "venue": "Scientia Horticulturae",
+      "citationCount": 60,
+      "doi": "10.1016/J.SCIENTA.2020.109677",
+      "matched_queries": [
+        {
+          "category": "humidity",
+          "query": "basil growing relative humidity"
+        }
+      ]
+    },
+    {
+      "category": "humidity",
+      "query": "basil greenhouse humidity range",
+      "title": "Implementation of Agro-Shade with Fluorescent Solar Concentrators in Greenhouses",
+      "abstract": "This study investigates the implementation of Fluorescent Solar Concentrators (FSC) in greenhouse with an IoT-based monitoring system as an alternative agro-shade material. The purpose of the research is to assess the degree of effectiveness of FSC in producing electricity in a greenhouse setting while also promoting crop growth rate and provide a shade. A small greenhouse with roofing integrated with FSC was constructed to generate power for the IoT monitoring system and control environmental variables like temperature, humidity, and light intensity. Comparative growth trials were conducted with lettuce and basil under three conditions: (1) a modified greenhouse with FSC roofing, (2) a conventional greenhouse, and (3) openfield farming. The FSC system generated 0.16 kWh of energy per day, sufficient to power the IoT system, which consumes 0.078 kWh daily. Environmental data from the FSC-setup revealed temperature and humidity levels within the optimal range for crop growth, comparable to conventional greenhouse. One-Way ANOVA analysis demonstrated that plants in the FSC-modified greenhouse exhibited significantly higher growth rates in height, width, and leaf number compared to those in conventional greenhouses and open fields. The results suggest that FSC roofing is a viable alternative to traditional agro-shade materials, offering dual benefits: a controlled environment for enhanced crop growth and renewable energy for IoT systems. This integrated approach presents a sustainable solution for modern agricultural practices, optimizing both energy use and crop productivity.",
+      "url": "https://www.semanticscholar.org/paper/f699d17117fc6c583b700744c7d10cee3aaba9df",
+      "openAccessPdf": "",
+      "source_type": "paper",
+      "paperId": "f699d17117fc6c583b700744c7d10cee3aaba9df",
+      "year": 2024,
+      "venue": "International Conference on Humanoid, Nanotechnology, Information Technology,Communication and Control, Environment and Management",
+      "citationCount": 0,
+      "doi": "10.1109/HNICEM64917.2024.11258836",
+      "matched_queries": [
+        {
+          "category": "humidity",
+          "query": "basil greenhouse humidity range"
+        }
+      ]
+    },
+    {
+      "category": "humidity",
+      "query": "basil greenhouse humidity range",
+      "title": "A Design and Experimental Study of Fog Spraying Into the Greenhouse Roof for Radiation and Relative Humidity Control",
+      "abstract": "The objectives of this study were to investigate a design and experimental fog spraying into a greenhouse roof to control the temperature, relative humidity (%RH), radiation intensity (RI), and storage data system, which will support the maximum quality and quantity of vegetarian production. This study is a novel design and experiment concerning a greenhouse model that uses fogging spray on the roof and inside the greenhouse. The automatic control systems are applied with GY-49 sensors, AMT1001 temperature and humidity sensors and DS1307 real time clock module. The experimental results are shown by LCD monitoring using a real-time clock (RTC) from 2.00 a.m. to 8.00 p.m. The percentage difference in radiation intensity inside the greenhouse decreased in the range of 69.58 % to 95.00 %. The maximum temperature inside the greenhouse decreased by $12{}^{\\circ} \\mathrm{C}$. The temperature variation ratio of fogging is 80 %, while the relative humidity range of 60-97 %RH.",
+      "url": "https://www.semanticscholar.org/paper/3f916b0431fde5c071dec223e5a462bf82611feb",
+      "openAccessPdf": "",
+      "source_type": "paper",
+      "paperId": "3f916b0431fde5c071dec223e5a462bf82611feb",
+      "year": 2025,
+      "venue": "2025 11th International Conference on Engineering, Applied Sciences, and Technology (ICEAST)",
+      "citationCount": 0,
+      "doi": "10.1109/ICEAST64767.2025.11088164",
+      "matched_queries": [
+        {
+          "category": "humidity",
+          "query": "basil greenhouse humidity range"
+        }
+      ]
+    },
+    {
+      "category": "light",
+      "query": "basil hydroponic light requirement",
+      "title": "IMPACT OF LIGHT INTENSITY AND LUMINAIRE TYPE ON BASIL YIELD: INSIGHTS FROM A HYDROPONIC URBAN AGRICULTURE SYSTEM",
+      "abstract": "This study investigates the impact of different artificial lighting systems on the growth and yield of basil (Ocimum basilicum L.) within a controlled hydroponic environment. Aimed at comparing the effectiveness of several luminaire types, the research is identifying the optimal lighting conditions that enhance plant growth and productivity in an urban agriculture setting. The experiment was conducted in a 40\" HQ shipping container using a Nutrient Film Technique (NFT) system. Basil plants were grown under five different luminaire types (A, B, C, D, E) at varying light intensities (200, 230, 250, 260, and 275 μmol/m²/s) with 3 repetitions. Plant growth parameters, including weight, green plant part length, and total yield per square meter, were measured from 11 plants per growth board (55 plants in each test) after a cultivation period of 27 days post-transplantation. The findings demonstrated significant variations in plant yield and growth characteristics across the different lighting setups. Luminaire C consistently provided the highest yields, particularly at the 260 μmol/m²/s intensity, suggesting its lighting configuration offers optimal conditions for basil production. In contrast, Luminaires D and B showed lower yields, indicating less favourable growth environments under their specific lighting conditions. Statistical analysis revealed that there were observable trends in yield enhancement under specific lamps. Additionally, the study highlighted variations in plant uniformity. In terms of plant uniformity, the standard deviations in length and weight were lowest under Luminaire B, emphasizing its potential for producing uniform crops, a crucial factor in commercial horticulture. The study underscores the critical role of selecting appropriate lighting technologies to maximize plant growth in controlled environment agriculture. By identifying the most effective luminaire types and light intensities, the research contributes valuable insights toward optimizing urban agricultural practices and enhancing the sustainability of food production systems.",
+      "url": "https://www.semanticscholar.org/paper/a4e8a108a2ab763315aa698131120cb43ca77f47",
+      "openAccessPdf": "",
+      "source_type": "paper",
+      "paperId": "a4e8a108a2ab763315aa698131120cb43ca77f47",
+      "year": 2025,
+      "venue": "Environment Technology Resources Proceedings of the International Scientific and Practical Conference",
+      "citationCount": 1,
+      "doi": "10.17770/etr2025vol4.8399",
+      "matched_queries": [
+        {
+          "category": "light",
+          "query": "basil hydroponic light requirement"
+        }
+      ]
+    },
+    {
+      "category": "light",
+      "query": "basil hydroponic light requirement",
+      "title": "Impact of natural-white and red-blue light-emitting diode lighting on hydroponic basil growth and energy efficiency",
+      "abstract": "Advanced phosphor-converted white light-emitting diodes (pc-WLEDs) have been developed to mimic the natural sunlight spectrum, potentially enhancing plant growth compared to traditional red-blue (R-B) LEDs. This study aimed to compare the effects of natural-white pc-WLED (nsW-pcLED) and conventional R-B LED (R:B 3.24) on the growth, yield, and energy efficiency of hydroponically grown sweet basil. It was cultivated in a deep-water culture system under identical conditions with a photosynthetic photon flux density (PPFD) of 200±10 µmol·m⁻²·s⁻¹ and a 16/8 light/dark photoperiod over 28 days. Key growth parameters, including plant height, stem diameter, leaf number, and plant fresh weight (PFW), were measured, while energy consumption was recorded to assess efficiency. Results indicated that nsW-pcLED significantly enhanced growth, with plants achieving an average height of 44.30±1.51 cm, stem diameter of 6.68±0.21 mm, and a PFW of 34.20±6.12 g, compared to 35.88±4.05 cm, 4.66±0.88 mm, and 23.02±5.26 g under R-B LED (p <0.05), respectively. The nsW-pcLED treatment produced an average net growth of 1,221 g·m⁻² versus 536.43 g·m⁻² for R-B LED and delivered 33.05 g·m⁻²·kW·h⁻¹ compared to 11.17 g·m⁻²·kW·h⁻¹, while consuming 23% less energy. These findings highlight nsW-pcLED’s superior performance for indoor hydroponic cultivation. Future studies should explore its application in large-scale systems and across diverse crop species.",
+      "url": "https://www.semanticscholar.org/paper/e0b4a1b66c3ee9b16ddd9ce2578f0c47b7c4b62e",
+      "openAccessPdf": "",
+      "source_type": "paper",
+      "paperId": "e0b4a1b66c3ee9b16ddd9ce2578f0c47b7c4b62e",
+      "year": 2025,
+      "venue": "International Journal of Advances in Applied Sciences",
+      "citationCount": 0,
+      "doi": "10.11591/ijaas.v14.i2.pp406-415",
+      "matched_queries": [
+        {
+          "category": "light",
+          "query": "basil hydroponic light requirement"
+        },
+        {
+          "category": "light",
+          "query": "basil PPFD DLI photoperiod hydroponic"
+        }
+      ]
+    },
+    {
+      "category": "light",
+      "query": "basil PPFD DLI photoperiod hydroponic",
+      "title": "Determination of optimal daily light integral (DLI) for indoor cultivation of iceberg lettuce in an indigenous vertical hydroponic system",
+      "abstract": "The indoor cultivation of lettuce in a vertical hydroponic system (VHS) under artificial lighting is an energy-intensive process incurring a high energy cost. This study determines the optimal daily light integral (DLI) as a function of photoperiod on the physiological, morphological, and nutritional parameters, as well as the resource use efficiency of iceberg lettuce (cv. Glendana) grown in an indoor VHS. Seedlings were grown in a photoperiod of 12 h, 16 h, and 20 h with a photosynthetic photon flux density (PPFD) of 200 µmol m^−2 s^−1 using white LED lights. The results obtained were compared with VHS without artificial lights inside the greenhouse. The DLI values for 12 h, 16 h, and 20 h were 8.64, 11.5, and 14.4 mol m^−2 day^−1, respectively. The shoot fresh weight at harvest increased from 275.5 to 393 g as the DLI increased from 8.64 to 11.5 mol m^−2 day^−1. DLI of 14.4 mol m^−2 day^−1 had a negative impact on fresh weight, dry weight, and leaf area. The transition from VHS without artificial lights to VHS with artificial lights resulted in a 60% increase in fresh weight. Significantly higher water use efficiency of 71 g FW/L and energy use efficiency of 206.31 g FW/kWh were observed under a DLI of 11.5 mol m^−2 day^−1. The study recommends an optimal DLI of 11.5 mol m^−2 day^−1 for iceberg lettuce grown in an indoor vertical hydroponic system.",
+      "url": "https://www.semanticscholar.org/paper/0f5de8cb2268942ab0e4b789fe74f59ee719e199",
+      "openAccessPdf": "https://www.nature.com/articles/s41598-023-36997-2.pdf",
+      "source_type": "paper",
+      "paperId": "0f5de8cb2268942ab0e4b789fe74f59ee719e199",
+      "year": 2023,
+      "venue": "Scientific Reports",
+      "citationCount": 55,
+      "doi": "10.1038/s41598-023-36997-2",
+      "matched_queries": [
+        {
+          "category": "light",
+          "query": "basil PPFD DLI photoperiod hydroponic"
+        }
+      ]
+    },
+    {
+      "category": "crop_risk",
+      "query": "basil root rot hydroponic",
+      "title": "Effect of Some Nanocomposites on Infection Severity with Basil Root Rot",
+      "abstract": null,
+      "url": "https://www.semanticscholar.org/paper/4f7fd8f9021d49856f57b4095cfcafc83932443f",
+      "openAccessPdf": "https://doi.org/10.36632/mejar/2021.10.4.98",
+      "source_type": "paper",
+      "paperId": "4f7fd8f9021d49856f57b4095cfcafc83932443f",
+      "year": 2021,
+      "venue": "Middle East Journal of Agriculture Research",
+      "citationCount": 0,
+      "doi": "10.36632/mejar/2021.10.4.98",
+      "matched_queries": [
+        {
+          "category": "crop_risk",
+          "query": "basil root rot hydroponic"
+        }
+      ]
+    },
+    {
+      "category": "crop_risk",
+      "query": "basil bolting temperature hydroponic",
+      "title": "Hydroponic Basil Production: Temperature Influences Volatile Organic Compound Profile, but Not Overall Consumer Preference",
+      "abstract": "Altering the growing temperature during controlled-environment production not only influences crop growth and development, but can also influence volatile organic compound (VOC) production and, subsequently, sensory attributes of culinary herbs. Therefore, the objectives of this study were to (1) quantify the influence of mean daily temperature (MDT) and daily light integral (DLI) on key basil phenylpropanoid and terpenoid concentrations, (2) determine if differences in sensory characteristics due to MDT and DLI influence consumer preference, and (3) identify the sweet basil attributes consumers prefer. Thus, 2-week-old sweet basil ‘Nufar’ seedlings were transplanted into deep-flow hydroponic systems in greenhouses with target MDTs of 23, 26, 29, 32, or 35 °C and DLIs of 7, 9, or 12 mol·m−2·d−1. After three weeks, the two most recently mature leaves were harvested for gas chromatography–mass spectrometry (GC–MS) and consumer sensory analysis. Panel evaluations were conducted through a sliding door with samples served individually while panelists answered Likert scale and open-ended quality attribute and sensory questions. The DLI did not influence VOC concentrations. Increasing MDT from 23 to 36 °C during production increased 1,8 cineole, eugenol, and methyl chavicol concentrations linearly and did not affect linalool concentration. The increases in phenylpropanoid (eugenol and methyl chavicol) were greater than increases in terpenoid (1,8 cineole) concentrations. However, these increases did not impact overall consumer or flavor preference. The MDT during basil production influenced appearance, texture, and color preference of panelists. Taken together, MDT during production influenced both VOC concentrations and textural and visual attribute preference of basil but did not influence overall consumer preference. Therefore, changing the MDT during production can be used to alter plant growth and development without significantly affecting consumer preference.",
+      "url": "https://www.semanticscholar.org/paper/8dd059d95f86876eccfa7f3af4c0b9cc511f4488",
+      "openAccessPdf": "https://www.mdpi.com/2311-7524/8/1/76/pdf?version=1642147212",
+      "source_type": "paper",
+      "paperId": "8dd059d95f86876eccfa7f3af4c0b9cc511f4488",
+      "year": 2022,
+      "venue": "Horticulturae",
+      "citationCount": 6,
+      "doi": "10.3390/horticulturae8010076",
+      "matched_queries": [
+        {
+          "category": "crop_risk",
+          "query": "basil bolting temperature hydroponic"
+        }
+      ]
+    },
+    {
+      "category": "crop_risk",
+      "query": "basil bolting temperature hydroponic",
+      "title": "Design and Implementation of a Small-Scale Hydroponic Chamber for Sustainable Vegetative Propagation from Cuttings: A Basil (Ocimum basilicum L.)",
+      "abstract": "Urban agriculture in space-constrained cities requires compact, reproducible propagation systems. Therefore, the aim of this Technical Note is to design, implement, and functionally validate a low-cost, modular hydroponic chamber (SSHG) for early-stage vegetative propagation. This system couples DHT11-based temperature/RH monitoring with rule-based actuation—irrigation 4×/day and temperature-triggered ventilation—under the control of an Arduino Uno microcontroller; LED lighting was not controlled nor analyzed. Two 15-day trials with basil (Ocimum basilicum L.) yielded rooting rates of 61.7% (37/60) and 43.3% (26/60) under a deliberate minimal-input configuration without nutrient solutions or rooting hormones. Environmental summaries and spatial survival maps revealed edge-effect patterns and RH variability that inform irrigation layout improvements. The chamber, bill of materials, and protocol are documented to support replication and iteration. Thus, the SSHG provides a transferable baseline for educators and researchers to audit, reproduce, and improve small-footprint, controlled-environment propagation. Beyond its technical feasibility, the SSHG contributes to sustainability by leveraging low-cost, readily available components, enabling decentralized seedling production in space-constrained settings, and operating under a minimal-input configuration. In line with widely reported hydroponic efficiencies (e.g., lower water use relative to soil-based propagation), this open and replicable platform aligns with SDGs 2, 11, 12, and 13.",
+      "url": "https://www.semanticscholar.org/paper/792db0c40c749ce712459644e6c75521d03b5e44",
+      "openAccessPdf": "",
+      "source_type": "paper",
+      "paperId": "792db0c40c749ce712459644e6c75521d03b5e44",
+      "year": 2025,
+      "venue": "Sustainability",
+      "citationCount": 0,
+      "doi": "10.3390/su17198773",
+      "matched_queries": [
+        {
+          "category": "crop_risk",
+          "query": "basil bolting temperature hydroponic"
+        }
+      ]
+    },
+    {
+      "category": "KR",
+      "query": "바질 수경재배 적정 온도 pH EC 양액",
+      "title": "Light quality and photoperiod affect growth of sowthistle (Ixeris dentata Nakai) in a closed-type plant production system.",
+      "abstract": null,
+      "url": "https://www.semanticscholar.org/paper/ad299ec9353256e75fd61120fa1793e12ccd49d6",
+      "openAccessPdf": "",
+      "source_type": "paper",
+      "paperId": "ad299ec9353256e75fd61120fa1793e12ccd49d6",
+      "year": 2016,
+      "venue": "",
+      "citationCount": 8,
+      "doi": "10.12972/KJHST.20160005",
+      "matched_queries": [
+        {
+          "category": "KR",
+          "query": "바질 수경재배 적정 온도 pH EC 양액"
+        }
+      ]
+    }
+  ],
+  "next_step": {
+    "target_module": "DocumentNLPExtractor",
+    "description": "documents 배열의 title, abstract, openAccessPdf를 이용해 수온, pH, EC, 유량, 탁도, DO, 습도, 광량, 작물 특이 위험 관련 파라미터 후보를 추출한다."
+  }
+}

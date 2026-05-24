@@ -1,0 +1,37 @@
+{
+  "category": "flow",
+  "query": "basil hydroponic flow rate",
+  "limit": 2,
+  "year": null,
+  "documents": [
+    {
+      "category": "flow",
+      "query": "basil hydroponic flow rate",
+      "title": "Nutrient solution concentration and flow rate affect sweet basil growth, yield, and water productivity in a recirculating gravel film hydroponic system",
+      "abstract": null,
+      "url": "https://www.semanticscholar.org/paper/fdf23a883f9e6a7052b2c4a7143719ac1b6a4571",
+      "openAccessPdf": "",
+      "source_type": "paper",
+      "paperId": "fdf23a883f9e6a7052b2c4a7143719ac1b6a4571",
+      "year": 2026,
+      "venue": "South African Journal of Botany",
+      "citationCount": 1,
+      "doi": "10.1016/j.sajb.2026.04.018"
+    },
+    {
+      "category": "flow",
+      "query": "basil hydroponic flow rate",
+      "title": "Design, Development and Testing of an IoT‐Based Smart Vertical Hydroponic System for Optimized Nutrient Management in a Controlled Environment",
+      "abstract": "This study focuses on the development of a smart vertical hydroponic system based on the Internet of Things (IoT). The system is programmed to regulate key aspects of hydroponic farming, including irrigation, growth environment and nutrient requirements. The experimental design evaluated the effects of nutrient solution flow rates (0.5, 1.0 and 1.5 lpm) and fertigation management systems (manual, commercial dozer and developed IoT‐based dozer) for basil crops. During 2022–2023, growth parameters were monitored at regular intervals along with the yield and water consumption of each system. The results showed that the 1 lpm flow rate is the most suitable for the developed system. Compared with manual fertigation, the IoT‐based fertigation system resulted in significant increases in plant height (12%), leaf area (16%), number of leaves (16%) and fresh weight (19%). These improvements helped the plants achieve significantly higher yields (19%) and water use efficiencies (18%). The IoT‐based vertical nutrient film technique (NFT) hydroponic system continuously allows remote data monitoring and precisely manages fertigation automatically. Compared with traditional methods, the developed system achieved 5.46 times greater crop density. This study highlights the potential of integrating IoT and sensor technologies in hydroponic systems to improve nutrient management, crop productivity and sustainability in modern agriculture.",
+      "url": "https://www.semanticscholar.org/paper/4eaa7e04de68c62cc18150496a867fd96c5ae2a3",
+      "openAccessPdf": "",
+      "source_type": "paper",
+      "paperId": "4eaa7e04de68c62cc18150496a867fd96c5ae2a3",
+      "year": 2025,
+      "venue": "Irrigation and Drainage",
+      "citationCount": 5,
+      "doi": "10.1002/ird.4002"
+    }
+  ],
+  "cached_at": "2026-05-12 01:49:01"
+}

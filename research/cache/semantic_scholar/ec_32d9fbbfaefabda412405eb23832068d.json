@@ -1,0 +1,37 @@
+{
+  "category": "EC",
+  "query": "strawberry hydroponic EC range",
+  "limit": 2,
+  "year": null,
+  "documents": [
+    {
+      "category": "EC",
+      "query": "strawberry hydroponic EC range",
+      "title": "Effects of varying electrical conductivity levels on plant growth, yield, and photosynthetic parameters of Tochiotome strawberry (Fragaria × ananassa 'Tochiotome) in a greenhouse",
+      "abstract": "This study aimed to identify the salinity threshold affecting plant health and optimal conditions for sustainable strawberry cultivation in greenhouses. By identifying the optimal EC range that promotes plant growth while minimizing salinity stress, this study offers strategies to mitigate the negative effects of salinity on crop production. This study was conducted in a hydroponic system, where strawberries were irrigated with different EC levels (0.5, 1.0, 2.0, 4.0, 6.0, and 8.0 dS·m⁻¹) using Hoagland nutrient solutions. We applied irrigation treatments with different electrical conductivity (EC) levels to evaluate their effects on the growth, yield, and photosynthetic performance of Fragaria × ananassa ‘Tochiotome’ strawberries. The crown and leaf fresh weights, root length, individual fruit weight, leaf area, SPAD values (chlorophyll content), Brix percentage (fruit sweetness), and overall yield were measured. The results showed that EC influenced water uptake, nutrient availability, and physiological aspects of the plant. The EC levels above 6.0 dS·m⁻¹ significantly reduced crown and leaf fresh weights due to osmotic stress and nutrient imbalances, negatively affecting biomass accumulation. Root length also decreased at higher EC levels, indicating compromised root growth, while individual fruit weight was declined likely due to impaired nutrient uptake. In contrast, leaf area, SPAD values (chlorophyll content indicator), and Brix percentage (fruit sweetness) remained stable, suggesting resilience in some plant traits. Yield was declined at both high and low EC levels, which might be attributed to a reduced fruit size and nutrient uptake limitations. Moderate salinity levels (2.0–4.0 dS·m⁻¹) initially improved photosynthetic parameters, but higher levels (6.0–8.0 dS·m⁻¹) reduced photosynthetic efficiency. These results suggest that maintaining the EC between 2.0 and 4.0 dS·m⁻¹ optimizes plant growth and photosynthesis, whereas deviations above or below this range may lead to salinity stress or nutrient deficiencies.",
+      "url": "https://www.semanticscholar.org/paper/f179f0a0213029351c4e39692ca32b377f1bd68a",
+      "openAccessPdf": "",
+      "source_type": "paper",
+      "paperId": "f179f0a0213029351c4e39692ca32b377f1bd68a",
+      "year": 2025,
+      "venue": "Australian Journal of Crop Science",
+      "citationCount": 2,
+      "doi": "10.21475/ajcs.25.19.04.p322"
+    },
+    {
+      "category": "EC",
+      "query": "strawberry hydroponic EC range",
+      "title": "Growth and Fruit Yield of Strawberry Grown in Raised Bed Culture Using Growing Media with Lower Cost",
+      "abstract": null,
+      "url": "https://www.semanticscholar.org/paper/0ccbbf09923ef2f36e4bf79406c1e33b65fda141",
+      "openAccessPdf": "",
+      "source_type": "paper",
+      "paperId": "0ccbbf09923ef2f36e4bf79406c1e33b65fda141",
+      "year": 2004,
+      "venue": "",
+      "citationCount": 4,
+      "doi": null
+    }
+  ],
+  "cached_at": "2026-05-12 02:01:24"
+}

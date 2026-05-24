@@ -1,0 +1,37 @@
+{
+  "category": "crop_risk",
+  "query": "basil root rot hydroponic",
+  "limit": 2,
+  "year": null,
+  "documents": [
+    {
+      "category": "crop_risk",
+      "query": "basil root rot hydroponic",
+      "title": "Effects of Low pH of Hydroponic Nutrient Solution on Plant Growth, Nutrient Uptake, and Root Rot Disease Incidence of Basil (Ocimum basilicum L.)",
+      "abstract": "Rootzone pH affects nutrient availability for plants. Hydroponic leafy greens are grown in nutrient solutions with pH 5.5 to 6.5. Lower pH may inhibit plant growth, whereas pathogenic oomycete growth and reproduction may be mitigated. General understanding of pH effects on nutrient availability suggests likely toxicity and deficiency of specific micronutrients. We hypothesized that if adjustments are made to the micronutrient concentrations in solution, plants will grow in lower-than-conventional pH without nutrient disorders, while oomycete disease incidence and severity may be reduced. To develop a new nutrient solution management strategy, we examined pH of 4.0, 4.5, 5.0, and 5.5 with or without micronutrient adjustments for growing two cultivars of basil plants Dolce Fresca and Nufar in a greenhouse hydroponic deep-water culture (DWC) system. Micronutrient adjustments included reduced concentrations of copper, zinc, manganese, and boron by one-half and doubled molybdenum concentration. Plants harvested 20 to 28 days after transplanting did not show significant effects of pH or the micronutrient adjustment. Phosphorus, calcium, magnesium, sulfur, boron, manganese, and zinc concentrations in leaves significantly declined, while potassium and aluminum concentrations increased with decreasing pH. However, these changes and therefore micronutrient adjustments did not affect basil plant growth significantly. ‘Nufar’ basil plants were then grown in a growth chamber DWC system at pH 4.0 or a conventional 5.5 with and without inoculation of Pythium aphanidermatum zoospores. Fourteen days after inoculation, P. aphanidermatum oospore production was confirmed only for the inoculated plants in pH 5.5 solution, where a significant reduction of plant growth was observed. The results of the present study indicate that maintaining nutrient solution pH at 4.0 can effectively suppress the severity of root rot caused by P. aphanidermatum initiated by zoospore inoculation without influencing basil growth.",
+      "url": "https://www.semanticscholar.org/paper/521ae521ada9a9a3e708c55ddafa4eef0f0050ba",
+      "openAccessPdf": "https://journals.ashs.org/downloadpdf/journals/hortsci/55/8/article-p1251.pdf",
+      "source_type": "paper",
+      "paperId": "521ae521ada9a9a3e708c55ddafa4eef0f0050ba",
+      "year": 2020,
+      "venue": "Hortscience",
+      "citationCount": 58,
+      "doi": "10.21273/hortsci14986-20"
+    },
+    {
+      "category": "crop_risk",
+      "query": "basil root rot hydroponic",
+      "title": "Effect of Some Nanocomposites on Infection Severity with Basil Root Rot",
+      "abstract": null,
+      "url": "https://www.semanticscholar.org/paper/4f7fd8f9021d49856f57b4095cfcafc83932443f",
+      "openAccessPdf": "https://doi.org/10.36632/mejar/2021.10.4.98",
+      "source_type": "paper",
+      "paperId": "4f7fd8f9021d49856f57b4095cfcafc83932443f",
+      "year": 2021,
+      "venue": "Middle East Journal of Agriculture Research",
+      "citationCount": 0,
+      "doi": "10.36632/mejar/2021.10.4.98"
+    }
+  ],
+  "cached_at": "2026-05-12 01:49:25"
+}

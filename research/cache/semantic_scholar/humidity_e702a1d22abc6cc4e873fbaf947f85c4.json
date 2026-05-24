@@ -1,0 +1,37 @@
+{
+  "category": "humidity",
+  "query": "strawberry greenhouse humidity range",
+  "limit": 2,
+  "year": null,
+  "documents": [
+    {
+      "category": "humidity",
+      "query": "strawberry greenhouse humidity range",
+      "title": "DEVELOPMENT OF A THERMAL MODEL OF A SOLAR POWERED VAPOUR ABSORPTION REFRIGERATION SUPPORTED GREENHOUSE FOR STRAWBERRY CULTIVATION",
+      "abstract": "In this paper, a novel scheme of a solar powered vapour absorption refrigeration supported greenhouse with indirect evaporative cooler has been proposed. The main objective of this work is to create a favorable microclimatic condition for strawberry cultivation inside the greenhouse for a country with sub-tropical climatic conditions like India when the ambient temperature and humidity are high. The maximum yield of strawberry is achieved for a temperature ranging between 15-25 °C with a relative humidity varying from 55 to 65%. It is quite impossible to achieve a favorable temperature range for strawberry cultivation in the greenhouse under such condition by using the existing greenhouse cooling techniques. A double effect parallel flow LiBr-H2O absorption cooling system along with an IDEC powered through solar energy has been used. A thermal model for the greenhouse has been developed and analyzed for the climatic condition of Kolkata, India. The study reveals that the proposed system can very well maintain a conducive climate for the growth of target plantation for the given location.",
+      "url": "https://www.semanticscholar.org/paper/63d3945d285451ec041e5b3352bdaaa51b796abd",
+      "openAccessPdf": "https://doi.org/10.1088/1757-899x/1080/1/012043",
+      "source_type": "paper",
+      "paperId": "63d3945d285451ec041e5b3352bdaaa51b796abd",
+      "year": 2021,
+      "venue": "",
+      "citationCount": 0,
+      "doi": "10.1088/1757-899X/1080/1/012043"
+    },
+    {
+      "category": "humidity",
+      "query": "strawberry greenhouse humidity range",
+      "title": "اثر اسید سالیسیلیک بر رشد، عملکرد و کیفیت میوه توتفرنگی رقم \"پاروس\" در شرایط شوری",
+      "abstract": "Because of increasing trend in salinization of water sources, and inevitable using non-traditional water, a research was planned to determine the tolerance range of strawberry cv. Paros to salinity and possible role of salicylic acid (SA) in ameliorating its adverse effect on plant growth. In this research, effect of different salinity levels (0, 20 and 40 mM in nutrient solution) and SA (0, 100, 200 and 300 mg/L as foliar spray) on this plant was investigated. Rooted plants of strawberry were cultivated in 3 L plastic pots, filled with 1:1 ratio of perlite and cocopeat under greenhouse conditions. Day and night temperatures were 23±3 and 15±3 oC and relative humidity was about 60 to 70%. After establishment of plants, salinity treatments were carried out. Results indicated that salt stress had adverse influence on most of the parameters and caused reduction in shoot and root fresh and dry weight, and also decreased vitamin C concentration of fruits. Foliar application of SA solution at 200 mg/L caused an increase in tolerance level of plants and improved such characteristics as leaf area, shoot and root fresh and dry weight and yield. This ameliorative effect of SA decreased along with increase in salinity concentration to 40 mM. In general, SA could mitigate the detrimental effect of saline conditions on growth of strawberry plants, especially at 200 mg/L concentration.",
+      "url": "https://www.semanticscholar.org/paper/9627ba130bb93d70f3b71de9e32db6d4eb1f98dd",
+      "openAccessPdf": "https://doi.org/10.18869/acadpub.ejgcst.7.4.163",
+      "source_type": "paper",
+      "paperId": "9627ba130bb93d70f3b71de9e32db6d4eb1f98dd",
+      "year": 2017,
+      "venue": "",
+      "citationCount": 3,
+      "doi": "10.18869/ACADPUB.EJGCST.7.4.163"
+    }
+  ],
+  "cached_at": "2026-05-12 02:01:47"
+}

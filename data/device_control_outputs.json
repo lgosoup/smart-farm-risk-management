@@ -1,0 +1,204 @@
+﻿{
+    "timestamp":  "2026-05-05T00:43:18+09:00",
+    "control_mode":  "optimize",
+    "trigger":  {
+                    "enabled":  true,
+                    "reason":  "action_key가 경고 이상",
+                    "action_key":  "위험",
+                    "risk_label":  "위험",
+                    "risk_score":  77.044
+                },
+    "current_inputs":  {
+                           "T":  18,
+                           "DO":  6,
+                           "pH":  6.3,
+                           "FR":  1,
+                           "EC":  0.5,
+                           "Turbidity":  1
+                       },
+    "selected_control":  {
+                             "circulation_pump_minutes":  5,
+                             "nutrient_pump_ml":  0,
+                             "aeration_minutes":  15,
+                             "cooler_minutes":  0,
+                             "fan_minutes":  0,
+                             "led_minutes":  0
+                         },
+    "device_commands":  {
+                            "circulation_pump":  {
+                                                     "enabled":  true,
+                                                     "duration_sec":  300,
+                                                     "estimated_wh":  0.6667,
+                                                     "purpose":  "순환/유량 안정화 및 DO 보조"
+                                                 },
+                            "nutrient_pump":  {
+                                                  "enabled":  false,
+                                                  "target_ml":  0.0,
+                                                  "estimated_wh":  0.0,
+                                                  "purpose":  "EC 보정"
+                                              },
+                            "aeration_pump":  {
+                                                  "enabled":  true,
+                                                  "duration_sec":  900,
+                                                  "estimated_wh":  1.0,
+                                                  "purpose":  "DO 증가"
+                                              },
+                            "peltier_cooler":  {
+                                                   "enabled":  false,
+                                                   "duration_sec":  0,
+                                                   "estimated_wh":  0.0,
+                                                   "purpose":  "양액 수온 하강"
+                                               },
+                            "cooling_fan":  {
+                                                "enabled":  false,
+                                                "duration_sec":  0,
+                                                "estimated_wh":  0.0,
+                                                "purpose":  "펠티어 방열/환기"
+                                            },
+                            "grow_led":  {
+                                             "enabled":  false,
+                                             "duration_sec":  0,
+                                             "estimated_wh":  0.0,
+                                             "purpose":  "광량/광주기 제어"
+                                         }
+                        },
+    "prediction":  {
+                       "predicted_inputs":  {
+                                                "T":  17.9,
+                                                "DO":  8.005,
+                                                "pH":  6.3,
+                                                "FR":  1.125,
+                                                "EC":  0.5,
+                                                "Turbidity":  1
+                                            },
+                       "predicted_risk":  {
+                                              "risk_score":  66.5576,
+                                              "risk_label":  "경고",
+                                              "action_key":  "경고"
+                                          }
+                   },
+    "objective":  {
+                      "J":  67.8909,
+                      "predicted_risk_score":  66.5576,
+                      "risk_reduction":  10.4864,
+                      "energy_wh":  1.6667,
+                      "energy_cost_norm":  0.1667,
+                      "resource_cost_norm":  0.0,
+                      "change_penalty":  0.0,
+                      "over_control_penalty":  0.0,
+                      "weak_reduction_penalty":  0.0,
+                      "weights":  {
+                                      "alpha":  1.0,
+                                      "beta":  8.0,
+                                      "gamma":  5.0,
+                                      "delta":  2.0,
+                                      "eta":  6.0,
+                                      "theta":  5.0
+                                  }
+                  },
+    "candidate_summary":  {
+                              "total_candidates":  1280,
+                              "valid_candidates":  960,
+                              "top_k":  [
+                                            {
+                                                "rank":  1,
+                                                "J":  67.8909,
+                                                "control":  {
+                                                                "circulation_pump_minutes":  5,
+                                                                "nutrient_pump_ml":  0,
+                                                                "aeration_minutes":  15,
+                                                                "cooler_minutes":  0,
+                                                                "fan_minutes":  0,
+                                                                "led_minutes":  0
+                                                            },
+                                                "predicted_risk_score":  66.5576,
+                                                "predicted_risk_label":  "경고",
+                                                "risk_reduction":  10.4864,
+                                                "energy_wh":  1.6667,
+                                                "resource_cost_norm":  0.0
+                                            },
+                                            {
+                                                "rank":  2,
+                                                "J":  68.202,
+                                                "control":  {
+                                                                "circulation_pump_minutes":  5,
+                                                                "nutrient_pump_ml":  0,
+                                                                "aeration_minutes":  15,
+                                                                "cooler_minutes":  0,
+                                                                "fan_minutes":  5,
+                                                                "led_minutes":  0
+                                                            },
+                                                "predicted_risk_score":  66.5576,
+                                                "predicted_risk_label":  "경고",
+                                                "risk_reduction":  10.4864,
+                                                "energy_wh":  1.9167,
+                                                "resource_cost_norm":  0.0
+                                            },
+                                            {
+                                                "rank":  3,
+                                                "J":  68.5132,
+                                                "control":  {
+                                                                "circulation_pump_minutes":  5,
+                                                                "nutrient_pump_ml":  0,
+                                                                "aeration_minutes":  15,
+                                                                "cooler_minutes":  0,
+                                                                "fan_minutes":  10,
+                                                                "led_minutes":  0
+                                                            },
+                                                "predicted_risk_score":  66.5576,
+                                                "predicted_risk_label":  "경고",
+                                                "risk_reduction":  10.4864,
+                                                "energy_wh":  2.1667,
+                                                "resource_cost_norm":  0.0
+                                            },
+                                            {
+                                                "rank":  4,
+                                                "J":  68.8243,
+                                                "control":  {
+                                                                "circulation_pump_minutes":  5,
+                                                                "nutrient_pump_ml":  0,
+                                                                "aeration_minutes":  15,
+                                                                "cooler_minutes":  0,
+                                                                "fan_minutes":  15,
+                                                                "led_minutes":  0
+                                                            },
+                                                "predicted_risk_score":  66.5576,
+                                                "predicted_risk_label":  "경고",
+                                                "risk_reduction":  10.4864,
+                                                "energy_wh":  2.4167,
+                                                "resource_cost_norm":  0.0
+                                            },
+                                            {
+                                                "rank":  5,
+                                                "J":  70.702,
+                                                "control":  {
+                                                                "circulation_pump_minutes":  5,
+                                                                "nutrient_pump_ml":  0,
+                                                                "aeration_minutes":  15,
+                                                                "cooler_minutes":  3,
+                                                                "fan_minutes":  5,
+                                                                "led_minutes":  0
+                                                            },
+                                                "predicted_risk_score":  66.5576,
+                                                "predicted_risk_label":  "경고",
+                                                "risk_reduction":  10.4864,
+                                                "energy_wh":  4.9167,
+                                                "resource_cost_norm":  0.0
+                                            }
+                                        ]
+                          },
+    "estimated_total_wh":  1.6667,
+    "measured_total_wh":  null,
+    "measurement_source":  null,
+    "bandit_feedback":  {
+                            "enabled":  false,
+                            "reward":  null,
+                            "comment":  "향후 실제 위험도 감소량과 실제 전력 사용량 기반 보상 계산 예정"
+                        },
+    "notes":  [
+                  "outputs.json은 현재 inputs.json 기준으로 최신화함",
+                  "기존 history_inputs.jsonl과 history_packets.jsonl은 수정하지 않음",
+                  "예측 모델은 소형 수경재배 박스 기준 초기 휴리스틱 선형 근사이며 향후 실측 데이터로 보정 필요",
+                  "예상 전력은 추정값이며 실제 전력 측정값과 비교 가능"
+              ]
+}

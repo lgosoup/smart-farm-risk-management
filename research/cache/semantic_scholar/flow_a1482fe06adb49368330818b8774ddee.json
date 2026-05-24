@@ -1,0 +1,37 @@
+{
+  "category": "flow",
+  "query": "strawberry hydroponic water circulation",
+  "limit": 2,
+  "year": null,
+  "documents": [
+    {
+      "category": "flow",
+      "query": "strawberry hydroponic water circulation",
+      "title": "Spot Cooling System Development for Ever-bearing Strawberry by Using Low Density Polyethylene Pipe",
+      "abstract": null,
+      "url": "https://www.semanticscholar.org/paper/4c420c75834bbee270a5c57cf54bed30efb494ff",
+      "openAccessPdf": "https://doi.org/10.5389/ksae.2014.56.6.149",
+      "source_type": "paper",
+      "paperId": "4c420c75834bbee270a5c57cf54bed30efb494ff",
+      "year": 2014,
+      "venue": "",
+      "citationCount": 2,
+      "doi": "10.5389/KSAE.2014.56.6.149"
+    },
+    {
+      "category": "flow",
+      "query": "strawberry hydroponic water circulation",
+      "title": "연질 PE관을 이용한 여름딸기 부분냉방기술 개발",
+      "abstract": null,
+      "url": "https://www.semanticscholar.org/paper/a2792f4ffdadcc2b4b9f70e257348b8770902c64",
+      "openAccessPdf": "",
+      "source_type": "paper",
+      "paperId": "a2792f4ffdadcc2b4b9f70e257348b8770902c64",
+      "year": 2014,
+      "venue": "",
+      "citationCount": 0,
+      "doi": null
+    }
+  ],
+  "cached_at": "2026-05-12 02:01:32"
+}

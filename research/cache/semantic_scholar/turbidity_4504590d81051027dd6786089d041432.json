@@ -1,0 +1,37 @@
+{
+  "category": "turbidity",
+  "query": "basil hydroponic water quality turbidity",
+  "limit": 2,
+  "year": null,
+  "documents": [
+    {
+      "category": "turbidity",
+      "query": "basil hydroponic water quality turbidity",
+      "title": "Short-Term Time-Series Forecasting of Hydroponic Water Quality Parameters Using XGBoost Based IoT Sensor Data",
+      "abstract": "Water quality monitoring is a critical factor in the success of hydroponic farming. Conventional reactive monitoring systems are often too slow to detect changes in water quality parameters such as Total Dissolved Solids (TDS), turbidity, and water level, which can lead to crop failure. This study aims to develop a short-term forecasting model using the Extreme Gradient Boosting (XGBoost) algorithm to support an early warning system. Time-series data was collected via IoT sensors over five months at 15-minute intervals. Model performance evaluation showed high accuracy across all parameters. The nutrient prediction model (TDS) achieved an R-squared value above 0.94 with MAPE below 2%, indicating excellent precision. For the turbidity parameter, the model obtained the highest R-squared value of 0.986 with MAE of only 0.72 NTU. Meanwhile, water level predictions were able to map water fluctuation dynamics with R-squared ranging from 0.85-0.92. These results prove that the XGBoost model is effective in providing accurate water condition estimates, enabling farmers to take preventive measures before a significant decline in water quality occurs within a relatively short period of time.",
+      "url": "https://www.semanticscholar.org/paper/f01ed090ec5cb9641c18886d6fd8d44515a83fbe",
+      "openAccessPdf": "",
+      "source_type": "paper",
+      "paperId": "f01ed090ec5cb9641c18886d6fd8d44515a83fbe",
+      "year": 2026,
+      "venue": "Jurnal Informatika dan Teknik Elektro Terapan",
+      "citationCount": 0,
+      "doi": "10.23960/jitet.v14i2.9458"
+    },
+    {
+      "category": "turbidity",
+      "query": "basil hydroponic water quality turbidity",
+      "title": "Cold Plasma Treatment of Sweet Basil Seeds and Nutrient Water in Hydroponics: Impact on Growth and Quality",
+      "abstract": "ABSTRACT This study investigated the combined effect of two plasma treatments during hydroponic growing of sweet basil plants. Air‐based cold plasma was applied to basil seeds using a Plasmajet. Also, plasma‐activated water (PAW) was produced by using a submerged gliding arc plasmatron system followed by mixing the PAW with a nutrient solution (NS) to make plasma‐activated NS (PANS). Basil plants from untreated and plasma‐treated seeds were grown hydroponically using NS and PANS in a greenhouse in an ebb‐and‐flow system. Basil plants were harvested after 21 days and analyzed for their dry tissue mass, growth parameters (plant height, number of branches and nodes, root length, and leaf index), quality (color, texture), and microbiology (total plate count). The combination of plasma treatment of seeds followed by growing the plants using PANS (treated group) resulted in higher plant height, longer root length, greater number of branches, bigger leaves, and higher zinc content in leaves in comparison to plants grown from untreated seeds and with NS (control group). Plasma treatment did not significantly affect moisture content, number of nodes, dry weight, wet weight, greenness, texture, aroma content, and sensory attributes of basil leaves. However, sensory results showed increased basil flavor, aroma, and bitterness in the tomato basil salad made with PANS‐treated basil, compared to tomato basil salad made with NS‐treated basil. This work revealed that the plasma treatment of the basil seeds combined with PANS could be effective to enhance the growth of sweet basil plants and increase the aroma and flavor of this culinary herb.",
+      "url": "https://www.semanticscholar.org/paper/af8b98e12bf14d57dd2b7ad90900c2a2179e66a6",
+      "openAccessPdf": "https://doi.org/10.1111/1750-3841.70224",
+      "source_type": "paper",
+      "paperId": "af8b98e12bf14d57dd2b7ad90900c2a2179e66a6",
+      "year": 2025,
+      "venue": "Journal of Food Science",
+      "citationCount": 1,
+      "doi": "10.1111/1750-3841.70224"
+    }
+  ],
+  "cached_at": "2026-05-12 01:49:06"
+}

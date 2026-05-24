@@ -1,0 +1,37 @@
+{
+  "category": "light",
+  "query": "basil hydroponic light requirement",
+  "limit": 2,
+  "year": null,
+  "documents": [
+    {
+      "category": "light",
+      "query": "basil hydroponic light requirement",
+      "title": "IMPACT OF LIGHT INTENSITY AND LUMINAIRE TYPE ON BASIL YIELD: INSIGHTS FROM A HYDROPONIC URBAN AGRICULTURE SYSTEM",
+      "abstract": "This study investigates the impact of different artificial lighting systems on the growth and yield of basil (Ocimum basilicum L.) within a controlled hydroponic environment. Aimed at comparing the effectiveness of several luminaire types, the research is identifying the optimal lighting conditions that enhance plant growth and productivity in an urban agriculture setting. The experiment was conducted in a 40\" HQ shipping container using a Nutrient Film Technique (NFT) system. Basil plants were grown under five different luminaire types (A, B, C, D, E) at varying light intensities (200, 230, 250, 260, and 275 μmol/m²/s) with 3 repetitions. Plant growth parameters, including weight, green plant part length, and total yield per square meter, were measured from 11 plants per growth board (55 plants in each test) after a cultivation period of 27 days post-transplantation. The findings demonstrated significant variations in plant yield and growth characteristics across the different lighting setups. Luminaire C consistently provided the highest yields, particularly at the 260 μmol/m²/s intensity, suggesting its lighting configuration offers optimal conditions for basil production. In contrast, Luminaires D and B showed lower yields, indicating less favourable growth environments under their specific lighting conditions. Statistical analysis revealed that there were observable trends in yield enhancement under specific lamps. Additionally, the study highlighted variations in plant uniformity. In terms of plant uniformity, the standard deviations in length and weight were lowest under Luminaire B, emphasizing its potential for producing uniform crops, a crucial factor in commercial horticulture. The study underscores the critical role of selecting appropriate lighting technologies to maximize plant growth in controlled environment agriculture. By identifying the most effective luminaire types and light intensities, the research contributes valuable insights toward optimizing urban agricultural practices and enhancing the sustainability of food production systems.",
+      "url": "https://www.semanticscholar.org/paper/a4e8a108a2ab763315aa698131120cb43ca77f47",
+      "openAccessPdf": "",
+      "source_type": "paper",
+      "paperId": "a4e8a108a2ab763315aa698131120cb43ca77f47",
+      "year": 2025,
+      "venue": "Environment Technology Resources Proceedings of the International Scientific and Practical Conference",
+      "citationCount": 1,
+      "doi": "10.17770/etr2025vol4.8399"
+    },
+    {
+      "category": "light",
+      "query": "basil hydroponic light requirement",
+      "title": "Impact of natural-white and red-blue light-emitting diode lighting on hydroponic basil growth and energy efficiency",
+      "abstract": "Advanced phosphor-converted white light-emitting diodes (pc-WLEDs) have been developed to mimic the natural sunlight spectrum, potentially enhancing plant growth compared to traditional red-blue (R-B) LEDs. This study aimed to compare the effects of natural-white pc-WLED (nsW-pcLED) and conventional R-B LED (R:B 3.24) on the growth, yield, and energy efficiency of hydroponically grown sweet basil. It was cultivated in a deep-water culture system under identical conditions with a photosynthetic photon flux density (PPFD) of 200±10 µmol·m⁻²·s⁻¹ and a 16/8 light/dark photoperiod over 28 days. Key growth parameters, including plant height, stem diameter, leaf number, and plant fresh weight (PFW), were measured, while energy consumption was recorded to assess efficiency. Results indicated that nsW-pcLED significantly enhanced growth, with plants achieving an average height of 44.30±1.51 cm, stem diameter of 6.68±0.21 mm, and a PFW of 34.20±6.12 g, compared to 35.88±4.05 cm, 4.66±0.88 mm, and 23.02±5.26 g under R-B LED (p <0.05), respectively. The nsW-pcLED treatment produced an average net growth of 1,221 g·m⁻² versus 536.43 g·m⁻² for R-B LED and delivered 33.05 g·m⁻²·kW·h⁻¹ compared to 11.17 g·m⁻²·kW·h⁻¹, while consuming 23% less energy. These findings highlight nsW-pcLED’s superior performance for indoor hydroponic cultivation. Future studies should explore its application in large-scale systems and across diverse crop species.",
+      "url": "https://www.semanticscholar.org/paper/e0b4a1b66c3ee9b16ddd9ce2578f0c47b7c4b62e",
+      "openAccessPdf": "",
+      "source_type": "paper",
+      "paperId": "e0b4a1b66c3ee9b16ddd9ce2578f0c47b7c4b62e",
+      "year": 2025,
+      "venue": "International Journal of Advances in Applied Sciences",
+      "citationCount": 0,
+      "doi": "10.11591/ijaas.v14.i2.pp406-415"
+    }
+  ],
+  "cached_at": "2026-05-12 01:49:20"
+}

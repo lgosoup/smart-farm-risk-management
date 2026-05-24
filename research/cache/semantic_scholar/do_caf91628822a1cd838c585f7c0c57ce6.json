@@ -1,0 +1,37 @@
+{
+  "category": "DO",
+  "query": "strawberry root oxygen hydroponic",
+  "limit": 2,
+  "year": null,
+  "documents": [
+    {
+      "category": "DO",
+      "query": "strawberry root oxygen hydroponic",
+      "title": "Effect of Root-Zone Temperature on the Growth and Fruit Quality of Hydroponically Grown Strawberry Plants",
+      "abstract": "It has been reported that soil temperature modulates the growth and quality of many leafy vegetables and some fruit vegetables; however, this effect has not been sufficiently reported for strawberry plants. Here using a deep flow technique hydroponic system, we investigated the effect of various root-zone temperatures (10 °C, 20 °C, and 30 °C) on the plant growth and fruit quality of strawberry plants grown at an air temperature of 20 °C. The high root-zone temperature treatment (30 °C) decreased oxygen consumption and cell viability of the roots, resulting in withering of most of the plants after 2 months of treatment. In contrast, roots exposed to low temperature (10 °C) showed higher biomass production than those exposed to ambient condition (20 °C), whereas leaf growth was only slightly influenced. The biomass of reproductive organs, such as inflorescences and fruits, were increased in plants treated with a low root-zone temperature, suggesting the activation of reproductive growth by low temperature. However, the contents of ascorbic acid and sugar in fruits were not significantly influenced by the cooling of the root-zone, although the fruit maturation period was significantly prolonged by low temperature. These data indicate that manipulation of root-zone temperature could alter the vegetative and reproductive growth of hydroponically grown strawberry plants.",
+      "url": "https://www.semanticscholar.org/paper/c44eae6da51aebfe6f1e308a359a412a3edb63f0",
+      "openAccessPdf": "https://doi.org/10.5539/jas.v8n5p122",
+      "source_type": "paper",
+      "paperId": "c44eae6da51aebfe6f1e308a359a412a3edb63f0",
+      "year": 2016,
+      "venue": "",
+      "citationCount": 42,
+      "doi": "10.5539/JAS.V8N5P122"
+    },
+    {
+      "category": "DO",
+      "query": "strawberry root oxygen hydroponic",
+      "title": "On the hydroponic induction of strawberry roots and its microstructure changes",
+      "abstract": null,
+      "url": "https://www.semanticscholar.org/paper/636cc1d1fd12f2e83188ba1b6f4477c9c7e0d95a",
+      "openAccessPdf": "",
+      "source_type": "paper",
+      "paperId": "636cc1d1fd12f2e83188ba1b6f4477c9c7e0d95a",
+      "year": 2015,
+      "venue": "",
+      "citationCount": 0,
+      "doi": null
+    }
+  ],
+  "cached_at": "2026-05-12 02:01:41"
+}

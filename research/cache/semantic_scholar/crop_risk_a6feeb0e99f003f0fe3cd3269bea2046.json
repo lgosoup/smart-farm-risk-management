@@ -1,0 +1,37 @@
+{
+  "category": "crop_risk",
+  "query": "basil bolting temperature hydroponic",
+  "limit": 2,
+  "year": null,
+  "documents": [
+    {
+      "category": "crop_risk",
+      "query": "basil bolting temperature hydroponic",
+      "title": "Hydroponic Basil Production: Temperature Influences Volatile Organic Compound Profile, but Not Overall Consumer Preference",
+      "abstract": "Altering the growing temperature during controlled-environment production not only influences crop growth and development, but can also influence volatile organic compound (VOC) production and, subsequently, sensory attributes of culinary herbs. Therefore, the objectives of this study were to (1) quantify the influence of mean daily temperature (MDT) and daily light integral (DLI) on key basil phenylpropanoid and terpenoid concentrations, (2) determine if differences in sensory characteristics due to MDT and DLI influence consumer preference, and (3) identify the sweet basil attributes consumers prefer. Thus, 2-week-old sweet basil ‘Nufar’ seedlings were transplanted into deep-flow hydroponic systems in greenhouses with target MDTs of 23, 26, 29, 32, or 35 °C and DLIs of 7, 9, or 12 mol·m−2·d−1. After three weeks, the two most recently mature leaves were harvested for gas chromatography–mass spectrometry (GC–MS) and consumer sensory analysis. Panel evaluations were conducted through a sliding door with samples served individually while panelists answered Likert scale and open-ended quality attribute and sensory questions. The DLI did not influence VOC concentrations. Increasing MDT from 23 to 36 °C during production increased 1,8 cineole, eugenol, and methyl chavicol concentrations linearly and did not affect linalool concentration. The increases in phenylpropanoid (eugenol and methyl chavicol) were greater than increases in terpenoid (1,8 cineole) concentrations. However, these increases did not impact overall consumer or flavor preference. The MDT during basil production influenced appearance, texture, and color preference of panelists. Taken together, MDT during production influenced both VOC concentrations and textural and visual attribute preference of basil but did not influence overall consumer preference. Therefore, changing the MDT during production can be used to alter plant growth and development without significantly affecting consumer preference.",
+      "url": "https://www.semanticscholar.org/paper/8dd059d95f86876eccfa7f3af4c0b9cc511f4488",
+      "openAccessPdf": "https://www.mdpi.com/2311-7524/8/1/76/pdf?version=1642147212",
+      "source_type": "paper",
+      "paperId": "8dd059d95f86876eccfa7f3af4c0b9cc511f4488",
+      "year": 2022,
+      "venue": "Horticulturae",
+      "citationCount": 6,
+      "doi": "10.3390/horticulturae8010076"
+    },
+    {
+      "category": "crop_risk",
+      "query": "basil bolting temperature hydroponic",
+      "title": "Design and Implementation of a Small-Scale Hydroponic Chamber for Sustainable Vegetative Propagation from Cuttings: A Basil (Ocimum basilicum L.)",
+      "abstract": "Urban agriculture in space-constrained cities requires compact, reproducible propagation systems. Therefore, the aim of this Technical Note is to design, implement, and functionally validate a low-cost, modular hydroponic chamber (SSHG) for early-stage vegetative propagation. This system couples DHT11-based temperature/RH monitoring with rule-based actuation—irrigation 4×/day and temperature-triggered ventilation—under the control of an Arduino Uno microcontroller; LED lighting was not controlled nor analyzed. Two 15-day trials with basil (Ocimum basilicum L.) yielded rooting rates of 61.7% (37/60) and 43.3% (26/60) under a deliberate minimal-input configuration without nutrient solutions or rooting hormones. Environmental summaries and spatial survival maps revealed edge-effect patterns and RH variability that inform irrigation layout improvements. The chamber, bill of materials, and protocol are documented to support replication and iteration. Thus, the SSHG provides a transferable baseline for educators and researchers to audit, reproduce, and improve small-footprint, controlled-environment propagation. Beyond its technical feasibility, the SSHG contributes to sustainability by leveraging low-cost, readily available components, enabling decentralized seedling production in space-constrained settings, and operating under a minimal-input configuration. In line with widely reported hydroponic efficiencies (e.g., lower water use relative to soil-based propagation), this open and replicable platform aligns with SDGs 2, 11, 12, and 13.",
+      "url": "https://www.semanticscholar.org/paper/792db0c40c749ce712459644e6c75521d03b5e44",
+      "openAccessPdf": "",
+      "source_type": "paper",
+      "paperId": "792db0c40c749ce712459644e6c75521d03b5e44",
+      "year": 2025,
+      "venue": "Sustainability",
+      "citationCount": 0,
+      "doi": "10.3390/su17198773"
+    }
+  ],
+  "cached_at": "2026-05-12 01:49:27"
+}

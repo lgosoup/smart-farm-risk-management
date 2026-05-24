@@ -1,0 +1,37 @@
+{
+  "category": "humidity",
+  "query": "basil greenhouse humidity range",
+  "limit": 2,
+  "year": null,
+  "documents": [
+    {
+      "category": "humidity",
+      "query": "basil greenhouse humidity range",
+      "title": "Implementation of Agro-Shade with Fluorescent Solar Concentrators in Greenhouses",
+      "abstract": "This study investigates the implementation of Fluorescent Solar Concentrators (FSC) in greenhouse with an IoT-based monitoring system as an alternative agro-shade material. The purpose of the research is to assess the degree of effectiveness of FSC in producing electricity in a greenhouse setting while also promoting crop growth rate and provide a shade. A small greenhouse with roofing integrated with FSC was constructed to generate power for the IoT monitoring system and control environmental variables like temperature, humidity, and light intensity. Comparative growth trials were conducted with lettuce and basil under three conditions: (1) a modified greenhouse with FSC roofing, (2) a conventional greenhouse, and (3) openfield farming. The FSC system generated 0.16 kWh of energy per day, sufficient to power the IoT system, which consumes 0.078 kWh daily. Environmental data from the FSC-setup revealed temperature and humidity levels within the optimal range for crop growth, comparable to conventional greenhouse. One-Way ANOVA analysis demonstrated that plants in the FSC-modified greenhouse exhibited significantly higher growth rates in height, width, and leaf number compared to those in conventional greenhouses and open fields. The results suggest that FSC roofing is a viable alternative to traditional agro-shade materials, offering dual benefits: a controlled environment for enhanced crop growth and renewable energy for IoT systems. This integrated approach presents a sustainable solution for modern agricultural practices, optimizing both energy use and crop productivity.",
+      "url": "https://www.semanticscholar.org/paper/f699d17117fc6c583b700744c7d10cee3aaba9df",
+      "openAccessPdf": "",
+      "source_type": "paper",
+      "paperId": "f699d17117fc6c583b700744c7d10cee3aaba9df",
+      "year": 2024,
+      "venue": "International Conference on Humanoid, Nanotechnology, Information Technology,Communication and Control, Environment and Management",
+      "citationCount": 0,
+      "doi": "10.1109/HNICEM64917.2024.11258836"
+    },
+    {
+      "category": "humidity",
+      "query": "basil greenhouse humidity range",
+      "title": "A Design and Experimental Study of Fog Spraying Into the Greenhouse Roof for Radiation and Relative Humidity Control",
+      "abstract": "The objectives of this study were to investigate a design and experimental fog spraying into a greenhouse roof to control the temperature, relative humidity (%RH), radiation intensity (RI), and storage data system, which will support the maximum quality and quantity of vegetarian production. This study is a novel design and experiment concerning a greenhouse model that uses fogging spray on the roof and inside the greenhouse. The automatic control systems are applied with GY-49 sensors, AMT1001 temperature and humidity sensors and DS1307 real time clock module. The experimental results are shown by LCD monitoring using a real-time clock (RTC) from 2.00 a.m. to 8.00 p.m. The percentage difference in radiation intensity inside the greenhouse decreased in the range of 69.58 % to 95.00 %. The maximum temperature inside the greenhouse decreased by $12{}^{\\circ} \\mathrm{C}$. The temperature variation ratio of fogging is 80 %, while the relative humidity range of 60-97 %RH.",
+      "url": "https://www.semanticscholar.org/paper/3f916b0431fde5c071dec223e5a462bf82611feb",
+      "openAccessPdf": "",
+      "source_type": "paper",
+      "paperId": "3f916b0431fde5c071dec223e5a462bf82611feb",
+      "year": 2025,
+      "venue": "2025 11th International Conference on Engineering, Applied Sciences, and Technology (ICEAST)",
+      "citationCount": 0,
+      "doi": "10.1109/ICEAST64767.2025.11088164"
+    }
+  ],
+  "cached_at": "2026-05-12 01:49:18"
+}

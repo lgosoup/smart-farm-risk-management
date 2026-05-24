@@ -1,0 +1,37 @@
+{
+  "category": "flow",
+  "query": "basil hydroponic water circulation",
+  "limit": 2,
+  "year": null,
+  "documents": [
+    {
+      "category": "flow",
+      "query": "basil hydroponic water circulation",
+      "title": "AI-Driven Robotic Systems for Efficient Hydroponic Water Circulation and Purification Management",
+      "abstract": "The development of AI-driven robotic systems offers substantial prospects for improving hydroponic farming methods, especially in water circulation and purification oversight. This work investigates using Reinforcement Learning (RL) algorithms in robotic systems to enhance fertilizer delivery and water quality in hydroponic settings. By persistently monitoring essential characteristics like pH, turbidity, and nutrient content, the robotic systems may implement real-time modifications to the water circulation process. The RL algorithm facilitates the system's learning from environmental input, enhancing decision-making over time and providing optimum plant growth conditions. Simulation and field testing demonstrated that the deployment of AI-driven robots results in less water waste, improved fertilizer efficiency, and greater plant health. Moreover, the automation of repetitive chores reduces labor expenses and operational intricacies, facilitating sustainable agriculture methods. This study underscores the potential of AI to transform hydroponic agriculture via intelligent resource management and environmental sustainability solutions.",
+      "url": "https://www.semanticscholar.org/paper/6c14a51275de746d3f4b35dad48fa37f64356288",
+      "openAccessPdf": "",
+      "source_type": "paper",
+      "paperId": "6c14a51275de746d3f4b35dad48fa37f64356288",
+      "year": 2025,
+      "venue": "2025 World Skills Conference on Universal Data Analytics and Sciences (WorldSUAS)",
+      "citationCount": 1,
+      "doi": "10.1109/WorldSUAS66815.2025.11199191"
+    },
+    {
+      "category": "flow",
+      "query": "basil hydroponic water circulation",
+      "title": "Hydroponic lettuce in-situ water circulation evaluation via nondestructive mass measurement in controlled environment",
+      "abstract": "This study proposed a hydroponic system with the capacity to acquire high-resolution in situ mass data for non-destructive evaluation of water circulation in lettuce. The system customizes the watering profile, enables high-frequency in situ weight measurement, and monitors multidimensional environment changes. Key air, water, and light parameters were collected to evaluate the plant response, susceptibility, and adaptability to environmental conditions. Multiple physiological indices were defined to characterize the properties of two lettuce varieties in response to different environmental factors.",
+      "url": "https://www.semanticscholar.org/paper/f31480812c215ff305b1e2b6a5625c5e9621f8e0",
+      "openAccessPdf": "https://doi.org/10.3389/fpls.2024.1385191",
+      "source_type": "paper",
+      "paperId": "f31480812c215ff305b1e2b6a5625c5e9621f8e0",
+      "year": 2024,
+      "venue": "Frontiers in Plant Science",
+      "citationCount": 1,
+      "doi": "10.3389/fpls.2024.1385191"
+    }
+  ],
+  "cached_at": "2026-05-12 01:49:04"
+}
