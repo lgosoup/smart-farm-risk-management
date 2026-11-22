@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import json
+from datetime import datetime
 from pathlib import Path
 from typing import Any, Dict, List
 
@@ -36,6 +37,31 @@ def _read_jsonl_tail(path: str, n: int) -> List[Dict[str, Any]]:
     return rows[-n:]
 
 
+def _packets_since(packets: List[Dict[str, Any]], since_iso: Any) -> List[Dict[str, Any]]:
+    """packet['inputs']['timestamp'] >= since_iso 인 패킷만 반환. 시각을 해석할 수 없으면 빈 리스트."""
+    if not isinstance(since_iso, str):
+        return []
+    try:
+        since = datetime.fromisoformat(since_iso)
+    except ValueError:
+        return []
+    out: List[Dict[str, Any]] = []
+    for p in packets:
+        inputs = p.get("inputs") if isinstance(p.get("inputs"), dict) else {}
+        ts = inputs.get("timestamp")
+        if not isinstance(ts, str):
+            continue
+        try:
+            t = datetime.fromisoformat(ts)
+            if (t.tzinfo is None) != (since.tzinfo is None):
+                continue
+            if t >= since:
+                out.append(p)
+        except ValueError:
+            continue
+    return out
+
+
 def run_improvement_cycle(
     *,
     state_path: str = DEFAULT_STATE_PATH,
@@ -54,6 +80,7 @@ def run_improvement_cycle(
       - Save state
     """
     cfg = load_config(state_path=state_path)  # includes existing overrides
+    base_cfg = load_config(state_path=state_path, apply_state=False)  # 누적 변경 한도의 기준점
     state = load_state(state_path)
 
     recent_packets = _read_jsonl_tail(history_packets_path, reward_window)
@@ -64,8 +91,11 @@ def run_improvement_cycle(
     reward_value = None
     reward_details: Dict[str, Any] = {}
     if isinstance(pending, dict) and isinstance(pending.get("action_id"), str):
+        # 보상은 액션 적용 '이후' 패킷으로만 계산한다(이전 패킷이 섞이면 다른 액션의 결과가 보상에 들어간다).
+        # 적용 이후 패킷이 하나도 없으면 예전처럼 최근 패킷 전체를 쓴다.
+        after = _packets_since(recent_packets, pending.get("applied_at"))
         reward_value, reward_details = compute_reward(
-            recent_packets=recent_packets,
+            recent_packets=after or recent_packets,
             vision_capture_dir=vision_capture_dir,
         )
         update_reward(bandit_state=state["bandit"], action_id=str(pending["action_id"]), reward=float(reward_value))
@@ -89,7 +119,7 @@ def run_improvement_cycle(
 
     change: Dict[str, Any] = {"ok": False}
     if decision == "APPROVE":
-        change = apply_action_to_state(cfg=cfg, state=state, action=action)
+        change = apply_action_to_state(cfg=cfg, state=state, action=action, base_cfg=base_cfg)
         if change.get("ok"):
             # mark as pending for next cycle reward update
             state["pending"] = {

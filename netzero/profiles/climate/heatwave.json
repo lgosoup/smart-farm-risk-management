@@ -1,0 +1,15 @@
+{
+  "climate_id": "heatwave",
+  "name": "여름 + 폭염 (3~5일차)",
+  "outdoor_mean_c": 27.0,
+  "outdoor_amplitude_c": 4.5,
+  "peak_hour": 15,
+  "day_to_day_sd_c": 0.8,
+  "humidity_mean": 72.0,
+  "humidity_amplitude": 12.0,
+  "sunrise_hour": 5.5,
+  "sunset_hour": 19.5,
+  "events": [
+    {"type": "heatwave", "start_day": 2, "end_day": 5, "delta_mean_c": 4.0, "delta_amplitude_c": 1.0}
+  ]
+}

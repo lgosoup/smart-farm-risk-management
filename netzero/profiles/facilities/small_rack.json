@@ -1,0 +1,91 @@
+{
+  "facility_id": "small_rack",
+  "name": "소형 수경 랙 (기존 아두이노 구성)",
+  "description": "기존 저장소의 하드웨어(D5~D12)를 그대로 옮긴 구성. 펠티어 2개를 냉각펌프·팬 보호 시퀀스와 함께 하나의 냉각 장치로 다룬다.",
+  "step_minutes": 60,
+  "prior_thermal_coupling": 0.10,
+  "devices": [
+    {
+      "id": "peltier_bank",
+      "name": "펠티어 냉각 (펠티어 2 + 냉각펌프 + 냉각팬 2)",
+      "type": "peltier_cooler",
+      "functions": ["water_temp_down"],
+      "unit": "min",
+      "levels": [0, 10, 20, 30, 45, 60],
+      "power_w": 136,
+      "effects": {"water_temperature": {"model": "direct", "prior": -0.06}},
+      "hardware": {
+        "pins": {"peltier_1": "D11", "peltier_2": "D12"},
+        "support_pins": {"cooling_pump": "D7", "cooling_fan": "D8"},
+        "protection": {"startup_delay_sec": 5, "cooldown_sec": 45}
+      }
+    },
+    {
+      "id": "main_pump",
+      "name": "메인 순환펌프",
+      "type": "circulation_pump",
+      "functions": ["flow_up", "turbidity_down"],
+      "unit": "min",
+      "levels": [0, 5, 10, 20, 30],
+      "power_w": 18,
+      "effects": {
+        "flow_ratio": {"model": "direct", "prior": 0.003},
+        "turbidity": {"model": "direct", "prior": -0.01}
+      },
+      "hardware": {"pins": {"main_water_pump": "D5"}, "driver": "BTS7960_PWM"}
+    },
+    {
+      "id": "oxygen_pump",
+      "name": "산소펌프",
+      "type": "aerator",
+      "functions": ["oxygen_supply"],
+      "unit": "min",
+      "levels": [10, 20],
+      "min_level": 10,
+      "power_w": 4,
+      "hardware": {"pins": {"oxygen_pump": "D6"}}
+    },
+    {
+      "id": "vent_fan",
+      "name": "환풍기",
+      "type": "ventilation_fan",
+      "functions": ["air_exchange", "water_temp_down"],
+      "unit": "min",
+      "levels": [0, 15, 30, 60],
+      "power_w": 12,
+      "effects": {"water_temperature": {"model": "exchange", "prior": 0.003}},
+      "hardware": {"pins": {"ventilation_fan": "D10"}}
+    },
+    {
+      "id": "nutrient_doser",
+      "name": "양액 공급 펌프",
+      "type": "dosing_pump",
+      "functions": ["ec_up"],
+      "unit": "ml",
+      "levels": [0, 5, 10, 20],
+      "energy_wh_per_unit": 0.05,
+      "resource_per_unit": {"nutrient_ml": 1.0},
+      "effects": {"EC": {"model": "direct", "prior": 0.01}},
+      "hardware": {"pins": {}}
+    }
+  ],
+  "simulator_truth": {
+    "thermal_coupling": 0.12,
+    "solar_gain_c_per_h": 0.6,
+    "greenhouse_air_offset_c": 2.0,
+    "device_effects": {
+      "peltier_bank": {"water_temperature": -0.045},
+      "main_pump": {"flow_gain": 0.025, "turbidity_gain": 0.004, "water_temperature": 0.002},
+      "vent_fan": {"water_temperature_exchange": 0.006},
+      "nutrient_doser": {"EC": 0.007}
+    },
+    "power_factor": {"peltier_bank": 1.08},
+    "flow": {"decay_per_h": 0.05, "floor": 0.4, "max": 1.06},
+    "ec": {"uptake_per_h": 0.010, "evaporation_per_c": 0.0004},
+    "turbidity": {"rise_per_h": 0.04},
+    "ph": {"mean": 6.15, "reversion": 0.05, "drift_sd": 0.02},
+    "process_noise": {"water_temperature": 0.05, "flow_ratio": 0.005, "EC": 0.003, "turbidity": 0.01},
+    "sensor_noise": {"water_temperature": 0.1, "flow_ratio": 0.01, "EC": 0.02, "turbidity": 0.04, "pH": 0.03},
+    "spike_prob": 0.004
+  }
+}

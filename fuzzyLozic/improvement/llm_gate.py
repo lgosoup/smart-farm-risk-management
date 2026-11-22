@@ -1,8 +1,26 @@
 from __future__ import annotations
 
+import importlib.util
 import json
 import re
+import sys
+from pathlib import Path
 from typing import Any, Dict, List
+
+# 프로젝트 루트(llm/ 패키지가 있는 폴더). fuzzyLozic/ 에서 실행해도 llm을 찾을 수 있게 한다.
+_ROOT_DIR = Path(__file__).resolve().parent.parent.parent
+
+
+def _llm_runtime_available() -> bool:
+    """transformers + CUDA GPU가 있을 때만 True. torch는 이 함수 안에서만 import한다."""
+    try:
+        if importlib.util.find_spec("transformers") is None or importlib.util.find_spec("torch") is None:
+            return False
+        import torch
+
+        return bool(torch.cuda.is_available())
+    except Exception:
+        return False
 
 
 def _strip_think_blocks(text: str) -> str:
@@ -79,7 +97,14 @@ def llm_gate(
     action: Dict[str, Any],
 ) -> Dict[str, Any]:
     """LLM gate. If model load fails, fall back to heuristic_gate."""
+    # GPU/transformers가 없으면 모델을 받거나 올리려 하지 말고 바로 휴리스틱으로 간다.
+    # (llm.loader는 GPU 전용(device_map={"": 0})이라, 없는 환경에서는 수 GB 모델을 내려받은 뒤에야 실패한다)
+    if not _llm_runtime_available():
+        return heuristic_gate(current_packet=current_packet, recent_packets=recent_packets, action=action)
     try:
+        root = str(_ROOT_DIR)
+        if root not in sys.path:
+            sys.path.insert(0, root)
         from llm.loader import get_llm
         from llm.improvement_prompts import SYSTEM_PROMPT_IMPROVEMENT_GATE
 

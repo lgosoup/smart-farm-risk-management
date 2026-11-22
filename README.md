@@ -61,13 +61,21 @@
 - 센서는 어댑터 구조로 분리되어 있어, `inputs.json`을 읽는 기본 어댑터를 실제 센서 수집 스크립트 어댑터로 바꿔 끼울 수 있습니다.
 - `streamlit_app.py`: 입력값을 바로 바꿔 가며 멤버십, 발화 규칙, 시계열·무결성 플래그, 위험도 결과를 확인하는 데모 화면입니다.
 
+### 8. 넷제로 확장 (`netzero/`)
+- **기능 중심 장치 추상화:** 장치를 이름이 아니라 수행 기능, 제어 단계, 소비 전력, 환경 영향으로 표현합니다. 제어 후보와 핀 단위 명령은 시설 프로필에서 자동으로 만들어지므로, 장치 구성이 바뀌어도 코드를 고치지 않습니다.
+- **학습형 환경 예측:** 장치 작동 전후의 실제 변화로 시설별 열 손실, 장치별 냉각 효과 등을 재귀 최소제곱(RLS)으로 계속 갱신합니다.
+- **상시 최적화:** 경고 때만이 아니라 매 주기 최적화합니다. 먼저 적정 생육 범위를 지키는 후보를 고르고, 그 안에서 에너지, 탄소, 양액, 장치 변경을 최소화합니다.
+- **탄소·요금 반영:** 시간대별 전력 배출계수와 계시별 요금을 에너지 비용에 반영합니다.
+- **가상 스마트팜과 비교 실험:** 시설의 실제 물리 특성을 제어기에 숨긴 시뮬레이터에서 고정 임계값 제어(A), 기존 방식(B), 상시 최적화(C), 탄소 반영(D)을 같은 조건으로 비교합니다.
+
 ## 사용 기술
 
 | 구분 | 내용 |
 |---|---|
 | 언어 | Python 3.10+ |
 | 퍼지 추론 | 직접 구현한 Mamdani 추론 엔진 (사다리꼴·삼각형 멤버십, 무게중심법) |
-| 최적화·학습 | 후보 탐색 기반 다목적 최적화, UCB1 멀티암드 밴딧 |
+| 최적화·학습 | 후보 탐색 기반 다목적 최적화, UCB1 멀티암드 밴딧, 재귀 최소제곱(RLS) 시스템 식별 |
+| 시뮬레이션 | 시설·기후·전력망 프로필 기반 가상 스마트팜 |
 | LLM | Qwen3-4B, Hugging Face Transformers, bitsandbytes 4bit 양자화, PyTorch (CUDA 11.8) |
 | 영상 처리 | OpenCV, NumPy (ExG 지수, HSV 채도) |
 | 데이터 수집 | 농촌진흥청 농사로 API, Semantic Scholar API, requests |
@@ -102,6 +110,16 @@
 │   ├── generate_crop_profile.py
 │   └── activate_crop.py
 ├── research/                # Semantic Scholar 논문 검색, 결과 캐시
+├── netzero/                 # 넷제로 확장: 장치 추상화, 학습형 예측, 탄소 반영 최적화, 가상 스마트팜
+│   ├── facility.py          # 기능 중심 장치 프로필, 제어 후보 생성, 장치 명령 변환
+│   ├── model.py             # 장치 작동 기록으로 갱신되는 환경 예측 모델 (RLS)
+│   ├── controllers.py       # A 고정 임계값 / B 기존 방식 / C 상시 최적화 / D 탄소·요금 반영
+│   ├── simulator.py         # 시설 특성을 숨긴 가상 스마트팜, 기후 프로필
+│   ├── grid.py              # 시간대별 전력 배출계수·요금
+│   ├── experiment.py        # 비교 실험 실행과 지표 계산
+│   └── profiles/            # facilities/, climate/, grid/ (JSON)
+├── netzero_app.py           # 넷제로 비교 실험 시연 화면
+├── tests/                   # 실행 경로(오케스트레이터, app, LLM, 대시보드) 테스트
 └── data/                    # 입력, 작물 설정, 상태, 출력 파일
 ```
 
@@ -119,9 +137,11 @@ python -m venv .venv
 .venv\Scripts\activate
 pip install -r requirements.txt
 
-# LLM 기능을 쓸 때만 (NVIDIA GPU 필요)
+# LLM 기능을 쓸 때만 (NVIDIA GPU 필요): setup.bat gpu  또는
 pip install -r requirements-gpu.txt --extra-index-url https://download.pytorch.org/whl/cu118
 ```
+
+LLM 패키지가 없거나 GPU가 없으면 LLM 해설과 LLM 게이트는 퍼지 결과 요약과 휴리스틱 판단으로 대신 동작합니다.
 
 ### 실행
 ```bash
@@ -133,6 +153,28 @@ python orchestrator.py
 
 # 퍼지 평가 + LLM 해설 1회
 python app.py "현재 상태를 근거와 함께 자세히 설명"
+```
+
+### 넷제로 비교 실험
+```bash
+# 시설 3종 × 제어 방식 A~D, 7일 시뮬레이션
+python -m netzero.experiment --days 7
+
+# 폭염 + 3일차 칠러 성능 50% 저하
+python -m netzero.experiment --facility mid_greenhouse --climate heatwave --event degrade:chiller_a:0.5@3
+
+# 작물 변경 + 2일차 환풍기 제거
+python -m netzero.experiment --facility small_rack --crop strawberry --event remove:vent_fan@2
+
+# 시연 화면
+streamlit run netzero_app.py
+```
+
+새 시설은 `netzero/profiles/facilities/`에 장치 프로필 JSON을 추가하면 됩니다. 장치마다 수행 기능, 제어 단계, 소비 전력, 환경 영향의 초기 추정값(prior)을 적고, 실제 영향은 운전하면서 학습합니다. `simulator_truth` 블록은 가상 스마트팜만 읽는 숨은 물리 특성입니다.
+
+### 테스트
+```bash
+python -m pytest -q fuzzyLozic/tests smartfarm/tests tests netzero/tests
 ```
 
 ### 작물 설정

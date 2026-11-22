@@ -10,8 +10,16 @@ import numpy as np
 
 
 def _load_image(path: str | Path) -> np.ndarray:
-    """BGR 이미지 로드 후 RGB로 반환."""
-    img_bgr = cv2.imread(str(path))
+    """BGR 이미지 로드 후 RGB로 반환.
+
+    cv2.imread()는 Windows에서 비ASCII(한글) 경로를 열지 못하고 None을 반환하므로
+    (예: C:\\Users\\...\\공부\\스마트팜\\data\\vision_captures) 바이트로 읽어 디코딩한다.
+    """
+    try:
+        buf = np.fromfile(str(path), dtype=np.uint8)
+    except OSError:
+        buf = None
+    img_bgr = cv2.imdecode(buf, cv2.IMREAD_COLOR) if buf is not None and buf.size else None
     if img_bgr is None:
         raise ValueError(f"이미지 로드 실패: {path}")
     return cv2.cvtColor(img_bgr, cv2.COLOR_BGR2RGB)

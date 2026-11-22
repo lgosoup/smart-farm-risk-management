@@ -292,4 +292,14 @@ def infer(
     if promote_to_danger and best_label in {"경계", "주의", "경고"}:
         best_label = "위험"
 
+    # Same policy one level down: a strongly fired 경고 rule must not be diluted
+    # to 경계/주의 by weaker boundary rules in the centroid (R22–R30).
+    warning_rule_threshold = 0.6
+    max_warning_rule = max(
+        (float(r.get("firing_strength", 0.0)) for r in fired_rules if r.get("conclusion_label") == "경고"),
+        default=0.0,
+    )
+    if max_warning_rule >= warning_rule_threshold and best_label in {"매우안정", "안정", "경계", "주의"}:
+        best_label = "경고"
+
     return risk_score, best_label, score_membership, label_peaks, fired_rules

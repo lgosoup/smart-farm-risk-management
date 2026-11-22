@@ -79,7 +79,7 @@ class UnitNormalizer:
         if unit_lower in ("ds/m", "ds/m"):
             # 1 dS/m == 1 mS/cm
             return value, "dS/m → mS/cm ×1.0", True
-        if unit_lower in ("µs/cm", "us/cm", "µs/cm"):
+        if unit_lower in ("µs/cm", "μs/cm", "us/cm"):  # micro sign / Greek mu
             return self._apply_factor(value, 1.0 / 1000.0), "µS/cm ÷ 1000 → mS/cm", True
         if "ppm" in unit_lower:
             if ppm_scale == 500:
@@ -96,7 +96,7 @@ class UnitNormalizer:
         unit_stripped = unit.strip().replace("°", "").upper()
         if unit_stripped in ("℃", "C", "°C", "DEGC"):
             return value, "1:1 passthrough (already ℃)", True
-        if unit_stripped in ("F", "°F", "DEGF"):
+        if unit_stripped in ("F", "°F", "DEGF", "℉"):
             return self._apply_f_to_c(value), "°F → ℃ (F-32)×5/9", True
         return value, f"unknown temperature unit '{unit}', no conversion", False
 
@@ -113,7 +113,7 @@ class UnitNormalizer:
         for cand in candidates:
             c = dict(cand)  # shallow copy
             param = c.get("param", "")
-            unit: str = c.get("unit", "")
+            unit: str = c.get("unit") or ""  # NLP candidates may carry unit=None
             value: Any = c.get("value")
             ppm_scale: int | None = c.get("ppm_scale", None)
 

@@ -103,6 +103,11 @@ def optimize_control(
     config: Optional[Dict[str, object]] = None,
 ) -> Dict[str, object]:
     merged = merged_config(config)
+    # run_assessment는 ec_mode="water"를 받으면 crop_config.json의 ec_mode(예: hydro)로 바꿔 쓴다.
+    # 현재 패킷이 실제로 쓴 모드를 따라야 과잉제어 벌점(EC 기준값)과 예측 평가가 같은 모드가 된다.
+    packet_ec_mode = current_packet.get("ec_mode") if isinstance(current_packet, dict) else None
+    if isinstance(packet_ec_mode, str) and packet_ec_mode:
+        ec_mode = packet_ec_mode
     previous_control = load_previous_control(merged["control_history_path"])
 
     total_candidates = raw_candidate_count(merged)

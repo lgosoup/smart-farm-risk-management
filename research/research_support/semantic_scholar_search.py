@@ -13,11 +13,12 @@ import requests
 
 SEMANTIC_SCHOLAR_SEARCH_URL = "https://api.semanticscholar.org/graph/v1/paper/search"
 
-OUTPUT_DIR = Path("smartfarm/outputs")
-CACHE_DIR = Path("smartfarm/cache/semantic_scholar")
-
-OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
-CACHE_DIR.mkdir(parents=True, exist_ok=True)
+# Paths are anchored to the research/ package (not the CWD), so the committed
+# cache in research/cache/semantic_scholar is reused and outputs land in research/outputs.
+# Directories are created lazily on write (importing this module has no side effects).
+_RESEARCH_DIR = Path(__file__).resolve().parent.parent
+OUTPUT_DIR = _RESEARCH_DIR / "outputs"
+CACHE_DIR = _RESEARCH_DIR / "cache" / "semantic_scholar"
 
 
 # ============================================================
@@ -280,6 +281,7 @@ def save_cache(
     documents: List[Dict[str, Any]],
 ) -> None:
     path = cache_path(category, query, limit, year)
+    path.parent.mkdir(parents=True, exist_ok=True)
 
     payload = {
         "category": category,
@@ -474,8 +476,9 @@ def collect_crop_source_bundle(
                 }
             )
 
-            # API Key가 있어도 너무 빠르게 호출하지 않도록 대기
-            time.sleep(1.2)
+            # API Key가 있어도 너무 빠르게 호출하지 않도록 대기 (캐시 적중 시에는 생략)
+            if result["status"] != "ok_cached":
+                time.sleep(1.2)
 
     deduped_documents = deduplicate_documents(all_documents)
 
@@ -513,6 +516,7 @@ def collect_crop_source_bundle(
 def save_source_bundle(bundle: Dict[str, Any]) -> Path:
     crop = bundle["crop_info"]["crop"]
     filename = f"{safe_filename(crop)}_source_bundle.json"
+    OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
     output_path = OUTPUT_DIR / filename
 
     output_path.write_text(

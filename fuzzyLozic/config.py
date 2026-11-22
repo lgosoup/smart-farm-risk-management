@@ -258,7 +258,9 @@ def default_config() -> Dict[str, object]:
             "R9": {"base_label": "경고", "promote_label": "위험", "promote_threshold": 0.8},
             "R12": {
                 "warning_rules": [
-                    "R2","R4","R5","R6","R7","R8","R10","R11","R16","R17","R18","R19"
+                    # R11은 R10과 전제·결론이 완전히 같아(수온 경계 & 유량 경계 → 경고) 함께 세면
+                    # 한 가지 상황이 '경고 2건'으로 이중 계산되어 R12(위험 승급)가 발동한다. 그래서 제외.
+                    "R2","R4","R5","R6","R7","R8","R10","R16","R17","R18","R19","R21"
                 ],
                 "firing_threshold": 0.6,
                 "count_threshold": 2,
@@ -294,7 +296,8 @@ def default_config() -> Dict[str, object]:
             "R6": 1.0, "R7": 1.0, "R8": 1.0, "R9": 1.0, "R10": 1.0,
             "R11": 1.0, "R12": 1.0,
             "R13": 1.0, "R14": 1.0,
-            "R16": 1.0, "R17": 1.0, "R18": 1.0, "R19": 1.0, "R20": 1.0,
+            "R16": 1.0, "R17": 1.0, "R18": 1.0, "R19": 1.0, "R20": 1.0, "R21": 1.0,
+            "R22": 1.0, "R23": 1.0, "R24": 1.0, "R25": 1.0, "R26": 1.0, "R27": 1.0, "R28": 1.0, "R29": 1.0, "R30": 1.0,
         },
     }
 
@@ -335,7 +338,14 @@ def _apply_membership_overrides(cfg: Dict[str, object], overrides: Dict[str, obj
         new_shapes: List[MembershipShape] = []
         for s in shapes:
             pts = ov.get(s.label)
-            if isinstance(pts, list) and all(isinstance(x, (int, float)) for x in pts):
+            # 점 개수가 모양(tri=3, trap=4)과 다르거나 순서가 뒤집힌 override는 무시한다.
+            # (그대로 쓰면 evaluate()에서 ValueError로 추론 전체가 멈춘다)
+            if (
+                isinstance(pts, list)
+                and len(pts) == len(s.points)
+                and all(isinstance(x, (int, float)) for x in pts)
+                and all(float(a) <= float(b) for a, b in zip(pts, pts[1:]))
+            ):
                 new_pts = tuple(float(x) for x in pts)
             else:
                 new_pts = s.points
@@ -367,11 +377,18 @@ def _apply_rule_weight_overrides(cfg: Dict[str, object], overrides: Dict[str, ob
             cur[k] = float(v)
 
 
-def load_config(state_path: str | None = None, crop_config_path: str | None = None) -> Dict[str, object]:
+def load_config(
+    state_path: str | None = None,
+    crop_config_path: str | None = None,
+    *,
+    apply_state: bool = True,
+) -> Dict[str, object]:
     """
     Load baseline config, then apply crop profile overrides, then improvement overrides.
 
     Layer order: base → crop_config.json → improvement_state.json
+    apply_state=False 이면 improvement_state.json 층을 건너뛴다
+    (개선 루프가 누적 변경 한도를 '작물 기준값' 대비로 계산할 때 사용).
     """
     base = default_config()
     imp = base.get("improvement") if isinstance(base.get("improvement"), dict) else {}
@@ -403,7 +420,7 @@ def load_config(state_path: str | None = None, crop_config_path: str | None = No
 
     # Layer 2: UCB1 bandit improvement overrides
     p = Path(sp)
-    if p.exists():
+    if apply_state and p.exists():
         try:
             data = json.loads(p.read_text(encoding="utf-8"))
             if isinstance(data, dict):

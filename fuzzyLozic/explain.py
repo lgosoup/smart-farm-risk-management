@@ -75,17 +75,22 @@ def _build_recommendations(
                 scenario_notes.append(f"Single-step spike detected on {var}.")
             checklist.append(f"Verify whether the {var} change is real or caused by sensor noise.")
 
+    # 플래그 이름은 fuzzify.compute_timeseries_flags가 만드는 형식(TS_<종류>_<변수명>_...)과 같아야 한다.
+    # 예전 변수명(T, FR) 기준 접두사로 비교해 해당 안내가 한 번도 나오지 않던 문제 수정.
     for flag in timeseries_flags:
-        if flag.startswith("TS_PERSIST_T_HIGH"):
+        if flag.startswith("TS_PERSIST_water_temperature_HIGH"):
             scenario_notes.append("High water temperature has persisted across recent samples.")
             checklist.append("Prioritize cooling or heat rejection.")
-        elif flag.startswith("TS_TREND_T_UP"):
+        elif flag.startswith("TS_TREND_water_temperature_UP"):
             scenario_notes.append("Water temperature is trending upward.")
             checklist.append("Inspect the cooling path and nearby heat sources.")
-        elif flag.startswith("TS_TREND_FR_DOWN"):
+        elif flag.startswith("TS_TREND_flow_ratio_DOWN"):
             scenario_notes.append("Flow ratio is trending downward.")
             checklist.append("Inspect pump output, filter blockage, and tubing.")
-        elif flag.startswith("TS_RECOVERY_FAIL_FR"):
+        elif flag.startswith("TS_PERSIST_flow_ratio_LOW"):
+            scenario_notes.append("Low flow ratio has persisted across recent samples.")
+            checklist.append("Inspect pump output, filter blockage, and tubing.")
+        elif flag.startswith("TS_RECOVERY_FAIL_flow_ratio"):
             scenario_notes.append("Flow recovery has not appeared in recent samples.")
         elif flag.startswith("TS_VOL_"):
             scenario_notes.append(f"Short-window variability increased ({flag}).")
@@ -116,6 +121,9 @@ def _build_recommendations(
             checklist.append("Inspect water clarity and contamination sources.")
         elif rule_id == "R19":
             checklist.append("Inspect EC increase sources before adding more nutrient.")
+        elif rule_id == "R21":
+            scenario_notes.append("Very high EC (salt stress) is driving the current risk state.")
+            checklist.append("Dilute the solution or replace part of it to lower EC.")
 
     if action_key in {WARNING, DANGER, EMERGENCY}:
         checklist.append("Confirm that actuators are responding after intervention.")

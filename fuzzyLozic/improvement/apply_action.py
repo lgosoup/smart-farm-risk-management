@@ -49,8 +49,12 @@ def apply_action_to_state(
     cfg: Dict[str, object],
     state: Dict[str, Any],
     action: Action,
+    base_cfg: Dict[str, object] | None = None,
 ) -> Dict[str, Any]:
     """Apply an approved action into state['overrides'].
+
+    base_cfg: 개선 override를 적용하기 전 설정(기본값 + 작물 설정). 주어지면
+    membership_delta_cap을 '한 번의 변경량'뿐 아니라 '기준점 대비 누적 이동량' 한도로도 적용한다.
 
     Returns a small dict describing what changed (for logging).
     """
@@ -80,7 +84,10 @@ def apply_action_to_state(
             return {"ok": False, "reason": "invalid membership action"}
 
         var_key = action.var_key
-        cap = float(delta_caps.get(var_key.split("_")[0], delta_caps.get(var_key, 0.0) or 0.0))
+        # 한도 키: 변수명 그대로(water_temperature, flow_ratio …), EC_water/EC_hydro 는 "EC".
+        # (예전 split("_")[0]는 "water_temperature" → "water" 처럼 잘못된 키를 먼저 찾았다)
+        cap_key = "EC" if var_key.startswith("EC_") else var_key
+        cap = float(delta_caps.get(cap_key, delta_caps.get(var_key, 0.0)) or 0.0)
         d = float(action.delta)
         if cap > 0:
             d = max(min(d, cap), -cap)
@@ -114,7 +121,25 @@ def apply_action_to_state(
             return {"ok": False, "reason": "point_index out of range"}
 
         before = pts[idx]
-        pts[idx] = float(pts[idx]) + d
+        new_val = float(pts[idx]) + d
+
+        # 누적 한도: 같은 액션이 반복 승인돼도 기준점에서 cap 이상 멀어지지 않게 한다.
+        if cap > 0 and base_cfg is not None:
+            ref_shapes = _get_var_shapes(base_cfg, var_key)
+            ref_pts = None
+            if isinstance(ref_shapes, list):
+                for s in ref_shapes:
+                    if getattr(s, "label", None) == action.shape_label:
+                        ref_pts = list(getattr(s, "points", ()))
+                        break
+            if ref_pts and idx < len(ref_pts):
+                ref = float(ref_pts[idx])
+                new_val = max(min(new_val, ref + cap), ref - cap)
+
+        if abs(new_val - before) <= 1e-12:
+            return {"ok": False, "reason": "membership_delta_cap reached"}
+
+        pts[idx] = new_val
         pts = _clamp_monotonic(pts, idx)
         var_map[action.shape_label] = pts
         return {

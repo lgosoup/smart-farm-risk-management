@@ -15,10 +15,12 @@ def tri(a: float, b: float, c: float, x: float) -> float:
         return 0.0
     if a == b and b == c:
         return 1.0 if x == a else 0.0
-    if x <= a or x >= c:
-        return 0.0
+    # 꼭짓점을 경계 검사보다 먼저 본다: a == b(왼쪽 숄더)나 b == c(오른쪽 숄더)일 때
+    # x == b 에서 0이 나오는 문제 방지
     if x == b:
         return 1.0
+    if x <= a or x >= c:
+        return 0.0
     if x < b:
         return (x - a) / (b - a)
     return (c - x) / (c - b)
@@ -28,10 +30,13 @@ def trap(a: float, b: float, c: float, d: float, x: float) -> float:
     """Trapezoidal membership."""
     if x is None:
         return 0.0
-    if x <= a or x >= d:
-        return 0.0
+    # 평탄 구간을 경계 검사보다 먼저 본다: a == b(예: pH 강산성 (0,0,4.5,5.5),
+    # 유량 정체 (0,0,0.35,0.45))나 c == d(습도 (88,95,100,100))일 때 끝점 값
+    # (유량 0.0, pH 0.0, 습도 100)이 0이 되어 아무 규칙도 발화하지 않던 버그 수정
     if b <= x <= c:
         return 1.0
+    if x <= a or x >= d:
+        return 0.0
     if a < x < b:
         return (x - a) / (b - a)
     return (d - x) / (d - c)

@@ -1,0 +1,13 @@
+{
+  "climate_id": "spring_mild",
+  "name": "봄 (일교차 큼)",
+  "outdoor_mean_c": 18.0,
+  "outdoor_amplitude_c": 6.5,
+  "peak_hour": 14,
+  "day_to_day_sd_c": 1.2,
+  "humidity_mean": 60.0,
+  "humidity_amplitude": 15.0,
+  "sunrise_hour": 6.0,
+  "sunset_hour": 19.0,
+  "events": []
+}

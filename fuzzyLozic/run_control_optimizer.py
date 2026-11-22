@@ -49,6 +49,10 @@ def resolve_path(path_str: str) -> Path:
         return path
     if path.exists():
         return path.resolve()
+    # 사용 예시(`--input inputs.json`)처럼 파일 이름만 주면 data/ 폴더의 파일을 찾는다.
+    for base in (BASE_DIR, DATA_DIR):
+        if (base / path).exists():
+            return (base / path).resolve()
     return (BASE_DIR / path).resolve()
 
 

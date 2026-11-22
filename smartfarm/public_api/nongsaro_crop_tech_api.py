@@ -101,8 +101,8 @@ class NongsaroCropTechApiClient:
         else:
             self._cache_dir = Path(cache_dir)
 
-        if self._cache_dir is not None:
-            self._cache_dir.mkdir(parents=True, exist_ok=True)
+        # The cache directory is created lazily on first write (see _save_cache),
+        # so constructing a client without a key leaves nothing on disk.
 
         self._session = requests.Session()
         self._session.headers.update({"Accept": "application/xml, text/xml, */*"})
@@ -222,15 +222,20 @@ class NongsaroCropTechApiClient:
         # The API may return JSON or XML depending on the endpoint and key.
         documents: list[dict] = []
         if raw_content.lstrip().startswith("<"):
-            documents = self._parse_xml_response(raw_content, query)
+            # Parse raw bytes so the XML declaration's encoding is honoured
+            # (response.text falls back to ISO-8859-1 when no charset header
+            # is sent, which garbles Korean text).
+            documents = self._parse_xml_response(response.content, query)
         else:
             documents = self._parse_json_response(raw_content, query)
 
-        payload = {"documents": documents}
-        self._save_cache(cache_key, payload)
+        # Do not cache empty results: an error envelope (e.g. invalid key)
+        # would otherwise poison the cache permanently.
+        if documents:
+            self._save_cache(cache_key, {"documents": documents})
         return documents, 1
 
-    def _parse_xml_response(self, xml_text: str, query: str = "") -> list[dict]:
+    def _parse_xml_response(self, xml_text: str | bytes, query: str = "") -> list[dict]:
         """Parse a Nongsaro XML response and return a list of document dicts."""
         documents: list[dict] = []
         try:
@@ -327,13 +332,13 @@ class NongsaroCropTechApiClient:
 
     def _item_dict_to_document(self, item: dict) -> Optional[dict]:
         """Convert a JSON item dict to a document dict."""
-        title = (
+        title = str(
             item.get("cntntsNm")
             or item.get("title")
             or item.get("cropTechNm")
             or ""
         ).strip()
-        content = (
+        content = str(
             item.get("cntnts")
             or item.get("content")
             or item.get("cropTechCntnts")
@@ -356,11 +361,12 @@ class NongsaroCropTechApiClient:
         }
 
     def _build_detail_url(self, cntnts_no: str) -> str:
-        """Build a detail URL for a content ID."""
-        return (
-            f"{_BASE_URL}{_ENDPOINT_DETAIL}"
-            f"?apiKey={self.api_key}&cntntsNo={cntnts_no}"
-        )
+        """Build a detail URL for a content ID.
+
+        The API key is deliberately NOT embedded: this URL is stored in
+        documents, cache files and profiles, which must not contain secrets.
+        """
+        return f"{_BASE_URL}{_ENDPOINT_DETAIL}?cntntsNo={cntnts_no}"
 
     # ------------------------------------------------------------------
     # Text cleaning
@@ -415,6 +421,7 @@ class NongsaroCropTechApiClient:
         if path is None:
             return
         try:
+            path.parent.mkdir(parents=True, exist_ok=True)
             with path.open("w", encoding="utf-8") as fh:
                 json.dump(data, fh, ensure_ascii=False, indent=2)
         except OSError as exc:

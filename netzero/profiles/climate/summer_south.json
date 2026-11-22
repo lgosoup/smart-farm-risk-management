@@ -1,0 +1,13 @@
+{
+  "climate_id": "summer_south",
+  "name": "남부 지역 여름",
+  "outdoor_mean_c": 27.0,
+  "outdoor_amplitude_c": 4.5,
+  "peak_hour": 15,
+  "day_to_day_sd_c": 0.8,
+  "humidity_mean": 75.0,
+  "humidity_amplitude": 12.0,
+  "sunrise_hour": 5.5,
+  "sunset_hour": 19.5,
+  "events": []
+}

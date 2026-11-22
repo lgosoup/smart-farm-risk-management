@@ -5,11 +5,10 @@ import json
 from pathlib import Path
 
 
-# Absolute path for fuzzyLozic integration
-_FUZZY_CONFIG_PATH = Path(
-    r"E:\Smart Farm Risk Management System\Smart Farm Risk Management System"
-    r"\fuzzyLozic\crop_config.json"
-)
+# fuzzyLozic integration config: the same file that fuzzyLozic/config.py load_config()
+# and FuzzyConfigManager use (<repo>/data/crop_config.json).
+# (Previously a hard-coded E: drive path from another PC -> crash / wrong file.)
+_FUZZY_CONFIG_PATH = Path(__file__).resolve().parent.parent.parent / "data" / "crop_config.json"
 
 # Default profiles directory: sibling of this file's directory
 _DEFAULT_PROFILES_DIR = Path(__file__).parent / "profiles"
@@ -26,16 +25,21 @@ class CropProfileRepository:
         this module's location.
     """
 
-    def __init__(self, profiles_dir: str | None = None) -> None:
+    def __init__(
+        self,
+        profiles_dir: str | None = None,
+        crop_config_path: str | Path | None = None,
+    ) -> None:
         self._dir = Path(profiles_dir) if profiles_dir else _DEFAULT_PROFILES_DIR
         self._dir.mkdir(parents=True, exist_ok=True)
+        self._crop_config_path = Path(crop_config_path) if crop_config_path else _FUZZY_CONFIG_PATH
 
     # ------------------------------------------------------------------ #
     # Helpers                                                              #
     # ------------------------------------------------------------------ #
 
     def _profile_path(self, crop_name: str) -> Path:
-        return self._dir / f"{crop_name.lower()}.json"
+        return self._dir / f"{str(crop_name or 'unknown').lower()}.json"
 
     def _read_json(self, path: Path) -> dict | None:
         if not path.exists():
@@ -54,7 +58,7 @@ class CropProfileRepository:
 
     def save(self, profile: dict) -> Path:
         """Save profile to ``profiles/{crop}.json`` and return the path."""
-        crop_name = profile.get("crop", "unknown")
+        crop_name = profile.get("crop") or "unknown"
         path = self._profile_path(crop_name)
         self._write_json(path, profile)
         return path
@@ -150,31 +154,16 @@ class CropProfileRepository:
         return {"memberships": memberships, "rule_weights": fuzzy_rule_weights}
 
     def _write_fuzzy_config(self, profile: dict) -> None:
-        """Write ``fuzzyLozic/crop_config.json`` from the current profile."""
-        overrides = self._to_fuzzy_overrides(profile)
-        rule_weights_raw: dict = profile.get("rule_weights", {})
+        """Write ``data/crop_config.json`` from the current profile.
 
-        _rw_map = {
-            "R6_high_temp_low_flow": "R6",
-            "R7_high_ec_low_flow":   "R7",
-            "R8_low_flow_turbidity": "R8",
-            "R9_high_ec_flow_border": "R9",
-        }
-        rule_weights_short: dict = {}
-        for pk, rid in _rw_map.items():
-            rule_weights_short[rid] = rule_weights_raw.get(pk, 1.0)
+        Uses the same conversion as FuzzyConfigManager so both entry points
+        produce an identical file.
+        """
+        from smartfarm.fuzzy_config.fuzzy_config_manager import FuzzyConfigManager
 
-        crop_config: dict = {
-            "crop":    profile.get("crop"),
-            "crop_ko": profile.get("crop_ko"),
-            "ec_mode": profile.get("control_targets", {}).get("ec_mode", "hydro"),
-            "control_targets":   profile.get("control_targets", {}),
-            "improvement_limits": profile.get("improvement_limits", {}),
-            "overrides": {
-                "memberships": overrides.get("memberships", {}),
-                "rule_weights": rule_weights_short,
-            },
-        }
+        crop_config = FuzzyConfigManager(
+            profiles_dir=self._dir, crop_config_path=self._crop_config_path
+        )._profile_to_crop_config(profile)
 
-        _FUZZY_CONFIG_PATH.parent.mkdir(parents=True, exist_ok=True)
-        self._write_json(_FUZZY_CONFIG_PATH, crop_config)
+        self._crop_config_path.parent.mkdir(parents=True, exist_ok=True)
+        self._write_json(self._crop_config_path, crop_config)

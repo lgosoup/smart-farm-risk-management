@@ -41,6 +41,8 @@ UNIT_CANONICAL: dict[str, str] = {
     "%": "%",
 }
 
+_UNIT_CANONICAL_CI: dict[str, str] = {k.lower(): v for k, v in UNIT_CANONICAL.items()}
+
 # ---------------------------------------------------------------------------
 # Compiled regex patterns
 # ---------------------------------------------------------------------------
@@ -168,7 +170,11 @@ class ValueExtractor:
         # Normalise unit
         canonical_unit: Optional[str] = None
         if raw_unit:
-            canonical_unit = UNIT_CANONICAL.get(raw_unit, raw_unit)
+            # The regex is case-insensitive ("PH", "ms/cm", "°c"), so look the
+            # canonical form up case-insensitively too.
+            canonical_unit = UNIT_CANONICAL.get(raw_unit) or _UNIT_CANONICAL_CI.get(
+                raw_unit.lower(), raw_unit
+            )
 
         # Build raw text snippet
         raw = m.group(0).strip()

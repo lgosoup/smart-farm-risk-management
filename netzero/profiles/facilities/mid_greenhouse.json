@@ -1,0 +1,99 @@
+{
+  "facility_id": "mid_greenhouse",
+  "name": "중형 수경 온실",
+  "description": "칠러 2대(신형·구형), 속도 조절형 환풍기, 대형 저수조. 두 칠러의 사양은 같지만 실제 효율은 다르다.",
+  "step_minutes": 60,
+  "prior_thermal_coupling": 0.10,
+  "devices": [
+    {
+      "id": "chiller_a",
+      "name": "칠러 A (신형)",
+      "type": "chiller",
+      "functions": ["water_temp_down"],
+      "unit": "min",
+      "levels": [0, 15, 30, 45, 60],
+      "power_w": 450,
+      "effects": {"water_temperature": {"model": "direct", "prior": -0.02}},
+      "hardware": {"pins": {"relay": "R1"}}
+    },
+    {
+      "id": "chiller_b",
+      "name": "칠러 B (구형)",
+      "type": "chiller",
+      "functions": ["water_temp_down"],
+      "unit": "min",
+      "levels": [0, 15, 30, 45, 60],
+      "power_w": 450,
+      "effects": {"water_temperature": {"model": "direct", "prior": -0.02}},
+      "hardware": {"pins": {"relay": "R2"}}
+    },
+    {
+      "id": "vent_fan",
+      "name": "환풍기 (속도 조절)",
+      "type": "ventilation_fan",
+      "functions": ["air_exchange", "water_temp_down"],
+      "unit": "min",
+      "levels": [0, 15, 30, 45, 60],
+      "power_w": 60,
+      "effects": {"water_temperature": {"model": "exchange", "prior": 0.003}},
+      "hardware": {"pins": {"vfd": "R3"}, "driver": "VFD"}
+    },
+    {
+      "id": "main_pump",
+      "name": "순환펌프",
+      "type": "circulation_pump",
+      "functions": ["flow_up", "turbidity_down"],
+      "unit": "min",
+      "levels": [0, 10, 20, 30],
+      "power_w": 80,
+      "effects": {
+        "flow_ratio": {"model": "direct", "prior": 0.003},
+        "turbidity": {"model": "direct", "prior": -0.01}
+      },
+      "hardware": {"pins": {"relay": "R4"}}
+    },
+    {
+      "id": "oxygen_pump",
+      "name": "산소펌프",
+      "type": "aerator",
+      "functions": ["oxygen_supply"],
+      "unit": "min",
+      "levels": [15, 30],
+      "min_level": 15,
+      "power_w": 20,
+      "hardware": {"pins": {"relay": "R5"}}
+    },
+    {
+      "id": "nutrient_doser",
+      "name": "양액 공급 펌프",
+      "type": "dosing_pump",
+      "functions": ["ec_up"],
+      "unit": "ml",
+      "levels": [0, 20, 40, 80],
+      "energy_wh_per_unit": 0.03,
+      "resource_per_unit": {"nutrient_ml": 1.0},
+      "effects": {"EC": {"model": "direct", "prior": 0.0025}},
+      "hardware": {"pins": {"relay": "R6"}}
+    }
+  ],
+  "simulator_truth": {
+    "thermal_coupling": 0.08,
+    "solar_gain_c_per_h": 0.5,
+    "greenhouse_air_offset_c": 3.0,
+    "device_effects": {
+      "chiller_a": {"water_temperature": -0.022},
+      "chiller_b": {"water_temperature": -0.012},
+      "vent_fan": {"water_temperature_exchange": 0.004},
+      "main_pump": {"flow_gain": 0.02, "turbidity_gain": 0.003, "water_temperature": 0.001},
+      "nutrient_doser": {"EC": 0.0018}
+    },
+    "power_factor": {"chiller_b": 1.15},
+    "flow": {"decay_per_h": 0.04, "floor": 0.4, "max": 1.06},
+    "ec": {"uptake_per_h": 0.008, "evaporation_per_c": 0.0003},
+    "turbidity": {"rise_per_h": 0.03},
+    "ph": {"mean": 6.15, "reversion": 0.05, "drift_sd": 0.02},
+    "process_noise": {"water_temperature": 0.04, "flow_ratio": 0.005, "EC": 0.003, "turbidity": 0.01},
+    "sensor_noise": {"water_temperature": 0.1, "flow_ratio": 0.01, "EC": 0.02, "turbidity": 0.04, "pH": 0.03},
+    "spike_prob": 0.004
+  }
+}

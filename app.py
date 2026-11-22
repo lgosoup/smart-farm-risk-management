@@ -1,5 +1,6 @@
 # app.py
 import json
+import os
 import sys
 from pathlib import Path
 import subprocess
@@ -33,15 +34,21 @@ def run_fuzzy_main():
     if not script_path.exists():
         raise FileNotFoundError(f"fuzzyLozic/main.py를 찾을 수 없습니다: {script_path}")
 
+    # 자식 프로세스 출력 인코딩을 UTF-8로 고정한다. (Windows 기본 cp949와 부모의
+    # PYTHONIOENCODING 설정이 어긋나면 한글 경로/메시지 디코딩에서 UnicodeDecodeError 발생)
+    env = dict(os.environ, PYTHONIOENCODING="utf-8")
     result = subprocess.run(
-        [sys.executable, "main.py"],
+        [sys.executable, str(script_path)],
         cwd=str(BASE_DIR),
         capture_output=True,
         text=True,
+        encoding="utf-8",
+        errors="replace",
+        env=env,
     )
 
     if result.returncode != 0:
-        print("❌ fuzzyLozic/main.py 실행 실패")
+        print("[ERROR] fuzzyLozic/main.py 실행 실패")
         print(result.stderr)
         raise RuntimeError("퍼지 로직 실행 중 오류 발생")
 
@@ -90,12 +97,24 @@ def _print_human_readable(obj: dict) -> None:
         if isinstance(score, (int, float)):
             print(f"- 위험 점수: {score}")
 
-        reasons = basis.get("판단 이유")
+        # 프롬프트 스키마(llm/prompts.py)의 키는 "핵심 근거" ("판단 이유"는 구버전 키)
+        reasons = basis.get("핵심 근거", basis.get("판단 이유"))
         if isinstance(reasons, list) and reasons:
-            print("- 판단 이유:")
+            print("- 핵심 근거:")
             for r in reasons:
                 if isinstance(r, str) and r.strip():
                     print(f"  - {r.strip()}")
+
+
+def _print_fuzzy_summary(packet: dict) -> None:
+    risk = packet.get("risk") or {}
+    print(f"\n[상태] {packet.get('action_key', '알수없음')}")
+    score = risk.get("risk_score")
+    if isinstance(score, (int, float)):
+        print(f"- 위험 점수: {score:.1f} ({risk.get('risk_label', '-')})")
+    for r in (packet.get("rules_fired_topN") or [])[:3]:
+        if isinstance(r, dict) and r.get("human_readable_reason"):
+            print(f"- {r['human_readable_reason']}")
 
 
 def main():
@@ -113,8 +132,17 @@ def main():
     current_packet = history_packets[-1]
     past_packets = history_packets[:-1]
 
-    # 4) LLM 실행 (선택 의존성 — transformers 없으면 여기서만 실패)
+    # 4) LLM 실행 (선택 의존성 — 없으면 퍼지 결과만 출력하고 이유를 알려준다)
     from llm.generate import run_smartfarm_llm_timeseries
+    from llm.loader import LLMUnavailableError, check_llm_available
+
+    try:
+        check_llm_available()
+    except LLMUnavailableError as e:
+        _print_fuzzy_summary(current_packet)
+        print(f"\n[LLM 해설 생략] {e}")
+        sys.exit(2)
+
     result = run_smartfarm_llm_timeseries(
         current_packet=current_packet,
         history_packets=past_packets,

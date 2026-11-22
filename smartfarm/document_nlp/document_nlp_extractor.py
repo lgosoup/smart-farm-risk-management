@@ -56,6 +56,7 @@ class DocumentNLPExtractor:
                              "DO", "FR", "Turbidity", or "unknown"
         * ``min``          — float or None (lower bound of a range)
         * ``max``          — float or None (upper bound of a range)
+        * ``value``        — float or None (single value when not a range)
         * ``unit``         — canonical unit string or None
         * ``growth_stage`` — "seedling", "vegetative", "fruiting", "all"
         * ``evidence``     — the original sentence the value was drawn from
@@ -102,6 +103,7 @@ class DocumentNLPExtractor:
                     "field": val["field"],
                     "min": val.get("min"),
                     "max": val.get("max"),
+                    "value": val.get("value"),  # single (non-range) value
                     "unit": val.get("unit"),
                     "growth_stage": val["growth_stage"],
                     "evidence": sentence,
@@ -159,6 +161,7 @@ class DocumentNLPExtractor:
                 c.get("field"),
                 c.get("min"),
                 c.get("max"),
+                c.get("value"),
                 c.get("unit"),
                 c.get("evidence"),
                 c.get("source"),
@@ -177,6 +180,7 @@ class DocumentNLPExtractor:
                 c.get("growth_stage"),
                 c.get("min"),
                 c.get("max"),
+                c.get("value"),
                 c.get("unit"),
             )
             bucket[bkey].append(c)

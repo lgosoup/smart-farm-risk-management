@@ -160,12 +160,25 @@ def build_rules(cfg: Dict[str, object]) -> Dict[str, Rule]:
     rules["R17"] = Rule("R17", atom("flow_ratio", "매우낮음(경고)"), "경고", "유량이 매우낮음 → 경고")
     rules["R18"] = Rule("R18", atom("turbidity", "매우 탁함(경고)"), "경고", "탁도가 매우 탁함 → 경고")
     rules["R19"] = Rule("R19", atom("EC", "높음(경고)"), "경고", "EC가 높음 구간 → 경고")
+    rules["R21"] = Rule("R21", atom("EC", "매우높음(위험)"), "위험", "EC 매우높음(염류 스트레스) → 위험")
     rules["R20"] = Rule(
         "R20",
         any_of(atom("pH", "약산성(경고–주의)"), atom("pH", "약알칼리(경고–주의)")),
         "주의",
         "pH가 최적 범위를 벗어남(약산성/약알칼리) → 주의",
     )
+
+    # E. 단일 경계·주의 규칙: 한 변수만 경계/주의 구간에 있을 때 발화하는 규칙이 없으면
+    #    fallback(50점)으로 점프하므로, 위험도가 연속적으로 변하도록 빈 구간을 채운다.
+    rules["R22"] = Rule("R22", atom("water_temperature", "경계(상승)"), "경계", "수온이 경계(상승) 구간 → 경계")
+    rules["R23"] = Rule("R23", atom("water_temperature", "낮음"), "경계", "수온이 낮음 구간 → 경계")
+    rules["R24"] = Rule("R24", atom("water_temperature", "매우낮음"), "주의", "수온이 매우낮음 구간 → 주의")
+    rules["R25"] = Rule("R25", atom("flow_ratio", "경계"), "경계", "유량이 경계 구간 → 경계")
+    rules["R26"] = Rule("R26", atom("flow_ratio", "낮음(주의)"), "주의", "유량이 낮음 구간 → 주의")
+    rules["R27"] = Rule("R27", atom("flow_ratio", "과다(주의)"), "주의", "유량이 과다 → 주의")
+    rules["R28"] = Rule("R28", atom("turbidity", "탁함(주의)"), "주의", "탁도가 탁함 구간 → 주의")
+    rules["R29"] = Rule("R29", atom("EC", "낮음"), "경계", "EC가 낮음 구간 → 경계")
+    rules["R30"] = Rule("R30", atom("EC", "매우낮음"), "주의", "EC가 매우낮음 구간 → 주의")
 
     # C. 누적 승급
     rules["R11"] = Rule(
@@ -175,9 +188,11 @@ def build_rules(cfg: Dict[str, object]) -> Dict[str, Rule]:
         "수온/유량이 모두 경계 → 경고로 승급",
     )
     # R12 handled in inference via policy; stub rule for reference.
+    # 전제는 inference.py의 메타 로직(경고급 규칙 다발)이 대신하므로 여기서는 항상 0.
+    # (이전 stub은 'turbidity 약간 탁함 → 위험'으로 읽혀, 직접 evaluate하면 탁도만으로 위험이 나왔다)
     rules["R12"] = Rule(
         "R12",
-        atom("turbidity", "약간 탁함(경계)"),
+        lambda memberships: 0.0,
         "위험",
         "경고급 규칙 다발 → 위험으로 승급",
     )

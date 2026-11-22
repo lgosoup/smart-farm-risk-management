@@ -28,8 +28,14 @@ data/llm_response.json
 data/system_status.json
 data/vision_capture_request.json
 
-# 로그
+# 로그 (orchestrator.log 포함)
 *.log
+
+# 테스트 캐시
+.pytest_cache/
+
+# netzero 실험 결과
+netzero/results/
 
 # LLM 모델 캐시
 *.bin

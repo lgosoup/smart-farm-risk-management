@@ -164,6 +164,8 @@ def run_assessment(
         recent_risk_labels=list(recent_risk_labels or []),
         alert_policy=cfg.get("alert_policy"),
     )
+    # 실제로 퍼지화에 쓴 EC 모드(작물 설정으로 바뀌었을 수 있음). 제어 최적화가 같은 모드를 쓰도록 남긴다.
+    packet["ec_mode"] = ec_mode
 
     if save_history:
         _append_jsonl(history_inputs_path, {"ts": now, "sensor": processed})

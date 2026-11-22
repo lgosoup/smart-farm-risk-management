@@ -242,44 +242,45 @@ def _score_membership_table(score_membership: Dict[str, float]) -> Dict[str, flo
 
 
 def _display_label(label: str) -> str:
+    # 키는 fuzzyLozic/config.py(+crop_config 오버라이드)의 실제 라벨 문자열이어야 한다.
+    # (이전 버전은 키가 인코딩 깨진 문자열이라 어떤 라벨과도 일치하지 않았음)
     label_map = {
         # risk/output labels
-        "留ㅼ슦?덉젙": "매우 안전",
-        "?덉젙": "안전",
-        "寃쎄퀎": "경계",
-        "二쇱쓽": "주의",
-        "寃쎄퀬": "경고",
-        "?꾪뿕": "위험",
-        # temperature
-        "留ㅼ슦??쓬": "매우 낮음",
-        "??쓬": "낮음",
-        "?덉젙(理쒖쟻)": "적정(최적)",
-        "寃쎄퀎(?곸듅)": "경계(고온)",
-        "寃쎄퀬(怨좎삩)": "경고(고온)",
-        "?꾪뿕(湲됯퀬??": "위험(극고온)",
-        # DO
-        "移섎챸????쓬": "치명적 저산소",
-        "?덉젙(紐⑺몴)": "적정(목표)",
-        "異⑸텇(?믪쓬)": "충분(높음)",
+        "매우안정": "매우 안전",
+        "안정": "안전",
+        "경계": "경계",
+        "주의": "주의",
+        "경고": "경고",
+        "위험": "위험",
+        # water temperature
+        "매우낮음": "매우 낮음",
+        "낮음": "낮음",
+        "안정(최적)": "적정(최적)",
+        "경계(상승)": "경계(고온)",
+        "경고(고온)": "경고(고온)",
+        "위험(급고온)": "위험(극고온)",
         # pH
-        "媛뺤궛???꾪뿕)": "강산성(위험)",
-        "?쎌궛??寃쎄퀬?볦＜??": "약산성(경계)",
-        "?쎌븣移쇰━(寃쎄퀬?볦＜??": "약알칼리(경계)",
-        "媛뺤븣移쇰━(?꾪뿕)": "강알칼리(위험)",
-        # FR
-        "?뺤껜(?꾪뿕)": "정체(위험)",
-        "留ㅼ슦??쓬(寃쎄퀬)": "매우 낮음(경고)",
-        "??쓬(二쇱쓽)": "낮음(주의)",
-        "怨쇰떎(二쇱쓽)": "과다(주의)",
-        # EC
-        "?믪쓬(寃쎄퀬)": "높음(경고)",
-        "留ㅼ슦?믪쓬(?꾪뿕)": "매우 높음(위험)",
-        # Turbidity
-        "留묒쓬(?덉젙)": "맑음(적정)",
-        "?쎄컙 ?곹븿(寃쎄퀎)": "약간 상승(경계)",
-        "?곹븿(二쇱쓽)": "상승(주의)",
-        "留ㅼ슦 ?곹븿(寃쎄퀬)": "매우 상승(경고)",
-        "洹밸룄濡??곹븿(?꾪뿕)": "극심 상승(위험)",
+        "강산성(위험)": "강산성(위험)",
+        "약산성(경고–주의)": "약산성(경계)",
+        "약알칼리(경고–주의)": "약알칼리(경계)",
+        "강알칼리(위험)": "강알칼리(위험)",
+        # flow ratio
+        "정체(위험)": "정체(위험)",
+        "매우낮음(경고)": "매우 낮음(경고)",
+        "낮음(주의)": "낮음(주의)",
+        "과다(주의)": "과다(주의)",
+        # EC / air temperature / humidity
+        "높음(경고)": "높음(경고)",
+        "매우높음(위험)": "매우 높음(위험)",
+        "안정(적정)": "적정",
+        "적정": "적정",
+        "높음(주의)": "높음(주의)",
+        # turbidity
+        "맑음(안정)": "맑음(적정)",
+        "약간 탁함(경계)": "약간 탁함(경계)",
+        "탁함(주의)": "탁함(주의)",
+        "매우 탁함(경고)": "매우 탁함(경고)",
+        "극도로 탁함(위험)": "극도로 탁함(위험)",
     }
     return label_map.get(label, label)
 
@@ -299,7 +300,7 @@ def _memberships_table(memberships: Dict[str, float]) -> List[Dict[str, object]]
 def _label_color(label: str) -> str:
     disp = _display_label(label)
     # Safe/ideal
-    if any(k in disp for k in ["안정", "적정", "최적", "목표", "맑음"]):
+    if any(k in disp for k in ["안전", "안정", "적정", "최적", "목표", "맑음"]):
         return "#2E7D32"  # green
     # Boundary / caution
     if any(k in disp for k in ["경계", "주의"]):
@@ -335,6 +336,16 @@ def _rule_name(rule_id: str) -> str:
         "R18": "탁도 경고",
         "R19": "고EC 경고",
         "R20": "pH 경계",
+        "R21": "고EC 위험",
+        "R22": "수온 경계",
+        "R23": "수온 낮음",
+        "R24": "수온 매우낮음",
+        "R25": "유량 경계",
+        "R26": "유량 낮음",
+        "R27": "유량 과다",
+        "R28": "탁도 주의",
+        "R29": "EC 낮음",
+        "R30": "EC 매우낮음",
         "DELTA": "급변 플래그",
         "TS_TREND": "추세 플래그",
         "TS_VOL": "변동성 플래그",
@@ -345,6 +356,37 @@ def _rule_name(rule_id: str) -> str:
     return mapping.get(rule_id, rule_id)
 
 
+_TS_KINDS = ("RECOVERY_FAIL", "TREND", "VOL", "PERSIST", "SPIKE")
+_TS_SUFFIX_TOKENS = {"UP", "DOWN", "FAST", "HIGH", "LOW"}
+
+
+def _parse_ts_flag(flag: str) -> Tuple[Optional[str], str, List[str]]:
+    """'TS_TREND_water_temperature_UP_FAST' -> ('TREND', 'water_temperature', ['UP', 'FAST']).
+
+    변수명에 '_'가 들어가므로(water_temperature, flow_ratio, air_temperature)
+    단순 split('_') 인덱싱으로는 변수/방향을 잘못 읽는다.
+    """
+    if not flag.startswith("TS_"):
+        return None, "", []
+    rest = flag[3:]
+    for kind in _TS_KINDS:
+        if not rest.startswith(kind + "_"):
+            continue
+        body = rest[len(kind) + 1:]
+        for var in sorted(VAR_INFO, key=len, reverse=True):
+            if body == var:
+                return kind, var, []
+            if body.startswith(var + "_"):
+                return kind, var, body[len(var) + 1:].split("_")
+        # 알 수 없는 변수명: 뒤쪽 대문자 방향 토큰만 suffix로 분리
+        tokens = body.split("_")
+        suffix: List[str] = []
+        while len(tokens) > 1 and tokens[-1] in _TS_SUFFIX_TOKENS:
+            suffix.insert(0, tokens.pop())
+        return kind, "_".join(tokens), suffix
+    return None, "", []
+
+
 def _describe_ts_flag(flag: str, cfg: Dict[str, object]) -> Dict[str, str]:
     ts_cfg = cfg.get("timeseries_policy", {}) or {}
     window = int(ts_cfg.get("window", 0))
@@ -352,17 +394,15 @@ def _describe_ts_flag(flag: str, cfg: Dict[str, object]) -> Dict[str, str]:
     def _detail(text: str) -> str:
         return f"{text} (window={window})" if window else text
 
-    parts = flag.split("_")
-    if len(parts) < 3:
+    kind, var, suffix = _parse_ts_flag(flag)
+    if kind is None:
         return {"flag": flag, "variable": "-", "meaning": "알 수 없음", "detail": "-"}
 
-    kind = parts[1]
-    var = parts[2]
     var_label = _var_label(var)
 
     if kind == "TREND":
-        direction = parts[3] if len(parts) > 3 else ""
-        fast = "FAST" in parts
+        direction = suffix[0] if suffix else ""
+        fast = "FAST" in suffix
         spec = (ts_cfg.get("trend", {}) or {}).get(var, {})
         th = spec.get("threshold")
         fast_th = spec.get("fast_threshold")
@@ -389,7 +429,7 @@ def _describe_ts_flag(flag: str, cfg: Dict[str, object]) -> Dict[str, str]:
         }
 
     if kind == "PERSIST":
-        level = parts[3] if len(parts) > 3 else ""
+        level = suffix[0] if suffix else ""
         spec = (ts_cfg.get("persistence", {}) or {}).get(var, {})
         th = spec.get("threshold")
         cnt = spec.get("count")
@@ -404,7 +444,7 @@ def _describe_ts_flag(flag: str, cfg: Dict[str, object]) -> Dict[str, str]:
         }
 
     if kind == "SPIKE":
-        direction = parts[3] if len(parts) > 3 else ""
+        direction = suffix[0] if suffix else ""
         spec = (ts_cfg.get("spike", {}) or {}).get(var, {})
         th = spec.get("up" if direction == "UP" else "down")
         dir_text = "급등" if direction == "UP" else "급락"
@@ -416,9 +456,7 @@ def _describe_ts_flag(flag: str, cfg: Dict[str, object]) -> Dict[str, str]:
             "detail": _detail(detail),
         }
 
-    if kind == "RECOVERY" and len(parts) > 3 and parts[2] == "FAIL":
-        var = parts[3] if len(parts) > 3 else var
-        var_label = _var_label(var)
+    if kind == "RECOVERY_FAIL":
         spec = (ts_cfg.get("recovery_fail", {}) or {}).get(var, {})
         th = spec.get("bad_threshold")
         cnt = spec.get("count")
@@ -545,6 +583,9 @@ def main() -> None:
         if span > 0:
             lo -= span * 0.2
             hi += span * 0.2
+        # 센서값이 허용 범위를 크게 벗어나도(무결성 데모 대상) number_input이 예외로 죽지 않게
+        lo = min(lo, float(default))
+        hi = max(hi, float(default))
         value = float(
             st.sidebar.number_input(
                 label,
@@ -602,9 +643,9 @@ def main() -> None:
 
     history_rows, history_ts = _read_history_inputs(HISTORY_INPUTS_PATH)
     if history_source.startswith("세션"):
+        # 평가에는 "이전" 샘플만 넣는다 (main.run_assessment와 동일: 현재 입력은 평가 후 append).
+        # 현재 입력을 먼저 넣으면 previous_inputs == 현재값이 되어 Delta/스파이크가 항상 0.
         history_inputs = st.session_state.session_history[:]
-        if auto_append:
-            history_inputs = history_inputs + [inputs]
     else:
         history_inputs = history_rows
 
@@ -625,6 +666,7 @@ def main() -> None:
     )
 
     if history_source.startswith("세션") and auto_append:
+        history_inputs = history_inputs + [dict(inputs)]
         st.session_state.session_history = history_inputs
 
     col1, col2 = st.columns(2)

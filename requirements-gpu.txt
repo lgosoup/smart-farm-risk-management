@@ -1,7 +1,10 @@
-# GPU / LLM inference (optional — install only when running the local LLM)
+# GPU / LLM inference (optional - install only when running the local LLM; NVIDIA GPU required)
 # pip install -r requirements-gpu.txt --extra-index-url https://download.pytorch.org/whl/cu118
+# Keep this file ASCII-only (old pip decodes it with the locale codec, cp949 on Korean Windows).
 torch==2.5.1+cu118
-torchaudio==2.5.1+cu118
-torchvision==0.20.1+cu118
-transformers>=4.36.0
-bitsandbytes>=0.41.0
+# Qwen/Qwen3-4B (llm/loader.py) needs the "qwen3" architecture: transformers>=4.51
+transformers>=4.51.0
+# device_map={"": 0} in llm/loader.py requires accelerate
+accelerate>=0.26.0
+# 4-bit quantization; official Windows wheels from 0.43
+bitsandbytes>=0.43.0

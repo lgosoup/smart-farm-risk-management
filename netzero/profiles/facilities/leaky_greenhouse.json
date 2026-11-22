@@ -1,0 +1,87 @@
+{
+  "facility_id": "leaky_greenhouse",
+  "name": "단열이 약한 비닐 온실",
+  "description": "칠러 1대와 환풍기. 사양서상 열 손실 계수는 일반 시설과 같게 적혀 있지만 실제로는 외기 영향을 두 배 이상 받는다.",
+  "step_minutes": 60,
+  "prior_thermal_coupling": 0.10,
+  "devices": [
+    {
+      "id": "chiller_a",
+      "name": "칠러",
+      "type": "chiller",
+      "functions": ["water_temp_down"],
+      "unit": "min",
+      "levels": [0, 15, 30, 45, 60],
+      "power_w": 450,
+      "effects": {"water_temperature": {"model": "direct", "prior": -0.02}},
+      "hardware": {"pins": {"relay": "R1"}}
+    },
+    {
+      "id": "vent_fan",
+      "name": "환풍기",
+      "type": "ventilation_fan",
+      "functions": ["air_exchange", "water_temp_down"],
+      "unit": "min",
+      "levels": [0, 15, 30, 60],
+      "power_w": 40,
+      "effects": {"water_temperature": {"model": "exchange", "prior": 0.003}},
+      "hardware": {"pins": {"relay": "R2"}}
+    },
+    {
+      "id": "main_pump",
+      "name": "순환펌프",
+      "type": "circulation_pump",
+      "functions": ["flow_up", "turbidity_down"],
+      "unit": "min",
+      "levels": [0, 10, 20, 30],
+      "power_w": 60,
+      "effects": {
+        "flow_ratio": {"model": "direct", "prior": 0.003},
+        "turbidity": {"model": "direct", "prior": -0.01}
+      },
+      "hardware": {"pins": {"relay": "R3"}}
+    },
+    {
+      "id": "oxygen_pump",
+      "name": "산소펌프",
+      "type": "aerator",
+      "functions": ["oxygen_supply"],
+      "unit": "min",
+      "levels": [15, 30],
+      "min_level": 15,
+      "power_w": 15,
+      "hardware": {"pins": {"relay": "R4"}}
+    },
+    {
+      "id": "nutrient_doser",
+      "name": "양액 공급 펌프",
+      "type": "dosing_pump",
+      "functions": ["ec_up"],
+      "unit": "ml",
+      "levels": [0, 20, 40, 80],
+      "energy_wh_per_unit": 0.03,
+      "resource_per_unit": {"nutrient_ml": 1.0},
+      "effects": {"EC": {"model": "direct", "prior": 0.0025}},
+      "hardware": {"pins": {"relay": "R5"}}
+    }
+  ],
+  "simulator_truth": {
+    "thermal_coupling": 0.22,
+    "solar_gain_c_per_h": 0.9,
+    "greenhouse_air_offset_c": 4.0,
+    "device_effects": {
+      "chiller_a": {"water_temperature": -0.03},
+      "vent_fan": {"water_temperature_exchange": 0.006},
+      "main_pump": {"flow_gain": 0.02, "turbidity_gain": 0.003, "water_temperature": 0.001},
+      "nutrient_doser": {"EC": 0.002}
+    },
+    "power_factor": {},
+    "flow": {"decay_per_h": 0.04, "floor": 0.4, "max": 1.06},
+    "ec": {"uptake_per_h": 0.010, "evaporation_per_c": 0.0006},
+    "turbidity": {"rise_per_h": 0.04},
+    "ph": {"mean": 6.15, "reversion": 0.05, "drift_sd": 0.02},
+    "process_noise": {"water_temperature": 0.06, "flow_ratio": 0.005, "EC": 0.003, "turbidity": 0.01},
+    "sensor_noise": {"water_temperature": 0.1, "flow_ratio": 0.01, "EC": 0.02, "turbidity": 0.04, "pH": 0.03},
+    "spike_prob": 0.004
+  }
+}

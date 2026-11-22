@@ -73,15 +73,24 @@ BANDIT_HOUR           = 3        # 03:00에 밴딧 실행
 ALERT_LEVELS          = {"경고", "위험", "긴급"}
 
 # ── 로깅 ──────────────────────────────────────────────────────────────────────
-logging.basicConfig(
-    level=logging.INFO,
-    format="%(asctime)s [%(levelname)s] %(message)s",
-    handlers=[
-        logging.StreamHandler(),
-        logging.FileHandler(ROOT_DIR / "orchestrator.log", encoding="utf-8"),
-    ],
-)
+# import 시점에는 핸들러를 달지 않는다 (테스트/다른 모듈에서 import할 때 로그 파일 생성·
+# 루트 로거 설정을 가로채지 않도록). run() 시작 시 _setup_logging()으로 설정.
+LOG_PATH = ROOT_DIR / "orchestrator.log"
 log = logging.getLogger("orchestrator")
+
+
+def _setup_logging(log_path: Path = LOG_PATH) -> None:
+    root = logging.getLogger()
+    if root.handlers:
+        return
+    logging.basicConfig(
+        level=logging.INFO,
+        format="%(asctime)s [%(levelname)s] %(message)s",
+        handlers=[
+            logging.StreamHandler(),
+            logging.FileHandler(log_path, encoding="utf-8"),
+        ],
+    )
 
 
 # ════════════════════════════════════════════════════════════════════════════════
@@ -193,7 +202,7 @@ def save_alert(packet: dict, action_key: str) -> None:
     log.warning(
         "ALERT [%s] risk_score=%.1f",
         action_key,
-        risk.get("risk_score", 0.0),
+        risk.get("risk_score") or 0.0,
     )
 
 
@@ -325,6 +334,27 @@ def _should_run_bandit(last_bandit_date: Optional[date], now: datetime, bandit_h
     return last_bandit_date != now.date() and now.hour >= bandit_hour
 
 
+def _load_last_bandit_date(state_path: Path) -> Optional[date]:
+    """improvement_state.json의 last_cycle.ts에서 마지막 밴딧 실행 날짜를 복원.
+
+    재시작할 때마다 last_bandit_date=None으로 시작하면, BANDIT_HOUR 이후에 재시작한
+    모든 경우 같은 날 밴딧이 다시 돌아 멤버십/가중치가 하루에 여러 번 바뀐다.
+    """
+    try:
+        state = json.loads(state_path.read_text(encoding="utf-8"))
+        ts = ((state or {}).get("last_cycle") or {}).get("ts")
+        if isinstance(ts, str) and ts:
+            dt = datetime.fromisoformat(ts)
+            if dt.tzinfo is not None:
+                dt = dt.astimezone()  # 로컬 시각 기준 날짜
+            return dt.date()
+    except FileNotFoundError:
+        return None
+    except Exception as e:  # 깨진 상태 파일이어도 루프는 계속
+        log.warning("improvement_state.json에서 마지막 밴딧 날짜 복원 실패: %s", e)
+    return None
+
+
 def _request_vision_capture(
     capture_dir: Path,
     timeout_sec: int = 60,
@@ -387,9 +417,10 @@ def run(
     ec_mode:
         EC 모드. "water" 이면 crop_config.json의 설정을 자동으로 사용.
     """
+    _setup_logging()
     adapter = sensor_adapter or FileSensorAdapter()
     eval_interval_sec = eval_interval_minutes * 60
-    last_bandit_date: Optional[date] = None
+    last_bandit_date: Optional[date] = _load_last_bandit_date(IMPROVEMENT_STATE_PATH)
 
     log.info(
         "오케스트레이터 시작. eval_interval=%dmin, bandit_hour=%02d:00",

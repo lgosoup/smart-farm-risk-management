@@ -38,6 +38,17 @@ def _fuzzify_single(value: Optional[float], var_cfg: VariableConfig) -> Dict[str
     memberships: Dict[str, float] = {}
     for shape in var_cfg.shapes:
         memberships[shape.label] = evaluate(shape.shape, shape.points, value) if value is not None else 0.0
+
+    # 양 끝 집합은 숄더로 처리: 정의 범위를 벗어난 값이 모든 집합에서 0이 되어
+    # "안전"으로 보이는 일을 막는다. (입력값 자체는 바꾸지 않는다)
+    if value is not None and var_cfg.shapes:
+        lowest = min(var_cfg.shapes, key=lambda s: s.points[0])
+        highest = max(var_cfg.shapes, key=lambda s: s.points[-1])
+        # 끝점 자체(예: 수온 -5.0)도 포함한다. '<'만 쓰면 정확히 끝점인 값이 모든 집합에서 0이 된다.
+        if value <= lowest.points[0]:
+            memberships[lowest.label] = 1.0
+        elif value >= highest.points[-1]:
+            memberships[highest.label] = 1.0
     return memberships
 
 

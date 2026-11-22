@@ -6,7 +6,9 @@ from pathlib import Path
 from typing import Any, Dict, List, Optional, Tuple
 
 _DATA_DIR = Path(__file__).resolve().parent.parent.parent / "data"
-_ROOT_DIR = Path(__file__).resolve().parent.parent.parent.parent
+# 프로젝트 루트(= smartfarm/ 패키지가 있는 폴더). 예전에는 한 단계 더 위(상위 폴더)를 가리켜
+# smartfarm.vision을 찾지 못하고 항상 휴리스틱 보상으로 떨어졌다.
+_ROOT_DIR = Path(__file__).resolve().parent.parent.parent
 
 log = logging.getLogger(__name__)
 

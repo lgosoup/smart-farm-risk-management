@@ -7,7 +7,7 @@ def _clamp(val: float, lo: float, hi: float) -> float:
 
 
 def _clamp_list(pts: list[float], lo: float, hi: float) -> list[float]:
-    return [_clamp(v, lo, hi) for v in pts]
+    return [round(_clamp(v, lo, hi), 4) for v in pts]
 
 
 _T_MIN, _T_MAX = -10.0, 60.0
@@ -33,7 +33,9 @@ class FuzzyParamConverter:
         border   = _clamp_list([opt_max + 0.5, opt_max + 3.5, opt_max + 6.5], lo, hi)
         warning  = _clamp_list([opt_max + 5, opt_max + 9, opt_max + 13], lo, hi)
         danger   = _clamp_list([opt_max + 11, opt_max + 15, opt_max + 28, opt_max + 33], lo, hi)
-        low      = _clamp_list([opt_min - 7, opt_min - 4, opt_min - 1], lo, hi)
+        # 낮음 ends at opt_min - 0.5 (inside the 안정 ramp opt_min-1..opt_min) so that
+        # x == opt_min - 1 still has non-zero membership (no point hole between sets).
+        low      = _clamp_list([opt_min - 7, opt_min - 4, opt_min - 0.5], lo, hi)
         very_low = _clamp_list([opt_min - 22, opt_min - 17, opt_min - 6, opt_min - 2], lo, hi)
         return {
             "매우낮음":    very_low,
@@ -65,10 +67,15 @@ class FuzzyParamConverter:
 
     def _convert_ec_hydro(self, ec_min: float, ec_max: float) -> dict:
         lo, hi = _EC_MIN, _EC_MAX
-        stable    = _clamp_list([ec_min, ec_min + 0.1, ec_max - 0.1, ec_max], lo, hi)
+        # Ramp width of the 안정 set; capped at half the span so the points stay
+        # monotonic for narrow ranges (e.g. 1.0-1.1 used to give [1.0, 1.1, 1.0, 1.1]).
+        ramp = min(0.1, max(ec_max - ec_min, 0.0) / 2.0)
+        stable    = _clamp_list([ec_min, ec_min + ramp, ec_max - ramp, ec_max], lo, hi)
         very_low  = _clamp_list([0.0, 0.0, ec_min * 0.3, ec_min * 0.5], lo, hi)
-        low       = _clamp_list([ec_min * 0.4, ec_min * 0.7, ec_min], lo, hi)
-        high_warn = _clamp_list([ec_max, ec_max + 0.4, ec_max + 0.8], lo, hi)
+        # 낮음 / 높음(경고) overlap the 안정 ramps by half a ramp, so that the optimal
+        # range boundaries (ec_min, ec_max) are not points where every set is 0.
+        low       = _clamp_list([ec_min * 0.4, ec_min * 0.7, ec_min + ramp / 2.0], lo, hi)
+        high_warn = _clamp_list([ec_max - ramp / 2.0, ec_max + 0.4, ec_max + 0.8], lo, hi)
         very_high = _clamp_list([ec_max + 0.6, ec_max + 1.2, ec_max + 3.0, ec_max + 4.0], lo, hi)
         return {
             "매우낮음":      very_low,

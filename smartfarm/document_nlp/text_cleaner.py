@@ -29,6 +29,8 @@ class TextCleaner:
         "（": "(",   # fullwidth left parenthesis （
         "）": ")",   # fullwidth right parenthesis ）
         "・": ".",   # katakana middle dot ・
+        "～": "~",  # fullwidth tilde (common range separator in Korean docs: 18～22℃)
+        "〜": "~",  # wave dash 〜
     }
 
     # Compiled patterns (class-level for performance)

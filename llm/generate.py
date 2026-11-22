@@ -67,9 +67,10 @@ def _postprocess_korean_terms(obj: Any) -> Any:
     - 이미 (EC), (DO) 형태로 들어간 건 중복 치환 방지
     - 키 이름은 절대 변경하지 않음(값만 변경)
     """
-    # "(EC)" 안의 EC는 건드리지 않기 위해 (?<!\() 사용
+    # "(EC)" 안의 EC, 이미 "EC(전기전도도)"로 풀어쓴 EC, 영문 단어 일부(ECO 등)는 건드리지 않는다.
+    # (\b는 "EC가"처럼 한글 조사가 붙으면 단어 경계로 보지 않으므로 영문자 기준 lookaround 사용)
     repls = [
-        (re.compile(r"(?<!\()EC\b"), "전기전도도(EC)"),
+        (re.compile(r"(?<![(A-Za-z])EC(?![A-Za-z(])"), "전기전도도(EC)"),
     ]
 
     if isinstance(obj, str):
@@ -300,7 +301,7 @@ def run_smartfarm_llm(payload: Dict[str, Any]) -> str:
         tokenize=True,
         return_dict=True,
         return_tensors="pt",
-    ).to("cuda")
+    ).to(model.device)
 
     # ✅ do_sample=False면 temperature/top_p/top_k는 제거(경고 방지)
     out = model.generate(
@@ -336,7 +337,7 @@ def run_smartfarm_llm(payload: Dict[str, Any]) -> str:
             tokenize=True,
             return_dict=True,
             return_tensors="pt",
-        ).to("cuda")
+        ).to(model.device)
 
         retry_out = model.generate(
             **retry_inputs,

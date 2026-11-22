@@ -15,10 +15,12 @@ import json
 import sys
 from pathlib import Path
 
-# Optional: rag-research semantic scholar integration
+# Optional: semantic scholar integration (module lives in <repo>/research/research_support/)
+_REPO_ROOT = Path(__file__).resolve().parent.parent
+if str(_REPO_ROOT) not in sys.path:
+    sys.path.insert(0, str(_REPO_ROOT))
 try:
-    sys.path.insert(0, str(Path(__file__).parent.parent / "rag-research"))
-    from research_support.semantic_scholar_search import normalize_crop as scholar_normalize
+    from research.research_support.semantic_scholar_search import normalize_crop as scholar_normalize
     HAS_RAG = True
 except ImportError:
     HAS_RAG = False
@@ -137,6 +139,8 @@ def _map_nlp_candidates(candidates: list[dict]) -> list[dict]:
             value = lo
         elif hi is not None:
             value = hi
+        elif c.get("value") is not None:
+            value = c.get("value")  # single (non-range) value
         else:
             continue
         mapped = dict(c)
@@ -205,6 +209,16 @@ def _save_profile(profile: dict) -> Path:
     return repo.save(profile)
 
 
+def _existing_profile_path(profile: dict) -> Path | None:
+    """Return the path of an already-saved profile for this crop, if any."""
+    from smartfarm.crop_profile.crop_profile_repository import _DEFAULT_PROFILES_DIR
+    crop = str(profile.get("crop") or "").lower()
+    if not crop:
+        return None
+    path = _DEFAULT_PROFILES_DIR / f"{crop}.json"
+    return path if path.exists() else None
+
+
 def _print_summary(
     crop_name: str,
     profile: dict,
@@ -246,7 +260,7 @@ def _print_summary(
 
     if activated:
         print()
-        print("  [OK] Profile activated -> fuzzyLozic/crop_config.json written")
+        print("  [OK] Profile activated -> data/crop_config.json written")
     print("=" * 60)
 
 
@@ -296,8 +310,9 @@ def generate_crop_profile(
             print(f"    [WARNING] scholar_normalize failed: {exc}")
 
     # Build a unified crop_info dict for downstream use
-    crop_info.setdefault("crop", crop_info.get("crop_common_name_en", crop_name))
-    crop_info.setdefault("crop_ko", crop_info.get("crop_common_name_ko", ""))
+    # (unknown Korean crops have crop_common_name_en=None -> fall back to the input name)
+    crop_info["crop"] = crop_info.get("crop") or crop_info.get("crop_common_name_en") or crop_name
+    crop_info["crop_ko"] = crop_info.get("crop_ko") or crop_info.get("crop_common_name_ko") or ""
 
     print(f"\n[2] Fetching documents from Nongsaro API...")
     crop_name_ko = crop_info.get("crop_ko") or crop_name
@@ -329,8 +344,16 @@ def generate_crop_profile(
     print(f"    -> profile built (fallbacks: {profile.get('fallbacks_used', [])})")
 
     print(f"\n[7] Saving profile...")
-    save_path = _save_profile(profile)
-    print(f"    -> saved to {save_path}")
+    existing_path = _existing_profile_path(profile)
+    passed_count = (profile.get("validation") or {}).get("passed_count", 0)
+    if passed_count == 0 and existing_path is not None:
+        # No document evidence (e.g. no API key): never overwrite a curated profile
+        # with generic fallback values. Keep (and later activate) the existing one.
+        save_path = existing_path
+        print(f"    -> no validated candidates; keeping existing profile {save_path} (not overwritten)")
+    else:
+        save_path = _save_profile(profile)
+        print(f"    -> saved to {save_path}")
 
     activated = False
     if activate:
