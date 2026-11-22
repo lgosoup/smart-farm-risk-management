@@ -67,6 +67,18 @@
       "resource_per_unit": {"nutrient_ml": 1.0},
       "effects": {"EC": {"model": "direct", "prior": 0.01}},
       "hardware": {"pins": {}}
+    },
+    {
+      "id": "fresh_water_valve",
+      "name": "급수 밸브 (희석)",
+      "type": "fresh_water_valve",
+      "functions": ["ec_down"],
+      "unit": "L",
+      "levels": [0, 1, 2, 4],
+      "energy_wh_per_unit": 0.1,
+      "resource_per_unit": {"water_l": 1.0},
+      "effects": {"EC": {"model": "dilution", "prior": -0.015}},
+      "hardware": {"pins": {}, "note": "기존 아두이노 구성에 없는 추가 장치"}
     }
   ],
   "simulator_truth": {
@@ -77,7 +89,8 @@
       "peltier_bank": {"water_temperature": -0.045},
       "main_pump": {"flow_gain": 0.025, "turbidity_gain": 0.004, "water_temperature": 0.002},
       "vent_fan": {"water_temperature_exchange": 0.006},
-      "nutrient_doser": {"EC": 0.007}
+      "nutrient_doser": {"EC": 0.007},
+      "fresh_water_valve": {"EC_dilution": -0.017}
     },
     "power_factor": {"peltier_bank": 1.08},
     "flow": {"decay_per_h": 0.05, "floor": 0.4, "max": 1.06},

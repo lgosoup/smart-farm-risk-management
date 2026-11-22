@@ -3,7 +3,8 @@
 A  ThresholdController      fixed thresholds + timers (common practice baseline)
 B  FuzzyOptimizer(legacy)   original behaviour: optimise only on 경고+, fixed priors, flat Wh cost
 C  FuzzyOptimizer(learned)  optimise every step, learned dynamics, 3-step lookahead
-D  FuzzyOptimizer(carbon)   C + hourly carbon intensity and price in the energy term
+D  FuzzyOptimizer(carbon)   C + hourly carbon intensity and price in the energy term,
+                            plus pre-cooling of the reservoir before dirtier/pricier hours
 """
 from __future__ import annotations
 
@@ -76,6 +77,8 @@ class ThresholdController(Controller):
                 u[d.id] = top if (fr < 0.95 or obs["turbidity"] > 0.7) else timer
             if "ec_up" in d.functions and ec < tg["EC"] - 0.1:
                 u[d.id] = mid
+            if "ec_down" in d.functions and ec > self.crop.optimal_ranges.get("EC", (tg["EC"], tg["EC"]))[1] + 0.05:
+                u[d.id] = mid
         return u, {"mode": "threshold"}
 
 
@@ -92,6 +95,10 @@ class OptimizerWeights:
     range_tolerance: float = 0.1
     energy_normalizer_kwh: float = 0.25
     resource_normalizer_ml: float = 40.0
+    water_normalizer_l: float = 20.0
+    # pre-cooling (D only): value cold stored now at the cost it avoids later
+    precool_window_h: int = 8
+    precool_floor_frac: float = 0.25  # do not pre-cool below lo + frac * width
     w_carbon: float = 0.7
     w_price: float = 0.3
     infeasible_penalty: float = 1000.0
@@ -117,6 +124,7 @@ class FuzzyOptimizer(Controller):
         self.name = name
         self.always = always
         self.carbon = carbon
+        self.precool = carbon
         self.horizon = max(1, int(horizon))
         self.w = weights or OptimizerWeights()
         self.model = LearnedDynamics(facility, learn=learn)
@@ -199,6 +207,53 @@ class FuzzyOptimizer(Controller):
             tot += abs(control.get(d.id, 0.0) - self.prev.get(d.id, d.min_level)) / span
         return tot / max(len(self.facility.devices), 1)
 
+    def _kwh_per_degree(self) -> Optional[float]:
+        """Cheapest learned cooling cost (kWh per 1 degC removed) among direct coolers."""
+        best = None
+        for d in self.facility.devices:
+            if "water_temp_down" not in d.functions or d.unit != "min" or d.power_w <= 0:
+                continue
+            eff = self.model.device_effect("water_temperature", d.id)
+            if eff is None or eff >= -1e-5 or any(e.model == "exchange" for e in d.effects):
+                continue
+            kwh = (d.power_w / 60000.0) / (-eff)
+            best = kwh if best is None else min(best, kwh)
+        return best
+
+    def _precool_plan(self, obs: Mapping[str, float], ctx: Context) -> Optional[Tuple[float, float, float]]:
+        """Value of cold stored in the reservoir now.
+
+        Cooling now at cost factor f_now replaces cooling later at f_future,
+        minus what leaks back through the walls. Returns (value per degC in
+        objective units, floor temperature, upper bound) when cooling will be
+        needed within the window, else None."""
+        rng = self.crop.optimal_ranges.get("water_temperature")
+        if not rng:
+            return None
+        lo, hi = rng
+        width = max(hi - lo, 1e-3)
+        W = max(1, int(self.w.precool_window_h))
+        t, clim, grid = ctx.t, ctx.climate, ctx.grid
+        # will the water need cooling soon if we do nothing?
+        idle = self.facility.idle_control()
+        x = dict(obs)
+        need_hours = []
+        for k in range(W):
+            x = self.model.predict(x, idle, clim.outdoor_temp(t + k), clim.sun(t + k))
+            if float(x["water_temperature"]) >= hi - 0.25 * width:
+                need_hours.append(t + k + 1)
+        if not need_hours:
+            return None
+        kwh_per_c = self._kwh_per_degree()
+        if kwh_per_c is None:
+            return None
+        # cost of the hours in which the cooling would otherwise happen
+        f_future = sum(grid.weighted_cost_factor(h, self.w.w_carbon, self.w.w_price) for h in need_hours) / len(need_hours)
+        coupling = (self.model.coefficients().get("water_temperature") or {}).get("ambient", 0.1)
+        retention = max(0.0, 1.0 - max(float(coupling), 0.0)) ** (W / 2.0)
+        value = self.w.energy * retention * f_future * kwh_per_c / self.w.energy_normalizer_kwh
+        return value, lo + self.w.precool_floor_frac * width, hi
+
     # ------------------------------------------------------------------
     def decide(self, obs: Mapping[str, float], ctx: Context) -> Tuple[Control, Dict[str, object]]:
         ev_now = self.crop.evaluate(obs)
@@ -210,6 +265,8 @@ class FuzzyOptimizer(Controller):
         t, clim, grid = ctx.t, ctx.climate, ctx.grid
         idle = self.facility.idle_control()
         candidates = self.facility.candidates(self.needed_functions(obs))
+        plan = self._precool_plan(obs, ctx) if self.precool else None
+        x_idle = self.model.predict(obs, idle, clim.outdoor_temp(t), clim.sun(t))["water_temperature"] if plan else None
         scored = []
         for c in candidates:
             x1 = self.model.predict(obs, c, clim.outdoor_temp(t), clim.sun(t))
@@ -229,15 +286,22 @@ class FuzzyOptimizer(Controller):
             risk = sum(w * r for w, r in zip(weights, risks)) / sum(weights)
             comfort = self._discomfort(ev1)
             kwh = self.facility.energy_wh(c) / 1000.0
-            nutrient = self.facility.resources(c).get("nutrient_ml", 0.0)
+            res = self.facility.resources(c)
+            nutrient = res.get("nutrient_ml", 0.0)
+            water = res.get("water_l", 0.0)
+            stored = 0.0
+            if plan:
+                value, floor, hi = plan
+                stored = max(0.0, min(x_idle, hi) - max(float(x1["water_temperature"]), floor))
             J = (
                 self.w.risk * risk
                 + self.w.energy * self._energy_term(kwh, t, grid)
-                + self.w.resource * nutrient / self.w.resource_normalizer_ml
+                + self.w.resource * (nutrient / self.w.resource_normalizer_ml + water / self.w.water_normalizer_l)
                 + self.w.change * self._change(c)
                 + self.w.over_control * self._over_control(c, x1)
                 + self.w.comfort * comfort
                 + (self.w.infeasible_penalty if infeasible else 0.0)
+                - (plan[0] * stored if plan else 0.0)
             )
             scored.append((round(violation, 3), J, c, x1, ev1))
         # 1) keep the crop in its optimal range first (lexicographic),
@@ -253,6 +317,7 @@ class FuzzyOptimizer(Controller):
             "pred_risk": ev1.risk_score,
             "objective": J,
             "n_candidates": len(candidates),
+            "precool": bool(plan),
         }
 
 
@@ -261,7 +326,7 @@ CONTROLLER_LABELS = {
     "A": "고정 임계값 제어",
     "B": "기존 시스템 (경고 시에만 최적화, 고정 계수)",
     "C": "상시 최적화 + 학습형 예측",
-    "D": "C + 탄소·요금 반영",
+    "D": "C + 탄소·요금 반영 + 저수조 예냉",
 }
 
 

@@ -10,6 +10,7 @@ Features per variable
   sun                   solar intensity 0..1   [water_temperature, EC, turbidity]
   <device>              u_i                    (effect model "direct")
   <device>:exchange     u_i * (outdoor - x)    (effect model "exchange")
+  <device>:dilution     u_i * x                (effect model "dilution", e.g. fresh water lowering EC)
 """
 from __future__ import annotations
 
@@ -78,13 +79,13 @@ class LearnedDynamics:
                 for e in d.effects:
                     if e.var != var:
                         continue
-                    kind = "exchange" if e.model == "exchange" else "direct"
+                    kind = e.model if e.model in ("exchange", "dilution") else "direct"
                     feats.append((kind, d.id))
                     prior.append(e.prior)
                     sd.append(max(abs(e.prior) * 0.8, 1e-4))
             theta = np.array(prior, dtype=float)
             P = np.diag((np.array(sd) / NOISE_SD[var]) ** 2)
-            names = [k if dev is None else (dev if k == "direct" else f"{dev}:exchange") for k, dev in feats]
+            names = [k if dev is None else (dev if k == "direct" else f"{dev}:{k}") for k, dev in feats]
             # carry over learned parameters
             if var in old:
                 om = old[var]
@@ -111,6 +112,8 @@ class LearnedDynamics:
                 out.append(float(u.get(dev, 0.0)))
             elif kind == "exchange":
                 out.append(float(u.get(dev, 0.0)) * (outdoor - xv))
+            elif kind == "dilution":
+                out.append(float(u.get(dev, 0.0)) * xv)
         return np.array(out, dtype=float)
 
     def predict(self, x: Mapping[str, float], u: Mapping[str, float], outdoor: float, sun: float) -> Dict[str, float]:
@@ -147,6 +150,6 @@ class LearnedDynamics:
         if vm is None:
             return None
         for nm, th in zip(vm.names, vm.theta):
-            if nm in (device_id, f"{device_id}:exchange"):
+            if nm in (device_id, f"{device_id}:exchange", f"{device_id}:dilution"):
                 return float(th)
         return None

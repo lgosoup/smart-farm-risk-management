@@ -200,6 +200,7 @@ class VirtualFarm:
         dec = -float(ecp.get("uptake_per_h", 0.01)) * (0.4 + sun) + float(ecp.get("evaporation_per_c", 0.0)) * max(0.0, air - 20.0) * ec
         for d in self.facility.devices:
             dec += self._eff(d.id, "EC") * u[d.id]
+            dec += self._eff(d.id, "EC_dilution") * u[d.id] * ec  # fresh water dilutes
         ec_next = ec + dec + self.rng.gauss(0.0, float(pn.get("EC", 0.0)))
 
         # turbidity (slow rise, filtered by circulation)

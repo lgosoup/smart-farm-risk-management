@@ -414,3 +414,63 @@ def test_event_parse():
     assert (e.day, e.type, e.device, e.factor) == (2, "remove", "vent_fan", 1.0)
     with pytest.raises(ValueError):
         Event.parse("explode:vent_fan@2")
+
+
+# ----------------------------------------------------------------------------
+# 10. dilution valve and pre-cooling
+# ----------------------------------------------------------------------------
+def test_dilution_valve_lowers_ec_in_simulator():
+    fac = load_facility("mid_greenhouse")
+    assert "ec_down" in fac.device("fresh_water_valve").functions
+    clim = load_climate("summer_south", seed=0)
+    truth = simulator_truth("mid_greenhouse")
+    truth["process_noise"] = {}
+    a = VirtualFarm(fac, truth, clim, initial_state={"EC": 2.2}, seed=1)
+    b = VirtualFarm(fac, truth, clim, initial_state={"EC": 2.2}, seed=1)
+    idle = fac.idle_control()
+    a.step(idle)
+    b.step({**idle, "fresh_water_valve": 20.0})
+    assert b.state["EC"] < a.state["EC"] - 0.05
+    assert fac.resources({**idle, "fresh_water_valve": 20.0})["water_l"] == 20.0
+
+
+def test_dilution_effect_is_learned():
+    fac = load_facility("mid_greenhouse")
+    m = LearnedDynamics(fac, learn=True)
+    prior = m.device_effect("EC", "fresh_water_valve")
+    true_k = -0.004
+    rng = random.Random(0)
+    for _ in range(300):
+        ec = rng.uniform(1.0, 2.5)
+        u = {**fac.idle_control(), "fresh_water_valve": rng.choice([0.0, 5.0, 10.0, 20.0])}
+        x = {"water_temperature": 22.0, "flow_ratio": 1.0, "EC": ec, "turbidity": 0.5}
+        nxt = dict(x, EC=ec + true_k * u["fresh_water_valve"] * ec)
+        m.update(x, u, 28.0, 0.0, nxt)
+    learned = m.device_effect("EC", "fresh_water_valve")
+    assert abs(learned - true_k) < abs(prior - true_k)
+    assert abs(learned - true_k) < 0.001
+
+
+def test_threshold_controller_dilutes_high_ec(basil):
+    from netzero.controllers import Context, ThresholdController
+    fac = load_facility("mid_greenhouse")
+    ctrl = ThresholdController(fac, basil)
+    obs = {"water_temperature": 22.5, "flow_ratio": 1.0, "EC": 2.2, "turbidity": 0.5, "pH": 6.15}
+    u, _ = ctrl.decide(obs, Context(0, load_climate("summer_south"), load_grid("kr_stylized")))
+    assert u["fresh_water_valve"] > 0
+    assert u["nutrient_doser"] == 0
+
+
+def test_precool_plan_only_for_carbon_aware(basil):
+    from netzero.controllers import Context, make_controller
+    fac = load_facility("mid_greenhouse")
+    ctx = Context(10, load_climate("heatwave"), load_grid("kr_stylized"))
+    obs = {"water_temperature": 23.5, "flow_ratio": 1.0, "EC": 1.5, "turbidity": 0.5, "pH": 6.15}
+    c = make_controller("C", fac, basil)
+    d = make_controller("D", fac, basil)
+    assert not c.precool and d.precool
+    plan = d._precool_plan(obs, ctx)
+    assert plan is not None
+    value, floor, hi = plan
+    lo = basil.optimal_ranges["water_temperature"][0]
+    assert value > 0 and lo < floor < hi

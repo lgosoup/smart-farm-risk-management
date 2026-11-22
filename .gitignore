@@ -20,6 +20,10 @@ data/history_packets.jsonl
 data/device_control_history.jsonl
 data/improvement_feedback.jsonl
 data/alerts.jsonl
+data/outputs.json
+data/device_control_outputs.json
+data/improvement_state.json
+data/label_dump.json
 data/vision_captures/
 
 # 임시 브릿지 파일

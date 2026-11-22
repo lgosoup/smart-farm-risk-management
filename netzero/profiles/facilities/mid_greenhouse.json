@@ -74,6 +74,18 @@
       "resource_per_unit": {"nutrient_ml": 1.0},
       "effects": {"EC": {"model": "direct", "prior": 0.0025}},
       "hardware": {"pins": {"relay": "R6"}}
+    },
+    {
+      "id": "fresh_water_valve",
+      "name": "급수 밸브 (희석)",
+      "type": "fresh_water_valve",
+      "functions": ["ec_down"],
+      "unit": "L",
+      "levels": [0, 5, 10, 20],
+      "energy_wh_per_unit": 0.1,
+      "resource_per_unit": {"water_l": 1.0},
+      "effects": {"EC": {"model": "dilution", "prior": -0.002}},
+      "hardware": {"pins": {"relay": "R7"}}
     }
   ],
   "simulator_truth": {
@@ -85,7 +97,8 @@
       "chiller_b": {"water_temperature": -0.012},
       "vent_fan": {"water_temperature_exchange": 0.004},
       "main_pump": {"flow_gain": 0.02, "turbidity_gain": 0.003, "water_temperature": 0.001},
-      "nutrient_doser": {"EC": 0.0018}
+      "nutrient_doser": {"EC": 0.0018},
+      "fresh_water_valve": {"EC_dilution": -0.0018}
     },
     "power_factor": {"chiller_b": 1.15},
     "flow": {"decay_per_h": 0.04, "floor": 0.4, "max": 1.06},

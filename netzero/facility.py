@@ -35,7 +35,7 @@ Control = Dict[str, float]
 @dataclass(frozen=True)
 class Effect:
     var: str
-    model: str  # "direct": dx = k*u   |  "exchange": dx = k*u*(outdoor - x)
+    model: str  # "direct": dx = k*u  |  "exchange": dx = k*u*(outdoor - x)  |  "dilution": dx = k*u*x
     prior: float
 
 
