@@ -140,7 +140,7 @@ def orch(tmp_path, monkeypatch):
 
     data = tmp_path / "data"
     data.mkdir()
-    shutil.copy2(ROOT / "data" / "improvement_state.json", data / "improvement_state.json")
+    # improvement_state.json is a runtime file (not in git); start without it like a fresh clone
     for attr, name in {
         "INPUTS_PATH": "inputs.json",
         "HISTORY_INPUTS_PATH": "history_inputs.jsonl",
@@ -237,7 +237,8 @@ def test_orchestrator_monitor_only_cycle(orch):
 def test_orchestrator_bandit_not_rerun_after_restart_same_day(orch, monkeypatch):
     o = orch
     d = o._test_data_dir
-    state = json.loads((d / "improvement_state.json").read_text(encoding="utf-8"))
+    sp = d / "improvement_state.json"
+    state = json.loads(sp.read_text(encoding="utf-8")) if sp.exists() else {}
     state["last_cycle"] = {"ts": datetime.now().astimezone().isoformat(timespec="seconds")}
     (d / "improvement_state.json").write_text(json.dumps(state, ensure_ascii=False), encoding="utf-8")
 
