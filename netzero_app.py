@@ -11,6 +11,7 @@ from typing import Dict, List, Optional, Sequence, Tuple
 
 import pandas as pd
 
+from netzero.controllers import CONTROLLER_DESCRIPTIONS, DEFAULT_CONTROLLERS
 from netzero.experiment import CONTROLLER_LABELS, EpisodeResult, Event, run_episode, summary_rows
 from netzero.facility import available_facilities, load_facility
 from netzero.fuzzy import available_crops
@@ -40,7 +41,7 @@ VAR_LABELS = {
 
 SUMMARY_COLUMNS = {
     "facility": "시설",
-    "controller": "제어기",
+    "controller": "운전 방식",
     "in_range_%": "적정 범위 유지율(%)",
     "alert_%": "경고 비율(%)",
     "danger_h": "위험 시간(h)",
@@ -122,6 +123,10 @@ def device_table(facility_name: str) -> pd.DataFrame:
     return pd.DataFrame(rows)
 
 
+def _nm(code: str) -> str:
+    return CONTROLLER_LABELS.get(code, code)
+
+
 def summary_table(results: Sequence[EpisodeResult]) -> pd.DataFrame:
     df = pd.DataFrame(summary_rows(results))
     if df.empty:
@@ -152,7 +157,7 @@ def water_temp_frame(results: Sequence[EpisodeResult]) -> pd.DataFrame:
     s0 = results[0].series
     df = pd.DataFrame({"외기 온도": s0.get("outdoor", [])}, index=s0.get("hour", []))
     for r in results:
-        df[f"{r.controller} 수온"] = r.series.get("water_temperature", [])
+        df[f"{_nm(r.controller)} 수온"] = r.series.get("water_temperature", [])
     df.index.name = "시간(h)"
     return df
 
@@ -162,7 +167,7 @@ def cumulative_carbon_frame(results: Sequence[EpisodeResult]) -> pd.DataFrame:
         return pd.DataFrame()
     df = pd.DataFrame(index=results[0].series.get("hour", []))
     for r in results:
-        df[r.controller] = pd.Series(r.series.get("carbon_kg", []), index=df.index).cumsum()
+        df[_nm(r.controller)] = pd.Series(r.series.get("carbon_kg", []), index=df.index).cumsum()
     df.index.name = "시간(h)"
     return df
 
@@ -183,7 +188,7 @@ def pred_error_frame(results: Sequence[EpisodeResult], window: int = 24) -> pd.D
         err = r.series.get("pred_error_wt") or []
         if not err:
             continue
-        cols[r.controller] = pd.Series(err).rolling(window, min_periods=1).mean()
+        cols[_nm(r.controller)] = pd.Series(err).rolling(window, min_periods=1).mean()
     if not cols:
         return pd.DataFrame()
     df = pd.DataFrame(cols)
@@ -223,9 +228,9 @@ def coefficient_table(results: Sequence[EpisodeResult], facility_name: str) -> p
         }
         for c, coefs in learned.items():
             v = (coefs.get(var) or {}).get(nm)
-            row[f"{c} 학습값"] = v
+            row[f"{_nm(c)} 학습값"] = v
             if v is not None and prior not in (None, 0.0):
-                row[f"{c} 학습/사전"] = round(v / prior, 2)
+                row[f"{_nm(c)} 학습/사전"] = round(v / prior, 2)
         rows.append(row)
     return pd.DataFrame(rows)
 
@@ -284,8 +289,8 @@ def main() -> None:
                                format_func=lambda c: clim_names.get(c, c))
         days = st.slider("기간(일)", 1, 14, 5)
         seed = int(st.number_input("시드", min_value=0, max_value=9999, value=0, step=1))
-        controllers = st.multiselect("제어기", list(CONTROLLER_LABELS.keys()), default=list(CONTROLLER_LABELS.keys()),
-                                     format_func=lambda k: f"{k}: {CONTROLLER_LABELS[k]}")
+        controllers = st.multiselect("운전 방식", list(CONTROLLER_LABELS.keys()), default=list(DEFAULT_CONTROLLERS),
+                                     format_func=_nm)
 
         fac_obj = load_facility(facility)
         dev_ids = [d.id for d in fac_obj.devices]
@@ -315,7 +320,7 @@ def main() -> None:
     if fac_obj.description:
         st.caption(fac_obj.description)
     st.dataframe(device_table(facility), hide_index=True, use_container_width=True)
-    st.caption("제어기는 장치 이름이 아니라 '기능'과 '영향 계수'만 보고 제어한다. 시설이 바뀌면 프로필만 교체한다.")
+    st.caption("운전 방식은 장치 이름이 아니라 '기능'과 '영향 계수'만 보고 제어한다. 시설이 바뀌면 프로필만 교체한다.")
 
     run_params = st.session_state.get("params")
     if run_params is None:
@@ -325,7 +330,7 @@ def main() -> None:
         st.warning("설정이 바뀌었습니다. 아래 결과는 이전 실행 기준입니다. 다시 '실행'을 누르세요.")
     r_fac, r_ctrls, r_crop, r_clim, r_days, r_seed, r_deg, r_rm = run_params
     if not r_ctrls:
-        st.warning("제어기를 하나 이상 선택하세요.")
+        st.warning("운전 방식을 하나 이상 선택하세요.")
         return
 
     with st.spinner("시뮬레이션 중..."):
@@ -348,17 +353,17 @@ def main() -> None:
     cmp = d_vs_a(results)
     if cmp is not None:
         c1, c2, c3 = st.columns(3)
-        c1.metric("에너지 절감률 (D vs A)", f"{cmp['energy_saving_%']:.1f}%")
-        c2.metric("탄소 감축률 (D vs A)", f"{cmp['carbon_reduction_%']:.1f}%")
-        c3.metric("적정 범위 유지율 (D)", f"{cmp['in_range_D_%']:.1f}%", f"{cmp['in_range_diff_pp']:+.1f}%p vs A")
+        c1.metric("전기 절감률 (탄소 반영 vs 흔한 방식)", f"{cmp['energy_saving_%']:.1f}%")
+        c2.metric("탄소 감축률 (탄소 반영 vs 흔한 방식)", f"{cmp['carbon_reduction_%']:.1f}%")
+        c3.metric("적정 범위 유지율 (탄소 반영)", f"{cmp['in_range_D_%']:.1f}%", f"{cmp['in_range_diff_pp']:+.1f}%p vs 흔한 방식")
     else:
-        st.info("D vs A 비교 지표는 A와 D를 모두 선택해야 표시됩니다.")
+        st.info("비교 지표는 '흔한 방식'과 '탄소 반영'을 모두 선택해야 표시됩니다.")
     st.dataframe(summary_table(results), hide_index=True, use_container_width=True)
-    with st.expander("제어기 설명"):
+    with st.expander("운전 방식 설명"):
         for k in r_ctrls:
-            st.markdown(f"- **{k}**: {CONTROLLER_LABELS.get(k, k)}")
+            st.markdown(f"- **{_nm(k)}**: {CONTROLLER_DESCRIPTIONS.get(k, '')}")
     if "A" not in r_ctrls:
-        st.caption("절감률·감축률 열은 기준 제어기 A가 있어야 계산됩니다.")
+        st.caption("절감률·감축률 열은 '흔한 방식'이 있어야 계산됩니다.")
 
     # 3. 그래프
     st.header("3. 시간별 변화")
@@ -378,7 +383,7 @@ def main() -> None:
         st.subheader("수온 예측오차 (24시간 이동평균, °C)")
         pe = pred_error_frame(results)
         if pe.empty:
-            st.info("학습형 제어기(C, D)를 선택하면 표시됩니다.")
+            st.info("'학습형' 또는 '탄소 반영'을 선택하면 표시됩니다.")
         else:
             st.line_chart(pe)
             st.caption("시간이 지날수록 오차가 줄면 모델이 이 시설에 적응한 것이다.")
@@ -387,7 +392,7 @@ def main() -> None:
     st.header("4. 학습된 장치 영향 계수")
     ct = coefficient_table(results, r_fac)
     if ct.empty:
-        st.info("학습형 제어기(C, D)를 선택하면 표시됩니다.")
+        st.info("'학습형' 또는 '탄소 반영'을 선택하면 표시됩니다.")
     else:
         st.dataframe(ct, hide_index=True, use_container_width=True)
         st.caption("사전값은 프로필에 적힌 추정치, 학습값은 운전 데이터로 보정한 값이다 (시간당 변화량 / 제어 단위). 학습/사전이 1보다 작으면 실제 효과가 예상보다 약하다는 뜻이다.")
@@ -398,7 +403,7 @@ def main() -> None:
     if not cmds:
         st.info("표시할 명령이 없습니다.")
     else:
-        st.caption(f"제어기 {who}의 마지막 시간 제어값을 하드웨어 명령으로 변환한 결과")
+        st.caption(f"{_nm(who) if who else ''} 방식의 마지막 시간 제어값을 하드웨어 명령으로 변환한 결과")
         st.json(cmds)
 
 

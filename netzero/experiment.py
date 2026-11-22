@@ -16,7 +16,7 @@ from dataclasses import dataclass, field
 from pathlib import Path
 from typing import Dict, List, Mapping, Optional, Sequence
 
-from .controllers import CONTROLLER_LABELS, Context, OptimizerWeights, make_controller
+from .controllers import CONTROLLER_DESCRIPTIONS, CONTROLLER_LABELS, DEFAULT_CONTROLLERS, Context, OptimizerWeights, make_controller, resolve_controller
 from .facility import available_facilities, load_facility, simulator_truth
 from .fuzzy import get_crop_model
 from .grid import load_grid
@@ -210,7 +210,7 @@ def run_episode(
 
 def compare(
     facilities: Sequence[str],
-    controllers: Sequence[str] = ("A", "B", "C", "D"),
+    controllers: Sequence[str] = DEFAULT_CONTROLLERS,
     **kwargs,
 ) -> List[EpisodeResult]:
     out = []
@@ -233,7 +233,7 @@ def summary_rows(results: Sequence[EpisodeResult]) -> List[Dict[str, object]]:
             carbon_red = round(100.0 * (b.metrics["carbon_kg"] - m["carbon_kg"]) / b.metrics["carbon_kg"], 1)
         rows.append({
             "facility": r.facility,
-            "controller": r.controller,
+            "controller": CONTROLLER_LABELS.get(r.controller, r.controller),
             "in_range_%": round(100 * m["in_range_rate"], 1),
             "alert_%": round(100 * m["alert_rate"], 1),
             "danger_h": m["danger_hours"],
@@ -263,9 +263,10 @@ def _print_table(rows: Sequence[Mapping[str, object]]) -> None:
 
 
 def main(argv: Optional[Sequence[str]] = None) -> None:
-    ap = argparse.ArgumentParser(description="Virtual smart farm comparison (A: threshold, B: legacy, C: learned, D: carbon-aware)")
+    ap = argparse.ArgumentParser(description="가상 스마트팜 운전 방식 비교 (흔한 방식 / 학습형 / 탄소 반영)")
     ap.add_argument("--facility", nargs="+", default=available_facilities(), choices=available_facilities())
-    ap.add_argument("--controllers", nargs="+", default=["A", "B", "C", "D"])
+    ap.add_argument("--controllers", nargs="+", default=list(DEFAULT_CONTROLLERS),
+                    help="흔한방식 학습형 탄소반영 (또는 A C D). 참고용: 경고시에만계산 (B)")
     ap.add_argument("--crop", default="basil")
     ap.add_argument("--climate", default="summer_south", choices=available_climates())
     ap.add_argument("--grid", default="kr_stylized")
@@ -277,9 +278,15 @@ def main(argv: Optional[Sequence[str]] = None) -> None:
     args = ap.parse_args(argv)
 
     events = [Event.parse(e) for e in args.event]
+    try:
+        codes = [resolve_controller(c) for c in args.controllers]
+    except ValueError as e:
+        ap.error(str(e))
+    if "A" not in codes:
+        codes.insert(0, "A")  # savings are measured against the baseline
     results = compare(
         args.facility,
-        args.controllers,
+        codes,
         crop=args.crop,
         climate=args.climate,
         grid=args.grid,
@@ -289,8 +296,9 @@ def main(argv: Optional[Sequence[str]] = None) -> None:
     )
     rows = summary_rows(results)
     print(f"crop={args.crop} climate={args.climate} days={args.days} seed={args.seed} events={args.event or '-'}")
-    for k, v in CONTROLLER_LABELS.items():
-        print(f"  {k}: {v}")
+    for k in codes:
+        print(f"  {CONTROLLER_LABELS[k]}: {CONTROLLER_DESCRIPTIONS[k]}")
+    print("  절감·감축률은 흔한 방식 대비")
     print()
     _print_table(rows)
 

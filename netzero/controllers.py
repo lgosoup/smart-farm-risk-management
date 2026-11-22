@@ -1,9 +1,9 @@
 """Controllers compared in the experiments.
 
-A  ThresholdController      fixed thresholds + timers (common practice baseline)
-B  FuzzyOptimizer(legacy)   original behaviour: optimise only on 경고+, fixed priors, flat Wh cost
-C  FuzzyOptimizer(learned)  optimise every step, learned dynamics, 3-step lookahead
-D  FuzzyOptimizer(carbon)   C + hourly carbon intensity and price in the energy term,
+A 흔한 방식       ThresholdController      fixed thresholds + timers (common practice baseline)
+B 경고 시에만 계산 FuzzyOptimizer(legacy)   optimise only on 경고+, fixed priors, flat Wh cost (reference only)
+C 학습형           FuzzyOptimizer(learned)  optimise every step, learned dynamics, 3-step lookahead
+D 탄소 반영        FuzzyOptimizer(carbon)   C + hourly carbon intensity and price in the energy term,
                             plus pre-cooling of the reservoir before dirtier/pricier hours
 """
 from __future__ import annotations
@@ -323,15 +323,37 @@ class FuzzyOptimizer(Controller):
 
 # ----------------------------------------------------------------------------
 CONTROLLER_LABELS = {
-    "A": "고정 임계값 제어",
-    "B": "기존 시스템 (경고 시에만 최적화, 고정 계수)",
-    "C": "상시 최적화 + 학습형 예측",
-    "D": "C + 탄소·요금 반영 + 저수조 예냉",
+    "A": "흔한 방식",
+    "B": "경고 시에만 계산",
+    "C": "학습형",
+    "D": "탄소 반영",
+}
+CONTROLLER_DESCRIPTIONS = {
+    "A": "정해진 온도를 넘으면 장치를 켜는 방식 (비교 기준)",
+    "B": "경고가 뜰 때만 계산하고 장치 효과를 배우지 않는 방식 (참고용)",
+    "C": "매시간 계산하고 장치 효과를 스스로 배워, 적정 범위를 지키며 전기를 덜 쓰는 방식",
+    "D": "학습형에 시간대별 탄소·요금 반영과 저수조 예냉을 더해, 같은 전기도 깨끗하고 싼 시간에 쓰는 방식",
+}
+DEFAULT_CONTROLLERS = ("A", "C", "D")
+_ALIASES = {
+    "A": "A", "흔한방식": "A", "baseline": "A", "threshold": "A",
+    "B": "B", "경고시에만계산": "B", "legacy": "B",
+    "C": "C", "학습형": "C", "learned": "C",
+    "D": "D", "탄소반영": "D", "carbon": "D",
 }
 
 
+def resolve_controller(name: str) -> str:
+    """'A' / '흔한 방식' / 'baseline' ... -> internal letter."""
+    key = str(name).strip().replace(" ", "")
+    code = _ALIASES.get(key) or _ALIASES.get(key.upper()) or _ALIASES.get(key.lower())
+    if code is None:
+        raise ValueError(f"unknown controller {name!r} (use one of: {', '.join(CONTROLLER_LABELS.values())})")
+    return code
+
+
 def make_controller(label: str, facility: Facility, crop: CropModel, weights: Optional[OptimizerWeights] = None) -> Controller:
-    label = label.upper()
+    label = resolve_controller(label)
     if label == "A":
         return ThresholdController(facility, crop)
     if label == "B":

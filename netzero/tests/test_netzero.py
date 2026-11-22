@@ -474,3 +474,14 @@ def test_precool_plan_only_for_carbon_aware(basil):
     value, floor, hi = plan
     lo = basil.optimal_ranges["water_temperature"][0]
     assert value > 0 and lo < floor < hi
+
+
+def test_controller_names_resolve():
+    from netzero.controllers import DEFAULT_CONTROLLERS, resolve_controller
+    assert resolve_controller("흔한 방식") == "A"
+    assert resolve_controller("학습형") == "C"
+    assert resolve_controller("탄소반영") == "D"
+    assert resolve_controller("d") == "D"
+    assert "B" not in DEFAULT_CONTROLLERS
+    with pytest.raises(ValueError):
+        resolve_controller("없는방식")
